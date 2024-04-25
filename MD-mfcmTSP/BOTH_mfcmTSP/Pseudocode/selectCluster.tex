@@ -1,0 +1,38 @@
+
+	\begin{algorithm}
+		\caption{selectCluster}
+		\SetKwProg{Fn}{Function}{}{}
+		
+		\Fn{selectCluster($vt, d, pos, V_{free}, K, \tau, \alpha, \beta$)}{
+			
+		
+					\For{\text{k = 1 to} $n_{prim}$}{
+						$V_{cand} = \emptyset$\\
+						$V_{cand} = V_{free} \cap K_k^{(vt)(pos)}$\\
+						\uIf{$V_{cand} = \emptyset$}{$\eta_k = \tau_k = 0$}\
+						\Else{
+						$\eta_k = |V_{cand}| \cdot \sum_{v_j \in V_{cand}} |v_{pos} - v_j|^{-1}$\\
+						$\tau_k = \frac{1}{|V_{cand}|} \cdot \sum_{v_j \in V_{cand}} \tau_{v_{pos} v_j}^{(vt)(d)}$\
+						}
+						
+					}
+					$\eta_{sum} \leftarrow \sum_{k=1}^{n_{prim}}\eta_k^\alpha$\\
+					$\tau_{sum} \leftarrow \sum_{k=1}^{n_{prim}}\tau_k^\beta$\\
+					\If{$\eta_{sum}$ = 0}{\tcp{return first cluster with a free customer}
+						\For{$k$ = $n_{prim}$ + 1 to $|K^{(vt)(pos)}|$}{
+							$V_{cand} = V_{free} \cap K_k^{(vt)(pos)}$\\
+							\If{$V_{cand} \neq \emptyset$}{\text{return k}}
+						}
+					}
+					\For{$k = 1$ to $n_{prim}$}{
+						$p({K_k}^{(vt)(pos)}) = \frac{{\eta_k}^\alpha\cdot{\tau_k}^\beta}{\eta_{sum}\cdot\tau_{sum}}$\
+					}
+					$p_{sum} = \sum_{k\in n_{prim}} p({K_k}^{(vt)(pos)})$\\
+					
+					$p({K_k}^{(vt)(pos)}) = p({K_k}^{(vt)(pos)})\div p_{sum}$\\
+					Select $p({K_k}^{(vt)(pos)})\in p({K}^{(vt)(pos)})$ based on probabilities $p({K_k}^{(vt)(pos)})$\\
+			\textbf{return} $k$\;
+		}
+		
+	\end{algorithm}
+

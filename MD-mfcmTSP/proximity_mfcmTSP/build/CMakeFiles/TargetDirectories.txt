@@ -1,0 +1,3 @@
+/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles/prox.dir
+/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles/edit_cache.dir
+/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,8 @@
+G.a_depots[idep].n_VT[ivt] = number of vehicles of type ivt in depot idep
+
+VT[ivt].n_vehicles = total number of vehicles of type ivt
+
+
+VT[ivt].a_depots -> has size VT[ivt].n_depots
+
+or has size G.n_depots and some cells will be NULL

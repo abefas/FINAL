@@ -1,0 +1,17 @@
+numOfCustomers numOfDepots differentTypes
+VT1.capacity   VT2.capacity VT3.capacity
+VT1.speed      VT2.speed    VT3.speed
+
+customer1.ID customer1.X customer1.Y customer1.Demand customer1.Accessibility
+customer2.ID customer2.X customer2.Y customer2.Demand customer2.Accessibility
+.
+.
+customerN.ID customerN.X customerN.Y customerN.Demand customerN.Accessibility
+//Accessibility example: 123 - Customer can be served by all VTs
+
+depot1.ID depot1.X depot1.Y depot1.numOfVT1 depot1.numOfVT2 depot1.numOfVT3
+depot2.ID depot2.X depot2.Y depot2.numOfVT2 depot2.numOfVT2 depot2.numOfVT3
+.
+.
+.
+

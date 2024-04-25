@@ -1,0 +1,41 @@
+	
+	\begin{algorithm}
+		\caption{antSolution}
+		
+		\SetKwProg{Fn}{Function}{}{}
+		
+		\Fn{antSolution($V = \{D,C\}, K, \tau, \alpha, \beta$)}{
+			$V_{free}$ = $C$\;
+			
+			\While{$V_{\text{free}} \neq \emptyset$}{
+				$vt = $ selectVehicleType($V_{free}, K, \tau$)\\
+				$d = $ selectDepot($vt, V_{free}, K^{(vt)}, \tau$)\\
+				$v = $ selectVehicle($vt, d, V_{free}, K^{(vt)}, \tau$)\\
+				
+				$pos \leftarrow$ \text{vehicle's position}\
+				
+				$k = $ selectCluster($vt, d, v, V_{free}, K^{(pos)(vt)}, \tau, \alpha, \beta$)\
+				
+				$V_{candidates} = V_{\text{free}} \cap K_k^{(pos)(vt)}$\
+				
+				
+				$c = $ selectCustomer($vt, d, pos, V_{candidates}, \tau, \alpha, \beta$)\\
+				\uIf(//Drone serves customer and immediately returns to depot){vt = Drone}{
+					$R_d^{vt} = R_d^{vt} + \{c\}$\\
+					$R_d^{(vt)} = R_d^{(vt)} + \{d\}$\\
+				}
+				\Else{	
+					\If{$v_{load} < c^{(demand)}$}{
+						$R_d^{(vt)} = R_d^{(vt)} + \{d\}$\\
+						$v_{load} = vt_{capacity}$\\
+					}
+					$R_d^{vt} = R_d^{vt} + \{c\}$\\
+					$v_{pos} = \{c\}$\\
+					$v_{load} = v_{load} - {c^{(demand)}}$\\
+				}
+				$V_{\text{free}} = V_{\text{free}} - \{c\}$\\
+			}
+			\ForEach(//Vehicles return to their depots){$d \in D \text{ and } vt\in VT$}{$R_d^{vt} = R_d^{vt} + \{d\}$}\
+			\textbf{return} $R = \{R_1^1, R_2^1, ..., R_2^3, R_3^3, ...,R_D^{VT}\}$\
+		}
+		\end{algorithm}

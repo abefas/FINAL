@@ -1,0 +1,40 @@
+total makespan: 2848.67
+type 1 depot   51 route    1 q_served   72 time 1959.23	0 13 25 14 0 
+type 1 depot   51 route    2 q_served   41 time 889.44	0 18 0 
+type 1 depot   52 route    1 q_served   78 time 2500.62	0 27 48 7 43 23 0 
+type 1 depot   53 route    1 q_served   26 time 759.53	0 9 16 0 
+type 1 depot   53 route    2 q_served   55 time 1745.35	0 39 33 49 0 
+type 1 depot   54 route    1 q_served   65 time 2246.68	0 20 3 38 29 0 
+type 1 makespan 2848.67
+ivt_ms 2848.673
+type 2 depot   51 route    1 q_served   25 time 520.00	0 47 0 
+type 2 depot   51 route    2 q_served   21 time 894.43	0 5 0 
+type 2 depot   51 route    3 q_served   27 time 417.61	0 41 0 
+type 2 depot   51 route    4 q_served   29 time 630.52	0 44 42 0 
+type 2 depot   52 route    1 q_served   29 time 322.49	0 12 0 
+type 2 depot   52 route    2 q_served   12 time 400.00	0 32 0 
+type 2 depot   52 route    3 q_served   23 time 880.91	0 8 0 
+type 2 depot   52 route    4 q_served   25 time 1007.80	0 24 6 0 
+type 2 depot   53 route    1 q_served   19 time 341.76	0 30 0 
+type 2 depot   53 route    2 q_served   26 time 456.07	0 34 0 
+type 2 depot   53 route    3 q_served   25 time 1701.81	0 28 31 0 
+type 2 depot   54 route    1 q_served   19 time 804.98	0 11 0 
+type 2 depot   54 route    2 q_served   30 time 441.81	0 2 0 
+type 2 depot   54 route    3 q_served   23 time 769.42	0 36 35 0 
+type 2 makespan 2611.20
+ivt_ms 2611.200
+type 3 depot   51 route    1 q_served    9 time 405.52	0 37 0 
+type 3 depot   51 route    2 q_served    9 time 200.00	0 4 0 
+type 3 depot   51 route    3 q_served    9 time 329.98	0 19 0 
+type 3 depot   51 route    4 q_served   10 time 932.28	0 17 40 0 
+type 3 depot   52 route    1 q_served   10 time 824.62	0 15 0 
+type 3 depot   52 route    2 q_served    7 time 938.68	0 26 0 
+type 3 depot   52 route    3 q_served    5 time 74.54	0 46 0 
+type 3 depot   53 route    1 q_served   10 time 307.32	0 50 0 
+type 3 depot   53 route    2 q_served    5 time 301.85	0 10 0 
+type 3 depot   53 route    3 q_served   10 time 760.85	0 45 0 
+type 3 depot   54 route    1 q_served    8 time 643.77	0 22 0 
+type 3 depot   54 route    2 q_served    8 time 274.87	0 21 0 
+type 3 depot   54 route    3 q_served    7 time 769.56	0 1 0 
+type 3 makespan 1867.78
+ivt_ms 1867.783

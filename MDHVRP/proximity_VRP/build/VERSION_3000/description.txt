@@ -1,0 +1,42 @@
+1) Clustering:
+Assign each customer to their closest depot, 
+considering customer's accessibility and depots' vehicle availability.
+
+The algorithm runs iteratively, constructing the routes of each depot in each 
+iteration. 
+2)In each iteration:
+
+a) Initialization:
+Use the NN algorithm to construct truck route(s), serving customers in the 
+current depot's cluster, while considering their accessibility and
+the Truck's capacity.
+
+Customers in the cluster that were not included in the Truck route are inserted in 
+either the Motorbike or Drone route of the depot, 
+in a similar way of the main heuristic algorithm, 
+trying to balance the makespans of the two vehicle types.
+If Motorbike is chosen, then it constructs a NN route with as many customers as
+the Motorbike's capacity allows.
+
+b) Main Algorithm:
+Run the mfcmTSP heuristic for the depot.
+Added:
+Switch: The first time when type = Motorbike and min_cost + M_M > M_Truck
+(Motorbike route complete), try to offload further customer(s) to the Drone
+
+Stop for when min_cost + M_Drone > M_Truck
+(No further customer(s) can be offloaded from the Truck route)
+
+c) Local optimization:
+In each iteration where customer(s) are offloaded from the Truck to an other 
+vehicle type, run local optimization for the Truck and Motorbike routes.
+(Useless to run local opt for Drone as they serve one customer at a time.)
+
+//This local opt helps truck route only?
+
+End depot iterations
+
+3) Do mutual local optimization between depots.
+
+    If this improves the vehicle type's makespan, 
+    run single local optimization again. 

@@ -1,0 +1,27 @@
+
+	\begin{algorithm}
+		\caption{selectVehicleType}
+		\SetKwProg{Fn}{Function}{}{}
+		
+		\Fn{selectVehicleType($V_{free}, K, \tau$)}{
+			\For{\text{each vehicle type }$t_i\in VT$}{
+				$V_{\text{cand}} = \emptyset$\\
+					\For{\text{each vehicle} }{
+						$pos \leftarrow $\text{vehicle's current location}\\
+						$d \leftarrow $\text{vehicle's depot}\
+						
+						\For{\text{k = 1 to} $n_{prim}$}{
+							$V_{cand} = V_{cand} + V_{free} \cap K_k^{(t_i)(pos)}$\
+						}
+					}
+					$p(t_i) = \sum_{v_j \in V_{cand}} \tau_{v_{pos} v_j}^{(t_i)(d)} \div |vehicles^{(t_i)}|$\
+			}
+			$p_{sum} = \sum_{t_i \in VT} p(t_i)$\\
+			
+			$p(t_i) = p(t_i) \div p_{sum}$\\
+			Select $t_i\in VT$ based on probabilities $p(t_i)$ using roulette wheel\\
+			\textbf{return} $t_i$\;
+		}
+		
+	\end{algorithm}
+

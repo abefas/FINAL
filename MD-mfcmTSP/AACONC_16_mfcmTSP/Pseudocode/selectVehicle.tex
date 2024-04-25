@@ -1,0 +1,25 @@
+
+	
+	\begin{algorithm}
+		\caption{selectVehicle}
+		\SetKwProg{Fn}{Function}{}{}
+		
+		\Fn{selectVehicle($vt, d, V_{free}, K^{(vt)}, \tau$)}{
+				\For{each $v_i\in Vh^{(vt)(d)}$}{
+					$V_{\text{cand}} = \emptyset$\\
+					$pos \leftarrow$\text{vehicle's current location}\
+					
+					\For{\text{k = 1 to} $n_{prim}$}{
+						$V_{cand} = V_{cand} + V_{free} \cap K_k^{(vt)(pos)}$\
+					}
+					
+					$p(v_i) = \sum_{v_j \in V_{cand}} \tau_{v_{pos} v_j}^{(vt)(d)}$\
+				}
+			$p_{sum} = \sum_{v_i \in V^{(vt)(d)}} p(v_i)$\\
+			$p(v_i) = p(v_i)\div p_{sum}$\\
+			Select $v_i\in Vh^{(vt)(d)}$ based on probabilities $p(v_i)$ using roulette wheel\\
+			\textbf{return} $v_i$\;
+		}
+		
+	\end{algorithm}
+

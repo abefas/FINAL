@@ -1,0 +1,204 @@
+Multi Depot Heterogeneous Fleet VRP with split deliveries
+
+1)Choose Vehicle Type based on pheromones from current location of each vehicle of VT to customers.
+2)Choose Depot from depots that can deploy vehicles of type chosen in step 1.
+3)Choose Vehicle ID from depot chosen in step 2.
+4)Choose Cluster
+5)Choose Customer
+
+6)Run local optimization on each vehicle type graph - run local optimization between different graphs???
+7)Update pheromones using simulated annealing principle
+
+
+
+
+
+
+
+Problems:
+If Vehicle chosen can't serve chosen customer's full demand ???
+a) Vehicle returns to depot for restock
+b) Find different vehicle that can fulfill their demand
+c) Split deliveries
+
+
+
+
+
+
+
+
+Similarities to Stodola's MDVRP:
+1)Node Clustering - Cluster selection function
+2)Temperature, Evaporation and termination condition
+3)Local Optimization
+4)Generally same way of selecting - formula of handling pheromones and usage of roulette wheel
+
+
+
+
+
+Idea:
+
+1)Weighted VT selection based on speed
+
+2)Choose new vehicle from selected depot IF
+    we can predict that already deployed vehicles can't fulfill chosen customer's demand
+
+3)Choose customer based on already deployed vehicle's current load
+
+
+    
+
+
+If vehicle is close to a lot of customers there is a high chance that it can fulfill an other 
+    customer's demand without returning for restock
+
+So: relation between vehicle's current load and an average of unserved customers' demands
+    in the primary clusters of current location
+
+high chance that this vehicle can't serve any more customers && high chance that no other VT can serve this customer
+If current_load < average(customer_demand_in_primary_clusters) && current_load > average(capacity_of_other_VT) then
+    Deploy new vehicle    
+    (OR continue to next iteration hoping that a different vehicle type can serve that customer more efficiently)
+else
+    Serve whichever customer in primary clusters it can.
+
+
+
+
+Different Idea: Split deliveries (Search literature, Temu as an example)
+                Compare advantage of split delivery.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************/
+Pheromones are stored in matrix phMatrix:
+
+double *phMatrix[V.numOfDepots*(V.numOfCustomers+V.numOfDepots)*(V.numOfCustomers+V.numOfDepots)]
+
+Initialization: 1.0:    if customer node to a different node(depot or customer) 
+                        if depot node to a customer node
+else initialized -1.0
+
+
+
+/*******************************/
+Node clustering:
+
+polar *polarArray[numOfCustomers] - contains the distance and the angle of the Customer node in relation to dx,dy (polar coordinates of each Customer node)
+
+sector *sec[n_sect] - contains a linked list of the customer nodes that belong to each sector
+
+
+int K[numOfCustomers+numOfDepots][rows * n_size] - rows = (int)ceil((double)V.numOfCustomers/n_size);
+- contains the clusters for each node
+
+
+
+
+
+
+/****************************************/
+Calculations for evaporation coefficient p:
+
+double *prob_matrix[(V.numOfCustomers+V.numOfDepots)*(V.numOfCustomers+V.numOfDepots)] 
+
+Initially contains the number of edge occurances in solutions Ra:
+
+p[(V.numOfCustomers+V.numOfDepots)*(temp->data-1) + (temp->next->data-1)] += 1.0;
+p[(temp->data-1) + (V.numOfCustomers+V.numOfDepots)*(temp->next->data-1)] += 1.0;
+
+In the pheromone evaporation phase, each element is divided with the total sum of edges in all solutions Ra and used to calculate H:
+
+for(int i = 0; i < V.numOfCustomers+V.numOfDepots; i++)
+        for(int j = 0; j < i; j++)
+            if(i != j)
+                prob_matrix[(V.numOfCustomers+V.numOfDepots)*i + j] /= edge_sum;
+                H -= prob_matrix[(V.numOfCustomers+V.numOfDepots)*i + j] * log2(prob_matrix[(V.numOfCustomers+V.numOfDepots)*i + j]);
+
+Then H_min and H_max are calculated:
+
+double H_min = -log2((double)n_ants/(double)edge_sum);
+double H_max = -log2(1/(double)edge_sum);
+
+As to calculate p:
+
+double p = p_min + (p_max - p_min) * ((H - H_min)/(H_max - H_min));
+
+
+Finally phMatrix is evaporated using p:
+
+for(int dep = 0; dep < numOfDepots; dep++)
+    for(int c1 = 0; c1 < numOfCustomers+V.numOfDepots; c1++)
+        for(int c2 = 0; c2 < numOfCustomers+numOfDepots; c2++)
+            if(phMatrix[dep*(numOfCustomers+numOfDepots)*(numOfCustomers+numOfDepots) + (numOfCustomers+numOfDepots)*c1 + c2] != -1.0)
+
+                phMatrix[dep*(numOfCustomers+numOfDepots)*(numOfCustomers+numOfDepots) + (numOfCustomers+numOfDepots)*c1 + c2] *= (1 - p);
+
+
+
+
+
+
+
+/**********************************/
+Pheromones update:
+
+if(R_best.totalDistance < R.totalDistance){
+        probability_R_best = 1.0;
+    }else{
+        t = -(R_best.totalDistance-R.totalDistance)/R.totalDistance;
+        probability_R_best = exp(t/T_update);
+    }
+
+    if(probability_R_best > (double)rand()/(double)RAND_MAX){    //Use R_best
+        for(int dep = 0; dep < V.numOfDepots; dep++){
+            list* temp = R_best.array[dep].routelist; 
+            if(!temp){ perror("temp == NULL at function update_pheromone. Couldn't update using R_best. Exiting..\n"); exit(1); }  
+            while(temp && temp->next){
+                phMatrix[dep*(V.numOfCustomers+V.numOfDepots)*(V.numOfCustomers+V.numOfDepots) + (V.numOfCustomers+V.numOfDepots)*(temp->data-1) + (temp->next->data-1)] += d*(R.totalDistance/R_best.totalDistance);
+                temp = temp->next;
+            }
+        }
+    }else{                                                          //Use R
+        for(int dep = 0; dep < V.numOfDepots; dep++){
+            list* temp = R.array[dep].routelist;
+            if(!temp){ perror("temp == NULL at function update_pheromone. Couldn't update using R. Exiting..\n"); exit(1); } 
+            while(temp && temp->next){
+                phMatrix[dep*(V.numOfCustomers+V.numOfDepots)*(V.numOfCustomers+V.numOfDepots) + (V.numOfCustomers+V.numOfDepots)*(temp->data-1) + (temp->next->data-1)] += d*(R.totalDistance/R.totalDistance);
+                temp = temp->next;
+            }
+        }
+    }
+
+
+
+
+Function used to calculate pheromone_sum:
+double calculate_pheromone_sum(int v_d, list *v_cand, double *phMatrix, int depotIndex, int numOfC, int numOfD){
+    if(!v_cand){ perror("v_cand == NULL at calculate_pheromone_sum\n"); exit(1); }
+    if(!phMatrix){ perror("phMatrix == NULL at calculate_pheromone_sum\n"); exit(1); }
+    double sum = 0.0;
+    int vd_index = v_d - 1;
+    list *temp = v_cand;
+    while(temp){
+        sum += phMatrix[(numOfC+numOfD)*(numOfC+numOfD)*depotIndex + (numOfC+numOfD)*vd_index + temp->data-1];
+        temp = temp->next;
+    }
+    return sum;
+}
+
+
+

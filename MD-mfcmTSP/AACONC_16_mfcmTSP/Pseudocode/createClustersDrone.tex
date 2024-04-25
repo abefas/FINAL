@@ -1,0 +1,22 @@
+\begin{algorithm}
+	\caption{createClustersDrone}
+	\SetKwProg{Fn}{Function}{}{}
+	\Fn{createClustersDrone($C^{(t_i)}, v_i, n_{size}$)}{
+		
+		$id = 1$\\
+		$K_{id}^{(v_i)} = \emptyset$\\
+		$V_{free} = C^{(t_i)}$\\
+		
+		\While{$V_{free} \neq \emptyset$}{
+			\If{$|K_{id}^{(v_i)}| \geq n_{size}$}{
+				$id = id + 1$\\
+				$K_{id}^{(v_i)} = \emptyset$
+			}
+			Find closest vertex $v\in V_{free}$ to $v_i$\\
+			$K_{id}^{(v_i)} = K_{id}^{(v_i)} + \{v\}$\\
+			$V_{free} = V_{free} - \{v\}$\\
+		}
+		\textbf{return} $K^{(v_i)}$\;
+	}
+\end{algorithm}
+

@@ -1,0 +1,18 @@
+	\begin{algorithm}
+		\caption{selectCustomer}
+		\SetKwProg{Fn}{Function}{}{}
+		
+		\Fn{selectCustomer($vt, d, pos, V_{candidates}, \tau, \alpha, \beta$)}{
+		
+				
+				\For{each $v_i \in V_{cand}$}{
+					$p(v_i) = {{|v_{pos} - v_i|}^{-\alpha}\cdot{(\tau_{v_{pos}v_i}^{(vt)(d)})}^\beta}$\
+				}
+				$p_{sum} = \sum_{v_i\in V_{cand}}p(v_i)$\\
+				$p(v_i) = p(v_i)\div p_{sum}$\\
+				Select $v_i\in V_{cand}$ based on probabilities $p(v_i)$ using roulette wheel\\
+				\textbf{return} $v_i$\
+			}
+			
+	\end{algorithm}
+
