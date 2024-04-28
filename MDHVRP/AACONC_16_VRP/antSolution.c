@@ -53,7 +53,7 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
                 continue;
 
 
-            ivt = selectVehicleType(idepot, Ra, VT, v_free, G, K, phMatrix, launch_count[idepot], da_access, n_size, n_prim);
+            ivt = selectVehicleType(idepot, Ra, VT, v_free, G, K, phMatrix, launch_count[0], da_access, n_size, n_prim);
             if(ivt == -1)
                 continue;
             if(ivt < 0 || ivt > G->n_differentTypes - 1){
@@ -88,32 +88,35 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
             deleteList(&v_candidates);
         }
 
+        //Vehicle launches from depot
+        if(ilast >= G->n_customers){
+            launch_count[0][ivt]++;
+        }
+
         //Drone immediately returns to depot after serving one customer, thus location is never changed also
         if(ivt == 2){
             /* Insert selected customer to route */
             append(&Ra->a_VT[ivt].a_depots[idepot].routelist, icustomer+1);
             append(&Ra->a_VT[ivt].a_depots[idepot].routelist, Ra->a_VT[ivt].a_depots[idepot].depot_id);
             Ra->a_VT[ivt].a_depots[idepot].quantity_served += G->a_customers[icustomer].demand;
-            launch_count[idepot][ivt]++;
+            v_free[icustomer] = -1;      //Mark as visited
         }else{
-            //Vehicle returns to depot to reload
+            //Vehicle returns to depot to reload and does NOT serve the customer
             if(Ra->a_VT[ivt].a_depots[idepot].current_load < G->a_customers[icustomer].demand){
                 append(&Ra->a_VT[ivt].a_depots[idepot].routelist, Ra->a_VT[ivt].a_depots[idepot].depot_id);
                 Ra->a_VT[ivt].a_depots[idepot].current_load = VT[ivt].capacity;
+                Ra->a_VT[ivt].a_depots[idepot].v_d = Ra->a_VT[ivt].a_depots[idepot].depot_id;
+            }else{
+                /* Insert selected customer to route */
+                append(&Ra->a_VT[ivt].a_depots[idepot].routelist, icustomer+1);
 
-                launch_count[idepot][ivt]++;
+                Ra->a_VT[ivt].a_depots[idepot].v_d = icustomer + 1;
+                Ra->a_VT[ivt].a_depots[idepot].current_load -= G->a_customers[icustomer].demand;
+                Ra->a_VT[ivt].a_depots[idepot].quantity_served += G->a_customers[icustomer].demand;
+                v_free[icustomer] = -1;      //Mark as visited
             }
-
-            /* Insert selected customer to route */
-            append(&Ra->a_VT[ivt].a_depots[idepot].routelist, icustomer+1);
-
-            Ra->a_VT[ivt].a_depots[idepot].v_d = icustomer + 1;
-            Ra->a_VT[ivt].a_depots[idepot].current_load -= G->a_customers[icustomer].demand;
-            Ra->a_VT[ivt].a_depots[idepot].quantity_served += G->a_customers[icustomer].demand;
-
         }
 
-        v_free[icustomer] = -1;      //Mark as visited
     }
 
     /* Vehicles return to depot */

@@ -13,10 +13,10 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
     for(int i = 0; i < G->n_customers; i++)
         v_free[i] = 1; //free = 1, not free = -1
 
-    int ivt, idepot, ilast, icluster, icustomer, launch_count[G->n_differentTypes], served_count[G->n_differentTypes];
+    int ivt, idepot, ilast, icluster, icustomer, launch_count[G->n_differentTypes];
 
     for(int i = 0; i < G->n_differentTypes; i++)
-        served_count[i] = launch_count[i] = 1;
+        launch_count[i] = 1;
 
     node *v_candidates = NULL;
 
@@ -45,7 +45,7 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
 
         while(ivt == -1 || idepot == -1 || icluster == -1 || icustomer == -1){
 
-            ivt = selectVehicleType(Ra, VT, v_free, G, K, phMatrix, launch_count, served_count, da_access, n_size, n_prim);
+            ivt = selectVehicleType(Ra, VT, v_free, G, K, phMatrix, launch_count, da_access, n_size, n_prim);
             if(ivt == -1)
                 continue;
             if(ivt < 0 || ivt > G->n_differentTypes - 1){
@@ -91,20 +91,18 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
             append(&Ra->a_VT[ivt].a_depots[idepot].routelist, icustomer+1);
             append(&Ra->a_VT[ivt].a_depots[idepot].routelist, Ra->a_VT[ivt].a_depots[idepot].depot_id);
             Ra->a_VT[ivt].a_depots[idepot].quantity_served += G->a_customers[icustomer].demand;
-            served_count[ivt]++;
-            //launch_count[ivt]++;
+            launch_count[ivt]++;
         }else{
             //Vehicle returns to depot to reload
             if(Ra->a_VT[ivt].a_depots[idepot].current_load < G->a_customers[icustomer].demand){
                 append(&Ra->a_VT[ivt].a_depots[idepot].routelist, Ra->a_VT[ivt].a_depots[idepot].depot_id);
                 Ra->a_VT[ivt].a_depots[idepot].current_load = VT[ivt].capacity;
                 //Ra->a_VT[ivt].a_depots[idepot].v_d = Ra->a_VT[ivt].a_depots[idepot].depot_id;
-                //launch_count[ivt]++;
+                launch_count[ivt]++;
             }
 
             /* Insert selected customer to route */
             append(&Ra->a_VT[ivt].a_depots[idepot].routelist, icustomer+1);
-            served_count[ivt]++;
 
             Ra->a_VT[ivt].a_depots[idepot].v_d = icustomer + 1;
             Ra->a_VT[ivt].a_depots[idepot].current_load -= G->a_customers[icustomer].demand;

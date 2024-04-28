@@ -45,7 +45,8 @@ int selectVehicleType(int idepot, asolution *Ra, VType *VT, int *v_free, SON *G,
                 for(int i_cluster = 0; i_cluster < N; i_cluster++)
                     find_free_in_clusterk_VT(&v_cand, v_free, K[ivt][ilast], i_cluster, n_size);
                 if(v_cand){
-                    probVT[ivt] = calculate_pheromone_sum(idepot, ivt, ilast, v_cand, phMatrix, G->n_nodes, G->n_differentTypes);
+                    int numOfCand = listLength(v_cand);
+                    probVT[ivt] = calculate_pheromone_sum(idepot, ivt, ilast, v_cand, phMatrix, G->n_nodes, G->n_differentTypes)/numOfCand;
                     deleteList(&v_cand);
                     flag = false;
                 }
@@ -60,12 +61,9 @@ int selectVehicleType(int idepot, asolution *Ra, VType *VT, int *v_free, SON *G,
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         double prob;
         if(probVT[ivt] > 0.0){
-            if(launch_count[ivt] > 0){
                 //40
-                prob = probVT[ivt]/((launch_count[ivt])*(G->a_depots[idepot].n_VT[ivt]));
-            }else{
-                prob = probVT[ivt]/G->a_depots[idepot].n_VT[ivt];
-            }
+                //prob = (probVT[ivt]*G->a_depots[idepot].n_VT[ivt])/(launch_count[ivt]);
+                prob = (probVT[ivt]*G->a_depots[idepot].n_VT[ivt]);
             push_rlist(&rl, ivt, prob);
             p_sum += prob;
         }

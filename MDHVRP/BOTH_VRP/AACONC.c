@@ -103,7 +103,7 @@ void AACONC(SON *G, VType *VT, vt_solution *Rz, int **da_access, int *remaining,
     time_t begin = time(NULL), loop = time(NULL), loop_time = difftime(loop, begin);
 
     /********** Main loop **********/
-    while(stop_cond < 4000 && iter < 100000 && term_condition > (0.1 - epsilon) && loop_time < 3600)
+    while(stop_cond < 10000 && iter < 100000 && term_condition > (0.1 - epsilon) && loop_time < 300)
     {
         R_best.makespan = HUGE_VAL;
         edge_sum = 0;
@@ -122,6 +122,7 @@ void AACONC(SON *G, VType *VT, vt_solution *Rz, int **da_access, int *remaining,
                 Ra_local.a_depots[idep].routelist = NULL;
                 Ra_local.a_depots[idep].depot_id = G->a_depots[idep].id;
             }
+
             antSolution(G, VT[ivt], &Ra_local, K, phMatrix, da_access[ivt], remaining, n_size, n_prim, a, b);
             
             edge_sum += store_edge_count(&Ra_local, G, edge_matrix);
@@ -156,13 +157,19 @@ void AACONC(SON *G, VType *VT, vt_solution *Rz, int **da_access, int *remaining,
                     og = R_best.makespan;
                     double ms1 = mutual_k_optimization(&R_best, G, VT[ivt], 2, 1);
                     double ms2 = mutual_k_optimization(&R_best, G, VT[ivt], 2, 2);
-                    if(R_best.makespan >= og - epsilon)
+                    if(R_best.makespan < og - epsilon){
                         flag = false;
+                    }else{
+                        flag = false;
+                    }
                 } else {
                     og = R_best.makespan;
                     double ms = mutual_drone(&R_best, G, VT[2]);
-                    if(ms >= og - epsilon)
+                    if(ms < og - epsilon){
+                        flag = true;
+                    }else{
                         flag = false;
+                    }
                 }
                 printf("After local OPT R_best = %0.3lf\n", R_best.makespan);
             }
@@ -180,7 +187,7 @@ void AACONC(SON *G, VType *VT, vt_solution *Rz, int **da_access, int *remaining,
 
         T_update *= a_update;
 
-        update_pheromone(G, &R, &R_best, phMatrix, T_update, d);  //Update Pheromone Matrices
+        update_pheromones(G, &R, &R_best, phMatrix, T_update, d);  //Update Pheromone Matrices
 
         term_condition = evaporate_pheromones(G, phMatrix, edge_matrix, da_access[ivt], edge_sum, n_ants, p_min, p_max);
         printf("term_condition = %0.3lf\n", term_condition);

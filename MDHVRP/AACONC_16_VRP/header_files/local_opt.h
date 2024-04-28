@@ -2,6 +2,8 @@
 #define local_opt 
 #include "structs.h"
 
+double local_opt_full(asolution *R, SON *G, int **da_access, VType *VT);
+
 double k_optimization2(route *r, SON *G, VType VT, int n_max);
 
 double mutual_k_optimization(vt_solution *R, SON *G, VType VT, int condition, int n_max);

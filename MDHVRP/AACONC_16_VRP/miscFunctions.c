@@ -356,7 +356,7 @@ void update_pheromones(SON *G, double *phMatrix, asolution *R, asolution *R_best
     
     if(!phMatrix){ perror("phMatrix == NULL at update_pheromone\n"); exit(1); }
     
-    double probability_R_best, t, x, R_update; 
+    double probability_R_best, t, x, R_update[3]; 
     bool flag = false;
 
     if(R->total_makespan < R_best->total_makespan - epsilon){           
@@ -364,13 +364,19 @@ void update_pheromones(SON *G, double *phMatrix, asolution *R, asolution *R_best
         probability_R_best = exp(-t/T_update);                      
         printf("probability_R_best = %0.3lf\n", probability_R_best);
         if((double)random()/(double)RAND_MAX < probability_R_best - epsilon){
-            R_update = R_best->total_makespan;                          //Use worse solution R_best
+            //R_update = R_best->total_makespan;                          //Use worse solution R_best
+            for(int ivt = 0; ivt < G->n_differentTypes; ivt++)
+                R_update[ivt] = R_best->a_VT[ivt].makespan;
             flag = true;
         }else{
-            R_update = R->total_makespan;
+            //R_update = R->total_makespan;
+            for(int ivt = 0; ivt < G->n_differentTypes; ivt++)
+                R_update[ivt] = R->a_VT[ivt].makespan;
         }
     }else{                                                          
-        R_update = R->total_makespan;                                   //In this case R == R_best
+        //R_update = R->total_makespan;                                   //In this case R == R_best
+        for(int ivt = 0; ivt < G->n_differentTypes; ivt++)
+            R_update[ivt] = R->a_VT[ivt].makespan;
     }
 
     node *temp = NULL;
@@ -388,7 +394,7 @@ void update_pheromones(SON *G, double *phMatrix, asolution *R, asolution *R_best
                         if(phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
                                     + ivt*G->n_nodes*G->n_nodes
                                     + (temp->data-1)*G->n_nodes 
-                                    + temp->next->data-1] < 0.0){
+                                    + (temp->next->data-1)] < 0.0){
                             perror("pheromone update error DRONE\n"); 
                             printf("temp->data %d temp->next->data %d\n", temp->data, temp->next->data);
                             printf("phMatrix = %0.2lf\n", 
@@ -400,7 +406,7 @@ void update_pheromones(SON *G, double *phMatrix, asolution *R, asolution *R_best
                                  + (temp->data-1)*G->n_nodes 
                                  + (temp->next->data - 1)] += 
                                 
-                        d*(R->total_makespan/R_update);
+                        d*(R->total_makespan/R_update[2]);
 
                         temp = temp->next->next;
                     }
@@ -416,31 +422,19 @@ void update_pheromones(SON *G, double *phMatrix, asolution *R, asolution *R_best
                                    phMatrix[ivt*G->n_nodes*G->n_nodes + (temp->data-1)*G->n_nodes + temp->next->data-1]);
                             exit(1);
                         }
-                        if(temp->next->data > G->n_customers && temp->next->next != NULL && temp->next->next->data <= G->n_customers){
-                            phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
-                                + ivt*G->n_nodes*G->n_nodes 
-                                + (temp->data-1)*G->n_nodes 
-                                + (temp->next->next->data - 1)] += 
-                                d*(R->total_makespan/R_update);
 
-                            phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
-                                + ivt*G->n_nodes*G->n_nodes 
-                                + (temp->next->next->data-1)*G->n_nodes 
-                                + (temp->data - 1)] += 
-                                d*(R->total_makespan/R_update);
-                        }else{
                             phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
                                 + ivt*G->n_nodes*G->n_nodes 
                                 + (temp->data-1)*G->n_nodes 
                                 + (temp->next->data - 1)] += 
-                                d*(R->total_makespan/R_update);
+                                d*(R->total_makespan/R_update[ivt]);
 
                             phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
                                 + ivt*G->n_nodes*G->n_nodes 
                                 + (temp->next->data-1)*G->n_nodes 
                                 + (temp->data - 1)] += 
-                                d*(R->total_makespan/R_update);
-                        }
+                                d*(R->total_makespan/R_update[ivt]);
+                        
 
                         temp = temp->next;
                     }

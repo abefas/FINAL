@@ -6,6 +6,99 @@
 #include "header_files/local_opt.h"
 #include "header_files/AACO_misc_functions.h"
 
+double local_opt_full(asolution *R, SON *G, int **da_access, VType *VT){
+
+    bool flag1 = true, flag2 = true;
+    while(flag1 || flag2){
+        //R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 1);
+        //R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 2);
+        for (int ivt = 0; ivt < G->n_differentTypes; ivt++) {
+            if (ivt != 2) {
+                for (int idep = 0; idep < G->n_depots; idep++) {
+                    if(G->a_depots[idep].n_VT[ivt] != 0){
+                        double ms1 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 1);
+                        double ms2 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 2);
+                    }
+                }
+                R->a_VT[ivt].makespan = get_makespan_VT(G, &R->a_VT[ivt]);
+                double og = R->a_VT[ivt].makespan;
+                double ms1 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 1);
+                double ms2 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 2);
+                if(ms1 < og - epsilon || ms2 < og - epsilon){
+                    flag1 = true;
+                }else{
+                    flag1 = false;
+                }
+            } else {
+                double og = R->a_VT[ivt].makespan;
+                double ms = mutual_drone(&R->a_VT[ivt], G, VT[ivt]);
+                if(ms < og - epsilon){
+                    flag1 = true;
+                }else{
+                    flag1 = false;
+                }
+            }
+        }
+        R->total_makespan = get_total_makespan(R,  G->n_differentTypes);
+        double og = R->total_makespan;
+        R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 1);
+        R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 2);
+
+        if(R->total_makespan < og - epsilon){
+            flag2 = true;
+        }else{
+            flag2 = false;
+        }
+    }
+
+
+    return R->total_makespan;
+}
+/*
+double local_opt_full(asolution *R, SON *G, int **da_access, VType *VT){
+
+    //R->total_makespan = depot_VT_optimization(R, G, VT, da_access, 1);
+    //R->total_makespan = depot_VT_optimization(R, G, VT, da_access, 2);
+
+    for (int ivt = 0; ivt < G->n_differentTypes; ivt++) {
+        bool flag = true;
+        while(flag){
+            if (ivt != 2) {
+                for (int idep = 0; idep < G->n_depots; idep++) {
+                    if(G->a_depots[idep].n_VT[ivt] != 0){
+                        double ms1 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 1);
+                        double ms2 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 2);
+                    }
+                }
+                R->a_VT[ivt].makespan = get_makespan_VT(G, &R->a_VT[ivt]);
+                double og = R->a_VT[ivt].makespan;
+                double ms1 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 1);
+                double ms2 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 2);
+                if(ms1 < og - epsilon || ms2 < og - epsilon){
+                    flag = true;
+                }else{
+                    flag = false;
+                }
+            } else {
+                double og = R->a_VT[ivt].makespan;
+                double ms = mutual_drone(&R->a_VT[ivt], G, VT[ivt]);
+                if(ms < og - epsilon){
+                    flag = true;
+                }else{
+                    flag = false;
+                }
+            }
+        }
+    }
+
+    R->total_makespan = get_total_makespan(R,  G->n_differentTypes);
+    R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 1);
+    R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 2);
+
+    return R->total_makespan;
+}
+*/
+
 
 double depot_VT_optimization(asolution *R, SON *G, VType *VT, int **da_access, int n_max){
 

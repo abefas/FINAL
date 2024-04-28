@@ -5,9 +5,10 @@
 #include <unistd.h>
 #include "header_files/AACO_misc_functions.h"
 #include "header_files/listFunctions.h"
+#include "header_files/local_opt.h"
 #include "header_files/structs.h"
 
-extern int RUN_NUMBER;
+extern int RUN_NUMBER, instance_id;
 
 double calculate_pheromone_sum(int ilast, node *v_cand, double *phMatrix, int idep, int n_nodes){
     if(!v_cand){ perror("v_cand == NULL at calculate_pheromone_sum\n"); exit(1); }
@@ -16,8 +17,8 @@ double calculate_pheromone_sum(int ilast, node *v_cand, double *phMatrix, int id
     node *temp = v_cand;
 
     while(temp){
-        if(!phMatrix[idep*(n_nodes)*(n_nodes) + ilast*(n_nodes) + temp->data-1]) perror("phMatrix NULL!\n");
-        if(phMatrix[idep*(n_nodes)*(n_nodes) + ilast*(n_nodes) + temp->data-1] == -1.0){
+        if(!phMatrix[idep*(n_nodes)*(n_nodes) + ilast*(n_nodes) + (temp->data-1)]) perror("phMatrix NULL!\n");
+        if(phMatrix[idep*(n_nodes)*(n_nodes) + ilast*(n_nodes) + (temp->data-1)] == -1.0){
             perror("calculate_pheromone_sum error!\n");
             exit(1);
         }
@@ -58,7 +59,7 @@ void quickSort(double *arr, int low, int high){
 }
 
 double get_makespan_depot_VT(SON *G, node *routelist, int n_vehicles, double speed){
-    if(!routelist)
+    if(!routelist || !routelist->next)
         return 0;
     double ms = 0.0, route_time = 0.0, *r_times = NULL;
     int n_routes = 0;
@@ -150,11 +151,11 @@ void find_polar_coordinates(SON *G, int vi, polar *polarArray){
         exit(1);
     }
     // Assign Cluster Vertex as origin point instead of 0,0 in the cartesian plane 
-    int x0, y0;
+    float x0, y0;
     x0 = G->a_combined[vi].x;
     y0 = G->a_combined[vi].y;
 
-    int dx, dy;
+    float dx, dy;
     for(int i = 0; i < G->n_customers; i++){
         //If Cluster Vertex
         if(i == vi){
@@ -310,7 +311,7 @@ int store_edge_count(vt_solution *Ra, SON *G, int *edge_matrix){
                     exit(1);
                 }
                 edge_matrix[(G->n_nodes)*(temp->data - 1) + (temp->next->data - 1)] += 1;
-                edge_matrix[(temp->data - 1) + (G->n_nodes)*(temp->next->data - 1)] += 1;
+                //edge_matrix[(temp->data - 1) + (G->n_nodes)*(temp->next->data - 1)] += 1;
                 edge_sum++;
 
                 temp = temp->next;
@@ -321,7 +322,7 @@ int store_edge_count(vt_solution *Ra, SON *G, int *edge_matrix){
 }
 
 
-void update_pheromone(SON *G, vt_solution *R, vt_solution *R_best, double *phMatrix, double T_update, double d){
+void update_pheromones(SON *G, vt_solution *R, vt_solution *R_best, double *phMatrix, double T_update, double d){
     
     if(!phMatrix){ perror("phMatrix == NULL at update_pheromone\n"); exit(1); }
     
@@ -366,8 +367,28 @@ void update_pheromone(SON *G, vt_solution *R, vt_solution *R_best, double *phMat
                     exit(1);
                 }
 
-                phMatrix[idep*G->n_nodes*G->n_nodes + (temp->data-1)*G->n_nodes + (temp->next->data-1)] += 
-                    d*(R->makespan/R_update);
+                if(temp->next->data > G->n_customers && temp->next->next != NULL && temp->next->next->data <= G->n_customers)
+                {
+                    phMatrix[   idep*G->n_nodes*G->n_nodes + 
+                                (temp->data-1)*G->n_nodes + 
+                                (temp->next->next->data-1)
+                            ] += d*(R->makespan/R_update);
+
+                    phMatrix[   idep*G->n_nodes*G->n_nodes + 
+                                (temp->next->next->data-1)*G->n_nodes + 
+                                (temp->data-1)
+                            ] += d*(R->makespan/R_update);
+
+                }
+                    phMatrix[   idep*G->n_nodes*G->n_nodes + 
+                                (temp->data-1)*G->n_nodes + 
+                                (temp->next->data-1)
+                            ] += d*(R->makespan/R_update);
+
+                    phMatrix[   idep*G->n_nodes*G->n_nodes + 
+                                (temp->next->data-1)*G->n_nodes + 
+                                (temp->data-1)
+                            ] += d*(R->makespan/R_update);
 
                 temp = temp->next;
             }
@@ -391,7 +412,8 @@ double evaporate_pheromones(SON *G, double *phMatrix, int *edge_matrix, int *da_
     for(int i = 1; i < G->n_nodes; i++){
         for(int j = 0; j < i; j++){
             if(i != j && da_access[i] == da_access[j] == 1){
-                p[(G->n_nodes)*i + j] = (double) edge_matrix[(G->n_nodes)*i + j] / edge_sum;
+                p[(G->n_nodes)*i + j] = (double) edge_matrix[(G->n_nodes)*i + j] / edge_sum +
+                                        (double) edge_matrix[(G->n_nodes)*j + i] / edge_sum;
             }
         }
     }
@@ -434,16 +456,16 @@ double evaporate_pheromones(SON *G, double *phMatrix, int *edge_matrix, int *da_
     return (H-H_min)/H_min; //Termination condition
 }
 
-
-static int version_result = 1;
+static int version = 0;
 
 void fprint_results(asolution *R, SON *G, VType *VT){
 
     int detect_dup[G->n_customers];
     for(int i = 0; i < G->n_customers; i++)
         detect_dup[i] = 0;
-    char file_name[18], fn[18];
-    sprintf(file_name, "p07_%d_%d.res", RUN_NUMBER, version_result);
+
+    char file_name[30], fn[30];
+    sprintf(file_name, "p%02d_%d_%d.res", instance_id, RUN_NUMBER, version);
 
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
@@ -456,7 +478,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        sprintf(fn, "p07_%d_%d_ivt_%d.csv", RUN_NUMBER, version_result, ivt+1);
+        sprintf(fn, "p%02d_%d_type_%d.csv", instance_id, RUN_NUMBER, ivt+1);
         double ivt_ms = 0.0, dep_ms = 0.0;
         if(NULL == (fp_1 = fopen(fn, "w"))){
             perror("Error opening fp_1!\n");
@@ -477,7 +499,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
                     if(temp->next->data > G->n_customers){
                         v_ms += G->d_matrix[temp->data - 1][temp->next->data - 1] / VT[ivt].speed;
                         append(&vehicleRoute, 0);
-                        fprintf(fp, "type %d depot %d route %d q_served %d time %0.2lf\t", ivt+1, idep+G->n_customers+1, vehicle, q_served, v_ms);
+                        fprintf(fp, "type %d  depot %d  route %2d  q_served %3d  time %5.2lf\t", ivt+1, idep+G->n_customers+1, vehicle, q_served, v_ms);
                         fprintf(fp_1, "%d,%d\n", temp->data, temp->next->data);
                         fprintList(vehicleRoute, fp);
                         deleteList(&vehicleRoute);
@@ -505,87 +527,9 @@ void fprint_results(asolution *R, SON *G, VType *VT){
             exit(1);
         }
     }
-    int flag = -1;
     for(int i = 0; i < G->n_customers; i++){
         if(detect_dup[i] != 1){
-            flag = 1;
-            printf("detect_dup[%d] = %d\n", i, detect_dup[i]);
-        }
-    }
-    if(flag == 1)
-        exit(1);
-
-    if(fclose(fp) != 0){
-        perror("Error closing fp!\n");
-        exit(1);
-    }
-
-    free(vehicleRoute);
-
-    return;
-}
-
-void fprint_results_v3(asolution *R, SON *G, VType *VT){
-
-    char file_name[18], fn[18];
-    sprintf(file_name, "p07_%d_v3_%d.res", RUN_NUMBER, version_result);
-
-    FILE *fp, *fp_1;
-    if(NULL == (fp = fopen(file_name, "w")))
-    {
-        perror("Couldn't open file fp at fprint_results_v3\n");
-        exit(1);
-    }
-
-    fprintf(fp, "total makespan: %0.2lf\n", R->total_makespan);
-    node *temp = NULL, *vehicleRoute = NULL;
-    push(&vehicleRoute, 0);
-    for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        sprintf(fn, "p07_%d_%d_ivt_%d.csv", RUN_NUMBER, version_result, ivt+1);
-        double ivt_ms = 0.0, dep_ms = 0.0;
-        if(NULL == (fp_1 = fopen(fn, "w"))){
-            perror("Error opening fp_1!\n");
-            exit(1);
-        }
-        fprintf(fp_1, "StartNode,EndNode\n");
-        for(int idep = 0; idep < G->n_depots; idep++){
-            if(G->a_depots[idep].n_VT[ivt] != 0){
-                dep_ms = 0.0;
-                int vehicle = 1;
-                int q_served = 0;
-                if(!R->a_VT[ivt].a_depots[idep].routelist){
-                    continue;
-                } 
-                temp = R->a_VT[ivt].a_depots[idep].routelist;
-                double v_ms = 0.0;
-                while(temp->next){
-                    v_ms += G->d_matrix[temp->data - 1][temp->next->data - 1] / VT[ivt].speed;
-                    if(temp->next->data > G->n_customers){
-                        append(&vehicleRoute, 0);
-                        fprintf(fp, "type %d depot %d route %d q_served %d time %0.2lf\t", ivt+1, idep+G->n_customers+1, vehicle, q_served, v_ms);
-                        fprintf(fp_1, "%d,%d\n", temp->data, temp->next->data);
-                        fprintList(vehicleRoute, fp);
-                        deleteList(&vehicleRoute);
-                        vehicle++;	
-                        q_served = 0;
-                        push(&vehicleRoute, 0);
-                        dep_ms += v_ms;
-                        v_ms = 0.0;
-                    }else{
-                        q_served += G->a_customers[temp->next->data-1].demand;
-                        append(&vehicleRoute, temp->next->data);
-                        fprintf(fp_1, "%d,%d\n", temp->data, temp->next->data);
-                    }
-                    temp = temp->next;
-                }
-                if(dep_ms > ivt_ms)
-                    ivt_ms = dep_ms;
-            }
-        }
-        fprintf(fp, "type %d makespan %0.2lf\nfprintf ivt_ms = %0.3lf\n", ivt+1, R->a_VT[ivt].makespan, ivt_ms);
-        if(fclose(fp_1) != 0){
-            perror("Error closing fp_1!\n");
-            exit(1);
+            fprintf(fp, "detect_dup[%d] = %d\n", i, detect_dup[i]);
         }
     }
 
@@ -596,18 +540,19 @@ void fprint_results_v3(asolution *R, SON *G, VType *VT){
 
     free(vehicleRoute);
 
+    version++;
+
     return;
 }
-
 
 void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access){
-    printf("IN FPRINT_VT\n");
 
     int detect_dup[G->n_customers];
     for(int i = 0; i < G->n_customers; i++)
         detect_dup[i] = 0;
+
     char file_name[25], fn[25];
-    sprintf(file_name, "p07_%d_%d_ivt_%d.res", RUN_NUMBER, version_result, R->IVT);
+    sprintf(file_name, "p%02d_%d_AACONC.res", instance_id, RUN_NUMBER);
 
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
@@ -619,12 +564,13 @@ void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access){
     fprintf(fp, "total makespan: %0.2lf\n", R->makespan);
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
-    sprintf(fn, "p07_%d_%d_ivt_%d.csv", RUN_NUMBER, version_result, R->IVT+1);
+    sprintf(fn, "p%02d_%d_AACONC.csv", instance_id, RUN_NUMBER);
     if(NULL == (fp_1 = fopen(fn, "w"))){
         perror("Error opening fp_1!\n");
         exit(1);
     }
     fprintf(fp_1, "StartNode,EndNode\n");
+    double distance = 0.0;
     for(int idep = 0; idep < G->n_depots; idep++){
         if(G->a_depots[idep].n_VT[R->IVT] != 0){
             int vehicle = 1;
@@ -635,10 +581,11 @@ void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access){
             temp = R->a_depots[idep].routelist;
             double v_ms = 0.0;
             while(temp->next){
+                distance += G->d_matrix[temp->data - 1][temp->next->data - 1];
+                v_ms += G->d_matrix[temp->data - 1][temp->next->data - 1] / VT.speed;
                 if(temp->next->data > G->n_customers){
-                    v_ms += G->d_matrix[temp->data - 1][temp->next->data - 1] / VT.speed;
                     append(&vehicleRoute, 0);
-                    fprintf(fp, "type %d depot %d route %d q_served %d time %0.2lf\t", R->IVT+1, idep+G->n_customers+1, vehicle, q_served, v_ms);
+                    fprintf(fp, "type %d  depot %d  route %2d  q_served %3d  time %5.2lf\t", R->IVT+1, idep+G->n_customers+1, vehicle, q_served, v_ms);
                     fprintf(fp_1, "%d,%d\n", temp->data, temp->next->data);
                     fprintList(vehicleRoute, fp);
                     deleteList(&vehicleRoute);
@@ -647,31 +594,26 @@ void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access){
                     push(&vehicleRoute, 0);
                     v_ms = 0.0;
                 }else{
-                    q_served += G->a_customers[temp->next->data-1].demand;
+                    q_served += G->a_customers[temp->next->data - 1].demand;
                     append(&vehicleRoute, temp->next->data);
                     detect_dup[temp->next->data - 1]++;
-                    v_ms += G->d_matrix[temp->data - 1][temp->next->data - 1] / VT.speed;
                     fprintf(fp_1, "%d,%d\n", temp->data, temp->next->data);
                 }
                 temp = temp->next;
             }
         }
     }
-    fprintf(fp, "type %d makespan %0.2lf\n", R->IVT+1, R->makespan);
+    fprintf(fp, "type %d makespan %0.2lf\ntotal distance = %0.3lf\n", R->IVT+1, R->makespan, distance);
     if(fclose(fp_1) != 0){
         perror("Error closing fp_1!\n");
         exit(1);
     }
 
-    int flag = -1;
     for(int i = 0; i < G->n_customers; i++){
         if(da_access[i] == 1 && detect_dup[i] != 1){
-            flag = 1;
-            printf("fprint_results_VT detect_dup[%d] = %d\n", i, detect_dup[i]);
+            fprintf(fp, "fprint_results_VT detect_dup[%d] = %d\n", i, detect_dup[i]);
         }
     }
-    if(flag == 1)
-        exit(1);
 
     if(fclose(fp) != 0){
         perror("Error closing fp!\n");
@@ -685,7 +627,7 @@ void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access){
 
 void fprint_data_AACONC(int ivt, int iterations, int best_iter, double foundtime, double runtime){
     char file_name[25];
-    sprintf(file_name, "p07_%d_%d_ivt_%d.data", RUN_NUMBER, version_result, ivt);
+    sprintf(file_name, "p%02d_%d_AACONC.data", instance_id, RUN_NUMBER);
     FILE *fp;
     if(NULL == (fp = fopen(file_name, "w"))){
         perror("Error opening data file!\n");
@@ -704,7 +646,7 @@ void fprint_data_AACONC(int ivt, int iterations, int best_iter, double foundtime
 
 void fprint_data_total(double runtime){
     char file_name[25];
-    sprintf(file_name, "p07_runtime_%d_%d.data", RUN_NUMBER, version_result);
+    sprintf(file_name, "p%02d_%d.data", instance_id, RUN_NUMBER);
     FILE *fp;
     if(NULL == (fp = fopen(file_name, "w"))){
         perror("Error opening data file!\n");
@@ -718,10 +660,12 @@ void fprint_data_total(double runtime){
         exit(1);
     }
 
-    version_result++;
-
     return;
 }
+
+
+
+
 
 //heuristic misc functions
 //Used to assign customers that remained on the Truck route to their closest depot
@@ -819,19 +763,27 @@ void initialization1(SON *G, asolution *R, VType *VT, int **da_access,
             int cap = VT[1].capacity, load = 0;
             push(&R->a_VT[1].a_depots[idep].routelist, depotID);
             adj_node *p = adj_matrix[depotID - 1];
-            while(p && load < cap){
-                while(p && (v_free[p->id - 1] == 0 || da_access[1][p->id - 1] == 0)){
+            while(p){
+                while(  p && 
+                        (   
+                            v_free[p->id - 1] == 0 || 
+                            da_access[1][p->id - 1] == 0 ||
+                            load + G->a_customers[p->id - 1].demand > cap
+                        )
+                ){
                     p = p->next;
                 }
                 if(!p) break;
 
                 push(&R->a_VT[1].a_depots[idep].routelist, p->id);
                 v_free[p->id - 1] = 0;
-                load++;
+                load += G->a_customers[p->id - 1].demand;
                 p = adj_matrix[p->id - 1];
 
             }
             push(&R->a_VT[1].a_depots[idep].routelist, depotID);
+
+            remove_duplicate_nodes(&R->a_VT[1].a_depots[idep].routelist);
 
             if(listLength(R->a_VT[1].a_depots[idep].routelist) == 2){
                 printf("Error in init1 - no customer was added to Motorbike route\n");

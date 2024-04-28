@@ -1,0 +1,8 @@
+n_sect = 8 for Truck and Motorbike
+n_sect = 24 for Drone
+selectVT = dia numOfCand, no lc
+antSolution + update pheromones similar to original AACONC by Stodola
+d = 1
+a = 1
+b = 1
+rho = 0.02

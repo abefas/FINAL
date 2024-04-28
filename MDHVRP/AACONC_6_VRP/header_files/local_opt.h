@@ -11,5 +11,7 @@ double mutual_drone(vt_solution *R, SON *G, VType VT);
 void remove_duplicate_nodes(node **list);
 
 int check_route_feasibility(node *route, SON *G, int capacity);
+double depot_VT_optimization(asolution *R, SON *G, VType *VT, int **da_access, int n_max);
+double local_opt_full(asolution *R, SON *G, int **da_access, VType *VT);
 
 #endif

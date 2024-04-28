@@ -11,7 +11,7 @@ void antSolution(SON *G, VType *VT, int ***K, double *t, asolution *R, int **da_
                     int n_size, int n_prim, double a, double b);
 
 int selectVehicleType(asolution *Ra, VType *VT, int *v_free, SON *G, int ***K, double *phMatrix, 
-                        int *launch_count, int *served_count, int **da_access, int n_size, int n_prim);
+                        int *launch_count, int **da_access, int n_size, int n_prim);
 
 int selectDepot(asolution *Ra, int *v_free, SON *G, int **K, double *phMatrix, int *da_access, 
                 int ivt, int n_size, int n_prim);

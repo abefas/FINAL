@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
     /* Read file and store all info */
     FILE *fp;
-    if(NULL == (fp = fopen("../../../../Instances/Cordeau_MDHVRP/p01-H.txt", "r"))){
+    if(NULL == (fp = fopen("../../../../Instances/Cordeau_MDHVRP/p07-H.txt", "r"))){
         perror("Instance file error!\n");
         exit(1);
     }
@@ -159,15 +159,15 @@ int main(int argc, char **argv) {
     double a_update = 1.0;
     double p_min = 0.001;
     double p_max = 0.01;
-    double d = 1.0;
-    double a = 1.0;
+    double d = 2.0;
+    double a = 2.0;
     double b = 1.0;
 
     srand(time(NULL));
 
     printf("MADE IT HERE\n");
 
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < 10; i++)
         AACONC(&G, VT, da_access, n_ants, n_freq, n_size, n_sect, n_prim, T_update,
                a_update, p_min, p_max, d, a, b);
 

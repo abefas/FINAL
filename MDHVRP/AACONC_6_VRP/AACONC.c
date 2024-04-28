@@ -69,8 +69,7 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants, int n_freq, int n_si
                     perror("Error callocing K[ivt][i] clusters..\n");
                     exit(1);
                 }
-                createClusters(K[ivt][i], G, i, n_size, n_prim, n_sect, da_access[ivt]);
-                // createClusters_drone(K[ivt][i], G, i, n_size, da_access[ivt]);
+                createClusters(K[ivt][i], G, i, n_size, n_prim, 24, da_access[ivt]);
                 counter++;
             }
         } else {
@@ -145,7 +144,7 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants, int n_freq, int n_si
         exit(1);
     }
     /********** Main loop **********/
-    while (stop_cond < 5000 && iter < 200000 && term_condition > (0.00 - epsilon) && loop_time < 300) {
+    while (stop_cond < 10000 && iter < 200000 && term_condition > (0.00 - epsilon) && loop_time < 3600) {
         R_best.total_makespan = HUGE_VAL;
         int edge_sum = 0;
         memset(edge_matrix, 0, (G->n_nodes) * (G->n_nodes) * sizeof *edge_matrix);
@@ -190,47 +189,11 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants, int n_freq, int n_si
             free(Ra_local.a_VT);
         }
 
-        /*
-        for (int ivt = 0; ivt < G->n_differentTypes; ivt++) {
-            printf("Type %d: %0.3lf\n", ivt + 1, R_best.a_VT[ivt].makespan);
-        }
-        */
         printf("R_best = %0.3lf\n", R_best.total_makespan);
         printf("R = %0.3lf\n", R.total_makespan);
 
         if (iter % n_freq == 0) {
-            for (int ivt = 0; ivt < G->n_differentTypes; ivt++) {
-                bool flag = true;
-                while(flag){
-                    if (ivt != 2) {
-                        for (int idep = 0; idep < G->n_depots; idep++) {
-                            if(G->a_depots[idep].n_VT[ivt] != 0){
-                                double ms1 = k_optimization2(&R_best.a_VT[ivt].a_depots[idep], G, VT[ivt], 1);
-                                double ms2 = k_optimization2(&R_best.a_VT[ivt].a_depots[idep], G, VT[ivt], 2);
-                            }
-                        }
-                        R_best.a_VT[ivt].makespan = get_makespan_VT(G, &R_best.a_VT[ivt]);
-                        double og = R_best.a_VT[ivt].makespan;
-                        double ms1 = mutual_k_optimization(&R_best.a_VT[ivt], G, VT[ivt], 2, 1);
-                        double ms2 = mutual_k_optimization(&R_best.a_VT[ivt], G, VT[ivt], 2, 2);
-                        if(ms1 < og - epsilon || ms2 < og - epsilon){
-                            flag = true;
-                        }else{
-                            flag = false;
-                        }
-                    } else {
-                        double og = R_best.a_VT[ivt].makespan;
-                        double ms = mutual_drone(&R_best.a_VT[ivt], G, VT[ivt]);
-                        if(ms < og - epsilon){
-                            flag = true;
-                        }else{
-                            flag = false;
-                        }
-                    }
-                }
-            }
-            R_best.total_makespan = get_total_makespan(&R_best, G->n_differentTypes);
-            printf("After local OPT R_best = %0.3lf\n", R_best.total_makespan);
+            R_best.total_makespan = local_opt_full(&R_best, G, da_access, VT);
         }
 
 

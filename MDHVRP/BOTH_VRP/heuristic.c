@@ -58,8 +58,21 @@ void heuristic_v1(SON *G, VType *VT, asolution *R, int **da_access, int *remaini
             stop == 0
         ){
 
-            if(R->a_VT[0].a_depots[IDEPOT].makespan - R->a_VT[1].a_depots[IDEPOT].makespan >= 
-                R->a_VT[0].a_depots[IDEPOT].makespan - R->a_VT[2].a_depots[IDEPOT].makespan){
+            double diff_M, diff_D;
+            if(G->a_depots[IDEPOT].n_VT[1] != 0){
+                diff_M = R->a_VT[0].a_depots[IDEPOT].makespan - R->a_VT[1].a_depots[IDEPOT].makespan;
+            }else{
+                diff_M = -1;
+            }
+
+            if(G->a_depots[IDEPOT].n_VT[2] != 0){
+                diff_D = R->a_VT[0].a_depots[IDEPOT].makespan - R->a_VT[2].a_depots[IDEPOT].makespan;
+            }else{
+                diff_D = -1;
+            }
+
+
+            if(diff_M >= diff_D){
                 //choose motorcycle
                 type = 1;
                 capacity = VT[type].capacity;
@@ -77,7 +90,7 @@ void heuristic_v1(SON *G, VType *VT, asolution *R, int **da_access, int *remaini
             //Find the minimum cost route that can be swapped to selected type from Truck route
             while(index_nn < nn_length - 1){
                 bool flag = false;
-                if(s->data > G->n_customers){   //s points to depot
+                if(s->data > G->n_customers || G->a_customers[s->data - 1].demand > VT[type].capacity){
                     s = s->next;
                     index_nn++;
                     continue;
@@ -85,21 +98,18 @@ void heuristic_v1(SON *G, VType *VT, asolution *R, int **da_access, int *remaini
                 p = s;
                 int load = 0;
                 node *successive_nodes = NULL;
-                //Get at least one node
-                while(successive_nodes == NULL && p){
-                    //Get as many successive nodes as possible to offload from the Truck
-                    while(  p && p->data <= G->n_customers &&
-                            load + G->a_customers[p->data - 1].demand <= capacity && 
-                            da_access[type][p->data - 1] == 1
-                    ){
-                        load += G->a_customers[p->data-1].demand;
-                        push(&successive_nodes, p->data);
-                        p = p->next;
-                    }
+                //Get as many successive nodes as possible to offload from the Truck
+                while(  p && 
+                        p->data <= G->n_customers &&
+                        load + G->a_customers[p->data - 1].demand <= capacity && 
+                        da_access[type][p->data - 1] == 1
+                ){
+                    load += G->a_customers[p->data-1].demand;
+                    push(&successive_nodes, p->data);
                     p = p->next;
                 }
                 node *route = NULL;
-                if(successive_nodes && listLength(successive_nodes) == VT[type].capacity){
+                if(successive_nodes){
                     route = copyList(successive_nodes);
                     push(&route, G->a_depots[IDEPOT].id);
                     append(&route, G->a_depots[IDEPOT].id);
@@ -207,14 +217,7 @@ void heuristic_v1(SON *G, VType *VT, asolution *R, int **da_access, int *remaini
             R->total_makespan = R->a_VT[ivt].makespan;
     }
 
-
-
-    //Do final local opt (mutual)
-    //local_optimization(G, R, VT);
-    //When mutual local opt improves a vehicle type's makespan, run single local opt for that type's
-    //depots again
-    //While mutual local opt improves, run single opt again
-
+    R->total_makespan = local_opt_full(R, G, da_access, VT);
 
     time_t finish_total = time(NULL);
     double runtime_total = difftime(finish_total, begin_total);

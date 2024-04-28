@@ -71,7 +71,7 @@ void quickSort(double *arr, int low, int high){
 }
 
 double get_makespan_depot_VT(SON *G, node *routelist, int n_vehicles, double speed){
-    if(!routelist)
+    if(!routelist || !routelist->next)
         return 0;
     double ms = 0.0, route_time = 0.0, *r_times = NULL;
     int n_routes = 0;
@@ -325,7 +325,7 @@ int store_edge_count(asolution *Ra, SON *G, int *edge_matrix){
                             exit(1);
                         }
                         edge_matrix[(G->n_nodes)*(temp->data - 1) + (temp->next->data - 1)] += 1;
-                        edge_matrix[(temp->data - 1) + (G->n_nodes)*(temp->next->data - 1)] += 1;
+                        //edge_matrix[(temp->data - 1) + (G->n_nodes)*(temp->next->data - 1)] += 1;
                         edge_sum++;
 
                         temp = temp->next;
@@ -337,7 +337,7 @@ int store_edge_count(asolution *Ra, SON *G, int *edge_matrix){
                             exit(1);
                         }
                         edge_matrix[(G->n_nodes)*(temp->data - 1) + (temp->next->data - 1)] += 1;
-                        edge_matrix[(temp->data - 1) + (G->n_nodes)*(temp->next->data - 1)] += 1;
+                        //edge_matrix[(temp->data - 1) + (G->n_nodes)*(temp->next->data - 1)] += 1;
                         edge_sum++;
 
                         temp = temp->next->next;
@@ -395,7 +395,7 @@ void update_pheromones(SON *G, double *phMatrix, asolution *R, asolution *R_best
                         phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
                                  + ivt*G->n_nodes*G->n_nodes 
                                  + (temp->data-1)*G->n_nodes 
-                                 + temp->next->data-1] += 
+                                 + (temp->next->data-1)] += 
                                 
                         d*(R->total_makespan/R_update);
 
@@ -417,13 +417,24 @@ void update_pheromones(SON *G, double *phMatrix, asolution *R, asolution *R_best
                             phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
                                 + ivt*G->n_nodes*G->n_nodes 
                                 + (temp->data-1)*G->n_nodes 
-                                + temp->next->next->data - 1] += 
+                                + (temp->next->next->data-1)] += 
+                                d*(R->total_makespan/R_update);
+                            phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
+                                + ivt*G->n_nodes*G->n_nodes 
+                                + (temp->next->next->data-1)*G->n_nodes 
+                                + (temp->data-1)] += 
                                 d*(R->total_makespan/R_update);
                         }else{
                             phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
                                 + ivt*G->n_nodes*G->n_nodes 
                                 + (temp->data-1)*G->n_nodes 
-                                + temp->next->data - 1] += 
+                                + (temp->next->data - 1)] += 
+                                d*(R->total_makespan/R_update);
+
+                            phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
+                                + ivt*G->n_nodes*G->n_nodes 
+                                + (temp->next->data-1)*G->n_nodes 
+                                + (temp->data - 1)] += 
                                 d*(R->total_makespan/R_update);
                         }
 
@@ -452,7 +463,8 @@ double evaporate_pheromones(SON *G, int *edge_matrix, double *phMatrix, int edge
     for(int i = 1; i < G->n_nodes; i++){
         for(int j = 0; j < i; j++){
             if(i != j){
-                p[(G->n_nodes)*j + i] = (double) edge_matrix[(G->n_nodes)*j + i] / edge_sum;
+                p[(G->n_nodes)*j + i] = (double) edge_matrix[(G->n_nodes)*j + i] / edge_sum +
+                                        (double) edge_matrix[(G->n_nodes)*i + j] / edge_sum;
             }
         }
     }

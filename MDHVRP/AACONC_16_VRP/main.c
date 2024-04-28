@@ -160,15 +160,28 @@ int main(int argc, char **argv) {
     double a_update = 0.0001;
     double p_min = 0.001;
     double p_max = 0.01;
-    double d = 1.0;
-    double a = 2.0;
+    double d = 3.0;
+    double a = 1.0;
     double b = 1.0;
 
 
     printf("MADE IT HERE\n");
+    srand(time(NULL));
 
-    for (int i = 0; i < 20; i++){
-        srand(time(NULL));
+    for (int i = 0; i < 10; i++){
+        /*
+        if(i == 25){
+            d = 3.0;
+        }
+        if(i == 50){
+            d = 2.0;
+            a = 2.0;
+        }
+        if(i == 75){
+            d = 3.0;
+            a = 2.0;
+        }
+        */
         AACONC(&G, VT, da_access, n_ants, n_freq, n_size, n_sect, n_prim, T_update,
                a_update, p_min, p_max, d, a, b);
     }

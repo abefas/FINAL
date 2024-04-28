@@ -9,7 +9,7 @@
 /* Get pheromone info from prim clusters for Depots and for vehicle types  */
 
 int selectVehicleType(asolution *Ra, VType *VT, int *v_free, SON *G, int ***K, double *phMatrix, 
-                      int *launch_count, int *served_count, int **da_access, int n_size, int n_prim){
+                      int *launch_count, int **da_access, int n_size, int n_prim){
 
     if(!Ra){ perror("VT == NULL at selectVehicleType.c\n"); exit(1); }
     if(!G){ perror("G == NULL at selectVehicleType.c\n"); exit(1); }
@@ -61,7 +61,7 @@ int selectVehicleType(asolution *Ra, VType *VT, int *v_free, SON *G, int ***K, d
         double prob;
         if(probVT[ivt] > 0.0){
             if(launch_count[ivt] > 0){
-                prob = probVT[ivt];
+                prob = probVT[ivt]/launch_count[ivt];
                 //prob = pow(probVT[ivt]/launch_count[ivt], prob_cap[ivt]);
             }else{
                 prob = pow(probVT[ivt], prob_cap[ivt]);

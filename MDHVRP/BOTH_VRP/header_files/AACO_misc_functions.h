@@ -46,14 +46,12 @@ void new_best(vt_solution *new_r, vt_solution *r, SON *G);
 
 int store_edge_count(vt_solution *Ra, SON *G, int *edge_matrix);
 
-void update_pheromone(SON *G, vt_solution *R, vt_solution *R_best, double *phMatrix, double T_update, double d);
+void update_pheromones(SON *G, vt_solution *R, vt_solution *R_best, double *phMatrix, double T_update, double d);
 
 double evaporate_pheromones(SON *G, double *phMatrix, int *edge_matrix, int *da_access, int edge_sum, 
                             int n_ants, double p_min, double p_max);
 
 void fprint_results(asolution *R, SON *G, VType *VT);
-
-void fprint_results_v3(asolution *R, SON *G, VType *VT);
 
 void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access);
 

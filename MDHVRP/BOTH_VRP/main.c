@@ -7,19 +7,20 @@
 #include <time.h>
 
 time_t begin_total;
-int RUN_NUMBER;
+int RUN_NUMBER, instance_id;
 
 int main(int argc, char **argv) {
 
-    if (argc != 2) {
-        printf("Usage: %s <version_number>\n", argv[0]);
+    if (argc != 3) {
+        printf("Usage: %s <instance_id> <version_number>\n", argv[0]);
         exit(1);
     }
-    RUN_NUMBER = atoi(argv[1]);
+    instance_id = atoi(argv[1]);
+    RUN_NUMBER = atoi(argv[2]);
 
     /* Read file and store all info */
     FILE *fp;
-    if (NULL == (fp = fopen("../../../Instances/i500/i500_02.MD-mfcmTSP", "r"))) {
+    if (NULL == (fp = fopen("../../../../Instances/Cordeau_MDHVRP/p07-H.txt", "r"))) {
         perror("Instance file error!\n");
         exit(1);
     }
@@ -74,7 +75,7 @@ int main(int argc, char **argv) {
     /* Get customers info and store in SetOfNodes G */
     int accessibility;
     for (int i = 0; i < G.n_customers; i++) {
-        fscanf(fp, "%d %d %d %d %d\n", &G.a_customers[i].id, &G.a_customers[i].x,
+        fscanf(fp, "%d %f %f %d %d\n", &G.a_customers[i].id, &G.a_customers[i].x,
                &G.a_customers[i].y, &G.a_customers[i].demand, &accessibility);
 
         // CHECK ORDER OF VEHICLES FOR ACCESSIBILITY
@@ -96,7 +97,7 @@ int main(int argc, char **argv) {
             perror("Error mallocing n_VT!\n");
             exit(1);
         }
-        fscanf(fp, "%d %d %d %d %d %d\n", &G.a_depots[i].id, &G.a_depots[i].x,
+        fscanf(fp, "%d %f %f %d %d %d\n", &G.a_depots[i].id, &G.a_depots[i].x,
                &G.a_depots[i].y, &G.a_depots[i].n_VT[0], &G.a_depots[i].n_VT[1],
                &G.a_depots[i].n_VT[2]);
 
@@ -158,16 +159,15 @@ int main(int argc, char **argv) {
     int n_freq = 10;
     int n_size = 24;
     int n_sect = 16;
-    //int n_prim = (int)ceil((double)G.n_customers / n_size); // n_prim = total clusters
     int n_prim = 4;
     if((int)ceil((double)G.n_customers / n_size) < n_prim)
         n_prim = (int)ceil((double)G.n_customers / n_size);
 
-    double T_update = 0.1; // The higher it is - the higher probability to update pheromones using the worse solution
+    double T_update = 0.1; // The higher it is - the higher chance to update pheromones using the worse solution
     double a_update = 1;
     double p_min = 0.001;
     double p_max = 0.01;
-    double d = 3.0;
+    double d = 2.0;
     double a = 1.0;
     double b = 1.0;
 
@@ -268,32 +268,10 @@ int main(int argc, char **argv) {
         }
     }
 
-    /* Comparison order between all *
-  heuristic_og(&G, VT, &R_og, da_access, remaining);  //1
+    heuristic_og(&G, VT, &R_og, da_access, remaining);
 
-  heuristic_v1(&G, VT, &R_v1, da_access, remaining);  //2
-
-  heuristic_v2(&G, VT, &R_v2, da_access, remaining);  //3
-
-  heuristic_v01(&G, VT, &R, da_access, remaining);    //4
-
-  heuristic_v01_1(&G, VT, &R_i, da_access, remaining);//5
-  * DO NOT TOUCH THIS */
-
-    heuristic_og(&G, VT, &R_og, da_access, remaining); // 1
-    heuristic_v5(&G, VT, &R_og, da_access);
-
-    /*
     heuristic_v1(&G, VT, &R_v1, da_access, remaining); // 2
     heuristic_v5(&G, VT, &R_v1, da_access);
-
-    heuristic_v2(&G, VT, &R_v2, da_access, remaining); // 3
-    heuristic_v5(&G, VT, &R_v2, da_access);
-    */
-
-    // heuristic_v2(&G, VT, &R, da_access, remaining);
-
-    // heuristic_v3(&G, VT, &R, da_access);
 
     /* End of Program */
     for (int ivt = 0; ivt < G.n_differentTypes; ivt++) {

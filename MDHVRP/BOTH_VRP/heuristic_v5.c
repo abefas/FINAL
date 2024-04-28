@@ -54,7 +54,7 @@ void heuristic_v5(SON *G, VType *VT, asolution *R, int **da_access){
                 //Find the optimal route that can be swapped to selected type from Truck route
                 while(index_nn < nn_length - 1){
                     bool flag = false;
-                    if(s->data > G->n_customers){   //s points to depot
+                    if(s->data > G->n_customers || G->a_customers[s->data - 1].demand > VT[type].capacity){   //s points to depot
                         s = s->next;
                         index_nn++;
                         continue;
@@ -62,21 +62,17 @@ void heuristic_v5(SON *G, VType *VT, asolution *R, int **da_access){
                     p = s;
                     int load = 0;
                     node *successive_nodes = NULL;
-                    //Get at least one node
-                    while(successive_nodes == NULL && p){
-                        //Get as many successive nodes as possible to offload from the Truck
-                        while(  p && p->data <= G->n_customers &&
+                    while(  p && 
+                            p->data <= G->n_customers &&
                             load + G->a_customers[p->data - 1].demand <= capacity && 
                             da_access[type][p->data - 1] == 1
-                        ){
-                            load += G->a_customers[p->data-1].demand;
-                            push(&successive_nodes, p->data);
-                            p = p->next;
-                        }
+                    ){
+                        load += G->a_customers[p->data - 1].demand;
+                        push(&successive_nodes, p->data);
                         p = p->next;
                     }
                     node *route = NULL;
-                    if(successive_nodes && listLength(successive_nodes) == capacity){
+                    if(successive_nodes){
                         printList(successive_nodes);
                         printf("\n");
                         route = copyList(successive_nodes);
@@ -125,14 +121,8 @@ void heuristic_v5(SON *G, VType *VT, asolution *R, int **da_access){
                         deleteList(&route);
                     }
                     deleteList(&successive_nodes);
-                    //create v6 with no capacity dropping
-                    if(capacity > 10){
-                        capacity--;
-                    }else{
-                        capacity = VT[type].capacity;
-                        s = s->next;
-                        index_nn++;
-                    }
+                    s = s->next;
+                    index_nn++;
                 }
             }
 
@@ -163,19 +153,12 @@ void heuristic_v5(SON *G, VType *VT, asolution *R, int **da_access){
                 remove_duplicate_nodes(&R->a_VT[swap_type].a_depots[swap_depot].routelist);
                 double ms1 = k_optimization2(&R->a_VT[0].a_depots[IDEPOT], G, VT[0], 1);
                 double ms2 = k_optimization2(&R->a_VT[0].a_depots[IDEPOT], G, VT[0], 2);
-
                 if(swap_type != 2){
                     ms1 = k_optimization2(&R->a_VT[swap_type].a_depots[swap_depot], G, VT[swap_type], 1);
                     ms2 = k_optimization2(&R->a_VT[swap_type].a_depots[swap_depot], G, VT[swap_type], 2);
                 }
 
             }else{
-                //No swap is possible
-                /*
-                printf("mt %0.2lf\t drone %0.2lf\n", R->a_VT[1].a_depots[swap_depot].makespan, R->a_VT[2].a_depots[swap_depot].makespan);
-                printf("truck %0.2lf\n", R->a_VT[0].a_depots[IDEPOT].makespan);
-                printf("min_ms %0.2lf\n", min_ms);
-                */
                 printf("STOPPED\n");
                 stop = 1;
             }
@@ -205,52 +188,18 @@ void heuristic_v5(SON *G, VType *VT, asolution *R, int **da_access){
     }
 
 
-
-    //Do final local opt (mutual)
-    //While mutual local opt improves, run single opt again
-    for (int ivt = 0; ivt < G->n_differentTypes; ivt++) {
-        bool flag = true;
-        while(flag){
-            if (ivt != 2) {
-                for (int idep = 0; idep < G->n_depots; idep++) {
-                    if(G->a_depots[idep].n_VT[ivt] != 0){
-                        double ms1 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 1);
-                        double ms2 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 2);
-                    }
-                }
-                R->a_VT[ivt].makespan = get_makespan_VT(G, &R->a_VT[ivt]);
-                double og = R->a_VT[ivt].makespan;
-                double ms1 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 1);
-                double ms2 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 2);
-                if(ms1 < og - epsilon || ms2 < og - epsilon){
-                    flag = true;
-                }else{
-                    flag = false;
-                }
-            } else {
-                double og = R->a_VT[ivt].makespan;
-                double ms = mutual_drone(&R->a_VT[ivt], G, VT[ivt]);
-                if(ms < og - epsilon){
-                    flag = true;
-                }else{
-                    flag = false;
-                }
-            }
-        }
-    }
-
-    R->total_makespan = 0.0;
-    for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        if(R->total_makespan < R->a_VT[ivt].makespan)
-            R->total_makespan = R->a_VT[ivt].makespan;
-    }
+    R->total_makespan = depot_VT_optimization(R, G, VT, da_access, 1);
+    R->total_makespan = depot_VT_optimization(R, G, VT, da_access, 2);
+    R->total_makespan = local_opt_full(R, G, da_access, VT);
+    R->total_makespan = depot_VT_optimization(R, G, VT, da_access, 1);
+    R->total_makespan = depot_VT_optimization(R, G, VT, da_access, 2);
 
     printf("total makespan = %0.2lf\n", R->total_makespan);
 
     time_t finish_total = time(NULL);
     double runtime_total = difftime(finish_total, begin_total);
 
-    fprint_results_v3(R, G, VT);
+    fprint_results(R, G, VT);
     fprint_data_total(runtime_total);
 
     return;
