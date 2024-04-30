@@ -19,7 +19,9 @@ int main(int argc, char **argv) {
     }
 
     /* Read file and store all info */
-    FILE *fp = fopen("../../../Instances/i500/i500_01.MD-mfcmTSP", "r");
+    char input[100];
+    sprintf(input, "../../../../Instances/Cordeau_mfcmTSP/p%02d.MDmfcmTSP", instance_id);
+    FILE *fp = fopen(input, "r");
     if(!fp){
         perror("Error while opening the file.\n");
         exit(1);
@@ -72,7 +74,7 @@ int main(int argc, char **argv) {
     /* Get customers info and store in SetOfNodes G */
     int accessibility;
     for (int i = 0; i < G.n_customers; i++) {
-        fscanf(fp, "%d %d %d %d %d\n", &G.a_customers[i].id, &G.a_customers[i].x,
+        fscanf(fp, "%d %f %f %d %d\n", &G.a_customers[i].id, &G.a_customers[i].x,
                &G.a_customers[i].y, &G.a_customers[i].demand, &accessibility);
 
         // CHECK ORDER OF VEHICLES FOR ACCESSIBILITY
@@ -94,7 +96,7 @@ int main(int argc, char **argv) {
             perror("Error mallocing n_VT!\n");
             exit(1);
         }
-        fscanf(fp, "%d %d %d %d %d %d\n", &G.a_depots[i].id, &G.a_depots[i].x,
+        fscanf(fp, "%d %f %f %d %d %d\n", &G.a_depots[i].id, &G.a_depots[i].x,
                &G.a_depots[i].y, &G.a_depots[i].n_VT[0], &G.a_depots[i].n_VT[1],
                &G.a_depots[i].n_VT[2]);
 
@@ -143,7 +145,15 @@ int main(int argc, char **argv) {
     }
 
 
+    heuristic_v1_2(&G, VT, da_access);
+    /*
     heuristic_prox(&G, VT, da_access);
+    heuristic_prox_2(&G, VT, da_access);
+    heuristic_v1(&G, VT, da_access);
+    heuristic_prox_standalone(&G, VT, da_access);
+    heuristic_prox_standalone_2(&G, VT, da_access);
+    heuristic_local_opt(&G, VT, da_access);
+    */
 
 
     for (int i = 0; i < G.n_differentTypes; i++) {

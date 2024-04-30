@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.28.1)
 
-project(AACONC)
+project(AACONC-MDmfcmTSP)
 
 find_package(OpenMP REQUIRED)
 

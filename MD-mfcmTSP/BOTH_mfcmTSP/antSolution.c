@@ -24,8 +24,8 @@ void antSolution(SON *G, VType VT, vt_solution *Ra, int **K, double *phMatrix, i
     node *v_candidates = NULL;
 
     Ra->makespan = 0.0;
-    for(int idep = 0; idep < G->n_depots; idep++){          //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        if(G->a_depots[idep].n_VT[Ra->IVT] != 0){           //ADD FAKE TRUCK TO DEPOTS WITH MOTORBIKES AND NO TRUCKS!!!!!!!!!!
+    for(int idep = 0; idep < G->n_depots; idep++){
+        if(G->a_depots[idep].n_VT[Ra->IVT] != 0){
             deleteList(&Ra->a_depots[idep].routelist);
             Ra->a_depots[idep].makespan = 0.0;
             Ra->a_depots[idep].quantity_served = 0;
@@ -48,6 +48,7 @@ void antSolution(SON *G, VType VT, vt_solution *Ra, int **K, double *phMatrix, i
 
             idepot = selectDepot(Ra, G, v_free, K, phMatrix, n_size, n_prim);
             if(idepot == -1){
+                printf("idepot == -1\n");
                 continue;
             }
 
@@ -59,6 +60,7 @@ void antSolution(SON *G, VType VT, vt_solution *Ra, int **K, double *phMatrix, i
 
             icluster = selectCluster(G, ilast, v_free, K[ilast], phMatrix, idepot, n_size, n_prim, VT.speed, a, b);
             if(icluster == -1){
+                printf("icluster == -1\n");
                 continue;
             }
 
@@ -69,6 +71,9 @@ void antSolution(SON *G, VType VT, vt_solution *Ra, int **K, double *phMatrix, i
             }
 
             icustomer = selectCustomer(G, idepot, ilast, v_candidates, phMatrix, a, b);
+            if(icustomer == -1){
+                printf("icustomer == -1\n");
+            }
 
             deleteList(&v_candidates);
         }
@@ -87,6 +92,7 @@ void antSolution(SON *G, VType VT, vt_solution *Ra, int **K, double *phMatrix, i
         }
 
         v_free[icustomer] = -1;      //Mark customer as visited
+
     }
 
     /* Vehicles return to depot */

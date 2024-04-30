@@ -13,10 +13,10 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
     for(int i = 0; i < G->n_customers; i++)
         v_free[i] = 1; //free = 1, not free = -1
 
-    int ivt, idepot, ilast, icluster, icustomer, launch_count[G->n_differentTypes], served_count[G->n_differentTypes];
+    int ivt, idepot, ilast, icluster, icustomer, launch_count[G->n_differentTypes];
 
     for(int i = 0; i < G->n_differentTypes; i++)
-        launch_count[i] = served_count[i] = 0;
+        launch_count[i] = 1;
 
     node *v_candidates = NULL;
 
@@ -50,7 +50,7 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
                 continue;
 
 
-            ivt = selectVehicleType(idepot, Ra, VT, v_free, G, K, phMatrix, launch_count, served_count, da_access, n_size, n_prim);
+            ivt = selectVehicleType(idepot, Ra, VT, v_free, G, K, phMatrix, launch_count, da_access, n_size, n_prim);
             if(ivt == -1)
                 continue;
             if(ivt < 0 || ivt > G->n_differentTypes - 1){
@@ -87,12 +87,11 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
 
         /* Insert selected customer to route and update values makespan, ilast, vehicle's load and v_free */
         append(&Ra->a_VT[ivt].a_depots[idepot].routelist, icustomer+1);
-        served_count[ivt]++;
+        Ra->a_VT[ivt].a_depots[idepot].quantity_served += G->a_customers[icustomer].demand;
 
         //Drone immediately returns to depot after serving one customer, thus location is never changed also
         if(ivt == 2){
             append(&Ra->a_VT[ivt].a_depots[idepot].routelist, Ra->a_VT[ivt].a_depots[idepot].depot_id);
-            Ra->a_VT[ivt].a_depots[idepot].quantity_served += G->a_customers[icustomer].demand;
         }else{
             Ra->a_VT[ivt].a_depots[idepot].v_d = icustomer + 1;
             Ra->a_VT[ivt].a_depots[idepot].current_load -= G->a_customers[icustomer].demand;
@@ -101,7 +100,6 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
                 Ra->a_VT[ivt].a_depots[idepot].current_load = VT[ivt].capacity;
                 Ra->a_VT[ivt].a_depots[idepot].v_d = Ra->a_VT[ivt].a_depots[idepot].depot_id;
             }
-            Ra->a_VT[ivt].a_depots[idepot].quantity_served += G->a_customers[icustomer].demand;
         }
 
         v_free[icustomer] = -1;      //Mark as visited

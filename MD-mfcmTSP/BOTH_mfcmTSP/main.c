@@ -7,20 +7,27 @@
 #include <time.h>
 
 time_t begin_total;
-int RUN_NUMBER;
+int instance_id, AACORUN = 1, version_result;
 
 int main(int argc, char **argv) {
 
-    if (argc != 2) {
+    if(argc != 2){
         printf("Usage: %s <version_number>\n", argv[0]);
         exit(1);
+    }else{
+        if( sscanf(argv[1], "%02d", &instance_id) != 1) {
+            printf("Invalid instance ID\n");
+            exit(EXIT_FAILURE);
+        }
     }
-    RUN_NUMBER = atoi(argv[1]);
+
 
     /* Read file and store all info */
-    FILE *fp;
-    if (NULL == (fp = fopen("../../../Instances/i500/i500_02.MD-mfcmTSP", "r"))) {
-        perror("Instance file error!\n");
+    char input[100];
+    sprintf(input, "../../../../Instances/Cordeau_mfcmTSP/p%02d.MDmfcmTSP", instance_id);
+    FILE *fp = fopen(input, "r");
+    if(!fp){
+        perror("Error while opening the file.\n");
         exit(1);
     }
 
@@ -74,8 +81,13 @@ int main(int argc, char **argv) {
     /* Get customers info and store in SetOfNodes G */
     int accessibility;
     for (int i = 0; i < G.n_customers; i++) {
-        fscanf(fp, "%d %d %d %d %d\n", &G.a_customers[i].id, &G.a_customers[i].x,
+        fscanf(fp, "%d %f %f %d %d\n", &G.a_customers[i].id, &G.a_customers[i].x,
                &G.a_customers[i].y, &G.a_customers[i].demand, &accessibility);
+
+        if(G.a_customers[i].demand != 1){
+            printf("Demand != 1 detected\n");
+            exit(1);
+        }
 
         // CHECK ORDER OF VEHICLES FOR ACCESSIBILITY
         while (accessibility > 0) {
@@ -96,7 +108,7 @@ int main(int argc, char **argv) {
             perror("Error mallocing n_VT!\n");
             exit(1);
         }
-        fscanf(fp, "%d %d %d %d %d %d\n", &G.a_depots[i].id, &G.a_depots[i].x,
+        fscanf(fp, "%d %f %f %d %d %d\n", &G.a_depots[i].id, &G.a_depots[i].x,
                &G.a_depots[i].y, &G.a_depots[i].n_VT[0], &G.a_depots[i].n_VT[1],
                &G.a_depots[i].n_VT[2]);
 
@@ -167,155 +179,146 @@ int main(int argc, char **argv) {
     double a_update = 1;
     double p_min = 0.001;
     double p_max = 0.01;
-    double d = 3.0;
+    double d = 1.0;
     double a = 1.0;
     double b = 1.0;
 
     srand(time(NULL));
 
-    asolution R;
-    R.total_makespan = 0.0;
-    if (NULL == (R.a_VT = malloc(sizeof *R.a_VT * G.n_differentTypes))) {
-        printf("Error callocing R.a_VT\n");
-        exit(1);
-    }
-    for (int ivt = 0; ivt < G.n_differentTypes; ivt++) {
-        if (NULL == (R.a_VT[ivt].a_depots =
-            malloc(sizeof *R.a_VT[ivt].a_depots * G.n_depots))) {
-            printf("Error mallocing R.a_VT[].a_depots\n");
+    for(int i = 0; i < 10; i++){
+        version_result = 1;
+        for (int i = 0; i < G.n_customers; i++)
+            remaining[i] = 1;
+
+        asolution R;
+        R.total_makespan = 0.0;
+        if (NULL == (R.a_VT = malloc(sizeof *R.a_VT * G.n_differentTypes))) {
+            printf("Error callocing R.a_VT\n");
             exit(1);
         }
-        R.a_VT[ivt].IVT = ivt;
-        for (int idep = 0; idep < G.n_depots; idep++) {
-            R.a_VT[ivt].a_depots[idep].routelist = NULL;
-            R.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
-            R.a_VT[ivt].a_depots[idep].makespan = 0.0;
-            R.a_VT[ivt].a_depots[idep].quantity_served = 0;
-            R.a_VT[ivt].a_depots[idep].current_load = -1;
+        for (int ivt = 0; ivt < G.n_differentTypes; ivt++) {
+            if (NULL == (R.a_VT[ivt].a_depots =
+                malloc(sizeof *R.a_VT[ivt].a_depots * G.n_depots))) {
+                printf("Error mallocing R.a_VT[].a_depots\n");
+                exit(1);
+            }
+            R.a_VT[ivt].IVT = ivt;
+            for (int idep = 0; idep < G.n_depots; idep++) {
+                R.a_VT[ivt].a_depots[idep].routelist = NULL;
+                R.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
+                R.a_VT[ivt].a_depots[idep].makespan = 0.0;
+                R.a_VT[ivt].a_depots[idep].quantity_served = 0;
+                R.a_VT[ivt].a_depots[idep].current_load = -1;
+            }
         }
-    }
 
-    begin_total = time(NULL);
+        begin_total = time(NULL);
 
-    // Truck
-    AACONC(&G, VT, &R.a_VT[0], da_access, remaining, 0, n_ants, n_freq, n_size,
-           n_sect, n_prim, T_update, a_update, p_min, p_max, d, a, b);
+        AACONC(&G, VT, &R.a_VT[0], da_access, remaining, 0, n_ants, n_freq, n_size,
+               n_sect, n_prim, T_update, a_update, p_min, p_max, d, a, b);
 
-    asolution R_og, R_v1, R_v2, R_i;
-    R_og.total_makespan = R.total_makespan;
-    R_v1.total_makespan = R.total_makespan;
-    R_v2.total_makespan = R.total_makespan;
-    R_i.total_makespan = R.total_makespan;
-    if (NULL == (R_og.a_VT = malloc(sizeof *R_og.a_VT * G.n_differentTypes)) ||
-        NULL == (R_v1.a_VT = malloc(sizeof *R_v1.a_VT * G.n_differentTypes)) ||
-        NULL == (R_v2.a_VT = malloc(sizeof *R_v2.a_VT * G.n_differentTypes)) ||
-        NULL == (R_i.a_VT = malloc(sizeof *R_i.a_VT * G.n_differentTypes))) {
-        printf("Error callocing R.a_VT\n");
-        exit(1);
-    }
-    for (int ivt = 0; ivt < G.n_differentTypes; ivt++) {
-        if (NULL == (R_og.a_VT[ivt].a_depots =
-            malloc(sizeof *R_og.a_VT[ivt].a_depots * G.n_depots)) ||
-            NULL == (R_v1.a_VT[ivt].a_depots =
-            malloc(sizeof *R_v1.a_VT[ivt].a_depots * G.n_depots)) ||
-            NULL == (R_v2.a_VT[ivt].a_depots =
-            malloc(sizeof *R_v2.a_VT[ivt].a_depots * G.n_depots)) ||
-            NULL == (R_i.a_VT[ivt].a_depots =
-            malloc(sizeof *R_i.a_VT[ivt].a_depots * G.n_depots))) {
-            printf("Error mallocing R_og.a_VT[].a_depots\n");
+
+        asolution R_og, R_v1, R_v2, R_i;
+        R_og.total_makespan = R.total_makespan;
+        R_v1.total_makespan = R.total_makespan;
+        R_v2.total_makespan = R.total_makespan;
+        R_i.total_makespan = R.total_makespan;
+        if (NULL == (R_og.a_VT = malloc(sizeof *R_og.a_VT * G.n_differentTypes)) ||
+            NULL == (R_v1.a_VT = malloc(sizeof *R_v1.a_VT * G.n_differentTypes)) ||
+            NULL == (R_v2.a_VT = malloc(sizeof *R_v2.a_VT * G.n_differentTypes)) ||
+            NULL == (R_i.a_VT = malloc(sizeof *R_i.a_VT * G.n_differentTypes))) {
+            printf("Error callocing R.a_VT\n");
             exit(1);
         }
-        R_og.a_VT[ivt].IVT = ivt;
-        R_v1.a_VT[ivt].IVT = ivt;
-        R_v2.a_VT[ivt].IVT = ivt;
-        R_i.a_VT[ivt].IVT = ivt;
-        for (int idep = 0; idep < G.n_depots; idep++) {
-            R_og.a_VT[ivt].a_depots[idep].routelist =
-                copyList(R.a_VT[ivt].a_depots[idep].routelist);
-            R_og.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
-            R_og.a_VT[ivt].a_depots[idep].makespan =
-                R.a_VT[ivt].a_depots[idep].makespan;
-            R_og.a_VT[ivt].a_depots[idep].quantity_served =
-                R.a_VT[ivt].a_depots[idep].quantity_served;
-            R_og.a_VT[ivt].a_depots[idep].current_load = -1;
+        for (int ivt = 0; ivt < G.n_differentTypes; ivt++) {
+            if (NULL == (R_og.a_VT[ivt].a_depots =
+                malloc(sizeof *R_og.a_VT[ivt].a_depots * G.n_depots)) ||
+                NULL == (R_v1.a_VT[ivt].a_depots =
+                malloc(sizeof *R_v1.a_VT[ivt].a_depots * G.n_depots)) ||
+                NULL == (R_v2.a_VT[ivt].a_depots =
+                malloc(sizeof *R_v2.a_VT[ivt].a_depots * G.n_depots)) ||
+                NULL == (R_i.a_VT[ivt].a_depots =
+                malloc(sizeof *R_i.a_VT[ivt].a_depots * G.n_depots))) {
+                printf("Error mallocing R_og.a_VT[].a_depots\n");
+                exit(1);
+            }
+            R_og.a_VT[ivt].IVT = ivt;
+            R_v1.a_VT[ivt].IVT = ivt;
+            R_v2.a_VT[ivt].IVT = ivt;
+            R_i.a_VT[ivt].IVT = ivt;
+            for (int idep = 0; idep < G.n_depots; idep++) {
+                R_og.a_VT[ivt].a_depots[idep].routelist =
+                    copyList(R.a_VT[ivt].a_depots[idep].routelist);
+                R_og.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
+                R_og.a_VT[ivt].a_depots[idep].makespan =
+                    R.a_VT[ivt].a_depots[idep].makespan;
+                R_og.a_VT[ivt].a_depots[idep].quantity_served =
+                    R.a_VT[ivt].a_depots[idep].quantity_served;
+                R_og.a_VT[ivt].a_depots[idep].current_load = -1;
 
-            R_v1.a_VT[ivt].a_depots[idep].routelist =
-                copyList(R.a_VT[ivt].a_depots[idep].routelist);
-            R_v1.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
-            R_v1.a_VT[ivt].a_depots[idep].makespan =
-                R.a_VT[ivt].a_depots[idep].makespan;
-            R_v1.a_VT[ivt].a_depots[idep].quantity_served =
-                R.a_VT[ivt].a_depots[idep].quantity_served;
-            R_v1.a_VT[ivt].a_depots[idep].current_load = -1;
+                R_v1.a_VT[ivt].a_depots[idep].routelist =
+                    copyList(R.a_VT[ivt].a_depots[idep].routelist);
+                R_v1.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
+                R_v1.a_VT[ivt].a_depots[idep].makespan =
+                    R.a_VT[ivt].a_depots[idep].makespan;
+                R_v1.a_VT[ivt].a_depots[idep].quantity_served =
+                    R.a_VT[ivt].a_depots[idep].quantity_served;
+                R_v1.a_VT[ivt].a_depots[idep].current_load = -1;
 
-            R_v2.a_VT[ivt].a_depots[idep].routelist =
-                copyList(R.a_VT[ivt].a_depots[idep].routelist);
-            R_v2.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
-            R_v2.a_VT[ivt].a_depots[idep].makespan =
-                R.a_VT[ivt].a_depots[idep].makespan;
-            R_v2.a_VT[ivt].a_depots[idep].quantity_served =
-                R.a_VT[ivt].a_depots[idep].quantity_served;
-            R_v2.a_VT[ivt].a_depots[idep].current_load = -1;
+                R_v2.a_VT[ivt].a_depots[idep].routelist =
+                    copyList(R.a_VT[ivt].a_depots[idep].routelist);
+                R_v2.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
+                R_v2.a_VT[ivt].a_depots[idep].makespan =
+                    R.a_VT[ivt].a_depots[idep].makespan;
+                R_v2.a_VT[ivt].a_depots[idep].quantity_served =
+                    R.a_VT[ivt].a_depots[idep].quantity_served;
+                R_v2.a_VT[ivt].a_depots[idep].current_load = -1;
 
-            R_i.a_VT[ivt].a_depots[idep].routelist =
-                copyList(R.a_VT[ivt].a_depots[idep].routelist);
-            R_i.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
-            R_i.a_VT[ivt].a_depots[idep].makespan =
-                R.a_VT[ivt].a_depots[idep].makespan;
-            R_i.a_VT[ivt].a_depots[idep].quantity_served =
-                R.a_VT[ivt].a_depots[idep].quantity_served;
-            R_i.a_VT[ivt].a_depots[idep].current_load = -1;
+                R_i.a_VT[ivt].a_depots[idep].routelist =
+                    copyList(R.a_VT[ivt].a_depots[idep].routelist);
+                R_i.a_VT[ivt].a_depots[idep].depot_id = G.a_depots[idep].id;
+                R_i.a_VT[ivt].a_depots[idep].makespan =
+                    R.a_VT[ivt].a_depots[idep].makespan;
+                R_i.a_VT[ivt].a_depots[idep].quantity_served =
+                    R.a_VT[ivt].a_depots[idep].quantity_served;
+                R_i.a_VT[ivt].a_depots[idep].current_load = -1;
+            }
         }
-    }
 
-    /* Comparison order between all *
-  heuristic_og(&G, VT, &R_og, da_access, remaining);  //1
+        heuristic_og(&G, VT, &R_og, da_access, remaining);
+        heuristic_og_2(&G, VT, &R_i, da_access, remaining);
 
-  heuristic_v1(&G, VT, &R_v1, da_access, remaining);  //2
+        heuristic_v1(&G, VT, &R_v1, da_access, remaining);
+        heuristic_v1_2(&G, VT, &R_v2, da_access, remaining);
 
-  heuristic_v2(&G, VT, &R_v2, da_access, remaining);  //3
+        heuristic_lo(&G, VT, &R, da_access, remaining);
 
-  heuristic_v01(&G, VT, &R, da_access, remaining);    //4
 
-  heuristic_v01_1(&G, VT, &R_i, da_access, remaining);//5
-  * DO NOT TOUCH THIS */
+        //heuristic_v1_stand(&G, VT, &R_v2, da_access, remaining);
 
-    heuristic_og(&G, VT, &R_og, da_access, remaining); // 1
-    heuristic_v5(&G, VT, &R_og, da_access);
-
-    /*
-    heuristic_v1(&G, VT, &R_v1, da_access, remaining); // 2
-    heuristic_v5(&G, VT, &R_v1, da_access);
-
-    heuristic_v2(&G, VT, &R_v2, da_access, remaining); // 3
-    heuristic_v5(&G, VT, &R_v2, da_access);
-    */
-
-    // heuristic_v2(&G, VT, &R, da_access, remaining);
-
-    // heuristic_v3(&G, VT, &R, da_access);
-
-    /* End of Program */
-    for (int ivt = 0; ivt < G.n_differentTypes; ivt++) {
-        for (int idep = 0; idep < G.n_depots; idep++) {
-            deleteList(&R.a_VT[ivt].a_depots[idep].routelist);
-            deleteList(&R_og.a_VT[ivt].a_depots[idep].routelist);
-            deleteList(&R_v1.a_VT[ivt].a_depots[idep].routelist);
-            deleteList(&R_v2.a_VT[ivt].a_depots[idep].routelist);
-            deleteList(&R_i.a_VT[ivt].a_depots[idep].routelist);
+        /* End of Program */
+        for (int ivt = 0; ivt < G.n_differentTypes; ivt++) {
+            for (int idep = 0; idep < G.n_depots; idep++) {
+                deleteList(&R.a_VT[ivt].a_depots[idep].routelist);
+                deleteList(&R_og.a_VT[ivt].a_depots[idep].routelist);
+                deleteList(&R_v1.a_VT[ivt].a_depots[idep].routelist);
+                deleteList(&R_v2.a_VT[ivt].a_depots[idep].routelist);
+                deleteList(&R_i.a_VT[ivt].a_depots[idep].routelist);
+            }
+            free(R.a_VT[ivt].a_depots);
+            free(R_og.a_VT[ivt].a_depots);
+            free(R_v1.a_VT[ivt].a_depots);
+            free(R_v2.a_VT[ivt].a_depots);
+            free(R_i.a_VT[ivt].a_depots);
         }
-        free(R.a_VT[ivt].a_depots);
-        free(R_og.a_VT[ivt].a_depots);
-        free(R_v1.a_VT[ivt].a_depots);
-        free(R_v2.a_VT[ivt].a_depots);
-        free(R_i.a_VT[ivt].a_depots);
-    }
-    free(R.a_VT);
-    free(R_og.a_VT);
-    free(R_v1.a_VT);
-    free(R_v2.a_VT);
-    free(R_i.a_VT);
+        free(R.a_VT);
+        free(R_og.a_VT);
+        free(R_v1.a_VT);
+        free(R_v2.a_VT);
+        free(R_i.a_VT);
+        AACORUN++;
 
+    }
     for (int i = 0; i < G.n_differentTypes; i++) {
         free(da_access[i]);
     }

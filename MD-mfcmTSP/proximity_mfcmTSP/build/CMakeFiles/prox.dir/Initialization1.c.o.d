@@ -1,5 +1,5 @@
 CMakeFiles/prox.dir/Initialization1.c.o: \
- /home/abefas/Desktop/FINAL/proximity/Initialization1.c \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/Initialization1.c \
  /usr/include/stdc-predef.h /usr/include/stdlib.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -25,10 +25,10 @@ CMakeFiles/prox.dir/Initialization1.c.o: \
  /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/heuristic_misc_functions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/heuristic_misc_functions.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdbool.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/structs.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/listFunctions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/structs.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/listFunctions.h \
  /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdarg.h \
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
@@ -36,4 +36,4 @@ CMakeFiles/prox.dir/Initialization1.c.o: \
  /usr/include/bits/types/FILE.h /usr/include/bits/types/struct_FILE.h \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/stdio.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/structs.h
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/structs.h

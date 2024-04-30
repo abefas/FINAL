@@ -1,9 +1,10 @@
-CMakeFiles/prox.dir/main.c.o: /home/abefas/Desktop/FINAL/proximity/main.c \
+CMakeFiles/prox.dir/main.c.o: \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/main.c \
  /usr/include/stdc-predef.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/heuristic_main_functions.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/structs.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/heuristic_main_functions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/structs.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdbool.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/listFunctions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/listFunctions.h \
  /usr/include/stdio.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/bits/wordsize.h /usr/include/bits/timesize.h \
@@ -19,7 +20,7 @@ CMakeFiles/prox.dir/main.c.o: /home/abefas/Desktop/FINAL/proximity/main.c \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
  /usr/include/bits/floatn-common.h /usr/include/bits/stdio.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/structs.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/structs.h \
  /usr/include/stdlib.h /usr/include/bits/waitflags.h \
  /usr/include/bits/waitstatus.h /usr/include/sys/types.h \
  /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \

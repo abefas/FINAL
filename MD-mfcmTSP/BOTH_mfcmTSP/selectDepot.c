@@ -17,10 +17,9 @@ int selectDepot(vt_solution *Ra, SON *G, int *v_free, int **K, double *phMatrix,
     rlist *rl = NULL;
     int idepot, ilast, err, depot_id;
     node *v_cand = NULL;
-    bool flag = true;
     //Get available depots for this vehicle type
     int N = n_prim;
-    while(flag){
+    while(p_sum == 0.0){
         for(idepot = 0; idepot < G->n_depots; idepot++){
             if(Ra->a_depots[idepot].v_d != -1){
                 prob_D = 0.0;
@@ -38,7 +37,6 @@ int selectDepot(vt_solution *Ra, SON *G, int *v_free, int **K, double *phMatrix,
                     prob_D = calculate_pheromone_sum(ilast, v_cand, phMatrix, idepot, G->n_nodes);
                     deleteList(&v_cand);
                     if(prob_D > 0.0){
-                        flag = false;
                         push_rlist(&rl, idepot, prob_D);
                         p_sum += prob_D;
                     }
@@ -46,8 +44,7 @@ int selectDepot(vt_solution *Ra, SON *G, int *v_free, int **K, double *phMatrix,
 
             }
         }
-        if(flag)
-            N++;    //free customer was not found in n_prim, search next cluster
+        N++;    //free customer was not found in n_prim, search next cluster
     }
 
     if(p_sum == 0.0){

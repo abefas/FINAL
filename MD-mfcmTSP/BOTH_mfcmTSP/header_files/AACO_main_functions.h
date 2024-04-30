@@ -31,17 +31,16 @@ ClusterData createClusters_prox(SON *G, int **da_access, int *remaining);
 
 void heuristic_og(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
 
+void heuristic_og_2(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
+
+void heuristic_lo(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
+
+void heuristic_og_stand(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
+
 void heuristic_v1(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
 
-void heuristic_v2(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
+void heuristic_v1_2(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
 
-void heuristic_v3(SON *G, VType *VT, asolution *R, int **da_access);
+void heuristic_v1_stand(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
 
-void heuristic_v4(SON *G, VType *VT, asolution *R, int **da_access);
-
-void heuristic_v5(SON *G, VType *VT, asolution *R, int **da_access);
-
-void heuristic_v01(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
-
-void heuristic_v01_1(SON *G, VType *VT, asolution *R, int **da_access, int *remaining);
 #endif

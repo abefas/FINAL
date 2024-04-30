@@ -163,11 +163,11 @@ void find_polar_coordinates(SON *G, int vi, polar *polarArray){
         exit(1);
     }
     // Assign Cluster Vertex as origin point instead of 0,0 in the cartesian plane 
-    int x0, y0;
+    float x0, y0;
     x0 = G->a_combined[vi].x;
     y0 = G->a_combined[vi].y;
 
-    int dx, dy;
+    float dx, dy;
     for(int i = 0; i < G->n_customers; i++){
         //If Cluster Vertex
         if(i == vi){
@@ -326,7 +326,6 @@ int store_edge_count(asolution *Ra, SON *G, int *edge_matrix){
                             exit(1);
                         }
                         edge_matrix[(G->n_nodes)*(temp->data - 1) + (temp->next->data - 1)] += 1;
-                        edge_matrix[(temp->data - 1) + (G->n_nodes)*(temp->next->data - 1)] += 1;
                         edge_sum++;
 
                         temp = temp->next;
@@ -338,7 +337,6 @@ int store_edge_count(asolution *Ra, SON *G, int *edge_matrix){
                             exit(1);
                         }
                         edge_matrix[(G->n_nodes)*(temp->data - 1) + (temp->next->data - 1)] += 1;
-                        edge_matrix[(temp->data - 1) + (G->n_nodes)*(temp->next->data - 1)] += 1;
                         edge_sum++;
 
                         temp = temp->next->next;
@@ -396,7 +394,7 @@ void update_pheromones(SON *G, double *phMatrix, asolution *R, asolution *R_best
                         phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
                                  + ivt*G->n_nodes*G->n_nodes 
                                  + (temp->data-1)*G->n_nodes 
-                                 + temp->next->data-1] += 
+                                 + (temp->next->data-1)] += 
                                 
                         d*(R->total_makespan/R_update);
 
@@ -417,8 +415,13 @@ void update_pheromones(SON *G, double *phMatrix, asolution *R, asolution *R_best
                         phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
                                  + ivt*G->n_nodes*G->n_nodes 
                                  + (temp->data-1)*G->n_nodes 
-                                 + temp->next->data-1] += 
+                                 + (temp->next->data-1)] += 
+                        d*(R->total_makespan/R_update);
 
+                        phMatrix[idep*G->n_differentTypes*G->n_nodes*G->n_nodes 
+                                 + ivt*G->n_nodes*G->n_nodes 
+                                 + (temp->next->data-1)*G->n_nodes 
+                                 + (temp->data-1)] += 
                         d*(R->total_makespan/R_update);
 
                         temp = temp->next;
@@ -446,7 +449,8 @@ double evaporate_pheromones(SON *G, int *edge_matrix, double *phMatrix, int edge
     for(int i = 1; i < G->n_nodes; i++){
         for(int j = 0; j < i; j++){
             if(i != j){
-                p[(G->n_nodes)*j + i] = (double) edge_matrix[(G->n_nodes)*j + i] / edge_sum;
+                p[(G->n_nodes)*j + i] = (double) edge_matrix[(G->n_nodes)*j + i] / edge_sum +
+                                        (double) edge_matrix[(G->n_nodes)*i + j] / edge_sum;
             }
         }
     }
@@ -520,7 +524,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
         detect_dup[i] = 0;
 
     char file_name[18], fn[18];
-    sprintf(file_name, "p%02d_%d.res", instance_id, loop_iteration);
+    sprintf(file_name, "p%02d-%d.res", instance_id, loop_iteration);
 
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
@@ -554,7 +558,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
                     v_ms += G->d_matrix[temp->data - 1][temp->next->data - 1] / VT[ivt].speed;
                     if(temp->next->data > G->n_customers){
                         append(&vehicleRoute, 0);
-                        fprintf(fp, "type %d depot %d route %d q_served %d time %0.2lf\t", ivt+1, idep+G->n_customers+1, vehicle, q_served, v_ms);
+                        fprintf(fp, "t %d  d %d  route %2d  q_s %2d  time %10.2lf\t", ivt+1, idep+G->n_customers+1, vehicle, q_served, v_ms);
                         fprintf(fp_1, "%d,%d\n", temp->data, temp->next->data);
                         fprintList(vehicleRoute, fp);
                         deleteList(&vehicleRoute);
@@ -581,15 +585,11 @@ void fprint_results(asolution *R, SON *G, VType *VT){
             exit(1);
         }
     }
-    bool flag = false;
     for(int i = 0; i < G->n_customers; i++){
         if(detect_dup[i] != 1){
-            flag = true;
-            printf("detect_dup[%d] = %d\n", i, detect_dup[i]);
+            fprintf(fp, "detect_dup[%d] = %d\n", i, detect_dup[i]);
         }
     }
-    if(flag)
-        exit(1);
 
     if(fclose(fp) != 0){
         perror("Error closing fp!\n");

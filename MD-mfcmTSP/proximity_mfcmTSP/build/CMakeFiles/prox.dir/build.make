@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/abefas/Desktop/FINAL/proximity
+CMAKE_SOURCE_DIR = /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/abefas/Desktop/FINAL/proximity/build
+CMAKE_BINARY_DIR = /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/prox.dir/depend.make
@@ -70,116 +70,200 @@ include CMakeFiles/prox.dir/progress.make
 include CMakeFiles/prox.dir/flags.make
 
 CMakeFiles/prox.dir/main.c.o: CMakeFiles/prox.dir/flags.make
-CMakeFiles/prox.dir/main.c.o: /home/abefas/Desktop/FINAL/proximity/main.c
+CMakeFiles/prox.dir/main.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/main.c
 CMakeFiles/prox.dir/main.c.o: CMakeFiles/prox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/prox.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/main.c.o -MF CMakeFiles/prox.dir/main.c.o.d -o CMakeFiles/prox.dir/main.c.o -c /home/abefas/Desktop/FINAL/proximity/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/prox.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/main.c.o -MF CMakeFiles/prox.dir/main.c.o.d -o CMakeFiles/prox.dir/main.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/main.c
 
 CMakeFiles/prox.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/proximity/main.c > CMakeFiles/prox.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/main.c > CMakeFiles/prox.dir/main.c.i
 
 CMakeFiles/prox.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/proximity/main.c -o CMakeFiles/prox.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/main.c -o CMakeFiles/prox.dir/main.c.s
 
 CMakeFiles/prox.dir/Initialization1.c.o: CMakeFiles/prox.dir/flags.make
-CMakeFiles/prox.dir/Initialization1.c.o: /home/abefas/Desktop/FINAL/proximity/Initialization1.c
+CMakeFiles/prox.dir/Initialization1.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/Initialization1.c
 CMakeFiles/prox.dir/Initialization1.c.o: CMakeFiles/prox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/prox.dir/Initialization1.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/Initialization1.c.o -MF CMakeFiles/prox.dir/Initialization1.c.o.d -o CMakeFiles/prox.dir/Initialization1.c.o -c /home/abefas/Desktop/FINAL/proximity/Initialization1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/prox.dir/Initialization1.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/Initialization1.c.o -MF CMakeFiles/prox.dir/Initialization1.c.o.d -o CMakeFiles/prox.dir/Initialization1.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/Initialization1.c
 
 CMakeFiles/prox.dir/Initialization1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/Initialization1.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/proximity/Initialization1.c > CMakeFiles/prox.dir/Initialization1.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/Initialization1.c > CMakeFiles/prox.dir/Initialization1.c.i
 
 CMakeFiles/prox.dir/Initialization1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/Initialization1.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/proximity/Initialization1.c -o CMakeFiles/prox.dir/Initialization1.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/Initialization1.c -o CMakeFiles/prox.dir/Initialization1.c.s
 
 CMakeFiles/prox.dir/NearestNeighbour.c.o: CMakeFiles/prox.dir/flags.make
-CMakeFiles/prox.dir/NearestNeighbour.c.o: /home/abefas/Desktop/FINAL/proximity/NearestNeighbour.c
+CMakeFiles/prox.dir/NearestNeighbour.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/NearestNeighbour.c
 CMakeFiles/prox.dir/NearestNeighbour.c.o: CMakeFiles/prox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/prox.dir/NearestNeighbour.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/NearestNeighbour.c.o -MF CMakeFiles/prox.dir/NearestNeighbour.c.o.d -o CMakeFiles/prox.dir/NearestNeighbour.c.o -c /home/abefas/Desktop/FINAL/proximity/NearestNeighbour.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/prox.dir/NearestNeighbour.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/NearestNeighbour.c.o -MF CMakeFiles/prox.dir/NearestNeighbour.c.o.d -o CMakeFiles/prox.dir/NearestNeighbour.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/NearestNeighbour.c
 
 CMakeFiles/prox.dir/NearestNeighbour.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/NearestNeighbour.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/proximity/NearestNeighbour.c > CMakeFiles/prox.dir/NearestNeighbour.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/NearestNeighbour.c > CMakeFiles/prox.dir/NearestNeighbour.c.i
 
 CMakeFiles/prox.dir/NearestNeighbour.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/NearestNeighbour.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/proximity/NearestNeighbour.c -o CMakeFiles/prox.dir/NearestNeighbour.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/NearestNeighbour.c -o CMakeFiles/prox.dir/NearestNeighbour.c.s
 
 CMakeFiles/prox.dir/createClusters.c.o: CMakeFiles/prox.dir/flags.make
-CMakeFiles/prox.dir/createClusters.c.o: /home/abefas/Desktop/FINAL/proximity/createClusters.c
+CMakeFiles/prox.dir/createClusters.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/createClusters.c
 CMakeFiles/prox.dir/createClusters.c.o: CMakeFiles/prox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/prox.dir/createClusters.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/createClusters.c.o -MF CMakeFiles/prox.dir/createClusters.c.o.d -o CMakeFiles/prox.dir/createClusters.c.o -c /home/abefas/Desktop/FINAL/proximity/createClusters.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/prox.dir/createClusters.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/createClusters.c.o -MF CMakeFiles/prox.dir/createClusters.c.o.d -o CMakeFiles/prox.dir/createClusters.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/createClusters.c
 
 CMakeFiles/prox.dir/createClusters.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/createClusters.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/proximity/createClusters.c > CMakeFiles/prox.dir/createClusters.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/createClusters.c > CMakeFiles/prox.dir/createClusters.c.i
 
 CMakeFiles/prox.dir/createClusters.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/createClusters.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/proximity/createClusters.c -o CMakeFiles/prox.dir/createClusters.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/createClusters.c -o CMakeFiles/prox.dir/createClusters.c.s
+
+CMakeFiles/prox.dir/heuristic_local_opt.c.o: CMakeFiles/prox.dir/flags.make
+CMakeFiles/prox.dir/heuristic_local_opt.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_local_opt.c
+CMakeFiles/prox.dir/heuristic_local_opt.c.o: CMakeFiles/prox.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/prox.dir/heuristic_local_opt.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/heuristic_local_opt.c.o -MF CMakeFiles/prox.dir/heuristic_local_opt.c.o.d -o CMakeFiles/prox.dir/heuristic_local_opt.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_local_opt.c
+
+CMakeFiles/prox.dir/heuristic_local_opt.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/heuristic_local_opt.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_local_opt.c > CMakeFiles/prox.dir/heuristic_local_opt.c.i
+
+CMakeFiles/prox.dir/heuristic_local_opt.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/heuristic_local_opt.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_local_opt.c -o CMakeFiles/prox.dir/heuristic_local_opt.c.s
 
 CMakeFiles/prox.dir/heuristic_prox.c.o: CMakeFiles/prox.dir/flags.make
-CMakeFiles/prox.dir/heuristic_prox.c.o: /home/abefas/Desktop/FINAL/proximity/heuristic_prox.c
+CMakeFiles/prox.dir/heuristic_prox.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox.c
 CMakeFiles/prox.dir/heuristic_prox.c.o: CMakeFiles/prox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/prox.dir/heuristic_prox.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/heuristic_prox.c.o -MF CMakeFiles/prox.dir/heuristic_prox.c.o.d -o CMakeFiles/prox.dir/heuristic_prox.c.o -c /home/abefas/Desktop/FINAL/proximity/heuristic_prox.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/prox.dir/heuristic_prox.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/heuristic_prox.c.o -MF CMakeFiles/prox.dir/heuristic_prox.c.o.d -o CMakeFiles/prox.dir/heuristic_prox.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox.c
 
 CMakeFiles/prox.dir/heuristic_prox.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/heuristic_prox.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/proximity/heuristic_prox.c > CMakeFiles/prox.dir/heuristic_prox.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox.c > CMakeFiles/prox.dir/heuristic_prox.c.i
 
 CMakeFiles/prox.dir/heuristic_prox.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/heuristic_prox.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/proximity/heuristic_prox.c -o CMakeFiles/prox.dir/heuristic_prox.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox.c -o CMakeFiles/prox.dir/heuristic_prox.c.s
+
+CMakeFiles/prox.dir/heuristic_prox_2.c.o: CMakeFiles/prox.dir/flags.make
+CMakeFiles/prox.dir/heuristic_prox_2.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_2.c
+CMakeFiles/prox.dir/heuristic_prox_2.c.o: CMakeFiles/prox.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/prox.dir/heuristic_prox_2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/heuristic_prox_2.c.o -MF CMakeFiles/prox.dir/heuristic_prox_2.c.o.d -o CMakeFiles/prox.dir/heuristic_prox_2.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_2.c
+
+CMakeFiles/prox.dir/heuristic_prox_2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/heuristic_prox_2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_2.c > CMakeFiles/prox.dir/heuristic_prox_2.c.i
+
+CMakeFiles/prox.dir/heuristic_prox_2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/heuristic_prox_2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_2.c -o CMakeFiles/prox.dir/heuristic_prox_2.c.s
+
+CMakeFiles/prox.dir/heuristic_prox_standalone.c.o: CMakeFiles/prox.dir/flags.make
+CMakeFiles/prox.dir/heuristic_prox_standalone.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_standalone.c
+CMakeFiles/prox.dir/heuristic_prox_standalone.c.o: CMakeFiles/prox.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/prox.dir/heuristic_prox_standalone.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/heuristic_prox_standalone.c.o -MF CMakeFiles/prox.dir/heuristic_prox_standalone.c.o.d -o CMakeFiles/prox.dir/heuristic_prox_standalone.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_standalone.c
+
+CMakeFiles/prox.dir/heuristic_prox_standalone.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/heuristic_prox_standalone.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_standalone.c > CMakeFiles/prox.dir/heuristic_prox_standalone.c.i
+
+CMakeFiles/prox.dir/heuristic_prox_standalone.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/heuristic_prox_standalone.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_standalone.c -o CMakeFiles/prox.dir/heuristic_prox_standalone.c.s
+
+CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o: CMakeFiles/prox.dir/flags.make
+CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_standalone_2.c
+CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o: CMakeFiles/prox.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o -MF CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o.d -o CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_standalone_2.c
+
+CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_standalone_2.c > CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.i
+
+CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox_standalone_2.c -o CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.s
+
+CMakeFiles/prox.dir/heuristic_v1.c.o: CMakeFiles/prox.dir/flags.make
+CMakeFiles/prox.dir/heuristic_v1.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_v1.c
+CMakeFiles/prox.dir/heuristic_v1.c.o: CMakeFiles/prox.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/prox.dir/heuristic_v1.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/heuristic_v1.c.o -MF CMakeFiles/prox.dir/heuristic_v1.c.o.d -o CMakeFiles/prox.dir/heuristic_v1.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_v1.c
+
+CMakeFiles/prox.dir/heuristic_v1.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/heuristic_v1.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_v1.c > CMakeFiles/prox.dir/heuristic_v1.c.i
+
+CMakeFiles/prox.dir/heuristic_v1.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/heuristic_v1.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_v1.c -o CMakeFiles/prox.dir/heuristic_v1.c.s
+
+CMakeFiles/prox.dir/heuristic_v1_2.c.o: CMakeFiles/prox.dir/flags.make
+CMakeFiles/prox.dir/heuristic_v1_2.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_v1_2.c
+CMakeFiles/prox.dir/heuristic_v1_2.c.o: CMakeFiles/prox.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/prox.dir/heuristic_v1_2.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/heuristic_v1_2.c.o -MF CMakeFiles/prox.dir/heuristic_v1_2.c.o.d -o CMakeFiles/prox.dir/heuristic_v1_2.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_v1_2.c
+
+CMakeFiles/prox.dir/heuristic_v1_2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/heuristic_v1_2.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_v1_2.c > CMakeFiles/prox.dir/heuristic_v1_2.c.i
+
+CMakeFiles/prox.dir/heuristic_v1_2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/heuristic_v1_2.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_v1_2.c -o CMakeFiles/prox.dir/heuristic_v1_2.c.s
 
 CMakeFiles/prox.dir/listFunctions.c.o: CMakeFiles/prox.dir/flags.make
-CMakeFiles/prox.dir/listFunctions.c.o: /home/abefas/Desktop/FINAL/proximity/listFunctions.c
+CMakeFiles/prox.dir/listFunctions.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/listFunctions.c
 CMakeFiles/prox.dir/listFunctions.c.o: CMakeFiles/prox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/prox.dir/listFunctions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/listFunctions.c.o -MF CMakeFiles/prox.dir/listFunctions.c.o.d -o CMakeFiles/prox.dir/listFunctions.c.o -c /home/abefas/Desktop/FINAL/proximity/listFunctions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/prox.dir/listFunctions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/listFunctions.c.o -MF CMakeFiles/prox.dir/listFunctions.c.o.d -o CMakeFiles/prox.dir/listFunctions.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/listFunctions.c
 
 CMakeFiles/prox.dir/listFunctions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/listFunctions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/proximity/listFunctions.c > CMakeFiles/prox.dir/listFunctions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/listFunctions.c > CMakeFiles/prox.dir/listFunctions.c.i
 
 CMakeFiles/prox.dir/listFunctions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/listFunctions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/proximity/listFunctions.c -o CMakeFiles/prox.dir/listFunctions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/listFunctions.c -o CMakeFiles/prox.dir/listFunctions.c.s
 
 CMakeFiles/prox.dir/localOpt.c.o: CMakeFiles/prox.dir/flags.make
-CMakeFiles/prox.dir/localOpt.c.o: /home/abefas/Desktop/FINAL/proximity/localOpt.c
+CMakeFiles/prox.dir/localOpt.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/localOpt.c
 CMakeFiles/prox.dir/localOpt.c.o: CMakeFiles/prox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/prox.dir/localOpt.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/localOpt.c.o -MF CMakeFiles/prox.dir/localOpt.c.o.d -o CMakeFiles/prox.dir/localOpt.c.o -c /home/abefas/Desktop/FINAL/proximity/localOpt.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/prox.dir/localOpt.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/localOpt.c.o -MF CMakeFiles/prox.dir/localOpt.c.o.d -o CMakeFiles/prox.dir/localOpt.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/localOpt.c
 
 CMakeFiles/prox.dir/localOpt.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/localOpt.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/proximity/localOpt.c > CMakeFiles/prox.dir/localOpt.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/localOpt.c > CMakeFiles/prox.dir/localOpt.c.i
 
 CMakeFiles/prox.dir/localOpt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/localOpt.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/proximity/localOpt.c -o CMakeFiles/prox.dir/localOpt.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/localOpt.c -o CMakeFiles/prox.dir/localOpt.c.s
 
 CMakeFiles/prox.dir/miscFunctions.c.o: CMakeFiles/prox.dir/flags.make
-CMakeFiles/prox.dir/miscFunctions.c.o: /home/abefas/Desktop/FINAL/proximity/miscFunctions.c
+CMakeFiles/prox.dir/miscFunctions.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/miscFunctions.c
 CMakeFiles/prox.dir/miscFunctions.c.o: CMakeFiles/prox.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/prox.dir/miscFunctions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/miscFunctions.c.o -MF CMakeFiles/prox.dir/miscFunctions.c.o.d -o CMakeFiles/prox.dir/miscFunctions.c.o -c /home/abefas/Desktop/FINAL/proximity/miscFunctions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/prox.dir/miscFunctions.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/prox.dir/miscFunctions.c.o -MF CMakeFiles/prox.dir/miscFunctions.c.o.d -o CMakeFiles/prox.dir/miscFunctions.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/miscFunctions.c
 
 CMakeFiles/prox.dir/miscFunctions.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/prox.dir/miscFunctions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/proximity/miscFunctions.c > CMakeFiles/prox.dir/miscFunctions.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/miscFunctions.c > CMakeFiles/prox.dir/miscFunctions.c.i
 
 CMakeFiles/prox.dir/miscFunctions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/prox.dir/miscFunctions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/proximity/miscFunctions.c -o CMakeFiles/prox.dir/miscFunctions.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/miscFunctions.c -o CMakeFiles/prox.dir/miscFunctions.c.s
 
 # Object files for target prox
 prox_OBJECTS = \
@@ -187,7 +271,13 @@ prox_OBJECTS = \
 "CMakeFiles/prox.dir/Initialization1.c.o" \
 "CMakeFiles/prox.dir/NearestNeighbour.c.o" \
 "CMakeFiles/prox.dir/createClusters.c.o" \
+"CMakeFiles/prox.dir/heuristic_local_opt.c.o" \
 "CMakeFiles/prox.dir/heuristic_prox.c.o" \
+"CMakeFiles/prox.dir/heuristic_prox_2.c.o" \
+"CMakeFiles/prox.dir/heuristic_prox_standalone.c.o" \
+"CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o" \
+"CMakeFiles/prox.dir/heuristic_v1.c.o" \
+"CMakeFiles/prox.dir/heuristic_v1_2.c.o" \
 "CMakeFiles/prox.dir/listFunctions.c.o" \
 "CMakeFiles/prox.dir/localOpt.c.o" \
 "CMakeFiles/prox.dir/miscFunctions.c.o"
@@ -199,13 +289,19 @@ prox: CMakeFiles/prox.dir/main.c.o
 prox: CMakeFiles/prox.dir/Initialization1.c.o
 prox: CMakeFiles/prox.dir/NearestNeighbour.c.o
 prox: CMakeFiles/prox.dir/createClusters.c.o
+prox: CMakeFiles/prox.dir/heuristic_local_opt.c.o
 prox: CMakeFiles/prox.dir/heuristic_prox.c.o
+prox: CMakeFiles/prox.dir/heuristic_prox_2.c.o
+prox: CMakeFiles/prox.dir/heuristic_prox_standalone.c.o
+prox: CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o
+prox: CMakeFiles/prox.dir/heuristic_v1.c.o
+prox: CMakeFiles/prox.dir/heuristic_v1_2.c.o
 prox: CMakeFiles/prox.dir/listFunctions.c.o
 prox: CMakeFiles/prox.dir/localOpt.c.o
 prox: CMakeFiles/prox.dir/miscFunctions.c.o
 prox: CMakeFiles/prox.dir/build.make
 prox: CMakeFiles/prox.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abefas/Desktop/FINAL/proximity/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C executable prox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking C executable prox"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/prox.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -217,6 +313,6 @@ CMakeFiles/prox.dir/clean:
 .PHONY : CMakeFiles/prox.dir/clean
 
 CMakeFiles/prox.dir/depend:
-	cd /home/abefas/Desktop/FINAL/proximity/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/abefas/Desktop/FINAL/proximity /home/abefas/Desktop/FINAL/proximity /home/abefas/Desktop/FINAL/proximity/build /home/abefas/Desktop/FINAL/proximity/build /home/abefas/Desktop/FINAL/proximity/build/CMakeFiles/prox.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles/prox.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/prox.dir/depend
 

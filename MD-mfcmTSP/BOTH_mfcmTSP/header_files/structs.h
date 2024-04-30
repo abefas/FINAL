@@ -7,21 +7,21 @@
 
 typedef struct Customer{
     int id;
-    int x;
-    int y;
+    float x;
+    float y;
     int demand;
 } customer;
 
 typedef struct Combined{
     int id;
-    int x;
-    int y;
+    float x;
+    float y;
 } combined;
 
 typedef struct Depot{
     int id;
-    int x;
-    int y;
+    float x;
+    float y;
     int *n_VT;          //Stores how many vehicles of each type the depot has - isnt't used in VT.a_depots
 } depot;
 

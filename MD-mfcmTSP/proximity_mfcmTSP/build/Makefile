@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/abefas/Desktop/FINAL/proximity
+CMAKE_SOURCE_DIR = /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/abefas/Desktop/FINAL/proximity/build
+CMAKE_BINARY_DIR = /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/proximity/build/CMakeFiles /home/abefas/Desktop/FINAL/proximity/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/proximity/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -201,6 +201,30 @@ createClusters.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/createClusters.c.s
 .PHONY : createClusters.c.s
 
+heuristic_local_opt.o: heuristic_local_opt.c.o
+.PHONY : heuristic_local_opt.o
+
+# target to build an object file
+heuristic_local_opt.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_local_opt.c.o
+.PHONY : heuristic_local_opt.c.o
+
+heuristic_local_opt.i: heuristic_local_opt.c.i
+.PHONY : heuristic_local_opt.i
+
+# target to preprocess a source file
+heuristic_local_opt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_local_opt.c.i
+.PHONY : heuristic_local_opt.c.i
+
+heuristic_local_opt.s: heuristic_local_opt.c.s
+.PHONY : heuristic_local_opt.s
+
+# target to generate assembly for a file
+heuristic_local_opt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_local_opt.c.s
+.PHONY : heuristic_local_opt.c.s
+
 heuristic_prox.o: heuristic_prox.c.o
 .PHONY : heuristic_prox.o
 
@@ -224,6 +248,126 @@ heuristic_prox.s: heuristic_prox.c.s
 heuristic_prox.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox.c.s
 .PHONY : heuristic_prox.c.s
+
+heuristic_prox_2.o: heuristic_prox_2.c.o
+.PHONY : heuristic_prox_2.o
+
+# target to build an object file
+heuristic_prox_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox_2.c.o
+.PHONY : heuristic_prox_2.c.o
+
+heuristic_prox_2.i: heuristic_prox_2.c.i
+.PHONY : heuristic_prox_2.i
+
+# target to preprocess a source file
+heuristic_prox_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox_2.c.i
+.PHONY : heuristic_prox_2.c.i
+
+heuristic_prox_2.s: heuristic_prox_2.c.s
+.PHONY : heuristic_prox_2.s
+
+# target to generate assembly for a file
+heuristic_prox_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox_2.c.s
+.PHONY : heuristic_prox_2.c.s
+
+heuristic_prox_standalone.o: heuristic_prox_standalone.c.o
+.PHONY : heuristic_prox_standalone.o
+
+# target to build an object file
+heuristic_prox_standalone.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox_standalone.c.o
+.PHONY : heuristic_prox_standalone.c.o
+
+heuristic_prox_standalone.i: heuristic_prox_standalone.c.i
+.PHONY : heuristic_prox_standalone.i
+
+# target to preprocess a source file
+heuristic_prox_standalone.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox_standalone.c.i
+.PHONY : heuristic_prox_standalone.c.i
+
+heuristic_prox_standalone.s: heuristic_prox_standalone.c.s
+.PHONY : heuristic_prox_standalone.s
+
+# target to generate assembly for a file
+heuristic_prox_standalone.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox_standalone.c.s
+.PHONY : heuristic_prox_standalone.c.s
+
+heuristic_prox_standalone_2.o: heuristic_prox_standalone_2.c.o
+.PHONY : heuristic_prox_standalone_2.o
+
+# target to build an object file
+heuristic_prox_standalone_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.o
+.PHONY : heuristic_prox_standalone_2.c.o
+
+heuristic_prox_standalone_2.i: heuristic_prox_standalone_2.c.i
+.PHONY : heuristic_prox_standalone_2.i
+
+# target to preprocess a source file
+heuristic_prox_standalone_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.i
+.PHONY : heuristic_prox_standalone_2.c.i
+
+heuristic_prox_standalone_2.s: heuristic_prox_standalone_2.c.s
+.PHONY : heuristic_prox_standalone_2.s
+
+# target to generate assembly for a file
+heuristic_prox_standalone_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_prox_standalone_2.c.s
+.PHONY : heuristic_prox_standalone_2.c.s
+
+heuristic_v1.o: heuristic_v1.c.o
+.PHONY : heuristic_v1.o
+
+# target to build an object file
+heuristic_v1.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_v1.c.o
+.PHONY : heuristic_v1.c.o
+
+heuristic_v1.i: heuristic_v1.c.i
+.PHONY : heuristic_v1.i
+
+# target to preprocess a source file
+heuristic_v1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_v1.c.i
+.PHONY : heuristic_v1.c.i
+
+heuristic_v1.s: heuristic_v1.c.s
+.PHONY : heuristic_v1.s
+
+# target to generate assembly for a file
+heuristic_v1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_v1.c.s
+.PHONY : heuristic_v1.c.s
+
+heuristic_v1_2.o: heuristic_v1_2.c.o
+.PHONY : heuristic_v1_2.o
+
+# target to build an object file
+heuristic_v1_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_v1_2.c.o
+.PHONY : heuristic_v1_2.c.o
+
+heuristic_v1_2.i: heuristic_v1_2.c.i
+.PHONY : heuristic_v1_2.i
+
+# target to preprocess a source file
+heuristic_v1_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_v1_2.c.i
+.PHONY : heuristic_v1_2.c.i
+
+heuristic_v1_2.s: heuristic_v1_2.c.s
+.PHONY : heuristic_v1_2.s
+
+# target to generate assembly for a file
+heuristic_v1_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/prox.dir/build.make CMakeFiles/prox.dir/heuristic_v1_2.c.s
+.PHONY : heuristic_v1_2.c.s
 
 listFunctions.o: listFunctions.c.o
 .PHONY : listFunctions.o
@@ -339,9 +483,27 @@ help:
 	@echo "... createClusters.o"
 	@echo "... createClusters.i"
 	@echo "... createClusters.s"
+	@echo "... heuristic_local_opt.o"
+	@echo "... heuristic_local_opt.i"
+	@echo "... heuristic_local_opt.s"
 	@echo "... heuristic_prox.o"
 	@echo "... heuristic_prox.i"
 	@echo "... heuristic_prox.s"
+	@echo "... heuristic_prox_2.o"
+	@echo "... heuristic_prox_2.i"
+	@echo "... heuristic_prox_2.s"
+	@echo "... heuristic_prox_standalone.o"
+	@echo "... heuristic_prox_standalone.i"
+	@echo "... heuristic_prox_standalone.s"
+	@echo "... heuristic_prox_standalone_2.o"
+	@echo "... heuristic_prox_standalone_2.i"
+	@echo "... heuristic_prox_standalone_2.s"
+	@echo "... heuristic_v1.o"
+	@echo "... heuristic_v1.i"
+	@echo "... heuristic_v1.s"
+	@echo "... heuristic_v1_2.o"
+	@echo "... heuristic_v1_2.i"
+	@echo "... heuristic_v1_2.s"
 	@echo "... listFunctions.o"
 	@echo "... listFunctions.i"
 	@echo "... listFunctions.s"

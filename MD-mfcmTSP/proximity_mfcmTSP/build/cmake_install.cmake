@@ -1,4 +1,4 @@
-# Install script for directory: /home/abefas/Desktop/FINAL/proximity
+# Install script for directory: /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/abefas/Desktop/FINAL/proximity/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

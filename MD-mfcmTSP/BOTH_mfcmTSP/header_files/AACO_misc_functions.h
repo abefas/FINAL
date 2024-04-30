@@ -51,7 +51,7 @@ void update_pheromone(SON *G, vt_solution *R, vt_solution *R_best, double *phMat
 double evaporate_pheromones(SON *G, double *phMatrix, int *edge_matrix, int *da_access, int edge_sum, 
                             int n_ants, double p_min, double p_max);
 
-void fprint_results(asolution *R, SON *G, VType *VT);
+void fprint_results(asolution *R, SON *G, VType *VT, int **da_access);
 
 void fprint_results_v3(asolution *R, SON *G, VType *VT);
 

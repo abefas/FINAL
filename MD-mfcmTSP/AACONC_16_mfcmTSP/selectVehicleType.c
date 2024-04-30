@@ -9,7 +9,7 @@
 /* Get pheromone info from prim clusters for Depots and for vehicle types  */
 
 int selectVehicleType(int idepot, asolution *Ra, VType *VT, int *v_free, SON *G, int ***K, double *phMatrix, 
-                      int *launch_count, int *served_count, int **da_access, int n_size, int n_prim){
+                      int *launch_count, int **da_access, int n_size, int n_prim){
 
     if(!Ra){ perror("VT == NULL at selectVehicleType.c\n"); exit(1); }
     if(!G){ perror("G == NULL at selectVehicleType.c\n"); exit(1); }
@@ -45,8 +45,8 @@ int selectVehicleType(int idepot, asolution *Ra, VType *VT, int *v_free, SON *G,
                 for(int i_cluster = 0; i_cluster < N; i_cluster++)
                     find_free_in_clusterk_VT(&v_cand, v_free, K[ivt][ilast], i_cluster, n_size);
                 if(v_cand){
-                    int numOfCand = listLength(v_cand);
-                    probVT[ivt] = calculate_pheromone_sum(idepot, ivt, ilast, v_cand, phMatrix, G->n_nodes, G->n_differentTypes)/numOfCand;
+                    //int numOfCand = listLength(v_cand);
+                    probVT[ivt] = calculate_pheromone_sum(idepot, ivt, ilast, v_cand, phMatrix, G->n_nodes, G->n_differentTypes);//numOfCand;
                     deleteList(&v_cand);
                     flag = false;
                 }
@@ -61,11 +61,14 @@ int selectVehicleType(int idepot, asolution *Ra, VType *VT, int *v_free, SON *G,
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         double prob;
         if(probVT[ivt] > 0.0){
+            /*
             if(launch_count[ivt] > 0){
                 prob = pow(probVT[ivt]/launch_count[ivt], prob_cap[ivt]);
             }else{
                 prob = pow(probVT[ivt], prob_cap[ivt]);
             }
+            */
+            prob = probVT[ivt] * G->a_depots[idepot].n_VT[ivt];
             push_rlist(&rl, ivt, prob);
             p_sum += prob;
         }

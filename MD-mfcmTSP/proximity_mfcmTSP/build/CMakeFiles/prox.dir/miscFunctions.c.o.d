@@ -1,5 +1,5 @@
 CMakeFiles/prox.dir/miscFunctions.c.o: \
- /home/abefas/Desktop/FINAL/proximity/miscFunctions.c \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/miscFunctions.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -43,8 +43,8 @@ CMakeFiles/prox.dir/miscFunctions.c.o: \
  /usr/include/bits/environments.h /usr/include/bits/confname.h \
  /usr/include/bits/getopt_posix.h /usr/include/bits/getopt_core.h \
  /usr/include/bits/unistd_ext.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/heuristic_misc_functions.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/structs.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/listFunctions.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/listFunctions.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/structs.h
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/heuristic_misc_functions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/structs.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/listFunctions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/listFunctions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/structs.h

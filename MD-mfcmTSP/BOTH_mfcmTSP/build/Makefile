@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/abefas/Desktop/FINAL/BOTH_test
+CMAKE_SOURCE_DIR = /home/abefas/Desktop/FINAL/MD-mfcmTSP/BOTH_mfcmTSP
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/abefas/Desktop/FINAL/BOTH_test/build
+CMAKE_BINARY_DIR = /home/abefas/Desktop/FINAL/MD-mfcmTSP/BOTH_mfcmTSP/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/BOTH_test/build/CMakeFiles /home/abefas/Desktop/FINAL/BOTH_test/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/MD-mfcmTSP/BOTH_mfcmTSP/build/CMakeFiles /home/abefas/Desktop/FINAL/MD-mfcmTSP/BOTH_mfcmTSP/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/BOTH_test/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/MD-mfcmTSP/BOTH_mfcmTSP/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named AAA
+# Target rules for targets named Hybrid
 
 # Build rule for target.
-AAA: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 AAA
-.PHONY : AAA
+Hybrid: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Hybrid
+.PHONY : Hybrid
 
 # fast build rule for target.
-AAA/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/build
-.PHONY : AAA/fast
+Hybrid/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/build
+.PHONY : Hybrid/fast
 
 AACONC.o: AACONC.c.o
 .PHONY : AACONC.o
 
 # target to build an object file
 AACONC.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/AACONC.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/AACONC.c.o
 .PHONY : AACONC.c.o
 
 AACONC.i: AACONC.c.i
@@ -142,7 +142,7 @@ AACONC.i: AACONC.c.i
 
 # target to preprocess a source file
 AACONC.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/AACONC.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/AACONC.c.i
 .PHONY : AACONC.c.i
 
 AACONC.s: AACONC.c.s
@@ -150,7 +150,7 @@ AACONC.s: AACONC.c.s
 
 # target to generate assembly for a file
 AACONC.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/AACONC.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/AACONC.c.s
 .PHONY : AACONC.c.s
 
 antSolution.o: antSolution.c.o
@@ -158,7 +158,7 @@ antSolution.o: antSolution.c.o
 
 # target to build an object file
 antSolution.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/antSolution.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/antSolution.c.o
 .PHONY : antSolution.c.o
 
 antSolution.i: antSolution.c.i
@@ -166,7 +166,7 @@ antSolution.i: antSolution.c.i
 
 # target to preprocess a source file
 antSolution.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/antSolution.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/antSolution.c.i
 .PHONY : antSolution.c.i
 
 antSolution.s: antSolution.c.s
@@ -174,7 +174,7 @@ antSolution.s: antSolution.c.s
 
 # target to generate assembly for a file
 antSolution.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/antSolution.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/antSolution.c.s
 .PHONY : antSolution.c.s
 
 createClusters.o: createClusters.c.o
@@ -182,7 +182,7 @@ createClusters.o: createClusters.c.o
 
 # target to build an object file
 createClusters.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/createClusters.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/createClusters.c.o
 .PHONY : createClusters.c.o
 
 createClusters.i: createClusters.c.i
@@ -190,7 +190,7 @@ createClusters.i: createClusters.c.i
 
 # target to preprocess a source file
 createClusters.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/createClusters.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/createClusters.c.i
 .PHONY : createClusters.c.i
 
 createClusters.s: createClusters.c.s
@@ -198,7 +198,7 @@ createClusters.s: createClusters.c.s
 
 # target to generate assembly for a file
 createClusters.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/createClusters.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/createClusters.c.s
 .PHONY : createClusters.c.s
 
 createClusters_prox.o: createClusters_prox.c.o
@@ -206,7 +206,7 @@ createClusters_prox.o: createClusters_prox.c.o
 
 # target to build an object file
 createClusters_prox.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/createClusters_prox.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/createClusters_prox.c.o
 .PHONY : createClusters_prox.c.o
 
 createClusters_prox.i: createClusters_prox.c.i
@@ -214,7 +214,7 @@ createClusters_prox.i: createClusters_prox.c.i
 
 # target to preprocess a source file
 createClusters_prox.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/createClusters_prox.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/createClusters_prox.c.i
 .PHONY : createClusters_prox.c.i
 
 createClusters_prox.s: createClusters_prox.c.s
@@ -222,7 +222,7 @@ createClusters_prox.s: createClusters_prox.c.s
 
 # target to generate assembly for a file
 createClusters_prox.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/createClusters_prox.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/createClusters_prox.c.s
 .PHONY : createClusters_prox.c.s
 
 heuristic.o: heuristic.c.o
@@ -230,7 +230,7 @@ heuristic.o: heuristic.c.o
 
 # target to build an object file
 heuristic.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic.c.o
 .PHONY : heuristic.c.o
 
 heuristic.i: heuristic.c.i
@@ -238,7 +238,7 @@ heuristic.i: heuristic.c.i
 
 # target to preprocess a source file
 heuristic.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic.c.i
 .PHONY : heuristic.c.i
 
 heuristic.s: heuristic.c.s
@@ -246,15 +246,39 @@ heuristic.s: heuristic.c.s
 
 # target to generate assembly for a file
 heuristic.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic.c.s
 .PHONY : heuristic.c.s
+
+heuristic_localOpt.o: heuristic_localOpt.c.o
+.PHONY : heuristic_localOpt.o
+
+# target to build an object file
+heuristic_localOpt.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_localOpt.c.o
+.PHONY : heuristic_localOpt.c.o
+
+heuristic_localOpt.i: heuristic_localOpt.c.i
+.PHONY : heuristic_localOpt.i
+
+# target to preprocess a source file
+heuristic_localOpt.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_localOpt.c.i
+.PHONY : heuristic_localOpt.c.i
+
+heuristic_localOpt.s: heuristic_localOpt.c.s
+.PHONY : heuristic_localOpt.s
+
+# target to generate assembly for a file
+heuristic_localOpt.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_localOpt.c.s
+.PHONY : heuristic_localOpt.c.s
 
 heuristic_og.o: heuristic_og.c.o
 .PHONY : heuristic_og.o
 
 # target to build an object file
 heuristic_og.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_og.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og.c.o
 .PHONY : heuristic_og.c.o
 
 heuristic_og.i: heuristic_og.c.i
@@ -262,7 +286,7 @@ heuristic_og.i: heuristic_og.c.i
 
 # target to preprocess a source file
 heuristic_og.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_og.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og.c.i
 .PHONY : heuristic_og.c.i
 
 heuristic_og.s: heuristic_og.c.s
@@ -270,159 +294,135 @@ heuristic_og.s: heuristic_og.c.s
 
 # target to generate assembly for a file
 heuristic_og.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_og.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og.c.s
 .PHONY : heuristic_og.c.s
 
-heuristic_v01.o: heuristic_v01.c.o
-.PHONY : heuristic_v01.o
+heuristic_og_2.o: heuristic_og_2.c.o
+.PHONY : heuristic_og_2.o
 
 # target to build an object file
-heuristic_v01.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v01.c.o
-.PHONY : heuristic_v01.c.o
+heuristic_og_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og_2.c.o
+.PHONY : heuristic_og_2.c.o
 
-heuristic_v01.i: heuristic_v01.c.i
-.PHONY : heuristic_v01.i
+heuristic_og_2.i: heuristic_og_2.c.i
+.PHONY : heuristic_og_2.i
 
 # target to preprocess a source file
-heuristic_v01.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v01.c.i
-.PHONY : heuristic_v01.c.i
+heuristic_og_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og_2.c.i
+.PHONY : heuristic_og_2.c.i
 
-heuristic_v01.s: heuristic_v01.c.s
-.PHONY : heuristic_v01.s
+heuristic_og_2.s: heuristic_og_2.c.s
+.PHONY : heuristic_og_2.s
 
 # target to generate assembly for a file
-heuristic_v01.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v01.c.s
-.PHONY : heuristic_v01.c.s
+heuristic_og_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og_2.c.s
+.PHONY : heuristic_og_2.c.s
 
-heuristic_v01_1.o: heuristic_v01_1.c.o
-.PHONY : heuristic_v01_1.o
+heuristic_og_no_init.o: heuristic_og_no_init.c.o
+.PHONY : heuristic_og_no_init.o
 
 # target to build an object file
-heuristic_v01_1.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v01_1.c.o
-.PHONY : heuristic_v01_1.c.o
+heuristic_og_no_init.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og_no_init.c.o
+.PHONY : heuristic_og_no_init.c.o
 
-heuristic_v01_1.i: heuristic_v01_1.c.i
-.PHONY : heuristic_v01_1.i
+heuristic_og_no_init.i: heuristic_og_no_init.c.i
+.PHONY : heuristic_og_no_init.i
 
 # target to preprocess a source file
-heuristic_v01_1.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v01_1.c.i
-.PHONY : heuristic_v01_1.c.i
+heuristic_og_no_init.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og_no_init.c.i
+.PHONY : heuristic_og_no_init.c.i
 
-heuristic_v01_1.s: heuristic_v01_1.c.s
-.PHONY : heuristic_v01_1.s
+heuristic_og_no_init.s: heuristic_og_no_init.c.s
+.PHONY : heuristic_og_no_init.s
 
 # target to generate assembly for a file
-heuristic_v01_1.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v01_1.c.s
-.PHONY : heuristic_v01_1.c.s
+heuristic_og_no_init.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og_no_init.c.s
+.PHONY : heuristic_og_no_init.c.s
 
-heuristic_v2.o: heuristic_v2.c.o
-.PHONY : heuristic_v2.o
+heuristic_og_stand.o: heuristic_og_stand.c.o
+.PHONY : heuristic_og_stand.o
 
 # target to build an object file
-heuristic_v2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v2.c.o
-.PHONY : heuristic_v2.c.o
+heuristic_og_stand.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og_stand.c.o
+.PHONY : heuristic_og_stand.c.o
 
-heuristic_v2.i: heuristic_v2.c.i
-.PHONY : heuristic_v2.i
+heuristic_og_stand.i: heuristic_og_stand.c.i
+.PHONY : heuristic_og_stand.i
 
 # target to preprocess a source file
-heuristic_v2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v2.c.i
-.PHONY : heuristic_v2.c.i
+heuristic_og_stand.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og_stand.c.i
+.PHONY : heuristic_og_stand.c.i
 
-heuristic_v2.s: heuristic_v2.c.s
-.PHONY : heuristic_v2.s
+heuristic_og_stand.s: heuristic_og_stand.c.s
+.PHONY : heuristic_og_stand.s
 
 # target to generate assembly for a file
-heuristic_v2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v2.c.s
-.PHONY : heuristic_v2.c.s
+heuristic_og_stand.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_og_stand.c.s
+.PHONY : heuristic_og_stand.c.s
 
-heuristic_v3.o: heuristic_v3.c.o
-.PHONY : heuristic_v3.o
+heuristic_v1_2.o: heuristic_v1_2.c.o
+.PHONY : heuristic_v1_2.o
 
 # target to build an object file
-heuristic_v3.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v3.c.o
-.PHONY : heuristic_v3.c.o
+heuristic_v1_2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_v1_2.c.o
+.PHONY : heuristic_v1_2.c.o
 
-heuristic_v3.i: heuristic_v3.c.i
-.PHONY : heuristic_v3.i
+heuristic_v1_2.i: heuristic_v1_2.c.i
+.PHONY : heuristic_v1_2.i
 
 # target to preprocess a source file
-heuristic_v3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v3.c.i
-.PHONY : heuristic_v3.c.i
+heuristic_v1_2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_v1_2.c.i
+.PHONY : heuristic_v1_2.c.i
 
-heuristic_v3.s: heuristic_v3.c.s
-.PHONY : heuristic_v3.s
+heuristic_v1_2.s: heuristic_v1_2.c.s
+.PHONY : heuristic_v1_2.s
 
 # target to generate assembly for a file
-heuristic_v3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v3.c.s
-.PHONY : heuristic_v3.c.s
+heuristic_v1_2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_v1_2.c.s
+.PHONY : heuristic_v1_2.c.s
 
-heuristic_v4.o: heuristic_v4.c.o
-.PHONY : heuristic_v4.o
+heuristic_v1_stand.o: heuristic_v1_stand.c.o
+.PHONY : heuristic_v1_stand.o
 
 # target to build an object file
-heuristic_v4.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v4.c.o
-.PHONY : heuristic_v4.c.o
+heuristic_v1_stand.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_v1_stand.c.o
+.PHONY : heuristic_v1_stand.c.o
 
-heuristic_v4.i: heuristic_v4.c.i
-.PHONY : heuristic_v4.i
-
-# target to preprocess a source file
-heuristic_v4.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v4.c.i
-.PHONY : heuristic_v4.c.i
-
-heuristic_v4.s: heuristic_v4.c.s
-.PHONY : heuristic_v4.s
-
-# target to generate assembly for a file
-heuristic_v4.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v4.c.s
-.PHONY : heuristic_v4.c.s
-
-heuristic_v5.o: heuristic_v5.c.o
-.PHONY : heuristic_v5.o
-
-# target to build an object file
-heuristic_v5.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v5.c.o
-.PHONY : heuristic_v5.c.o
-
-heuristic_v5.i: heuristic_v5.c.i
-.PHONY : heuristic_v5.i
+heuristic_v1_stand.i: heuristic_v1_stand.c.i
+.PHONY : heuristic_v1_stand.i
 
 # target to preprocess a source file
-heuristic_v5.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v5.c.i
-.PHONY : heuristic_v5.c.i
+heuristic_v1_stand.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_v1_stand.c.i
+.PHONY : heuristic_v1_stand.c.i
 
-heuristic_v5.s: heuristic_v5.c.s
-.PHONY : heuristic_v5.s
+heuristic_v1_stand.s: heuristic_v1_stand.c.s
+.PHONY : heuristic_v1_stand.s
 
 # target to generate assembly for a file
-heuristic_v5.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/heuristic_v5.c.s
-.PHONY : heuristic_v5.c.s
+heuristic_v1_stand.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/heuristic_v1_stand.c.s
+.PHONY : heuristic_v1_stand.c.s
 
 listFunctions.o: listFunctions.c.o
 .PHONY : listFunctions.o
 
 # target to build an object file
 listFunctions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/listFunctions.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/listFunctions.c.o
 .PHONY : listFunctions.c.o
 
 listFunctions.i: listFunctions.c.i
@@ -430,7 +430,7 @@ listFunctions.i: listFunctions.c.i
 
 # target to preprocess a source file
 listFunctions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/listFunctions.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/listFunctions.c.i
 .PHONY : listFunctions.c.i
 
 listFunctions.s: listFunctions.c.s
@@ -438,7 +438,7 @@ listFunctions.s: listFunctions.c.s
 
 # target to generate assembly for a file
 listFunctions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/listFunctions.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/listFunctions.c.s
 .PHONY : listFunctions.c.s
 
 localOpt.o: localOpt.c.o
@@ -446,7 +446,7 @@ localOpt.o: localOpt.c.o
 
 # target to build an object file
 localOpt.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/localOpt.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/localOpt.c.o
 .PHONY : localOpt.c.o
 
 localOpt.i: localOpt.c.i
@@ -454,7 +454,7 @@ localOpt.i: localOpt.c.i
 
 # target to preprocess a source file
 localOpt.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/localOpt.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/localOpt.c.i
 .PHONY : localOpt.c.i
 
 localOpt.s: localOpt.c.s
@@ -462,7 +462,7 @@ localOpt.s: localOpt.c.s
 
 # target to generate assembly for a file
 localOpt.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/localOpt.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/localOpt.c.s
 .PHONY : localOpt.c.s
 
 main.o: main.c.o
@@ -470,7 +470,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -478,7 +478,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -486,7 +486,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/main.c.s
 .PHONY : main.c.s
 
 miscFunctions.o: miscFunctions.c.o
@@ -494,7 +494,7 @@ miscFunctions.o: miscFunctions.c.o
 
 # target to build an object file
 miscFunctions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/miscFunctions.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/miscFunctions.c.o
 .PHONY : miscFunctions.c.o
 
 miscFunctions.i: miscFunctions.c.i
@@ -502,7 +502,7 @@ miscFunctions.i: miscFunctions.c.i
 
 # target to preprocess a source file
 miscFunctions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/miscFunctions.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/miscFunctions.c.i
 .PHONY : miscFunctions.c.i
 
 miscFunctions.s: miscFunctions.c.s
@@ -510,7 +510,7 @@ miscFunctions.s: miscFunctions.c.s
 
 # target to generate assembly for a file
 miscFunctions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/miscFunctions.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/miscFunctions.c.s
 .PHONY : miscFunctions.c.s
 
 roulette.o: roulette.c.o
@@ -518,7 +518,7 @@ roulette.o: roulette.c.o
 
 # target to build an object file
 roulette.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/roulette.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/roulette.c.o
 .PHONY : roulette.c.o
 
 roulette.i: roulette.c.i
@@ -526,7 +526,7 @@ roulette.i: roulette.c.i
 
 # target to preprocess a source file
 roulette.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/roulette.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/roulette.c.i
 .PHONY : roulette.c.i
 
 roulette.s: roulette.c.s
@@ -534,7 +534,7 @@ roulette.s: roulette.c.s
 
 # target to generate assembly for a file
 roulette.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/roulette.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/roulette.c.s
 .PHONY : roulette.c.s
 
 selectCluster.o: selectCluster.c.o
@@ -542,7 +542,7 @@ selectCluster.o: selectCluster.c.o
 
 # target to build an object file
 selectCluster.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/selectCluster.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/selectCluster.c.o
 .PHONY : selectCluster.c.o
 
 selectCluster.i: selectCluster.c.i
@@ -550,7 +550,7 @@ selectCluster.i: selectCluster.c.i
 
 # target to preprocess a source file
 selectCluster.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/selectCluster.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/selectCluster.c.i
 .PHONY : selectCluster.c.i
 
 selectCluster.s: selectCluster.c.s
@@ -558,7 +558,7 @@ selectCluster.s: selectCluster.c.s
 
 # target to generate assembly for a file
 selectCluster.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/selectCluster.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/selectCluster.c.s
 .PHONY : selectCluster.c.s
 
 selectCustomer.o: selectCustomer.c.o
@@ -566,7 +566,7 @@ selectCustomer.o: selectCustomer.c.o
 
 # target to build an object file
 selectCustomer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/selectCustomer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/selectCustomer.c.o
 .PHONY : selectCustomer.c.o
 
 selectCustomer.i: selectCustomer.c.i
@@ -574,7 +574,7 @@ selectCustomer.i: selectCustomer.c.i
 
 # target to preprocess a source file
 selectCustomer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/selectCustomer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/selectCustomer.c.i
 .PHONY : selectCustomer.c.i
 
 selectCustomer.s: selectCustomer.c.s
@@ -582,7 +582,7 @@ selectCustomer.s: selectCustomer.c.s
 
 # target to generate assembly for a file
 selectCustomer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/selectCustomer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/selectCustomer.c.s
 .PHONY : selectCustomer.c.s
 
 selectDepot.o: selectDepot.c.o
@@ -590,7 +590,7 @@ selectDepot.o: selectDepot.c.o
 
 # target to build an object file
 selectDepot.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/selectDepot.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/selectDepot.c.o
 .PHONY : selectDepot.c.o
 
 selectDepot.i: selectDepot.c.i
@@ -598,7 +598,7 @@ selectDepot.i: selectDepot.c.i
 
 # target to preprocess a source file
 selectDepot.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/selectDepot.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/selectDepot.c.i
 .PHONY : selectDepot.c.i
 
 selectDepot.s: selectDepot.c.s
@@ -606,7 +606,7 @@ selectDepot.s: selectDepot.c.s
 
 # target to generate assembly for a file
 selectDepot.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/AAA.dir/build.make CMakeFiles/AAA.dir/selectDepot.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Hybrid.dir/build.make CMakeFiles/Hybrid.dir/selectDepot.c.s
 .PHONY : selectDepot.c.s
 
 # Help Target
@@ -617,7 +617,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... AAA"
+	@echo "... Hybrid"
 	@echo "... AACONC.o"
 	@echo "... AACONC.i"
 	@echo "... AACONC.s"
@@ -633,27 +633,27 @@ help:
 	@echo "... heuristic.o"
 	@echo "... heuristic.i"
 	@echo "... heuristic.s"
+	@echo "... heuristic_localOpt.o"
+	@echo "... heuristic_localOpt.i"
+	@echo "... heuristic_localOpt.s"
 	@echo "... heuristic_og.o"
 	@echo "... heuristic_og.i"
 	@echo "... heuristic_og.s"
-	@echo "... heuristic_v01.o"
-	@echo "... heuristic_v01.i"
-	@echo "... heuristic_v01.s"
-	@echo "... heuristic_v01_1.o"
-	@echo "... heuristic_v01_1.i"
-	@echo "... heuristic_v01_1.s"
-	@echo "... heuristic_v2.o"
-	@echo "... heuristic_v2.i"
-	@echo "... heuristic_v2.s"
-	@echo "... heuristic_v3.o"
-	@echo "... heuristic_v3.i"
-	@echo "... heuristic_v3.s"
-	@echo "... heuristic_v4.o"
-	@echo "... heuristic_v4.i"
-	@echo "... heuristic_v4.s"
-	@echo "... heuristic_v5.o"
-	@echo "... heuristic_v5.i"
-	@echo "... heuristic_v5.s"
+	@echo "... heuristic_og_2.o"
+	@echo "... heuristic_og_2.i"
+	@echo "... heuristic_og_2.s"
+	@echo "... heuristic_og_no_init.o"
+	@echo "... heuristic_og_no_init.i"
+	@echo "... heuristic_og_no_init.s"
+	@echo "... heuristic_og_stand.o"
+	@echo "... heuristic_og_stand.i"
+	@echo "... heuristic_og_stand.s"
+	@echo "... heuristic_v1_2.o"
+	@echo "... heuristic_v1_2.i"
+	@echo "... heuristic_v1_2.s"
+	@echo "... heuristic_v1_stand.o"
+	@echo "... heuristic_v1_stand.i"
+	@echo "... heuristic_v1_stand.s"
 	@echo "... listFunctions.o"
 	@echo "... listFunctions.i"
 	@echo "... listFunctions.s"

@@ -140,6 +140,7 @@ bool not_empty(int *array, int length){
 }
 
 
+static int version = 1;
 void fprint_results(asolution *R, SON *G, VType *VT){
 
     int detect_dup[G->n_customers];
@@ -147,7 +148,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
         detect_dup[i] = 0;
 
     char file_name[20], fn[30];
-    sprintf(file_name, "prox%02d.res", instance_id);
+    sprintf(file_name, "prox%02d-v%d.res", instance_id, version);
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
     {
@@ -159,8 +160,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        double ivt_ms = 0.0;
-        sprintf(fn, "prox%02d_ivt_%d.csv", instance_id, ivt+1);
+        sprintf(fn, "prox%02d-v%d-ivt_%d.csv", instance_id, version, ivt+1);
         if(NULL == (fp_1 = fopen(fn, "w"))){
             perror("Error opening fp_1!\n");
             exit(1);
@@ -180,7 +180,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
                     v_ms += G->d_matrix[temp->data - 1][temp->next->data - 1] / VT[ivt].speed;
                     if(temp->next->data > G->n_customers){
                         append(&vehicleRoute, 0);
-                        fprintf(fp, "type %d depot %d route %d q_served %d time %0.2lf\t", ivt+1, idep+G->n_customers+1, vehicle, q_served, v_ms);
+                        fprintf(fp, "type %d  depot %d  route %2d  time %10.2lf\t", ivt+1, idep+G->n_customers+1, vehicle, v_ms);
                         fprintf(fp_1, "%d,%d\n", temp->data, temp->next->data);
                         fprintList(vehicleRoute, fp);
                         deleteList(&vehicleRoute);
@@ -197,25 +197,20 @@ void fprint_results(asolution *R, SON *G, VType *VT){
                     }
                     temp = temp->next;
                 }
-                if(dep_ms > ivt_ms)
-                    ivt_ms = dep_ms;
             }
         }
-        fprintf(fp, "type %d makespan %0.2lf\nivt_ms %0.3lf\n", ivt+1, R->a_VT[ivt].makespan, ivt_ms);
+        fprintf(fp, "type %d makespan %0.2lf\n", ivt+1, R->a_VT[ivt].makespan);
         if(fclose(fp_1) != 0){ 
             perror("Error closing fp_1\n"); 
             exit(1); 
         }
     }
-    bool flag = false;
+
     for(int i = 0; i < G->n_customers; i++){
         if(detect_dup[i] != 1){
-            flag = true;
-            printf("detect_dup[%d] = %d\n", i, detect_dup[i]);
+            fprintf(fp, "detect_dup[%d] = %d\n", i, detect_dup[i]);
         }
     }
-    if(flag)
-        exit(1);
 
     if(fclose(fp) != 0){ 
         perror("Couldn't close fp\nExiting...\n"); 
@@ -232,7 +227,7 @@ void fprint_data(double runtime){
     sprintf(file_name, "prox%02d.data", instance_id);
     FILE *fp;
     if(NULL == (fp = fopen(file_name, "w"))){ 
-        perror("Couldn't open file fp at fprint_results\n"); 
+        perror("Couldn't open file fp at fprint_data\n"); 
         exit(1); 
     }
 
@@ -243,6 +238,7 @@ void fprint_data(double runtime){
         exit(1); 
     }
     
+    version++;
     return;
 }
 //

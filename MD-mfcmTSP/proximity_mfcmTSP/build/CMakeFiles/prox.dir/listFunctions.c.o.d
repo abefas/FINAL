@@ -1,5 +1,5 @@
 CMakeFiles/prox.dir/listFunctions.c.o: \
- /home/abefas/Desktop/FINAL/proximity/listFunctions.c \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/listFunctions.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -32,7 +32,7 @@ CMakeFiles/prox.dir/listFunctions.c.o: \
  /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/listFunctions.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/structs.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/listFunctions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/structs.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdbool.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/listFunctions.h
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/listFunctions.h

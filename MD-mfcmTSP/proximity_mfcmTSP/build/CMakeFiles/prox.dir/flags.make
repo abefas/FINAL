@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/abefas/Desktop/FINAL/proximity/header_files
+C_INCLUDES = -I/home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files
 
 C_FLAGS =  -O3
 

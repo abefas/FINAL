@@ -222,12 +222,14 @@ void printList(node *p){
 }
 
 void fprintList(node *p, FILE *fp){
-  while (p != NULL){
-    fprintf(fp, "%d ", p->data);
+    fprintf(fp, "%5d ", p->data);
     p = p->next;
-  }
-  fprintf(fp, "\n");
-  return;
+    while (p != NULL){
+        fprintf(fp, "%d ", p->data);
+        p = p->next;
+    }
+    fprintf(fp, "\n");
+    return;
 }
 
 node *copyList(node *head){

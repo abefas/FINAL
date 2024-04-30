@@ -1,5 +1,5 @@
 CMakeFiles/prox.dir/heuristic_prox.c.o: \
- /home/abefas/Desktop/FINAL/proximity/heuristic_prox.c \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/heuristic_prox.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -41,10 +41,10 @@ CMakeFiles/prox.dir/heuristic_prox.c.o: \
  /usr/include/bits/time.h /usr/include/bits/types/struct_tm.h \
  /usr/include/bits/types/struct_itimerspec.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/heuristic_main_functions.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/structs.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/heuristic_main_functions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/structs.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/13.2.1/include/stdbool.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/listFunctions.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/heuristic_misc_functions.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/listFunctions.h \
- /home/abefas/Desktop/FINAL/proximity/header_files/local_opt.h
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/listFunctions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/heuristic_misc_functions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/listFunctions.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/proximity_mfcmTSP/header_files/local_opt.h
