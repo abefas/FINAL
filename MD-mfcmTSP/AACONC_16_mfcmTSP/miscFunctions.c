@@ -515,7 +515,7 @@ double evaporate_pheromones(SON *G, int *edge_matrix, double *phMatrix, int edge
     return (H-H_min)/H_min; //Termination condition
 }
 
-static int loop_iteration = 1;
+extern int loop_iteration;
 
 void fprint_results(asolution *R, SON *G, VType *VT){
 
@@ -617,7 +617,5 @@ void fprint_data(int iterations, int best_iter, double foundtime, double runtime
         exit(1);
     }
     
-    loop_iteration++;
-
     return;
 }

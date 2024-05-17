@@ -13,10 +13,7 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
     for(int i = 0; i < G->n_customers; i++)
         v_free[i] = 1; //free = 1, not free = -1
 
-    int ivt, idepot, ilast, icluster, icustomer, launch_count[G->n_differentTypes];
-
-    for(int i = 0; i < G->n_differentTypes; i++)
-        launch_count[i] = 1;
+    int ivt, idepot, ilast, icluster, icustomer;
 
     node *v_candidates = NULL;
 
@@ -50,7 +47,7 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
                 continue;
 
 
-            ivt = selectVehicleType(idepot, Ra, VT, v_free, G, K, phMatrix, launch_count, da_access, n_size, n_prim);
+            ivt = selectVehicleType(idepot, Ra, VT, v_free, G, K, phMatrix, da_access, n_size, n_prim);
             if(ivt == -1)
                 continue;
             if(ivt < 0 || ivt > G->n_differentTypes - 1){
@@ -79,10 +76,6 @@ void antSolution(SON *G, VType *VT, int ***K, double *phMatrix, asolution *Ra, i
             icustomer = selectCustomer(idepot, ivt, ilast, v_candidates, phMatrix, G, da_access[2], a, b);
 
             deleteList(&v_candidates);
-        }
-
-        if(Ra->a_VT[ivt].a_depots[idepot].v_d == Ra->a_VT[ivt].a_depots[idepot].depot_id){
-            launch_count[ivt]++;
         }
 
         /* Insert selected customer to route and update values makespan, ilast, vehicle's load and v_free */

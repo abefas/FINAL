@@ -16,8 +16,33 @@ int selectDepot(asolution *Ra, int *v_free, SON *G, int ***K, double *phMatrix, 
 
     double p_sum = 0.0;
     rlist *rl = NULL;
-    int ilast, N = n_prim;
+    int ilast;
     node *v_cand = NULL;
+    for(int idepot = 0; idepot < G->n_depots; idepot++){
+        double prob_D = 0.0;
+        for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
+            if(G->a_depots[idepot].n_VT[ivt] != 0 && not_empty_clusters(v_free, G->n_customers, da_access[ivt])){
+                ilast = Ra->a_VT[ivt].a_depots[idepot].v_d - 1;
+                if(errCheck(ilast, 0, G->n_nodes-1) == 1){
+                    perror("ilast error in selectDepot.c\n");
+                    exit(1);
+                }
+                for(int icluster = 0; icluster < n_prim; icluster++)
+                    find_free_in_clusterk_VT(&v_cand, v_free, K[ivt][ilast], icluster, n_size);
+
+                if(v_cand){
+                    prob_D += calculate_pheromone_sum(idepot, ivt, ilast, v_cand, phMatrix, G->n_nodes, G->n_differentTypes);
+                    deleteList(&v_cand);
+                }
+            }
+        }
+        if(prob_D > 0.0){
+            push_rlist(&rl, idepot, prob_D);
+            p_sum += prob_D;
+        }
+    }
+
+    int s = n_prim, N = n_prim + 1;
     //In case no free customer exists in the primary clusters, then continue searching in the next cluster(s)
     while(p_sum == 0.0){
         for(int idepot = 0; idepot < G->n_depots; idepot++){
@@ -29,7 +54,7 @@ int selectDepot(asolution *Ra, int *v_free, SON *G, int ***K, double *phMatrix, 
                         perror("ilast error in selectDepot.c\n");
                         exit(1);
                     }
-                    for(int icluster = 0; icluster < N; icluster++)
+                    for(int icluster = s; icluster < N; icluster++)
                         find_free_in_clusterk_VT(&v_cand, v_free, K[ivt][ilast], icluster, n_size);
 
                     if(v_cand){
@@ -43,7 +68,8 @@ int selectDepot(asolution *Ra, int *v_free, SON *G, int ***K, double *phMatrix, 
                 p_sum += prob_D;
             }
         }
-        N++;    //Search n_prim+ clusters
+        N++;
+        s++;
     }
 
     int idepot;

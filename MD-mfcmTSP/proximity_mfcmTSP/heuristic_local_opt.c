@@ -114,7 +114,7 @@ void heuristic_local_opt(SON *G, VType *VT, int **da_access){
             R.total_makespan = R.a_VT[ivt].makespan;
     }
 
-    R.total_makespan = local_opt_full3(&R, G, da_access, VT);
+    //R.total_makespan = local_opt_full3(&R, G, da_access, VT);
 
 
     printf("total makespan = %0.2lf\n", R.total_makespan);

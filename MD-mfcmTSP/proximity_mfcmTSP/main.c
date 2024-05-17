@@ -9,7 +9,7 @@ int instance_id;
 int main(int argc, char **argv) {
 
     if(argc != 2){
-        printf("Usage: %s <version_number>\n", argv[0]);
+        printf("Usage: %s <instance_id>\n", argv[0]);
         exit(1);
     }else{
         if( sscanf(argv[1], "%02d", &instance_id) != 1) {
@@ -146,6 +146,7 @@ int main(int argc, char **argv) {
 
 
     heuristic_v1_2(&G, VT, da_access);
+
     /*
     heuristic_prox(&G, VT, da_access);
     heuristic_prox_2(&G, VT, da_access);

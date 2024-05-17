@@ -19,7 +19,7 @@ int selectCustomer(int idepot, int ivt, int ilast, node *v_cand, double *phMatri
         pheromones = phMatrix[idepot*G->n_differentTypes*G->n_nodes*G->n_nodes 
                               + ivt*G->n_nodes*G->n_nodes 
                               + ilast*G->n_nodes 
-                              + temp->data - 1];
+                              + (temp->data - 1)];
 
         if(pheromones < 0.0 - epsilon){
             perror("pheromones < 0.0 in selectCustomer\n");

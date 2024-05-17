@@ -1,32 +1,30 @@
-total makespan: 204.70
-t 1  d 51  route  1  q_s  5  time     203.86	    0 18 47 12 37 15 0 
-t 1  d 52  route  1  q_s  6  time     192.12	    0 6 48 1 32 11 46 0 
-t 1  d 53  route  1  q_s  4  time     185.51	    0 10 33 39 30 0 
-t 1  d 54  route  1  q_s  5  time     198.49	    0 20 35 3 22 2 0 
-type 1 makespan 203.86
-ivt_ms 203.858
-t 2  d 51  route  1  q_s  3  time     105.31	    0 13 25 4 0 
-t 2  d 51  route  2  q_s  3  time      99.05	    0 44 45 42 0 
-t 2  d 52  route  1  q_s  3  time     193.85	    0 28 24 14 0 
-t 2  d 53  route  1  q_s  2  time     204.70	    0 40 19 0 
-t 2  d 54  route  1  q_s  3  time     192.11	    0 23 7 8 0 
-type 2 makespan 204.70
-ivt_ms 204.697
-t 3  d 51  route  1  q_s  1  time      34.80	    0 41 0 
-t 3  d 51  route  2  q_s  1  time     161.69	    0 26 0 
-t 3  d 52  route  1  q_s  1  time      26.67	    0 27 0 
-t 3  d 52  route  2  q_s  1  time      57.54	    0 17 0 
-t 3  d 52  route  3  q_s  1  time     115.52	    0 43 0 
-t 3  d 53  route  1  q_s  1  time       9.43	    0 49 0 
-t 3  d 53  route  2  q_s  1  time      37.27	    0 16 0 
-t 3  d 53  route  3  q_s  1  time      12.02	    0 9 0 
-t 3  d 53  route  4  q_s  1  time      30.73	    0 50 0 
-t 3  d 53  route  5  q_s  1  time      33.33	    0 5 0 
-t 3  d 53  route  6  q_s  1  time      23.57	    0 38 0 
-t 3  d 53  route  7  q_s  1  time      38.01	    0 34 0 
-t 3  d 54  route  1  q_s  1  time      64.12	    0 36 0 
-t 3  d 54  route  2  q_s  1  time       9.43	    0 29 0 
-t 3  d 54  route  3  q_s  1  time      27.49	    0 21 0 
-t 3  d 54  route  4  q_s  1  time      99.44	    0 31 0 
-type 3 makespan 200.48
-ivt_ms 200.476
+total makespan: 188.00
+t 1  d 51  route  1  q_s  6  time     180.37	    0 4 17 37 15 45 44 0 
+t 1  d 52  route  1  q_s  4  time     168.44	    0 12 47 18 14 0 
+t 1  d 53  route  1  q_s  7  time     172.73	    0 49 38 11 16 50 34 9 0 
+t 1  d 54  route  1  q_s  3  time     181.90	    0 35 20 22 0 
+type 1 makespan 181.90
+ivt_ms 181.902
+t 2  d 51  route  1  q_s  2  time     102.34	    0 25 13 0 
+t 2  d 51  route  2  q_s  2  time      82.10	    0 19 40 0 
+t 2  d 52  route  1  q_s  3  time     110.17	    0 6 23 7 0 
+t 2  d 52  route  2  q_s  3  time      55.40	    0 27 32 46 0 
+t 2  d 53  route  1  q_s  3  time     105.12	    0 10 33 39 0 
+t 2  d 53  route  2  q_s  2  time      73.58	    0 5 30 0 
+t 2  d 54  route  1  q_s  1  time      11.31	    0 29 0 
+t 2  d 54  route  2  q_s  3  time     156.01	    0 26 31 28 0 
+type 2 makespan 184.43
+ivt_ms 184.432
+t 3  d 51  route  1  q_s  1  time     113.92	    0 24 0 
+t 3  d 51  route  2  q_s  1  time      33.50	    0 42 0 
+t 3  d 51  route  3  q_s  1  time      34.80	    0 41 0 
+t 3  d 52  route  1  q_s  1  time      46.31	    0 1 0 
+t 3  d 52  route  2  q_s  1  time      52.70	    0 48 0 
+t 3  d 52  route  3  q_s  1  time      73.41	    0 8 0 
+t 3  d 53  route  1  q_s  1  time     188.00	    0 43 0 
+t 3  d 54  route  1  q_s  1  time      53.75	    0 3 0 
+t 3  d 54  route  2  q_s  1  time      36.82	    0 2 0 
+t 3  d 54  route  3  q_s  1  time      64.12	    0 36 0 
+t 3  d 54  route  4  q_s  1  time      27.49	    0 21 0 
+type 3 makespan 188.00
+ivt_ms 188.001

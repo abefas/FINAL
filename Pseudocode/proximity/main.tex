@@ -1,0 +1,193 @@
+\documentclass[twocolumn]{article}
+\usepackage[linesnumbered,ruled,longend]{algorithm2e}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{multicol, relsize, geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\DontPrintSemicolon
+\SetKwFor{For}{for}{do}{end for}
+\SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{end if}%
+% Redefine \ForEach to display a vertical line under it
+\SetKwFor{ForEach}{for each}{}{end for}
+\geometry{top=1cm, bottom=2cm, left=1cm, right=1cm}
+\newcommand{\pluseq}{\mathrel{+}=}
+\title{MD-mfcmTSP algorithm}
+\author{Panagiotis Zachos}
+\date{May 2024}
+
+\begin{document}
+	\maketitle
+	
+	\section{Pseudocode for the MD-mfcmTSP}
+	At the end of Algorithm 1, a local optimization function (3) is called which in addition to moving nodes in different places in the same route, also moves nodes between routes of different depots and different vehicle types.\;
+	\begin{algorithm}
+
+		\small
+		\caption{MD-mfcmTSP heuristic}
+		\KwIn{$G_T, G_M, ..., G_D$}
+		\KwOut{$Sol = \{Sol^i = \{R_T^i, R_M^i, ...,R_D^i\}, Sol^{i+1}, ..., Sol^m\}$ for each $i\in D$}
+		
+		Create clusters $K^i$ of customer nodes for each depot $d^i\in D$\;
+		by assigning each customer to the closest possible depot\;
+		\For{each $d^i\in D$}{
+			
+			Call $Initialization(d^i, K^i)$\;
+			\While{$(M_T^i > M_M^i\parallel M_T^i > M_D^i)$ $\&\&$ $stop\neq true$}{
+				$diff_M = M_T^i - M_M^i$\;
+				$diff_D = M_T^i - M_D^i$\;
+				\uIf{$diff_M\ge diff_D$}{
+					$vt = M$\;
+					$cap =$ Motorbike's capacity\;
+				}\Else{
+					$vt = D$\;
+					$cap =$ 1\;
+				}
+				$M_{min} = M_T^i$\;
+				$r_{best} = \emptyset$\;
+				\For{$j=1$ to $|R_T^i| - cap$}{
+					$successive\_nodes = \emptyset$\;
+					$load = 0$\;
+					\While{$load + v_j^{demand} \leq cap$ $\&\&$ $v_j\in G_{vt}$}{
+						$successive\_nodes \pluseq v_j$\;
+					}
+					\If{$|successive\_nodes| == cap$}{
+						$r_{new} = R_T^i[0] + \{successive\_nodes\} + R_T^i[0]$\;
+						${R'}_{vt}^i = R_{vt}^i + r_{new}$\;
+						${M'}_{vt} = {R'}_{vt}^i$ 's makespan\;
+						${R'}_T^i = R_T^i - \{successive\_nodes\}$\;
+						${M'}_T = {R'}_T^i$ 's makespan\;
+						$M_{max} = MAX({M'}_T, {M'}_{vt})$\;
+						\If{$M_{max} < M_{min}$}{
+							$M_{min} = M_{max}$\;
+							$r_{best} = r_{new}$\;
+						}
+						$r_{new} = \emptyset$\;
+					}
+					$j\pluseq 1$\;
+				}
+				\uIf{$M_{min} < R_T^i$}{
+					$R_T^i = R_T^i - \{r_{best}^{customers}\}$\;
+					$M_T = R_T^i$ 's makespan\;
+					$R_{vt}^i\pluseq r_{best}$\;
+					$M_{vt} = R_{vt}^i$ 's makespan\;
+					Call $local\_optimization(R_T^i)$\;
+					Call $local\_optimization(R_{vt}^i)$\;
+				}\Else{ 
+					$stop = true$\;
+				}
+			}
+			$Sol^i = \{R_T^i, R_M^i, ..., R_D^i\}$\;
+		}
+		$M_T = MAX(M_T^i, M_T^{i+1}, ..., M_T^m)$\;
+		$M_M = MAX(M_M^i, M_M^{i+1}, ..., M_M^m)$\;
+		$M_D = MAX(M_D^i, M_D^{i+1}, ..., M_D^m)$\;
+		$M_{total} = MAX(M_T, M_M, ..., M_D)$\;
+	\end{algorithm}
+
+	\begin{algorithm}
+		\small
+		\caption{Initialization($d^i, K^i$)}
+		\While{$\{K^i\}\cap \{G_T\}\neq \emptyset$}{
+			$R_T^i\pluseq NearestNeighbour(\{K^i\}\cap \{G_T\})$\;
+		}
+		$M_T^i = R_T^i$ 's makespan\;
+		$v_{free} = \{K^i\} - \{G_T\}$\;
+		\uIf{$v_{free} = \emptyset$}{
+			\Return{$R_T^i$}\;
+		}\Else{
+			\While{$v_{free}\neq \emptyset$}{
+				\uIf{$M_T - M_M\geq M_T - M_D \parallel G_D = \emptyset$}{
+					$R_M^i\pluseq NearestNeighbour(\{K^i\}\cap \{G_M\})$\;
+					$v_{free} = v_{free} - \{R_M^i\}$\;
+					$M_M^i = R_M^i$ 's makespan\;
+				}\Else{
+					$R_D^i\pluseq closest(\{K^i\}\cap \{G_D\})$\;
+					$M_D^i = R_D^i$ 's makespan\;
+				}
+			}
+		}
+		\Return{$Sol^i$}\;
+	\end{algorithm}
+	
+	\begin{algorithm}
+		\small
+		\caption{$local\_opt\_full(Sol, n_{max})$}
+		Call $vt\_optimization(Sol, n_{max} = 2)$\;
+		\For{each $vt$}{
+			\For{each $i\in D$}{
+				Call $local\_optimization(R_{vt}^i, n_{max}=2)$\;
+			}
+			$M_{vt} = MAX(R_{vt}^i, R_{vt}^{i+1}, ..., R_{vt}^m)$\;
+			Call $mutual\_optimization(R_{vt}, n_{max}=2)$\;
+		}
+		Call $vt\_optimization(Sol, n_{max} = 2)$\;
+	\end{algorithm}
+	
+	\begin{algorithm}
+		\small
+		\caption{$local\_optimization(r, n_{max})$}
+		\For{$n=1$ to $n_{max}$}{
+			\ForEach{combination of $n$ successive nodes on the route}{
+				move the node(s) to a different place on the same route\;
+				evaluate the new route\;
+				\uIf{this route is better than the original and all constraints are satisfied}{
+					replace the original route with the new one\;
+				}
+				continue in point 3 unless all possible places in the route have been evaluated\;
+			}
+		}
+		\Return{$r$}\;
+	\end{algorithm}
+	
+	\begin{algorithm}
+		\small
+		\caption{$mutual\_optimization(R_{vt}, n_{max})$}
+		\For{$n = 1$ to $n_{max}$}{
+			\ForEach{possible pair of depots $c1$ and $c2$}{
+				\ForEach{combination of $n$ successive nodes in the route of c1}{
+					remove the nodes from the route of c1 and insert them into c2\;
+					evaluate the newly-created routes\;
+					\uIf{$MAX(|{R'}_{vt}^{c1}|, |{R'}_{vt}^{c2}|) < MAX(|{R}_{vt}^{c1}|, |{R}_{vt}^{c2}|)$ and all constraints are satisfied}{
+						replace the original routes with the new ones\;
+					}
+					continue in point 4 unless all possible places in c2 have been evaluated\;
+				}
+			}
+		}
+		\Return{$R_{VT}$}\;
+	\end{algorithm}
+	
+	\begin{algorithm}
+		\small
+		\caption{$vt\_optimization(Sol, n_{max})$}
+		\For{$n = 1$ to $n_{max}$}{
+			\ForEach{depot $i\in D$}{
+				\ForEach{possible pair of vehicle types $t1,t2\in VT$}{
+					\ForEach{combination of $n$ successive nodes in $R_{t1}^i$}{
+						remove the nodes from $R_{t1}^i$ and insert them in $R_{t2}^i$\;
+						\uIf{$MAX(|{R'}_{t1}^i|, |{R'}_{t2}^i|) < MAX(|{R}_{t1}^i|, |{R}_{t2}^i|)$ and all constraints are satisfied}{
+						replace the original routes with the new ones\;
+						}
+						continue in point 5 unless all possible places in $R_{t2}^i$ have been evaluated\;
+					}
+				}
+			}
+		}
+		\Return{$Sol$}\;
+	\end{algorithm}
+	\clearpage
+	\input{TABLE1.tex}\;
+	\input{TABLE2.tex}\;
+	\begin{figure}[t]
+		\includegraphics[width=\textwidth]{gaps_to_BKS}
+		\centering
+	\end{figure}
+	\clearpage
+	\begin{figure}[t]
+		\includegraphics[width=\textwidth]{Heuristic_LocalOpt_comparison}
+		\centering
+	\end{figure}
+
+\end{document}

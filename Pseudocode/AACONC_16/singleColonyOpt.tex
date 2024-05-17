@@ -1,0 +1,21 @@
+	\begin{algorithm}
+	\caption{singleColonyOptimization}
+	\SetKwProg{Fn}{Function}{}{}
+	
+	\Fn{singleColonyOptimization($R_{best}^{(t_i)(d_i)}, n_{max}$)}{
+		\For{n = 1 to $n_{max}$}{
+			\ForEach{combination of $n$ successive nodes in the route}{
+				move the nodes to a different place on the same route\\
+				evaluate the newly-created solution\\
+				\If{this solution is better than the original and all constraints are satisfied}{
+					replace the original with the new solution\\
+				}
+				continue in point 4 \textbf{unless} all possible places in the route have been already evaluated\\
+			}
+		}
+
+		\textbf{return} $R_{best}$\
+	}
+	
+\end{algorithm}
+

@@ -6,6 +6,7 @@
 #include <math.h>
 
 int instance_id;
+int loop_iteration = 1;
 
 int main(int argc, char **argv) {
 
@@ -169,9 +170,12 @@ int main(int argc, char **argv) {
 
     printf("MADE IT HERE\n");
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++){
         AACONC(&G, VT, da_access, n_ants, n_freq, n_size, n_sect, n_prim, T_update,
                a_update, p_min, p_max, d, a, b);
+
+        loop_iteration++;
+    }
 
     /* End of Program */
     for(int i = 0; i < G.n_nodes; i++){
