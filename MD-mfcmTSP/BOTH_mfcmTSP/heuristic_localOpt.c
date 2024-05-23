@@ -67,7 +67,7 @@ void heuristic_lo(SON *G, VType *VT, asolution *R, int **da_access, int *remaini
 
 
 
-    R->total_makespan = local_opt_full2(R, G, da_access, VT);
+    R->total_makespan = local_opt_full(R, G, da_access, VT);
 
 
     time_t finish_total = time(NULL);

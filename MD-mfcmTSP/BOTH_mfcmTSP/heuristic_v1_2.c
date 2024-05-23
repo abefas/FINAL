@@ -184,9 +184,6 @@ void heuristic_v1_2(SON *G, VType *VT, asolution *R, int **da_access, int *remai
                     ms2 = k_optimization2(&R->a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
             }else{
-                //No swap possible
-                printf("mt %0.2lf\t drone %0.2lf\n", R->a_VT[1].a_depots[IDEPOT].makespan, R->a_VT[2].a_depots[IDEPOT].makespan);
-                printf("truck %0.2lf\n", R->a_VT[0].a_depots[IDEPOT].makespan);
                 printf("min_cost %0.2lf\n", min_ms);
                 printf("STOPPED\n");
                 stop = 1;
@@ -220,7 +217,7 @@ void heuristic_v1_2(SON *G, VType *VT, asolution *R, int **da_access, int *remai
 
 
 
-    R->total_makespan = local_opt_full2(R, G, da_access, VT);
+    R->total_makespan = local_opt_full(R, G, da_access, VT);
 
 
     time_t finish_total = time(NULL);

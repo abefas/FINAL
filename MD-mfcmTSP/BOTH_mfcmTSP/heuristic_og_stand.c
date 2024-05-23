@@ -178,8 +178,8 @@ void heuristic_og_stand(SON *G, VType *VT, asolution *R, int **da_access, int *r
                     ms1 = k_optimization2(&R->a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
                     ms2 = k_optimization2(&R->a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
-                depot_VT_optimization_standalone(R, G, VT, IDEPOT, da_access, 1);
-                depot_VT_optimization_standalone(R, G, VT, IDEPOT, da_access, 2);
+                //depot_VT_optimization_standalone(R, G, VT, IDEPOT, da_access, 1);
+                //depot_VT_optimization_standalone(R, G, VT, IDEPOT, da_access, 2);
             }else{
                 //No swap possible
                 printf("min_cost %0.2lf\n", min_ms);

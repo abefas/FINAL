@@ -1,38 +1,34 @@
-total makespan: 250.60
-type 1  depot 51  route 1 q_s 3  time     143.51	    0 41 40 19 0 
-type 1  depot 52  route 1 q_s 2  time     240.28	    0 24 43 0 
-type 1  depot 53  route 1 q_s 4  time     203.38	    0 33 45 15 37 0 
-type 1  depot 54  route 1 q_s 1  time     250.60	    0 26 0 
-type 1 makespan 250.60
-fprint ivt_ms 250.599
-type 2  depot 51  route 1 q_s 1  time      24.00	    0 4 0 
-type 2  depot 51  route 2 q_s 3  time     121.88	    0 13 25 47 0 
-type 2  depot 52  route 1 q_s 3  time     112.46	    0 12 32 22 0 
-type 2  depot 52  route 2 q_s 3  time     110.46	    0 48 7 23 0 
-type 2  depot 53  route 1 q_s 3  time      75.87	    0 39 10 49 0 
-type 2  depot 53  route 2 q_s 3  time     101.45	    0 2 50 34 0 
-type 2  depot 54  route 1 q_s 2  time      80.62	    0 36 20 0 
-type 2  depot 54  route 2 q_s 3  time     123.54	    0 31 28 3 0 
-type 2 makespan 222.92
-fprint ivt_ms 222.917
-type 3  depot 51  route 1 q_s 1  time      44.47	    0 18 0 
-type 3  depot 51  route 2 q_s 1  time      37.27	    0 44 0 
-type 3  depot 51  route 3 q_s 1  time      33.50	    0 42 0 
-type 3  depot 51  route 4 q_s 1  time      25.39	    0 17 0 
-type 3  depot 52  route 1 q_s 1  time       7.45	    0 46 0 
-type 3  depot 52  route 2 q_s 1  time      60.37	    0 14 0 
-type 3  depot 52  route 3 q_s 1  time      46.31	    0 1 0 
-type 3  depot 52  route 4 q_s 1  time      38.01	    0 6 0 
-type 3  depot 52  route 5 q_s 1  time      26.67	    0 27 0 
-type 3  depot 53  route 1 q_s 1  time      37.27	    0 16 0 
-type 3  depot 53  route 2 q_s 1  time      12.02	    0 9 0 
-type 3  depot 53  route 3 q_s 1  time      45.34	    0 11 0 
-type 3  depot 53  route 4 q_s 1  time      33.33	    0 5 0 
-type 3  depot 53  route 5 q_s 1  time      28.48	    0 30 0 
-type 3  depot 53  route 6 q_s 1  time      23.57	    0 38 0 
-type 3  depot 54  route 1 q_s 1  time      43.84	    0 35 0 
-type 3  depot 54  route 2 q_s 1  time     104.62	    0 8 0 
-type 3  depot 54  route 3 q_s 1  time      27.49	    0 21 0 
-type 3  depot 54  route 4 q_s 1  time       9.43	    0 29 0 
-type 3 makespan 185.37
-fprint ivt_ms 185.374
+total makespan: 235.13
+1  51  r  1  q_s 5  time     219.52	    0 42 19 41 4 12 0 
+1  52  r  1  q_s 6  time     205.13	    0 11 32 1 27 48 6 0 
+1  53  r  1  q_s 5  time     210.03	    0 10 5 16 50 34 0 
+1  54  r  1  q_s 1  time     198.89	    0 31 0 
+type 1 makespan 219.52
+fprint ivt_ms 219.521
+2  51  r  1  q_s 3  time     113.25	    0 15 33 45 0 
+2  51  r  2  q_s 2  time     115.21	    0 14 13 0 
+2  52  r  1  q_s 3  time     134.89	    0 26 7 23 0 
+2  52  r  2  q_s 1  time     100.24	    0 24 0 
+2  53  r  1  q_s 1  time      34.18	    0 30 0 
+2  53  r  2  q_s 3  time     164.14	    0 38 3 35 0 
+2  54  r  1  q_s 2  time      63.26	    0 20 2 0 
+2  54  r  2  q_s 3  time     137.40	    0 22 28 36 0 
+type 2 makespan 235.13
+fprint ivt_ms 235.132
+3  51  r  1  q_s 1  time      37.27	    0 44 0 
+3  51  r  2  q_s 1  time      40.55	    0 37 0 
+3  51  r  3  q_s 1  time      25.39	    0 17 0 
+3  51  r  4  q_s 1  time      44.47	    0 18 0 
+3  51  r  5  q_s 1  time      68.39	    0 40 0 
+3  52  r  1  q_s 1  time      31.45	    0 47 0 
+3  52  r  2  q_s 1  time      73.41	    0 8 0 
+3  52  r  3  q_s 1  time     115.52	    0 43 0 
+3  53  r  1  q_s 1  time      12.02	    0 9 0 
+3  53  r  2  q_s 1  time       9.43	    0 49 0 
+3  53  r  3  q_s 1  time      67.08	    0 46 0 
+3  53  r  4  q_s 1  time      56.57	    0 21 0 
+3  53  r  5  q_s 1  time      58.31	    0 39 0 
+3  54  r  1  q_s 1  time       9.43	    0 29 0 
+3  54  r  2  q_s 1  time     181.14	    0 25 0 
+type 3 makespan 220.37
+fprint ivt_ms 220.374

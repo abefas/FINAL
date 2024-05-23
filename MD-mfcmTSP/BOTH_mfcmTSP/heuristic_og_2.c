@@ -211,7 +211,7 @@ void heuristic_og_2(SON *G, VType *VT, asolution *R, int **da_access, int *remai
             R->total_makespan = R->a_VT[ivt].makespan;
     }
 
-    R->total_makespan = local_opt_full2(R, G, da_access, VT);
+    R->total_makespan = local_opt_full(R, G, da_access, VT);
 
     time_t finish_total = time(NULL);
     double runtime_total = difftime(finish_total, begin_total);

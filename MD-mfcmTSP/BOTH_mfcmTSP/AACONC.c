@@ -103,7 +103,7 @@ void AACONC(SON *G, VType *VT, vt_solution *Rz, int **da_access, int *remaining,
     time_t begin = time(NULL), loop = time(NULL), loop_time = difftime(loop, begin);
 
     /********** Main loop **********/
-    while(stop_cond < 5000 && iter < 500000 && term_condition > (0.01 - epsilon) && loop_time < 3600)
+    while(stop_cond < 4000 && iter < 500000 && term_condition > (0.1 - epsilon) && loop_time < 3600)
     {
         R_best.makespan = HUGE_VAL;
         edge_sum = 0;

@@ -183,8 +183,8 @@ void heuristic_v1_stand(SON *G, VType *VT, asolution *R, int **da_access, int *r
                     ms1 = k_optimization2(&R->a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
                     ms2 = k_optimization2(&R->a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
-                depot_VT_optimization_standalone(R, G, VT, IDEPOT, da_access, 1);
-                depot_VT_optimization_standalone(R, G, VT, IDEPOT, da_access, 2);
+                //depot_VT_optimization_standalone(R, G, VT, IDEPOT, da_access, 1);
+                //depot_VT_optimization_standalone(R, G, VT, IDEPOT, da_access, 2);
             }else{
                 //No swap possible
                 printf("mt %0.2lf\t drone %0.2lf\n", R->a_VT[1].a_depots[IDEPOT].makespan, R->a_VT[2].a_depots[IDEPOT].makespan);

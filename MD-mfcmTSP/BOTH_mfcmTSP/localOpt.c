@@ -6,10 +6,10 @@
 #include "header_files/local_opt.h"
 #include "header_files/AACO_misc_functions.h"
 
-double local_opt_full2(asolution *R, SON *G, int **da_access, VType *VT){
+double local_opt_full(asolution *R, SON *G, int **da_access, VType *VT){
 
-    bool flag1 = true, flag2 = true;
-    while(flag1 || flag2){
+    bool flagVT[3] = {true}, flag3 = true;
+    while(flagVT[0] || flagVT[1] || flagVT[2] || flag3){
         R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 1);
         R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 2);
         for (int ivt = 0; ivt < G->n_differentTypes; ivt++) {
@@ -25,17 +25,17 @@ double local_opt_full2(asolution *R, SON *G, int **da_access, VType *VT){
                 double ms1 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 1);
                 double ms2 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 2);
                 if(ms1 < og - epsilon || ms2 < og - epsilon){
-                    flag1 = true;
+                    flagVT[ivt] = true;
                 }else{
-                    flag1 = false;
+                    flagVT[ivt] = false;
                 }
             } else {
                 double og = R->a_VT[ivt].makespan;
                 double ms = mutual_drone(&R->a_VT[ivt], G, VT[ivt]);
                 if(ms < og - epsilon){
-                    flag1 = true;
+                    flagVT[ivt] = true;
                 }else{
-                    flag1 = false;
+                    flagVT[ivt] = false;
                 }
             }
         }
@@ -45,109 +45,14 @@ double local_opt_full2(asolution *R, SON *G, int **da_access, VType *VT){
         R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 2);
 
         if(R->total_makespan < og - epsilon){
-            flag2 = true;
+            flag3 = true;
         }else{
-            flag2 = false;
+            flag3 = false;
         }
     }
 
-
     return R->total_makespan;
 }
-
-double local_opt_full(asolution *R, SON *G, int **da_access, VType *VT){
-
-    bool flag1 = true, flag2 = true;
-    while(flag1 || flag2){
-        //R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 1);
-        //R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 2);
-        for (int ivt = 0; ivt < G->n_differentTypes; ivt++) {
-            if (ivt != 2) {
-                for (int idep = 0; idep < G->n_depots; idep++) {
-                    if(G->a_depots[idep].n_VT[ivt] != 0){
-                        double ms1 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 1);
-                        double ms2 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 2);
-                    }
-                }
-                R->a_VT[ivt].makespan = get_makespan_VT(G, &R->a_VT[ivt]);
-                double og = R->a_VT[ivt].makespan;
-                double ms1 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 1);
-                double ms2 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 2);
-                if(ms1 < og - epsilon || ms2 < og - epsilon){
-                    flag1 = true;
-                }else{
-                    flag1 = false;
-                }
-            } else {
-                double og = R->a_VT[ivt].makespan;
-                double ms = mutual_drone(&R->a_VT[ivt], G, VT[ivt]);
-                if(ms < og - epsilon){
-                    flag1 = true;
-                }else{
-                    flag1 = false;
-                }
-            }
-        }
-        R->total_makespan = get_total_makespan(R,  G->n_differentTypes);
-        double og = R->total_makespan;
-        R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 1);
-        R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 2);
-
-        if(R->total_makespan < og - epsilon){
-            flag2 = true;
-        }else{
-            flag2 = false;
-        }
-    }
-
-
-    return R->total_makespan;
-}
-/*
-double local_opt_full(asolution *R, SON *G, int **da_access, VType *VT){
-
-    //R->total_makespan = depot_VT_optimization(R, G, VT, da_access, 1);
-    //R->total_makespan = depot_VT_optimization(R, G, VT, da_access, 2);
-
-    for (int ivt = 0; ivt < G->n_differentTypes; ivt++) {
-        bool flag = true;
-        while(flag){
-            if (ivt != 2) {
-                for (int idep = 0; idep < G->n_depots; idep++) {
-                    if(G->a_depots[idep].n_VT[ivt] != 0){
-                        double ms1 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 1);
-                        double ms2 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 2);
-                    }
-                }
-                R->a_VT[ivt].makespan = get_makespan_VT(G, &R->a_VT[ivt]);
-                double og = R->a_VT[ivt].makespan;
-                double ms1 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 1);
-                double ms2 = mutual_k_optimization(&R->a_VT[ivt], G, VT[ivt], 2, 2);
-                if(ms1 < og - epsilon || ms2 < og - epsilon){
-                    flag = true;
-                }else{
-                    flag = false;
-                }
-            } else {
-                double og = R->a_VT[ivt].makespan;
-                double ms = mutual_drone(&R->a_VT[ivt], G, VT[ivt]);
-                if(ms < og - epsilon){
-                    flag = true;
-                }else{
-                    flag = false;
-                }
-            }
-        }
-    }
-
-    R->total_makespan = get_total_makespan(R,  G->n_differentTypes);
-    R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 1);
-    R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 2);
-
-    return R->total_makespan;
-}
-*/
-
 
 double depot_VT_optimization(asolution *R, SON *G, VType *VT, int **da_access, int n_max){
 
@@ -296,154 +201,6 @@ double depot_VT_optimization(asolution *R, SON *G, VType *VT, int **da_access, i
 
     return R->total_makespan;
 }
-
-
-double depot_VT_optimization_standalone(asolution *R, SON *G, VType *VT, int idep, int **da_access, int n_max){
-
-    double ms_og = R->total_makespan;
-
-    node *successive_nodes = NULL, *l1 = NULL, *l2 = NULL, *p1 = NULL;
-
-    //For a depot with at least two different vehicle types, swap the customers between vehicles
-    //Swap if new_max_ms < max_ms
-    for(int t = 0; t < G->n_differentTypes; t++){
-        push(&R->a_VT[t].a_depots[idep].routelist, G->a_depots[idep].id);
-    }
-    //Removing duplicates at the end of the function
-
-    for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        if(G->a_depots[idep].n_VT[ivt] == 0 || !R->a_VT[ivt].a_depots[idep].routelist->next)
-        {
-            continue;
-        }
-        for(int ivt2 = 0; ivt2 < G->n_differentTypes; ivt2++){
-            if(ivt == ivt2 || G->a_depots[idep].n_VT[ivt2] == 0 || !R->a_VT[ivt2].a_depots[idep].routelist->next)
-            {
-                continue;
-            }
-            l1 = copyList(R->a_VT[ivt].a_depots[idep].routelist);
-            int length_l1 = listLength(l1);
-            int l1_position = 1, i_node;
-            int n_max_t = n_max;
-            if(ivt == 2 || ivt2 == 2) n_max_t = 1;
-            // move nodes in route
-            while(l1_position < length_l1-n_max_t){                                   //For every node(s) in l1
-                //Get ms of the two types
-                double max_ms;
-                if(R->a_VT[ivt].a_depots[idep].makespan < R->a_VT[ivt2].a_depots[idep].makespan - epsilon){
-                    max_ms = R->a_VT[ivt2].a_depots[idep].makespan;
-                }else{
-                    max_ms = R->a_VT[ivt].a_depots[idep].makespan;
-                }
-                //Get successive_nodes 
-                for(int i = 0; i < n_max_t; i++){
-                    i_node = getNth(l1, l1_position);                               //Get node(s) value
-                    if(i_node > G->n_customers || da_access[ivt2][i_node - 1] != 1){//Check node
-                        break;
-                    }         
-                    deleteInPosition(&l1, l1_position+1);
-                    append(&successive_nodes, i_node);
-                }
-                if(!successive_nodes || listLength(successive_nodes) != n_max_t){
-                    deleteList(&successive_nodes);
-                    deleteList(&l1);
-                    l1 = copyList(R->a_VT[ivt].a_depots[idep].routelist);
-                    l1_position++;
-                    continue;
-                }
-
-                double ivt_ms = get_makespan_depot_VT(G, l1, G->a_depots[idep].n_VT[ivt], VT[ivt].speed);
-                bool flag = false;  //Signals if a swap has been made
-
-                deleteList(&l2);
-                l2 = copyList(R->a_VT[ivt2].a_depots[idep].routelist);
-                //Move successive_nodes to every position in the route of ivt2
-                int node_position = 1;
-                node *p = l2;
-                while(p && p->next){
-                    node_position++;
-                    p1 = successive_nodes;
-                    while(p1){
-                        insertAfterNode(p, p1->data);
-                        p1 = p1->next;
-                        p = p->next;
-                    }
-
-                    //Check capacity feasibility
-                    int check = check_route_feasibility(l2, G, VT[ivt2].capacity);
-
-                    if(check == 0){
-
-                        double ivt2_ms = get_makespan_depot_VT(G, l2, G->a_depots[idep].n_VT[ivt2], VT[ivt2].speed);
-
-                        double new_max_ms;
-                        if(ivt_ms < ivt2_ms - epsilon){
-                            new_max_ms = ivt2_ms;
-                        }else{
-                            new_max_ms = ivt_ms;
-                        }
-                        //Accept swap if
-                        //new_max_ms < max_ms || (new_max_ms <= max_ms && sec_ms < R->a_depots[sec].makespan)
-                        //if max_ms is idep_ms then max_ms cannot change while moving nodes in sec
-                        //if max_ms is sec_ms then swap is only possible if sec has more than one vehicle
-                        //Summarize: Swap 
-                        //if combined ms of (ivt,ivt2) drops OR 
-                        //if ivt2_ms drops OR 
-                        //if ivt_ms drops without increasing ivt2_ms
-                        //Second condition: Allows for the successive_nodes to find the optimal place in sec
-                        //Third condition: sec has more than 1 vehicles and new_max_ms doesn't increase ivt2_ms
-                        if( new_max_ms < max_ms - epsilon || 
-                            (new_max_ms <= max_ms && ivt2_ms < R->a_VT[ivt2].a_depots[idep].makespan) ||
-                            (R->a_VT[ivt2].a_depots[idep].makespan == new_max_ms && ivt_ms < R->a_VT[ivt].a_depots[idep].makespan)
-                        ){
-                            deleteList(&R->a_VT[ivt].a_depots[idep].routelist);
-                            deleteList(&R->a_VT[ivt2].a_depots[idep].routelist);
-                            R->a_VT[ivt].a_depots[idep].routelist = copyList(l1);
-                            R->a_VT[ivt2].a_depots[idep].routelist = copyList(l2);
-                            R->a_VT[ivt].a_depots[idep].makespan = ivt_ms;
-                            R->a_VT[ivt2].a_depots[idep].makespan = ivt2_ms;
-                            max_ms = new_max_ms;
-                            flag = true;
-                        }
-                    }
-                    p = p->next;
-                    for(int i = 0; i < listLength(successive_nodes); i++)
-                        deleteInPosition(&l2, node_position);
-                    if(ivt2 == 2) break;    //Drone doesn't need to move places in ivt2
-                }
-                if(flag){                                                           //Swapped node_data to depot sec
-                    //If swap was made, get the updated l1 route
-                    deleteList(&l1);
-                    l1 = copyList(R->a_VT[ivt].a_depots[idep].routelist);
-                    length_l1 = listLength(l1);
-                    //node(s) where removed so index_l1 increment is not needed
-                }else{
-                    l1_position++;
-                    deleteList(&l1);
-                    l1 = copyList(R->a_VT[ivt].a_depots[idep].routelist);
-                }
-                deleteList(&l2);
-                deleteList(&successive_nodes);
-            }
-            //Changing ivt2
-            deleteList(&l1);
-        }
-        //Changing ivt
-    }
-
-    for(int t = 0; t < G->n_differentTypes; t++)
-        remove_duplicate_nodes(&R->a_VT[t].a_depots[idep].routelist);
-
-    R->total_makespan = 0.0;
-    for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        R->a_VT[ivt].makespan = get_makespan_VT(G, &R->a_VT[ivt]);
-        if(R->total_makespan < R->a_VT[ivt].makespan)
-            R->total_makespan = R->a_VT[ivt].makespan;
-    }
-
-    return R->total_makespan;
-}
-
 
 double k_optimization2(route *r, SON *G, VType VT, int n_max){
     if( !r->routelist ||
@@ -784,9 +541,8 @@ double mutual_drone(vt_solution *R, SON *G, VType VT){
 
 void remove_duplicate_nodes(node **combined_list){
     
-    if(!combined_list) return;
-
     node *current = *combined_list, *temp = NULL;
+    if(!current){perror("current == NULL at remove_duplicate_nodes at LocalOptimization\n"); }
     
     while(current && current->next){
         if(current->data == current->next->data){                   //If duplicate

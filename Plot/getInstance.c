@@ -8,7 +8,7 @@ struct vertex{
 
 int main(){
     FILE *fi;
-    if(NULL == (fi = fopen("../Instances/Cordeau_MDHVRP/p01-H.txt", "r"))){
+    if(NULL == (fi = fopen("../Instances/Cordeau_MDHVRP/p09-H.txt", "r"))){
         printf("Error opening fi\n");
         exit(1);
     }
@@ -33,7 +33,7 @@ int main(){
     }
 
     FILE *fn;
-    if(NULL == (fn = fopen("p07-H.csv", "w"))){
+    if(NULL == (fn = fopen("p09-H.csv", "w"))){
         printf("Error opening fi\n");
         exit(1);
     }

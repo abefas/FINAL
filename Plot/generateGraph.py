@@ -3,10 +3,10 @@ import matplotlib
 import matplotlib.pyplot as plt
 matplotlib.use('TkAgg')
 
-df = pd.read_csv('p01-H.csv')
-df_connections_T = pd.read_csv('p01_1_ivt_1.csv')
-df_connections_M = pd.read_csv('p01_1_ivt_2.csv')
-df_connections_D = pd.read_csv('p01_1_ivt_3.csv')
+df = pd.read_csv('p09-H.csv')
+df_connections_T = pd.read_csv('prox09_ivt_1.csv')
+df_connections_M = pd.read_csv('prox09_ivt_2.csv')
+df_connections_D = pd.read_csv('prox09_ivt_3.csv')
 
 x = df['Xposition']
 y = df['Yposition']

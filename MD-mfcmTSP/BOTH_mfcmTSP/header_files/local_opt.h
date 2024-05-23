@@ -2,8 +2,6 @@
 #define local_opt 
 #include "structs.h"
 
-double local_opt_full2(asolution *R, SON *G, int **da_access, VType *VT);
-
 double local_opt_full(asolution *R, SON *G, int **da_access, VType *VT);
 
 double depot_VT_optimization(asolution *R, SON *G, VType *VT, int **da_access, int n_max);

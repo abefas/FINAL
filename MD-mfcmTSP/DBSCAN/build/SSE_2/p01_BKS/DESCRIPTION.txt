@@ -1,0 +1,6 @@
+eps = 300
+minPts = 3
+iterations (kmeans) = 10
+iterations (heuristic) = 100
+k-means max iterations = 100
+Full Local Opt

@@ -1,35 +1,32 @@
-total makespan: 243.72
-type 1  depot 51  route 1 q_s 4  time     179.92	    0 37 15 42 19 0 
-type 1  depot 52  route 1 q_s 2  time     243.72	    0 7 43 0 
-type 1  depot 53  route 1 q_s 5  time     176.11	    0 10 39 34 50 9 0 
-type 1  depot 54  route 1 q_s 2  time     200.66	    0 31 28 0 
-type 1 makespan 243.72
-fprint ivt_ms 243.722
-type 2  depot 51  route 1 q_s 2  time      83.80	    0 44 47 0 
-type 2  depot 51  route 2 q_s 3  time     106.97	    0 18 25 13 0 
-type 2  depot 52  route 1 q_s 3  time      88.50	    0 6 1 32 0 
-type 2  depot 52  route 2 q_s 3  time     116.40	    0 48 26 8 0 
-type 2  depot 53  route 1 q_s 3  time     222.40	    0 45 40 41 0 
-type 2  depot 54  route 1 q_s 3  time      95.35	    0 20 3 36 0 
-type 2  depot 54  route 2 q_s 3  time     100.73	    0 30 16 29 0 
-type 2 makespan 222.40
-fprint ivt_ms 222.405
-type 3  depot 51  route 1 q_s 1  time      20.00	    0 4 0 
-type 3  depot 51  route 2 q_s 1  time      54.26	    0 12 0 
-type 3  depot 51  route 3 q_s 1  time      78.03	    0 14 0 
-type 3  depot 51  route 4 q_s 1  time      25.39	    0 17 0 
-type 3  depot 52  route 1 q_s 1  time      83.53	    0 24 0 
-type 3  depot 52  route 2 q_s 1  time      73.41	    0 23 0 
-type 3  depot 52  route 3 q_s 1  time      26.67	    0 27 0 
-type 3  depot 52  route 4 q_s 1  time       7.45	    0 46 0 
-type 3  depot 53  route 1 q_s 1  time       9.43	    0 49 0 
-type 3  depot 53  route 2 q_s 1  time      45.34	    0 11 0 
-type 3  depot 53  route 3 q_s 1  time      33.33	    0 5 0 
-type 3  depot 53  route 4 q_s 1  time      23.57	    0 38 0 
-type 3  depot 53  route 5 q_s 1  time      67.99	    0 33 0 
-type 3  depot 54  route 1 q_s 1  time      27.49	    0 21 0 
-type 3  depot 54  route 2 q_s 1  time      64.38	    0 22 0 
-type 3  depot 54  route 3 q_s 1  time      43.84	    0 35 0 
-type 3  depot 54  route 4 q_s 1  time      36.82	    0 2 0 
-type 3 makespan 191.06
-fprint ivt_ms 191.062
+total makespan: 278.53
+1  51  r  1  q_s 3  time     278.53	    0 30 9 38 0 
+1  52  r  1  q_s 4  time     240.58	    0 26 31 22 1 0 
+1  53  r  1  q_s 4  time     253.19	    0 42 17 37 5 0 
+1  54  r  1  q_s 6  time     234.35	    0 29 28 3 36 35 20 0 
+type 1 makespan 278.53
+fprint ivt_ms 278.532
+2  51  r  1  q_s 1  time      53.37	    0 18 0 
+2  51  r  2  q_s 2  time      67.51	    0 44 15 0 
+2  51  r  3  q_s 3  time     110.46	    0 41 13 25 0 
+2  52  r  1  q_s 3  time      93.30	    0 46 47 14 0 
+2  52  r  2  q_s 3  time     150.66	    0 8 7 24 0 
+2  53  r  1  q_s 1  time      36.22	    0 10 0 
+2  53  r  2  q_s 3  time     223.73	    0 50 33 19 0 
+2  54  r  1  q_s 2  time      68.66	    0 34 21 0 
+2  54  r  2  q_s 3  time     189.74	    0 6 23 48 0 
+type 2 makespan 259.95
+fprint ivt_ms 259.955
+3  51  r  1  q_s 1  time      20.00	    0 4 0 
+3  51  r  2  q_s 1  time      71.57	    0 45 0 
+3  51  r  3  q_s 1  time     131.06	    0 39 0 
+3  52  r  1  q_s 1  time      70.08	    0 2 0 
+3  52  r  2  q_s 1  time      73.41	    0 16 0 
+3  52  r  3  q_s 1  time     115.52	    0 43 0 
+3  53  r  1  q_s 1  time       9.43	    0 49 0 
+3  53  r  2  q_s 1  time      63.68	    0 12 0 
+3  53  r  3  q_s 1  time     170.00	    0 40 0 
+3  54  r  1  q_s 1  time      74.54	    0 32 0 
+3  54  r  2  q_s 1  time      67.08	    0 11 0 
+3  54  r  3  q_s 1  time     100.22	    0 27 0 
+type 3 makespan 259.01
+fprint ivt_ms 259.007

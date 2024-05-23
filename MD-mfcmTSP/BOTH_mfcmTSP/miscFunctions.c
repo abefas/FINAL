@@ -328,8 +328,8 @@ void update_pheromone(SON *G, vt_solution *R, vt_solution *R_best, double *phMat
     if(R->makespan < R_best->makespan - epsilon){           
         t = (R_best->makespan - R->makespan)/R->makespan;
         probability_R_best = exp(-t/T_update);                    
-        printf("T_update = %0.2lf\n", T_update);
-        printf("probability_R_best = %0.3lf\n", probability_R_best);
+        //printf("T_update = %0.2lf\n", T_update);
+        //printf("probability_R_best = %0.3lf\n", probability_R_best);
         if((double)random()/(double)RAND_MAX < probability_R_best - epsilon){
             R_update = R_best->makespan;                          //Use worse solution R_best
             flag = true;

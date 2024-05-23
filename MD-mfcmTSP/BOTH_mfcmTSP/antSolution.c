@@ -78,18 +78,19 @@ void antSolution(SON *G, VType VT, vt_solution *Ra, int **K, double *phMatrix, i
             deleteList(&v_candidates);
         }
 
+        //Vehicle returns to the depot to reload
+        if(Ra->a_depots[idepot].current_load == 0){
+            append(&Ra->a_depots[idepot].routelist, Ra->a_depots[idepot].depot_id);
+            Ra->a_depots[idepot].current_load = VT.capacity;
+            //Ra->a_depots[idepot].v_d = Ra->a_depots[idepot].depot_id;
+        }
+
         /* Insert selected customer to route and update values */
         append(&Ra->a_depots[idepot].routelist, icustomer+1);
         Ra->a_depots[idepot].v_d = icustomer + 1;
         Ra->a_depots[idepot].current_load -= G->a_customers[icustomer].demand;
         Ra->a_depots[idepot].quantity_served += G->a_customers[icustomer].demand;
 
-        //Vehicle returns to the depot to reload
-        if(Ra->a_depots[idepot].current_load == 0){
-            append(&Ra->a_depots[idepot].routelist, Ra->a_depots[idepot].depot_id);
-            Ra->a_depots[idepot].current_load = VT.capacity;
-            Ra->a_depots[idepot].v_d = Ra->a_depots[idepot].depot_id;
-        }
 
         v_free[icustomer] = -1;      //Mark customer as visited
 
