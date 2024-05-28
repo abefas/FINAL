@@ -4,6 +4,10 @@
 #include <stdbool.h>
 #include "structs.h"
 
+void save_clustering_to_csv(Point *points, Point *centroids, depot *depots, int num_points, int k);
+
+void plot_clusters(Point *points, Point *centroids, depot *depots, int num_points, int k);
+
 double get_makespan_depot_VT(SON *G, node *routelist, int n_vehicles, double speed);
 
 double get_makespan_VT(SON *G, vt_solution *R);

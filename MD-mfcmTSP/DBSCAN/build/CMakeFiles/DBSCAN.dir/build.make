@@ -167,10 +167,24 @@ CMakeFiles/DBSCAN.dir/heuristic_v1_2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DBSCAN.dir/heuristic_v1_2.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/heuristic_v1_2.c -o CMakeFiles/DBSCAN.dir/heuristic_v1_2.c.s
 
+CMakeFiles/DBSCAN.dir/kmeans.c.o: CMakeFiles/DBSCAN.dir/flags.make
+CMakeFiles/DBSCAN.dir/kmeans.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/kmeans.c
+CMakeFiles/DBSCAN.dir/kmeans.c.o: CMakeFiles/DBSCAN.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/DBSCAN.dir/kmeans.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DBSCAN.dir/kmeans.c.o -MF CMakeFiles/DBSCAN.dir/kmeans.c.o.d -o CMakeFiles/DBSCAN.dir/kmeans.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/kmeans.c
+
+CMakeFiles/DBSCAN.dir/kmeans.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/DBSCAN.dir/kmeans.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/kmeans.c > CMakeFiles/DBSCAN.dir/kmeans.c.i
+
+CMakeFiles/DBSCAN.dir/kmeans.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DBSCAN.dir/kmeans.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/kmeans.c -o CMakeFiles/DBSCAN.dir/kmeans.c.s
+
 CMakeFiles/DBSCAN.dir/listFunctions.c.o: CMakeFiles/DBSCAN.dir/flags.make
 CMakeFiles/DBSCAN.dir/listFunctions.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/listFunctions.c
 CMakeFiles/DBSCAN.dir/listFunctions.c.o: CMakeFiles/DBSCAN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/DBSCAN.dir/listFunctions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/DBSCAN.dir/listFunctions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DBSCAN.dir/listFunctions.c.o -MF CMakeFiles/DBSCAN.dir/listFunctions.c.o.d -o CMakeFiles/DBSCAN.dir/listFunctions.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/listFunctions.c
 
 CMakeFiles/DBSCAN.dir/listFunctions.c.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/DBSCAN.dir/listFunctions.c.s: cmake_force
 CMakeFiles/DBSCAN.dir/localOpt.c.o: CMakeFiles/DBSCAN.dir/flags.make
 CMakeFiles/DBSCAN.dir/localOpt.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/localOpt.c
 CMakeFiles/DBSCAN.dir/localOpt.c.o: CMakeFiles/DBSCAN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/DBSCAN.dir/localOpt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/DBSCAN.dir/localOpt.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DBSCAN.dir/localOpt.c.o -MF CMakeFiles/DBSCAN.dir/localOpt.c.o.d -o CMakeFiles/DBSCAN.dir/localOpt.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/localOpt.c
 
 CMakeFiles/DBSCAN.dir/localOpt.c.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/DBSCAN.dir/localOpt.c.s: cmake_force
 CMakeFiles/DBSCAN.dir/miscFunctions.c.o: CMakeFiles/DBSCAN.dir/flags.make
 CMakeFiles/DBSCAN.dir/miscFunctions.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/miscFunctions.c
 CMakeFiles/DBSCAN.dir/miscFunctions.c.o: CMakeFiles/DBSCAN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/DBSCAN.dir/miscFunctions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/DBSCAN.dir/miscFunctions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DBSCAN.dir/miscFunctions.c.o -MF CMakeFiles/DBSCAN.dir/miscFunctions.c.o.d -o CMakeFiles/DBSCAN.dir/miscFunctions.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/miscFunctions.c
 
 CMakeFiles/DBSCAN.dir/miscFunctions.c.i: cmake_force
@@ -209,6 +223,20 @@ CMakeFiles/DBSCAN.dir/miscFunctions.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DBSCAN.dir/miscFunctions.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/miscFunctions.c -o CMakeFiles/DBSCAN.dir/miscFunctions.c.s
 
+CMakeFiles/DBSCAN.dir/plot.c.o: CMakeFiles/DBSCAN.dir/flags.make
+CMakeFiles/DBSCAN.dir/plot.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/plot.c
+CMakeFiles/DBSCAN.dir/plot.c.o: CMakeFiles/DBSCAN.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/DBSCAN.dir/plot.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/DBSCAN.dir/plot.c.o -MF CMakeFiles/DBSCAN.dir/plot.c.o.d -o CMakeFiles/DBSCAN.dir/plot.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/plot.c
+
+CMakeFiles/DBSCAN.dir/plot.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/DBSCAN.dir/plot.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/plot.c > CMakeFiles/DBSCAN.dir/plot.c.i
+
+CMakeFiles/DBSCAN.dir/plot.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/DBSCAN.dir/plot.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/plot.c -o CMakeFiles/DBSCAN.dir/plot.c.s
+
 # Object files for target DBSCAN
 DBSCAN_OBJECTS = \
 "CMakeFiles/DBSCAN.dir/main.c.o" \
@@ -218,9 +246,11 @@ DBSCAN_OBJECTS = \
 "CMakeFiles/DBSCAN.dir/createClusters.c.o" \
 "CMakeFiles/DBSCAN.dir/heuristic_local_opt.c.o" \
 "CMakeFiles/DBSCAN.dir/heuristic_v1_2.c.o" \
+"CMakeFiles/DBSCAN.dir/kmeans.c.o" \
 "CMakeFiles/DBSCAN.dir/listFunctions.c.o" \
 "CMakeFiles/DBSCAN.dir/localOpt.c.o" \
-"CMakeFiles/DBSCAN.dir/miscFunctions.c.o"
+"CMakeFiles/DBSCAN.dir/miscFunctions.c.o" \
+"CMakeFiles/DBSCAN.dir/plot.c.o"
 
 # External object files for target DBSCAN
 DBSCAN_EXTERNAL_OBJECTS =
@@ -232,12 +262,14 @@ DBSCAN: CMakeFiles/DBSCAN.dir/NearestNeighbour.c.o
 DBSCAN: CMakeFiles/DBSCAN.dir/createClusters.c.o
 DBSCAN: CMakeFiles/DBSCAN.dir/heuristic_local_opt.c.o
 DBSCAN: CMakeFiles/DBSCAN.dir/heuristic_v1_2.c.o
+DBSCAN: CMakeFiles/DBSCAN.dir/kmeans.c.o
 DBSCAN: CMakeFiles/DBSCAN.dir/listFunctions.c.o
 DBSCAN: CMakeFiles/DBSCAN.dir/localOpt.c.o
 DBSCAN: CMakeFiles/DBSCAN.dir/miscFunctions.c.o
+DBSCAN: CMakeFiles/DBSCAN.dir/plot.c.o
 DBSCAN: CMakeFiles/DBSCAN.dir/build.make
 DBSCAN: CMakeFiles/DBSCAN.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable DBSCAN"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable DBSCAN"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DBSCAN.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

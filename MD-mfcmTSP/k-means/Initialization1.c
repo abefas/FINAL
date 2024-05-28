@@ -5,11 +5,9 @@
 void initialization1(SON *G, asolution *R, VType *VT, int **da_access, 
                      adj_node **adj_matrix, int *cluster, int n, int depotID){
 
-    int *v_free;
-    if(NULL == (v_free = calloc(G->n_customers, sizeof *v_free))){
-        perror("Error callocing v_free!\n");
-        exit(1);
-    }
+    int v_free[G->n_customers];
+    for(int i = 0; i < G->n_customers; i++)
+        v_free[i] = 0;
 
     //Get customers that are not in Truck route
     for(int i = 0; i < n; i++){
@@ -80,8 +78,6 @@ void initialization1(SON *G, asolution *R, VType *VT, int **da_access,
                 get_makespan_depot_VT(G, R->a_VT[1].a_depots[idep].routelist, G->a_depots[idep].n_VT[1], VT[1].speed);
         }
     }
-
-    free(v_free);
 
     return;
 }

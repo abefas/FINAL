@@ -1,0 +1,60 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table*}[]
+	\caption{Local optimization impact on heuristic using k-means clustering}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{@{}cccccccccc@{}}
+			\toprule
+			\textbf{Instance} & \textbf{Best} & \textbf{Full Local Opt} & \textbf{gap(\%)} & \textbf{No Local Opt} & \textbf{gap(\%)} & \textbf{Final Only} & \textbf{gap(\%)} & \textbf{Swap Only} & \textbf{gap(\%)} \\ \midrule
+			p01 & \textbf{191.03} & \textbf{191.03} & 0.00 & 225.72 & 18.16 & 202.96 & 6.25 & 201.60 & 5.53 \\
+			\midrule
+			p02 & \textbf{187.17} & 188.60 & 0.76 & 209.39 & 11.87 & \textbf{187.17} & 0.00 & 198.02 & 5.80 \\
+			\midrule
+			p03 & \textbf{185.82} & \textbf{185.82} & 0.00 & 200.64 & 7.98 & 188.63 & 1.51 & 198.01 & 6.56 \\
+			\midrule
+			p04 & \textbf{694.96} & \textbf{694.96} & 0.00 & 807.71 & 16.22 & 700.95 & 0.86 & \textbf{694.96} & 0.00 \\
+			\midrule
+			p05 & \textbf{624.33} & \textbf{624.33} & 0.00 & 695.79 & 11.45 & 629.61 & 0.85 & 642.77 & 2.95 \\
+			\midrule
+			p06 & \textbf{416.25} & \textbf{416.25} & 0.00 & 492.31 & 18.27 & 417.09 & 0.20 & 456.81 & 9.74 \\
+			\midrule
+			p07 & \textbf{313.57} & 314.41 & 0.27 & 359.30 & 14.58 & \textbf{313.57} & 0.00 & 339.09 & 8.14 \\
+			\midrule
+			p08 & \textbf{3051.63} & 3186.02 & 4.40 & 3288.45 & 7.76 & \textbf{3051.63} & 0.00 & 3256.46 & 6.71 \\
+			\midrule
+			p09 & \textbf{1932.21} & 1964.49 & 1.67 & 2099.99 & 8.68 & \textbf{1932.21} & 0.00 & 2031.19 & 5.12 \\
+			\midrule
+			p10 & \textbf{1463.63} & 1500.38 & 2.51 & 1636.23 & 11.79 & \textbf{1463.63} & 0.00 & 1658.74 & 13.33 \\
+			\midrule
+			p11 & \textbf{1031.09} & \textbf{1031.09} & 0.00 & 1209.73 & 17.33 & 1060.37 & 2.84 & 1080.39 & 4.78 \\
+			\midrule
+			p12 & \textbf{1273.77} & \textbf{1273.77} & 0.00 & 1356.09 & 6.46 & 1307.11 & 2.62 & \textbf{1273.77} & 0.00 \\
+			\midrule
+			p13 & \textbf{1191.96} & 1226.63 & 2.91 & 1455.87 & 22.14 & \textbf{1191.96} & 0.00 & 1259.97 & 5.71 \\
+			\midrule
+			p14 & \textbf{1248.53} & 1284.73 & 2.90 & 1413.87 & 13.24 & \textbf{1248.53} & 0.00 & 1302.34 & 4.31 \\
+			\midrule
+			p15 & \textbf{1295.23} & \textbf{1295.23} & 0.00 & 1434.72 & 10.77 & 1303.76 & 0.66 & \textbf{1295.23} & 0.00 \\
+			\midrule
+			p16 & \textbf{1289.29} & \textbf{1289.29} & 0.00 & 1436.36 & 11.41 & 1328.00 & 3.00 & \textbf{1289.29} & 0.00 \\
+			\midrule
+			p17 & \textbf{1273.39} & \textbf{1273.39} & 0.00 & 1375.55 & 8.02 & 1282.38 & 0.71 & 1283.38 & 0.78 \\
+			\midrule
+			p18 & \textbf{1211.56} & \textbf{1211.56} & 0.00 & 1369.81 & 13.06 & 1243.53 & 2.64 & 1280.85 & 5.72 \\
+			\midrule
+			p19 & \textbf{1248.93} & \textbf{1248.93} & 0.00 & 1384.13 & 10.83 & 1263.35 & 1.15 & 1281.68 & 2.62 \\
+			\midrule
+			p20 & \textbf{1234.12} & \textbf{1234.12} & 0.00 & 1389.60 & 12.60 & 1256.25 & 1.79 & 1267.53 & 2.71 \\
+			\midrule
+			p21 & \textbf{1231.23} & \textbf{1231.23} & 0.00 & 1354.91 & 10.05 & 1261.89 & 2.49 & 1278.10 & 3.81 \\
+			\midrule
+			p22 & \textbf{1230.99} & \textbf{1230.99} & 0.00 & 1379.49 & 12.06 & 1250.49 & 1.58 & 1265.17 & 2.78 \\
+			\midrule
+			p23 & \textbf{1222.63} & \textbf{1222.63} & 0.00 & 1363.52 & 11.52 & 1233.67 & 0.90 & 1250.29 & 2.26 \\
+			\midrule
+			Average & \textbf{1088.84} & 1100.86 & 0.67 & 1214.75 & 12.45 & 1100.81 & 1.31 & 1134.16 & 4.32 \\
+			\bottomrule
+		\end{tabular}%
+	}
+\end{table*}

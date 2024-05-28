@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 #include "header_files/heuristic_main_functions.h"
 #include "header_files/heuristic_misc_functions.h"
 #include "header_files/listFunctions.h"
 #include "header_files/local_opt.h"
+#include "header_files/structs.h"
 
-void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
+void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz, ClusterData *dbscan, plotClusters *pl){
 
     //time_t begin = time(NULL);
 
@@ -14,7 +16,7 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
     //e.g. if closest depot has only drones but customer cannot be accessed by drones then customer 
     //goes into the second closest depot's cluster
     //ClusterData cd = createClusters(G, da_access);
-    ClusterData cd = DBSCAN_plus_kmeans(G);
+    ClusterData cd = kmeans(G, dbscan);
 
     /* Generate files to visualize the clustering *
     char fn[15];
@@ -235,12 +237,14 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
 
                 remove_duplicate_nodes(&R.a_VT[0].a_depots[IDEPOT].routelist);
                 remove_duplicate_nodes(&R.a_VT[type].a_depots[IDEPOT].routelist);
+                /*
                 double ms1 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 1);
                 double ms2 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 2);
                 if(type != 2){
                     ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
                     ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
+                */
             }else{
                 printf("min_cost %0.2lf\n", min_ms);
                 printf("STOPPED\n");
@@ -278,10 +282,10 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
 
     printf("total makespan = %0.2lf\n", R.total_makespan);
 
-    //time_t finish = time(NULL);
-    //double runtime = difftime(finish, begin);
 
     if(R.total_makespan < Rz->total_makespan - epsilon){
+        memcpy(pl->points, cd.points, G->n_customers * sizeof *cd.points);
+        memcpy(pl->centroids, cd.centroids, G->n_depots * sizeof *cd.centroids);
         for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
             for(int idep = 0; idep < G->n_depots; idep++){
                 deleteList(&Rz->a_VT[ivt].a_depots[idep].routelist);
@@ -292,9 +296,6 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
         }
         Rz->total_makespan = R.total_makespan;
     }
-
-    //fprint_results(&R, G, VT);
-    //fprint_data(runtime);
 
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         for(int idep = 0; idep < G->n_depots; idep++){
@@ -310,6 +311,8 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
     }
     free(cd.cluster);
     free(cd.limit);
+    free(cd.points);
+    free(cd.centroids);
 
 
     return;

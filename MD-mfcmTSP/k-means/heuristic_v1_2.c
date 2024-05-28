@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 #include "header_files/heuristic_main_functions.h"
 #include "header_files/heuristic_misc_functions.h"
 #include "header_files/listFunctions.h"
 #include "header_files/local_opt.h"
 
-void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
+void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz, plotClusters *pl){
 
     //time_t begin = time(NULL);
 
@@ -233,17 +234,15 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
 
                 remove_duplicate_nodes(&R.a_VT[0].a_depots[IDEPOT].routelist);
                 remove_duplicate_nodes(&R.a_VT[type].a_depots[IDEPOT].routelist);
-                /*
                 double ms1 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 1);
                 double ms2 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 2);
                 if(type != 2){
                     ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
                     ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
-                */
             }else{
-                printf("min_cost %0.2lf\n", min_ms);
-                printf("STOPPED\n");
+                //printf("min_cost %0.2lf\n", min_ms);
+                //printf("STOPPED\n");
                 stop = 1;
             }
             deleteList(&route_best);    //best route was added to motorcycle or drone
@@ -269,19 +268,21 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         R.a_VT[ivt].makespan = get_makespan_VT(G, &R.a_VT[ivt]);
 
-        printf("vt %d makespan: %0.2lf\n", ivt, R.a_VT[ivt].makespan);
+        //printf("vt %d makespan: %0.2lf\n", ivt, R.a_VT[ivt].makespan);
         if(R.total_makespan < R.a_VT[ivt].makespan)
             R.total_makespan = R.a_VT[ivt].makespan;
     }
 
     R.total_makespan = local_opt_full2(&R, G, da_access, VT);
 
-    printf("total makespan = %0.2lf\n", R.total_makespan);
+    //printf("total makespan = %0.2lf\n", R.total_makespan);
 
     //time_t finish = time(NULL);
     //double runtime = difftime(finish, begin);
 
-    if(R.total_makespan < Rz->total_makespan - epsilon){
+    //if(R.total_makespan < Rz->total_makespan - epsilon){
+        memcpy(pl->points, cd.points, G->n_customers * sizeof *cd.points);
+        memcpy(pl->centroids, cd.centroids, G->n_depots * sizeof *cd.centroids);
         for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
             for(int idep = 0; idep < G->n_depots; idep++){
                 deleteList(&Rz->a_VT[ivt].a_depots[idep].routelist);
@@ -291,7 +292,7 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
             Rz->a_VT[ivt].makespan = R.a_VT[ivt].makespan;
         }
         Rz->total_makespan = R.total_makespan;
-    }
+    //}
 
     //fprint_results(&R, G, VT);
     //fprint_data(runtime);
@@ -310,6 +311,8 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz){
     }
     free(cd.cluster);
     free(cd.limit);
+    free(cd.points);
+    free(cd.centroids);
 
 
     return;

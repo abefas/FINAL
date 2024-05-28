@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/header_files
 
-C_FLAGS =  -O3
+C_FLAGS =  -O3 -fopenmp
 

@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/DBSCAN.c" "CMakeFiles/k_means.dir/DBSCAN.c.o" "gcc" "CMakeFiles/k_means.dir/DBSCAN.c.o.d"
   "/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/Initialization1.c" "CMakeFiles/k_means.dir/Initialization1.c.o" "gcc" "CMakeFiles/k_means.dir/Initialization1.c.o.d"
   "/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/NearestNeighbour.c" "CMakeFiles/k_means.dir/NearestNeighbour.c.o" "gcc" "CMakeFiles/k_means.dir/NearestNeighbour.c.o.d"
   "/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/createClusters.c" "CMakeFiles/k_means.dir/createClusters.c.o" "gcc" "CMakeFiles/k_means.dir/createClusters.c.o.d"

@@ -63,6 +63,9 @@ ax.yaxis.set_major_locator(plt.MultipleLocator(2))
 # Apply custom formatting function to y-axis ticks
 ax.yaxis.set_major_formatter(FuncFormatter(percentage))
 
+# Increase font size
+plt.rc('font', size=14)
+
 # Show plot
 plt.tight_layout()  # Adjust layout to prevent labels from being cut off
 plt.show()

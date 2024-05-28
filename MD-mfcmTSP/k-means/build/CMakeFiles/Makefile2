@@ -81,12 +81,12 @@ clean: CMakeFiles/k_means.dir/clean
 CMakeFiles/k_means.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target k_means"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target k_means"
 .PHONY : CMakeFiles/k_means.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/k_means.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/k_means.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles 0
 .PHONY : CMakeFiles/k_means.dir/rule

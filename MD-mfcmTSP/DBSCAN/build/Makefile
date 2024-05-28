@@ -273,6 +273,30 @@ heuristic_v1_2.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DBSCAN.dir/build.make CMakeFiles/DBSCAN.dir/heuristic_v1_2.c.s
 .PHONY : heuristic_v1_2.c.s
 
+kmeans.o: kmeans.c.o
+.PHONY : kmeans.o
+
+# target to build an object file
+kmeans.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DBSCAN.dir/build.make CMakeFiles/DBSCAN.dir/kmeans.c.o
+.PHONY : kmeans.c.o
+
+kmeans.i: kmeans.c.i
+.PHONY : kmeans.i
+
+# target to preprocess a source file
+kmeans.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DBSCAN.dir/build.make CMakeFiles/DBSCAN.dir/kmeans.c.i
+.PHONY : kmeans.c.i
+
+kmeans.s: kmeans.c.s
+.PHONY : kmeans.s
+
+# target to generate assembly for a file
+kmeans.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DBSCAN.dir/build.make CMakeFiles/DBSCAN.dir/kmeans.c.s
+.PHONY : kmeans.c.s
+
 listFunctions.o: listFunctions.c.o
 .PHONY : listFunctions.o
 
@@ -369,6 +393,30 @@ miscFunctions.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DBSCAN.dir/build.make CMakeFiles/DBSCAN.dir/miscFunctions.c.s
 .PHONY : miscFunctions.c.s
 
+plot.o: plot.c.o
+.PHONY : plot.o
+
+# target to build an object file
+plot.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DBSCAN.dir/build.make CMakeFiles/DBSCAN.dir/plot.c.o
+.PHONY : plot.c.o
+
+plot.i: plot.c.i
+.PHONY : plot.i
+
+# target to preprocess a source file
+plot.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DBSCAN.dir/build.make CMakeFiles/DBSCAN.dir/plot.c.i
+.PHONY : plot.c.i
+
+plot.s: plot.c.s
+.PHONY : plot.s
+
+# target to generate assembly for a file
+plot.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DBSCAN.dir/build.make CMakeFiles/DBSCAN.dir/plot.c.s
+.PHONY : plot.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -396,6 +444,9 @@ help:
 	@echo "... heuristic_v1_2.o"
 	@echo "... heuristic_v1_2.i"
 	@echo "... heuristic_v1_2.s"
+	@echo "... kmeans.o"
+	@echo "... kmeans.i"
+	@echo "... kmeans.s"
 	@echo "... listFunctions.o"
 	@echo "... listFunctions.i"
 	@echo "... listFunctions.s"
@@ -408,6 +459,9 @@ help:
 	@echo "... miscFunctions.o"
 	@echo "... miscFunctions.i"
 	@echo "... miscFunctions.s"
+	@echo "... plot.o"
+	@echo "... plot.i"
+	@echo "... plot.s"
 .PHONY : help
 
 

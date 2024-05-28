@@ -75,9 +75,25 @@ typedef struct closest{
     double distance;
 }closest;
 
+
+// Define a point structure
+typedef struct {
+    double x;
+    double y;
+    int cluster;
+} Point;
+
+typedef struct {
+    Point *points;
+    Point *centroids;
+} plotClusters;
+
 typedef struct Cluster{
     int **cluster;
     int *limit;
+    Point *points;
+    Point *centroids;
+    int n_clusters;
 }ClusterData; 
 
 #endif

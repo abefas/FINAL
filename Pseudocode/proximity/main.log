@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.4.16)  22 MAY 2024 19:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.4.16)  28 MAY 2024 19:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -687,27 +687,48 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \backup@length=\skip78
 \ar@cellbox=\box120
 ))
+(/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen310
+\captionmargin=\dimen311
+\caption@leftmargin=\dimen312
+\caption@rightmargin=\dimen313
+\caption@width=\dimen314
+\caption@indent=\dimen315
+\caption@parindent=\dimen316
+\caption@hangindent=\dimen317
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count324
+\c@continuedfloat=\count325
+)
+(/usr/share/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
+)
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count324
+\l__color_backend_stack_int=\count326
 \l__pdf_internal_box=\box121
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -745,16 +766,16 @@ LaTeX Font Info:    ... okay on input line 20.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count325
-\scratchdimen=\dimen310
+\scratchcounter=\count327
+\scratchdimen=\dimen318
 \scratchbox=\box122
-\nofMPsegments=\count326
-\nofMParguments=\count327
+\nofMPsegments=\count328
+\nofMParguments=\count329
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count328
-\MPscratchDim=\dimen311
-\MPnumerator=\count329
-\makeMPintoPDFobject=\count330
+\MPscratchCnt=\count330
+\MPscratchDim=\dimen319
+\MPnumerator=\count331
+\makeMPintoPDFobject=\count332
 \everyMPtoPDFconversion=\toks51
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -769,14 +790,16 @@ e
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 20.
+ on input line 24.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -792,51 +815,52 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 4.
 
-) (./TABLE2.tex)
-<gaps_to_BKS.png, id=31, 1365.1803pt x 700.2963pt>
-File: gaps_to_BKS.png Graphic file (type png)
-<use gaps_to_BKS.png>
-Package pdftex.def Info: gaps_to_BKS.png  used on input line 184.
+) (./TABLE2.tex) (./TABLE3.tex
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 4.
+
+) [4
+
+
+
+] [5] [6] [7]
+<gaps_to_aco_best.png, id=44, 1365.1803pt x 700.2963pt>
+File: gaps_to_aco_best.png Graphic file (type png)
+<use gaps_to_aco_best.png>
+Package pdftex.def Info: gaps_to_aco_best.png  used on input line 199.
 (pdftex.def)             Requested size: 557.38951pt x 285.92654pt.
-
-Overfull \hbox (283.69476pt too wide) in paragraph at lines 184--186
- [][] 
- []
-
-[4
-
-
-
- <./gaps_to_BKS.png>] [5] [6]
-<Heuristic_LocalOpt_comparison.png, id=43, 1365.1803pt x 700.2963pt>
-File: Heuristic_LocalOpt_comparison.png Graphic file (type png)
-<use Heuristic_LocalOpt_comparison.png>
-Package pdftex.def Info: Heuristic_LocalOpt_comparison.png  used on input line 
-189.
+<local_opt_comp_to_full.png, id=46, 1365.1803pt x 700.2963pt>
+File: local_opt_comp_to_full.png Graphic file (type png)
+<use local_opt_comp_to_full.png>
+Package pdftex.def Info: local_opt_comp_to_full.png  used on input line 204.
 (pdftex.def)             Requested size: 557.38951pt x 285.92654pt.
-
-Overfull \hbox (283.69476pt too wide) in paragraph at lines 189--191
- [][] 
- []
-
-[7
-
-
-
- <./Heuristic_LocalOpt_comparison.png>] (./main.aux)
+<local_opt_comp_to_full_kmeans.png, id=47, 1365.1803pt x 700.2963pt>
+File: local_opt_comp_to_full_kmeans.png Graphic file (type png)
+<use local_opt_comp_to_full_kmeans.png>
+Package pdftex.def Info: local_opt_comp_to_full_kmeans.png  used on input line 
+209.
+(pdftex.def)             Requested size: 557.38951pt x 285.92654pt.
+<kmeans-01.png, id=48, 1927.2pt x 1084.05pt>
+File: kmeans-01.png Graphic file (type png)
+<use kmeans-01.png>
+Package pdftex.def Info: kmeans-01.png  used on input line 213.
+(pdftex.def)             Requested size: 557.38951pt x 313.52284pt.
+ [8 <./gaps_to_aco_best.png> <./local_opt_comp_to_full.png>]
+[9 <./local_opt_comp_to_full_kmeans.png> <./kmeans-01.png>] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 25514 strings out of 476076
- 649391 string characters out of 5793775
- 1970187 words of memory out of 5000000
- 47206 multiletter control sequences out of 15000+600000
+ 26909 strings out of 476076
+ 676511 string characters out of 5793775
+ 1974187 words of memory out of 5000000
+ 48589 multiletter control sequences out of 15000+600000
  568831 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 99i,25n,107p,726b,702s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,25n,107p,726b,721s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public
@@ -851,10 +875,10 @@ dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
 
-Output written on main.pdf (7 pages, 307993 bytes).
+Output written on main.pdf (9 pages, 419724 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 125 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

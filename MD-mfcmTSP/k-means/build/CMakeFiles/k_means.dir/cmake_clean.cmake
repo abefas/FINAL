@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/k_means.dir/DBSCAN.c.o"
-  "CMakeFiles/k_means.dir/DBSCAN.c.o.d"
   "CMakeFiles/k_means.dir/Initialization1.c.o"
   "CMakeFiles/k_means.dir/Initialization1.c.o.d"
   "CMakeFiles/k_means.dir/NearestNeighbour.c.o"

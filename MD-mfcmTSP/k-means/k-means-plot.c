@@ -2,15 +2,11 @@
 #include <stdlib.h>
 #include <math.h>
 #include <float.h>
+#include <string.h>
 #include <time.h>
+#include <stdbool.h>
 #include "header_files/structs.h"
 
-// Define a point structure
-typedef struct {
-    double x;
-    double y;
-    int cluster;
-} Point;
 
 // Function to calculate the Euclidean distance between two points
 double euclidean_distance(Point a, Point b) {
@@ -88,57 +84,10 @@ void update_centroids(Point *points, Point *centroids, int num_points, int k) {
 
 // K-means++ algorithm implementation
 void kmeans_plus_plus(Point *points, Point *centroids, int num_points, int k, int max_iterations) {
-    initialize_centroids(points, centroids, num_points, k);
-
     for (int iter = 0; iter < max_iterations; iter++) {
         assign_clusters(points, centroids, num_points, k);
         update_centroids(points, centroids, num_points, k);
     }
-}
-
-// Function to plot clusters using GNU Plot
-void plot_clusters(Point *points, Point *centroids, Point *depots, int num_points, int k) {
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
-    if (gnuplotPipe == NULL) {
-        fprintf(stderr, "Error opening pipe to GNU Plot.\n");
-        return;
-    }
-
-    // Plot centroids
-    fprintf(gnuplotPipe, "set title 'K-means++ Clustering'\n");
-    fprintf(gnuplotPipe, "set xlabel 'X'\n");
-    fprintf(gnuplotPipe, "set ylabel 'Y'\n");
-    fprintf(gnuplotPipe, "set grid\n");
-    fprintf(gnuplotPipe, "set key outside\n");
-    fprintf(gnuplotPipe, "set palette model RGB defined (0 'red', 1 'green', 2 'blue', 3 'yellow', 4 'magenta', 5 'cyan')\n");
-
-    // Plot data points
-    fprintf(gnuplotPipe, "plot '-' using 1:2:3 with points palette pointtype 7 pointsize 1 title 'Data Points', '-' using 1:2 with points pointtype 4 pointsize 2 lc rgb 'black' title 'Centroids', '-' using 1:2 with points pointtype 5 pointsize 2 lc rgb 'gray' title 'Depots'\n");
-
-    /*
-    // Plot data points
-    fprintf(gnuplotPipe, "plot '-' using 1:2:3 with points palette pointtype 7 pointsize 1 title 'Data Points', '-' using 1:2 with points pointtype 4 pointsize 2 lc rgb 'black' title 'Centroids'\n");
-    */
-
-    //Customers
-    for (int i = 0; i < num_points; i++) {
-        fprintf(gnuplotPipe, "%lf %lf %d\n", points[i].x, points[i].y, points[i].cluster);
-    }
-    fprintf(gnuplotPipe, "e\n");
-
-    // Plot centroids
-    for (int j = 0; j < k; j++) {
-        fprintf(gnuplotPipe, "%lf %lf\n", centroids[j].x, centroids[j].y);
-    }
-    fprintf(gnuplotPipe, "e\n");
-
-    // Plot depots
-    for (int j = 0; j < k; j++) {
-        fprintf(gnuplotPipe, "%lf %lf\n", depots[j].x, depots[j].y);
-    }
-    fprintf(gnuplotPipe, "e\n");
-
-    pclose(gnuplotPipe);
 }
 
 // Function to assign centroids to the nearest depot ensuring every depot gets assigned
@@ -213,6 +162,8 @@ ClusterData k_means(SON *G) {
         exit(1);
     }
 
+    initialize_centroids(points, centroids, num_points, k);
+
     kmeans_plus_plus(points, centroids, num_points, k, max_iterations);
 
     /*
@@ -240,9 +191,6 @@ ClusterData k_means(SON *G) {
         printf("Centroid %d is assigned to Depot %d\n", i, centroids[i].cluster);
     }
     */
-
-    // Plot the clusters
-    //plot_clusters(points, centroids, dep_points, num_points, k);
 
     //Assign MY depot clustering to k-means++ clusters
 
@@ -283,11 +231,16 @@ ClusterData k_means(SON *G) {
     ClusterData result;
     result.cluster = cluster;
     result.limit = limit;
+    result.points = malloc(num_points * sizeof *result.points);
+    result.centroids = malloc(k * sizeof *result.centroids);
+    memcpy(result.points, points, num_points * sizeof *points);
+    memcpy(result.centroids, centroids, k * sizeof *centroids);
 
     free(counter);
     free(points);
     free(dep_points);
     free(centroids);
+
     return result;
 }
 

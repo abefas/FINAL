@@ -1,3 +1,0 @@
-eps = 500
-minPts = 3
-iterations = 20

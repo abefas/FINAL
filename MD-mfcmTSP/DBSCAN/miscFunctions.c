@@ -9,6 +9,10 @@
 
 extern int instance_id;
 
+double euclidean_distance(Point a, Point b) {
+    return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
+}
+
 double get_makespan_depot_VT(SON *G, node *routelist, int n_vehicles, double speed){
     if(!routelist)
         return 0;
@@ -147,7 +151,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
         detect_dup[i] = 0;
 
     char file_name[20], fn[30];
-    sprintf(file_name, "prox%02d.res", instance_id);
+    sprintf(file_name, "dbscan-%02d.res", instance_id);
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
     {
@@ -159,7 +163,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        sprintf(fn, "prox%02d-ivt_%d.csv", instance_id, ivt+1);
+        sprintf(fn, "dbscan-%02d-ivt_%d.csv", instance_id, ivt+1);
         if(NULL == (fp_1 = fopen(fn, "w"))){
             perror("Error opening fp_1!\n");
             exit(1);
@@ -223,7 +227,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
 
 void fprint_data(double runtime){
     char file_name[20];
-    sprintf(file_name, "prox%02d.data", instance_id);
+    sprintf(file_name, "dbscan-%02d.data", instance_id);
     FILE *fp;
     if(NULL == (fp = fopen(file_name, "w"))){ 
         perror("Couldn't open file fp at fprint_data\n"); 

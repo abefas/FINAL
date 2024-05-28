@@ -129,30 +129,6 @@ k_means/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/build
 .PHONY : k_means/fast
 
-DBSCAN.o: DBSCAN.c.o
-.PHONY : DBSCAN.o
-
-# target to build an object file
-DBSCAN.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/DBSCAN.c.o
-.PHONY : DBSCAN.c.o
-
-DBSCAN.i: DBSCAN.c.i
-.PHONY : DBSCAN.i
-
-# target to preprocess a source file
-DBSCAN.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/DBSCAN.c.i
-.PHONY : DBSCAN.c.i
-
-DBSCAN.s: DBSCAN.c.s
-.PHONY : DBSCAN.s
-
-# target to generate assembly for a file
-DBSCAN.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/DBSCAN.c.s
-.PHONY : DBSCAN.c.s
-
 Initialization1.o: Initialization1.c.o
 .PHONY : Initialization1.o
 
@@ -402,9 +378,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... k_means"
-	@echo "... DBSCAN.o"
-	@echo "... DBSCAN.i"
-	@echo "... DBSCAN.s"
 	@echo "... Initialization1.o"
 	@echo "... Initialization1.i"
 	@echo "... Initialization1.s"

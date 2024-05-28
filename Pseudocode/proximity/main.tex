@@ -6,6 +6,10 @@
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
+\usepackage{caption}
+\usepackage{pgfplotstable}
+\usepackage{indentfirst}
+\setlength\parindent{24pt}
 \DontPrintSemicolon
 \SetKwFor{For}{for}{do}{end for}
 \SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{end if}%
@@ -19,6 +23,12 @@
 
 \begin{document}
 	\maketitle
+	
+	\section{Introduction}
+	The rapid growth of e-commerce and the increasing demand for efficient delivery systems have underscored the importance of optimizing logistics and routing strategies. This paper introduces a novel problem within the logistics and routing sector, which we term the "Multi-Depot Mixed Fleet Capacitated TSP" (MD-mfcmTSP). A distinctive feature of this problem is the incorporation of accessibility restrictions which add complexity to the problem and aim to reflect real-world challenges faced by logistics companies.
+	\par
+	This paper aims to formalize the MD-mfcmTSP, provide a comprehensive analysis of its components, and propose both heuristic and metaheuristic approaches for its solution. By addressing this problem, we contribute to the field of logistics and routing by introducing a realistic and challenging problem that considers the practical limitations of different vehicle types used in last-mile delivery.
+	\par
 	
 	\section{Pseudocode for the MD-mfcmTSP}
 	At the end of Algorithm 1, a local optimization function (3) is called which in addition to moving nodes in different places in the same route, also moves nodes between routes of different depots and different vehicle types.\;
@@ -180,14 +190,29 @@
 	\clearpage
 	\input{TABLE1.tex}\;
 	\input{TABLE2.tex}\;
+	\input{TABLE3.tex}\;
+	\onecolumn
+	\captionsetup{justification=centering}  % Center the captions
 	\begin{figure}[t]
-		\includegraphics[width=\textwidth]{gaps_to_BKS}
+		\centering
+		\caption{Comparison to the best solution found by AACONC+}
+		\includegraphics[width=\textwidth]{gaps_to_aco_best}
+	\end{figure}
+	\begin{figure}[t]
+		\caption{Comparison to full local optimization (proximity clustering)}
+		\centering
+		\includegraphics[width=\textwidth]{local_opt_comp_to_full}
+	\end{figure}
+	\begin{figure}[t]
+		\caption{Comparison to full local optimization (k-means clustering)}
+		\centering
+		\includegraphics[width=\textwidth]{local_opt_comp_to_full_kmeans}
+	\end{figure}
+	\begin{figure}[t]
+		\caption[width=\textwidth]{kmeans Clustering}
+		\includegraphics[width=\textwidth]{kmeans-01}
 		\centering
 	\end{figure}
-	\clearpage
-	\begin{figure}[t]
-		\includegraphics[width=\textwidth]{Heuristic_LocalOpt_comparison}
-		\centering
-	\end{figure}
+	
 
 \end{document}

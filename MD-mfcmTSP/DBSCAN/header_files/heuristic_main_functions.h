@@ -3,11 +3,14 @@
 
 #include "structs.h"
 
+
+ClusterData kmeans(SON *G, ClusterData *dbscan);
+
+ClusterData DBSCAN(SON *G);
+
 double determine_eps(double *distances, int num_points);
 
-ClusterData DBSCAN_plus_kmeans(SON *G);
-
-void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz);
+void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz, ClusterData *dbscan, plotClusters *pl);
 
 ClusterData createClusters(SON *G, int **da_access);
 

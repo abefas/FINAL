@@ -320,6 +320,8 @@ CMakeFiles/k_means.dir/heuristic_v1_2.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/types.h \
@@ -395,6 +397,8 @@ CMakeFiles/k_means.dir/k-means-plot.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/k
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/types.h \
@@ -597,10 +601,13 @@ CMakeFiles/k_means.dir/main.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/m
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/types.h \
   /usr/include/time.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/omp.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stdbool.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stddef.h
@@ -705,6 +712,8 @@ CMakeFiles/k_means.dir/miscFunctions.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/
 
 /usr/include/bits/flt-eval-method.h:
 
+/usr/include/strings.h:
+
 /usr/include/bits/types/struct_tm.h:
 
 /usr/include/bits/types/locale_t.h:
@@ -733,6 +742,8 @@ CMakeFiles/k_means.dir/miscFunctions.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/
 
 /usr/include/sys/cdefs.h:
 
+/usr/include/string.h:
+
 /usr/include/bits/time64.h:
 
 /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/k-means-plot.c:
@@ -756,6 +767,8 @@ CMakeFiles/k_means.dir/miscFunctions.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/
 /usr/include/bits/thread-shared-types.h:
 
 /usr/include/bits/unistd_ext.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/omp.h:
 
 /usr/include/bits/stdio.h:
 

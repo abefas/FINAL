@@ -39,10 +39,11 @@ CMakeFiles/k_means.dir/k-means-plot.c.o: \
  /usr/include/bits/mathcalls-helper-functions.h \
  /usr/include/bits/mathcalls.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/float.h \
+ /usr/include/string.h /usr/include/bits/types/locale_t.h \
+ /usr/include/bits/types/__locale_t.h /usr/include/strings.h \
  /usr/include/time.h /usr/include/bits/time.h \
  /usr/include/bits/types/struct_tm.h \
  /usr/include/bits/types/struct_itimerspec.h \
- /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/header_files/structs.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.1.1/include/stdbool.h \
+ /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/header_files/structs.h \
  /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/header_files/listFunctions.h

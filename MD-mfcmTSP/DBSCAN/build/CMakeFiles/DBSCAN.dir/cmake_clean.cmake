@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DBSCAN.dir/heuristic_local_opt.c.o.d"
   "CMakeFiles/DBSCAN.dir/heuristic_v1_2.c.o"
   "CMakeFiles/DBSCAN.dir/heuristic_v1_2.c.o.d"
+  "CMakeFiles/DBSCAN.dir/kmeans.c.o"
+  "CMakeFiles/DBSCAN.dir/kmeans.c.o.d"
   "CMakeFiles/DBSCAN.dir/listFunctions.c.o"
   "CMakeFiles/DBSCAN.dir/listFunctions.c.o.d"
   "CMakeFiles/DBSCAN.dir/localOpt.c.o"
@@ -19,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DBSCAN.dir/main.c.o.d"
   "CMakeFiles/DBSCAN.dir/miscFunctions.c.o"
   "CMakeFiles/DBSCAN.dir/miscFunctions.c.o.d"
+  "CMakeFiles/DBSCAN.dir/plot.c.o"
+  "CMakeFiles/DBSCAN.dir/plot.c.o.d"
   "DBSCAN"
   "DBSCAN.pdb"
 )

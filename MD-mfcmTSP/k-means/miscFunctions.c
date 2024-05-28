@@ -9,6 +9,108 @@
 
 extern int instance_id;
 
+// Function to save clustering results to a CSV file
+void save_clustering_to_csv(Point *points, Point *centroids, depot *depots, int num_points, int k) {
+    char file_name[20];
+    sprintf(file_name, "kmeans-%02d.clusters", instance_id);
+    FILE *fp;
+    if(NULL == (fp = fopen(file_name, "w")))
+    {
+        printf("Couldn't open file fp at save_clustering_to_csv\n");
+        exit(1);
+    }
+
+    // Write header
+    fprintf(fp, "Type,X,Y,Cluster\n");
+
+    // Write points
+    for (int i = 0; i < num_points; i++) {
+        fprintf(fp, "Point,%lf,%lf,%d\n", points[i].x, points[i].y, points[i].cluster);
+    }
+
+    // Write centroids
+    for (int j = 0; j < k; j++) {
+        fprintf(fp, "Centroid,%lf,%lf,%d\n", centroids[j].x, centroids[j].y, j);
+    }
+
+    // Write depots
+    for (int j = 0; j < k; j++) {
+        fprintf(fp, "Depot,%lf,%lf,%d\n", (double)depots[j].x, (double)depots[j].y, j);
+    }
+
+    fclose(fp);
+}
+
+// Function to plot clusters using GNU Plot
+void plot_clusters(Point *points, Point *centroids, depot *depots, int num_points, int k) {
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
+    if (gnuplotPipe == NULL) {
+        fprintf(stderr, "Error opening pipe to GNU Plot.\n");
+        return;
+    }
+    // Create a formatted file name
+    char filename[50];
+    sprintf(filename, "kmeans-%02d.png", instance_id);
+
+    // Set the output terminal to PNG and specify the output file
+    fprintf(gnuplotPipe, "set terminal pngcairo size 1920,1080 enhanced font 'Arial,10' fontscale 1.5\n");
+    fprintf(gnuplotPipe, "set output '%s'\n", filename);
+
+    // Set plot title and labels
+    fprintf(gnuplotPipe, "set title 'K-means++ Clustering'\n");
+    fprintf(gnuplotPipe, "set xlabel 'X'\n");
+    fprintf(gnuplotPipe, "set ylabel 'Y'\n");
+    fprintf(gnuplotPipe, "set grid\n");
+    fprintf(gnuplotPipe, "set key inside spacing 1.5\n");
+
+    // Make the legend background transparent
+    fprintf(gnuplotPipe, "set key noopaque\n"); // This ensures the legend background is transparent
+
+    // Define colors for the clusters
+    const char *colors[] = {"red", "green", "blue", "magenta", "orange", "cyan", "purple", "brown", "pink", "yellow"};
+
+    // Start plotting
+    fprintf(gnuplotPipe, "plot ");
+
+    // Plot customers with different colors for each cluster
+    for (int c = 0; c < k; c++) {
+        if (c > 0) {
+            fprintf(gnuplotPipe, ", ");
+        }
+        fprintf(gnuplotPipe, "'-' using 1:2 with points pointtype 7 pointsize 2 lc rgb '%s' title 'Cluster %d'", colors[c % 10], c + 1);
+    }
+
+    // Add centroids and depots to the plot
+    fprintf(gnuplotPipe, ", '-' using 1:2 with points pointtype 13 pointsize 3 lc rgb 'black' title 'Centroids'");
+    fprintf(gnuplotPipe, ", '-' using 1:2 with points pointtype 7 pointsize 3 lc rgb 'gray' title 'Depots'\n");
+
+    // Plot customers for each cluster
+    for (int c = 0; c < k; c++) {
+        for (int i = 0; i < num_points; i++) {
+            if (points[i].cluster == c) {
+                fprintf(gnuplotPipe, "%lf %lf\n", points[i].x, points[i].y);
+            }
+        }
+        fprintf(gnuplotPipe, "e\n");
+    }
+
+    // Plot centroids
+    for (int j = 0; j < k; j++) {
+        fprintf(gnuplotPipe, "%lf %lf\n", centroids[j].x, centroids[j].y);
+    }
+    fprintf(gnuplotPipe, "e\n");
+
+    // Plot depots
+    for (int j = 0; j < k; j++) {
+        fprintf(gnuplotPipe, "%lf %lf\n", (double)depots[j].x, (double)depots[j].y);
+    }
+    fprintf(gnuplotPipe, "e\n");
+
+
+    // Close the pipe
+    pclose(gnuplotPipe);
+}
+
 double get_makespan_depot_VT(SON *G, node *routelist, int n_vehicles, double speed){
     if(!routelist)
         return 0;
@@ -147,7 +249,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
         detect_dup[i] = 0;
 
     char file_name[20], fn[30];
-    sprintf(file_name, "prox%02d.res", instance_id);
+    sprintf(file_name, "kmeans-%02d.res", instance_id);
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
     {
@@ -159,7 +261,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        sprintf(fn, "prox%02d-ivt_%d.csv", instance_id, ivt+1);
+        sprintf(fn, "kmeans-%02d-ivt_%d.csv", instance_id, ivt+1);
         if(NULL == (fp_1 = fopen(fn, "w"))){
             perror("Error opening fp_1!\n");
             exit(1);
@@ -223,7 +325,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
 
 void fprint_data(double runtime){
     char file_name[20];
-    sprintf(file_name, "prox%02d.data", instance_id);
+    sprintf(file_name, "kmeans-%02d.data", instance_id);
     FILE *fp;
     if(NULL == (fp = fopen(file_name, "w"))){ 
         perror("Couldn't open file fp at fprint_data\n"); 

@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 #include <time.h>
 
 int instance_id;
@@ -172,18 +173,19 @@ int main(int argc, char **argv) {
         }
     }
 
+
     time_t begin = time(NULL);
-    time_t loop = time(NULL);
-    time_t loop_time = difftime(loop, begin);
+
+    ClusterData dbscan = DBSCAN(&G);
+    plot_clusters(dbscan.points, dbscan.centroids, G.a_depots, G.n_customers, G.n_depots);
+
+    plotClusters pl;
+    pl.points = malloc(G.n_customers * sizeof *pl.points);
+    pl.centroids = malloc(G.n_depots * sizeof *pl.centroids);
 
     //Run Algorithm
-    int i = 0;
-    while(i < 1){
-        heuristic(&G, VT, da_access, &R);
-
-        loop = time(NULL);
-        loop_time = difftime(loop, begin);
-        i++;
+    for(int i = 0; i < 20 * G.n_customers; i++){
+        heuristic(&G, VT, da_access, &R, &dbscan, &pl);
     }
 
 
@@ -192,6 +194,15 @@ int main(int argc, char **argv) {
 
     fprint_results(&R, &G, VT);
     fprint_data(runtime);
+
+    plot_clusters(pl.points, pl.centroids, G.a_depots, G.n_customers, G.n_depots);
+    save_clustering_to_csv(pl.points, pl.centroids, G.a_depots, G.n_customers, G.n_depots);
+
+    free(pl.points);
+    free(pl.centroids);
+    free(dbscan.points);
+    free(dbscan.centroids);
+
 
     for(int ivt = 0; ivt < G.n_differentTypes; ivt++){
         for(int idep = 0; idep < G.n_depots; idep++){
