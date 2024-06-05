@@ -1,0 +1,16 @@
+x_max = 3150.00
+y_max = 3450.00
+
+x_min = 0.00
+y_min = 0.00
+
+Dimensions: 3150.00 x 3450.00
+
+number of customers = 50
+number of depots = 4
+
+Type 1: 46 customers, 92.00% 
+
+Type 2: 50 customers, 100.00% 
+
+Type 3: 42 customers, 84.00% 

@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 
     /* Read file and store all info */
     char input[100];
-    sprintf(input, "../../../../Instances/Cordeau_mfcmTSP/p%02d.MDmfcmTSP", instance_id);
+    sprintf(input, "../../../../Instances/myInstances/x%02d.MDmfcmTSP", instance_id);
     FILE *fp = fopen(input, "r");
     if(!fp){
         perror("Error while opening the file.\n");
@@ -211,7 +211,8 @@ int main(int argc, char **argv) {
         pl_local.points = malloc(G.n_customers * sizeof *pl_local.points);
         pl_local.centroids = malloc(G.n_depots * sizeof *pl_local.centroids);
 
-        heuristic(&G, VT, da_access, &R_local, &pl_local);
+        //heuristic(&G, VT, da_access, &R_local, &pl_local);
+        heuristic_og(&G, VT, da_access, &R_local, &pl_local);
 
         #pragma omp critical
         {

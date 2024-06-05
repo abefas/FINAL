@@ -1,0 +1,40 @@
+\begin{algorithm}
+		\caption{AACONC+ Algorithm}
+		\SetAlgoNlRelativeSize{-1}
+		
+		\SetKwProg{Fn}{Function}{}{}
+		
+		\Fn{AACONC+($V, n_{\text{ants}}, n_{\text{freq}}, n_{\text{size}}, n_{\text{sect}}, n_{\text{prim}}, T_{\text{update}}, \alpha, \beta, \rho_{\text{min}}, \rho_{\text{max}}, \delta$)}{
+			$|R| = \infty$\;
+			$iter = 0$\;
+			Initialize pheromone matrices $\tau$\;
+			
+			\For{each $v_i \in V$}{
+				$K(v_i)=$ CreateClusters($V, v_i, n_{\text{size}}, n_{\text{sect}}$)\;
+			}
+			
+			\While{not terminated}{
+				$|R_{\text{best}}| = \infty$\;
+				$iter = iter + 1$\;
+				
+				\For{$a = 1$ to $n_{\text{ants}}$}{
+					$R_a =$ AntSolution($V, K, \tau, \alpha, \beta$)\;
+					
+					\If{$|R_a| < |R_{\text{best}}|$}{
+						$R_{\text{best}} = R_a$\;
+					}
+				}
+				\If{$iter \mod n_{\text{freq}} = 0$}{
+					$R_{\text{best}} =$ LocalOptimization($V, R_{\text{best}}$)\;
+				}
+				\If{$|R_{\text{best}}| < |R|$}{
+					$R = R_{\text{best}}$\;
+				}
+				Update pheromone matrices $\tau$\;
+				Calculate evaporation coefficient $\rho$\;
+				Evaporate pheromone matrices $\tau$ using $\rho$\;
+			}
+			
+			\textbf{return} $R$\;
+		}
+\end{algorithm}

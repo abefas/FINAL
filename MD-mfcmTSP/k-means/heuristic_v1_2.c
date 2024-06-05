@@ -26,7 +26,7 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz, plotClusters *
         fprintf(fp, "NodeID,Xposition,Yposition\n");
         for(int l = 0; l < cd.limit[dep]; l++){
             printf(" %d", cd.cluster[dep][l]);
-            fprintf(fp, "%d,%d,%d\n", cd.cluster[dep][l], G->a_combined[cd.cluster[dep][l]-1].x, G->a_combined[cd.cluster[dep][l]-1].y);
+            fprintf(fp, "%d,%0.2f,%0.2f\n", cd.cluster[dep][l], G->a_combined[cd.cluster[dep][l]-1].x, G->a_combined[cd.cluster[dep][l]-1].y);
         }
         if(fclose(fp) != 0){ printf("Error closing fp!\n"); exit(1); }
         printf("\n");

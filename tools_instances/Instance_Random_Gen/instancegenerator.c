@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SPACE_SIZE 3000 //3000x3000 m^2
+#define SPACE_SIZE 10001 //x000 x x000 m^2
 #define N_TYPES 3
 
 #define DEMAND_1 101
@@ -10,9 +10,9 @@
 #define DRONE_CAPACITY 1
 
 #define TRUCK_CHANCE 90
-#define TRUCK_CAPACITY 30
+#define TRUCK_CAPACITY 100
 
-#define MOTORBIKE_CAPACITY 10
+#define MOTORBIKE_CAPACITY 5
 
 int main(int argc, char **argv){
 
@@ -27,8 +27,8 @@ int main(int argc, char **argv){
         }
     }
 
-    char file_name[20];
-    sprintf(file_name, "i500_%02d.MD-mfcmTSP", instance_id);
+    char file_name[30];
+    sprintf(file_name, "x%02d.MDmfcmTSP", instance_id);
     FILE *f;
     if(NULL == (f = fopen(file_name, "w"))){
         perror("Error opening file!\n");
@@ -53,7 +53,7 @@ int main(int argc, char **argv){
     srand((unsigned) time(&t));
 
     for(int i = 0; i < customers; i++){
-        int x = random() % SPACE_SIZE , y = random() % SPACE_SIZE, demand = 1;
+        float x = random() % SPACE_SIZE , y = random() % SPACE_SIZE, demand = 1;
         char acc[3] = {'\0'};
         if(random() % 100 < DEMAND_1){
             demand = 1;
@@ -81,11 +81,12 @@ int main(int argc, char **argv){
             }
         }
         int access = atoi(ac);
-        fprintf(f, "%d %d %d %d %d\n", i+1, x, y, demand, access);
+        fprintf(f, "%d %f %f %d %d\n", i+1, x, y, 1, access);
     }
 
     for(int i = customers; i < customers+depots; i++){
-        fprintf(f, "%d %ld %ld %d %d %d\n", i+1, random() % SPACE_SIZE, random() % SPACE_SIZE, 1, 1, 1);
+        float x = random() % SPACE_SIZE, y = random() % SPACE_SIZE;
+        fprintf(f, "%d %f %f %d %d %d\n", i+1, x, y, 1, 1, 1);
     }
 
 

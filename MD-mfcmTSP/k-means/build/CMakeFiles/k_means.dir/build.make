@@ -139,10 +139,24 @@ CMakeFiles/k_means.dir/heuristic_local_opt.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/k_means.dir/heuristic_local_opt.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/heuristic_local_opt.c -o CMakeFiles/k_means.dir/heuristic_local_opt.c.s
 
+CMakeFiles/k_means.dir/heuristic_og.c.o: CMakeFiles/k_means.dir/flags.make
+CMakeFiles/k_means.dir/heuristic_og.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/heuristic_og.c
+CMakeFiles/k_means.dir/heuristic_og.c.o: CMakeFiles/k_means.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/k_means.dir/heuristic_og.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/k_means.dir/heuristic_og.c.o -MF CMakeFiles/k_means.dir/heuristic_og.c.o.d -o CMakeFiles/k_means.dir/heuristic_og.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/heuristic_og.c
+
+CMakeFiles/k_means.dir/heuristic_og.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/k_means.dir/heuristic_og.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/heuristic_og.c > CMakeFiles/k_means.dir/heuristic_og.c.i
+
+CMakeFiles/k_means.dir/heuristic_og.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/k_means.dir/heuristic_og.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/heuristic_og.c -o CMakeFiles/k_means.dir/heuristic_og.c.s
+
 CMakeFiles/k_means.dir/heuristic_v1_2.c.o: CMakeFiles/k_means.dir/flags.make
 CMakeFiles/k_means.dir/heuristic_v1_2.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/heuristic_v1_2.c
 CMakeFiles/k_means.dir/heuristic_v1_2.c.o: CMakeFiles/k_means.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/k_means.dir/heuristic_v1_2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/k_means.dir/heuristic_v1_2.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/k_means.dir/heuristic_v1_2.c.o -MF CMakeFiles/k_means.dir/heuristic_v1_2.c.o.d -o CMakeFiles/k_means.dir/heuristic_v1_2.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/heuristic_v1_2.c
 
 CMakeFiles/k_means.dir/heuristic_v1_2.c.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/k_means.dir/heuristic_v1_2.c.s: cmake_force
 CMakeFiles/k_means.dir/k-means-plot.c.o: CMakeFiles/k_means.dir/flags.make
 CMakeFiles/k_means.dir/k-means-plot.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/k-means-plot.c
 CMakeFiles/k_means.dir/k-means-plot.c.o: CMakeFiles/k_means.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/k_means.dir/k-means-plot.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/k_means.dir/k-means-plot.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/k_means.dir/k-means-plot.c.o -MF CMakeFiles/k_means.dir/k-means-plot.c.o.d -o CMakeFiles/k_means.dir/k-means-plot.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/k-means-plot.c
 
 CMakeFiles/k_means.dir/k-means-plot.c.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/k_means.dir/k-means-plot.c.s: cmake_force
 CMakeFiles/k_means.dir/listFunctions.c.o: CMakeFiles/k_means.dir/flags.make
 CMakeFiles/k_means.dir/listFunctions.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/listFunctions.c
 CMakeFiles/k_means.dir/listFunctions.c.o: CMakeFiles/k_means.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/k_means.dir/listFunctions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/k_means.dir/listFunctions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/k_means.dir/listFunctions.c.o -MF CMakeFiles/k_means.dir/listFunctions.c.o.d -o CMakeFiles/k_means.dir/listFunctions.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/listFunctions.c
 
 CMakeFiles/k_means.dir/listFunctions.c.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/k_means.dir/listFunctions.c.s: cmake_force
 CMakeFiles/k_means.dir/localOpt.c.o: CMakeFiles/k_means.dir/flags.make
 CMakeFiles/k_means.dir/localOpt.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/localOpt.c
 CMakeFiles/k_means.dir/localOpt.c.o: CMakeFiles/k_means.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/k_means.dir/localOpt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/k_means.dir/localOpt.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/k_means.dir/localOpt.c.o -MF CMakeFiles/k_means.dir/localOpt.c.o.d -o CMakeFiles/k_means.dir/localOpt.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/localOpt.c
 
 CMakeFiles/k_means.dir/localOpt.c.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/k_means.dir/localOpt.c.s: cmake_force
 CMakeFiles/k_means.dir/miscFunctions.c.o: CMakeFiles/k_means.dir/flags.make
 CMakeFiles/k_means.dir/miscFunctions.c.o: /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/miscFunctions.c
 CMakeFiles/k_means.dir/miscFunctions.c.o: CMakeFiles/k_means.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/k_means.dir/miscFunctions.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/k_means.dir/miscFunctions.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/k_means.dir/miscFunctions.c.o -MF CMakeFiles/k_means.dir/miscFunctions.c.o.d -o CMakeFiles/k_means.dir/miscFunctions.c.o -c /home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/miscFunctions.c
 
 CMakeFiles/k_means.dir/miscFunctions.c.i: cmake_force
@@ -216,6 +230,7 @@ k_means_OBJECTS = \
 "CMakeFiles/k_means.dir/NearestNeighbour.c.o" \
 "CMakeFiles/k_means.dir/createClusters.c.o" \
 "CMakeFiles/k_means.dir/heuristic_local_opt.c.o" \
+"CMakeFiles/k_means.dir/heuristic_og.c.o" \
 "CMakeFiles/k_means.dir/heuristic_v1_2.c.o" \
 "CMakeFiles/k_means.dir/k-means-plot.c.o" \
 "CMakeFiles/k_means.dir/listFunctions.c.o" \
@@ -230,6 +245,7 @@ k_means: CMakeFiles/k_means.dir/Initialization1.c.o
 k_means: CMakeFiles/k_means.dir/NearestNeighbour.c.o
 k_means: CMakeFiles/k_means.dir/createClusters.c.o
 k_means: CMakeFiles/k_means.dir/heuristic_local_opt.c.o
+k_means: CMakeFiles/k_means.dir/heuristic_og.c.o
 k_means: CMakeFiles/k_means.dir/heuristic_v1_2.c.o
 k_means: CMakeFiles/k_means.dir/k-means-plot.c.o
 k_means: CMakeFiles/k_means.dir/listFunctions.c.o
@@ -239,7 +255,7 @@ k_means: CMakeFiles/k_means.dir/build.make
 k_means: /usr/lib/libgomp.so
 k_means: /usr/lib/libpthread.a
 k_means: CMakeFiles/k_means.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable k_means"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/abefas/Desktop/FINAL/MD-mfcmTSP/k-means/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C executable k_means"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/k_means.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

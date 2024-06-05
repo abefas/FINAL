@@ -1,0 +1,3 @@
+Type 1: 91 customers, 91.00% 
+Type 2: 100 customers, 100.00% 
+Type 3: 82 customers, 82.00% 

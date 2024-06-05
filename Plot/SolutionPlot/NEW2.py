@@ -4,10 +4,10 @@ import networkx as nx
 from matplotlib.lines import Line2D
 
 
-df = pd.read_csv('p07-H.csv')
-df_connections_T = pd.read_csv('p01_28_ivt_1.csv')
-df_connections_M = pd.read_csv('p01_28_ivt_2.csv')
-df_connections_D = pd.read_csv('p01_28_ivt_3.csv')
+df = pd.read_csv('p01_nodes.csv')
+df_connections_T = pd.read_csv('kmeans-01-ivt_1.csv')
+df_connections_M = pd.read_csv('kmeans-01-ivt_2.csv')
+df_connections_D = pd.read_csv('kmeans-01-ivt_3.csv')
 x = df['Xposition']
 y = df['Yposition']
 node_names = df['NodeID']

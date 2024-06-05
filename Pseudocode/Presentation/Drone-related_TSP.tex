@@ -1,0 +1,62 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table*}[]
+	\caption{Drone-related TSP literature}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{@{}lllcccl@{}}
+		\toprule
+		\textbf{Reference} & \textbf{Problem} & \textbf{Scale} & \textbf{Synchro.} & \textbf{Flight endurance} & \textbf{Capacitated} & \textbf{Solution Method} \\ \midrule
+		Murray \& Chu (2015) & FSTSP & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & MILP, Heuristics \\
+		\midrule
+		& PDSTSP & 1-Truck n-Drone 1-Depot & No & Yes & No & MILP, Heuristics \\
+		\midrule
+		Ha et al. (2015) & FSTSP & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & MIP, Heuristics \\
+		\midrule
+		Freitas \& Penna (2018) & FSTSP & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & IP, Heuristics \\
+		\midrule
+		Boccia et al. (2021) & FSTSP/PDSTSP & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & MILP, Heuristics \\
+		\midrule
+		Dell'Amico et al. (2021) & FSTSP & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & MILP \\
+		\midrule
+		Dell'Amico et al. (2021) & FSTSP & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & Branch and bound, Heuristic  \\
+		\midrule
+		Kuroswiski et al. (2023) & FSTSP & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & MILP, Metaheuristics \\
+		\midrule
+		Pilcher (2023) & FSTSP & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & Self-adaptive GA \\
+		\midrule
+		Mbiadou Saleu et al. (2018) & PDSTSP & 1-Truck n-Drone 1-Depot & No & Yes & No & MILP, Heuristics \\
+		\midrule
+		Dinh et al. (2021) & PDSTSP & 1-Truck n-Drone 1-Depot & No & Yes & No & Metaheuristics \\
+		\midrule
+		Nguyen et al. (2022) & PDSTSP & 1-Truck n-Drone 1-Depot & No & Yes & No & MILP \\
+		\midrule
+		Mbiadou Saleu et al. (2022) & PDSMTSP & m-Truck n-Drone 1-Depot & No & Yes & No & MILP, Metaheuristics \\
+		\midrule
+		Montemanni et al. (2023) & PDSTSP & 1-Truck n-Drone 1-Depot & Yes & Yes & No & Constraint Programming  \\
+		\midrule
+		Nguyen et al. (2023) & PDSTSP-c & 1-Truck n-Drone 1-Depot & No & Yes & No & MILP, Metaheuristics  \\
+		\midrule
+		Montemanni et al. (2024) & PDSTSP-c & 1-Truck n-Drone 1-Depot & No & Yes & No & MILP, Constraint Programming \\
+		\midrule
+		Ham (2018) & PDSTSP$^{+DP}$ & m-Truck n-Drone 2-Depot & No & Yes & No & Constraint Programming \\
+		\midrule
+		Agatz et al. (2018) & TSP-D & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & IP, Heuristics \\
+		\midrule
+		Yurek et al. (2018) & TSP-D & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & MIP, Heuristics \\
+		\midrule
+		Ha et al. (2018) & min-cost TSP-D & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & MILP, GRASP, TSP-LS \\
+		\midrule
+		Dorling et al. (2016) & DDPs & 0-Truck n-Drone 1-Depot & No & Yes & Yes & MILP, SA \\
+		\midrule
+		Ulmer \& Thomas (2018) & SDDPHF & m-Truck n-Drone 1-Depot & No & No & No & Adaptive dynamic programming \\
+		\midrule
+		Salama \& Srinivas (2020) & JOCR & 1-Truck n-Drone 1-Depot & Yes & Yes & No & IP, MILP, Heuristics \\
+		\midrule
+		Lu et al. (2022) & FDTSP & 1-Truck n-Drone 1-Depot & Yes & Yes & No & Heuristics, Metaheuristics \\
+		\midrule
+		Lan (2024) & TSPTWD & 1-Truck 1-Drone 1-Depot & Yes & Yes & No & Metaheuristics \\
+		\bottomrule
+		\end{tabular}%
+	}
+\end{table*}

@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/k_means.dir/createClusters.c.o.d"
   "CMakeFiles/k_means.dir/heuristic_local_opt.c.o"
   "CMakeFiles/k_means.dir/heuristic_local_opt.c.o.d"
+  "CMakeFiles/k_means.dir/heuristic_og.c.o"
+  "CMakeFiles/k_means.dir/heuristic_og.c.o.d"
   "CMakeFiles/k_means.dir/heuristic_v1_2.c.o"
   "CMakeFiles/k_means.dir/heuristic_v1_2.c.o.d"
   "CMakeFiles/k_means.dir/k-means-plot.c.o"

@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
     /* Read file and store all info */
     char input[100];
-    sprintf(input, "../../../../Instances/Cordeau_mfcmTSP/p%02d.MDmfcmTSP", instance_id);
+    sprintf(input, "../../../../Instances/myInstances/x%02d.MDmfcmTSP", instance_id);
     FILE *fp = fopen(input, "r");
     if(!fp){
         perror("Error while opening the file.\n");
@@ -144,11 +144,50 @@ int main(int argc, char **argv) {
         }
     }
 
+    /* Get Instance data *
+    char file_name[50];
+    sprintf(file_name, "p%02d-data.txt", instance_id);
+    FILE *fp_1;
+    if(NULL == (fp_1 = fopen(file_name, "w")))
+    {
+        perror("Couldn't open file fp_1 at main\n");
+        exit(1);
+    }
+    float x_max = 0, y_max = 0, x_min = 0, y_min = 0;
+    for(int j = 0; j < G.n_nodes; j++){
+        if(G.a_combined[j].x > x_max){
+            x_max = G.a_combined[j].x;
+        }
+        if(G.a_combined[j].x < x_min){
+            x_min = G.a_combined[j].x;
+        }
+        if(G.a_combined[j].y > y_max){
+            y_max = G.a_combined[j].y;
+        }
+        if(G.a_combined[j].y < y_min){
+            y_min = G.a_combined[j].y;
+        }
+    }
+    fprintf(fp_1, "x_max = %0.2f\ny_max = %0.2f\n\nx_min = %0.2f\ny_min = %0.2f\n\nDimensions: %0.2f x %0.2f", x_max, y_max, x_min, y_min, x_max-x_min, y_max-y_min);
+    fprintf(fp_1, "\n\nnumber of customers = %d\nnumber of depots = %d\n", G.n_customers, G.n_depots);
+    * Access *
+    for(int i = 0; i < G.n_differentTypes; i++){
+        int count = 0;
+        for(int j = 0; j < G.n_customers; j++){
+            if(da_access[i][j] == 1){
+                count++;
+            }
+        }
+        fprintf(fp_1, "\nType %d: %d customers, %0.2f%% \n", i+1, count, (float)count/G.n_customers*100);
+    }
+    fclose(fp_1);
+    */
+
 
     heuristic_v1_2(&G, VT, da_access);
 
+    //heuristic_prox(&G, VT, da_access);
     /*
-    heuristic_prox(&G, VT, da_access);
     heuristic_prox_2(&G, VT, da_access);
     heuristic_v1(&G, VT, da_access);
     heuristic_prox_standalone(&G, VT, da_access);

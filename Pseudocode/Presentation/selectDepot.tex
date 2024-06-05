@@ -1,0 +1,26 @@
+
+	\begin{algorithm}
+		\caption{selectDepot}
+		\SetKwProg{Fn}{Function}{}{}
+		
+		\Fn{selectDepot($vt, V_{free}, K^{(vt)}, \tau$)}{
+			
+			
+				\For{{each $d_i\in D^{(vt)}$}}{
+					$V_{cand} = \emptyset$\\
+					\For{\text{each vehicle}}{
+						$pos \leftarrow$\text{vehicle's current location}\
+						
+						\For{\text{k = 1 to} $n_{prim}$}{
+							$V_{cand} = V_{cand} + V_{\text{free}} \cap K_k^{(pos)(vt)}$\
+						}
+					}
+					$p(d_i) = \sum_{v_j \in V_{cand}} \tau_{v_{pos} v_j}^{(vt)(d_i)}$\
+				}
+			$p_{sum} = \sum_{d_i \in D^{(vt)}} p(d_i)$\\
+			\textbf{return} $rouletteWheel(p(D^{(vt)}), p_{sum})$\;
+		}
+		
+	\end{algorithm}
+	
+

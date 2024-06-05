@@ -225,6 +225,30 @@ heuristic_local_opt.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/heuristic_local_opt.c.s
 .PHONY : heuristic_local_opt.c.s
 
+heuristic_og.o: heuristic_og.c.o
+.PHONY : heuristic_og.o
+
+# target to build an object file
+heuristic_og.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/heuristic_og.c.o
+.PHONY : heuristic_og.c.o
+
+heuristic_og.i: heuristic_og.c.i
+.PHONY : heuristic_og.i
+
+# target to preprocess a source file
+heuristic_og.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/heuristic_og.c.i
+.PHONY : heuristic_og.c.i
+
+heuristic_og.s: heuristic_og.c.s
+.PHONY : heuristic_og.s
+
+# target to generate assembly for a file
+heuristic_og.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/k_means.dir/build.make CMakeFiles/k_means.dir/heuristic_og.c.s
+.PHONY : heuristic_og.c.s
+
 heuristic_v1_2.o: heuristic_v1_2.c.o
 .PHONY : heuristic_v1_2.o
 
@@ -390,6 +414,9 @@ help:
 	@echo "... heuristic_local_opt.o"
 	@echo "... heuristic_local_opt.i"
 	@echo "... heuristic_local_opt.s"
+	@echo "... heuristic_og.o"
+	@echo "... heuristic_og.i"
+	@echo "... heuristic_og.s"
 	@echo "... heuristic_v1_2.o"
 	@echo "... heuristic_v1_2.i"
 	@echo "... heuristic_v1_2.s"

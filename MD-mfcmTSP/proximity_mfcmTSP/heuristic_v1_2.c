@@ -76,7 +76,6 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
         //Depot adjacency to customers
         adj_matrix[G->a_depots[IDEPOT].id - 1] = create_adj_list(G->a_depots[IDEPOT].id, G, cd.cluster[IDEPOT], cd.limit[IDEPOT]);
 
-
         double distance = NearestNeighbour(adj_matrix, G, &R, da_access[0], cd.cluster[IDEPOT], cd.limit[IDEPOT], G->a_depots[IDEPOT].id, VT[0].capacity);
         if(!R.a_VT[0].a_depots[IDEPOT].routelist){
             printf("Depot doesn't have a truck!\n");

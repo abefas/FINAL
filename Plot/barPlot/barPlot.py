@@ -4,12 +4,12 @@ import pandas as pd
 from matplotlib.ticker import FuncFormatter
 
 # Read data from CSV file
-df = pd.read_csv('gaps_to_BKS.csv', na_values='-')  # Replace 'your_data.csv' with the path to your CSV file
+df = pd.read_csv('best_results_all.csv', na_values='-')  # Replace 'your_data.csv' with the path to your CSV file
 
 # Convert columns to numeric data types
-df['AACOAVG'] = pd.to_numeric(df['AACOAVG'])
-df['AACOWOR'] = pd.to_numeric(df['AACOWOR'])
-df['HEURISTIC'] = pd.to_numeric(df['HEURISTIC'])
+df['AACONC+'] = pd.to_numeric(df['AACONC+'])
+df['heuristic_prox'] = pd.to_numeric(df['heuristic_prox'])
+df['heuristic_kmeans'] = pd.to_numeric(df['heuristic_kmeans'])
 
 # Get number of instances after dropping empty results
 num_instances = len(df)
@@ -18,9 +18,9 @@ num_instances = len(df)
 non_empty_instances = [f'p{str(i).zfill(2)}-C' for i in range(1, num_instances + 1)]
 
 # Extract results for each instance
-results_1 = df['AACOAVG']
-results_2 = df['AACOWOR']
-results_3 = df['HEURISTIC']
+results_1 = df['AACONC+']
+results_2 = df['heuristic_prox']
+results_3 = df['heuristic_kmeans']
 
 # Combine all results to find the maximum value
 max_value = max(results_1.max(), results_2.max(), results_3.max())
@@ -47,14 +47,14 @@ for i, (instance, result_1, result_2, result_3) in enumerate(zip(non_empty_insta
         ax.bar(instance_position + width, result_3, width, color='lightgreen')
 
 # Add labels and title
-ax.set_xlabel('MD-mfcmTSP Instances')
-ax.set_ylabel('Gap (%)')
-ax.set_title('Comparison to the best solutions found by AACONC+')
+ax.set_xlabel('MD-mfcmTSP Instance')
+ax.set_ylabel('Result')
+ax.set_title('Comparison of the best results found by the algorithms')
 
 ax.set_xticks(np.arange(num_instances) * (3 * width + space_between_instances + space_between_groups))
 ax.set_xticklabels(non_empty_instances, rotation=45, ha='right')
 
-ax.legend(['AACONC+ Average', 'AACONC+ Worst', 'Heuristic'])
+ax.legend(['AACONC+ best', 'Heuristic proximity', 'Heuristic k-means'])
 
 # Set y-axis limits and ticks
 ax.set_ylim(-6, max_value)

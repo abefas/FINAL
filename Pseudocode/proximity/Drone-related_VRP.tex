@@ -1,0 +1,36 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table*}[]
+		\caption{Drone-related VRP literature}
+		\resizebox{\textwidth}{!}{%
+		\begin{tabular}{@{}llccccll@{}}
+			\toprule
+			\textbf{Reference} & \textbf{Problem} & \textbf{Scale} & \textbf{Tandem} & \textbf{Flight endurance} & \textbf{Capacitated} & \textbf{Solution Method} & \textbf{Notes} \\ \midrule
+			Wang et al. (2017) & VRPD & m-Truck n-Drone 1-Depot & Yes & Yes & Yes & Problem formulation, theoretical study & \begin{tabular}[c]{@{}l@{}}Capacity measured in parcels,\\ same speed for truck and drones\end{tabular} \\
+			\midrule
+			Schermer et al. (2018) & VRPD & m-Truck n-Drone 1-Depot & Yes & Yes & Yes & Heuristics & \begin{tabular}[c]{@{}l@{}}NN and optimization technique as in the MDmfcmTSP,\\ large instances up to 1000 customers\end{tabular} \\
+			\midrule
+			Sacramento et al. (2019) & VRP-D & m-Truck m-Drone 1-Depot & Yes & Yes & Yes* & MIP, ALNS &  \\
+			\midrule
+			Schermer et al. (2019) & VRPDERO & m-Truck n-Drone 1-Depot & No & Yes & No & MILP, VNS, TS &  \\
+			\midrule
+			Nguyen et al. (2022) & PDSVRP & m-Truck n-Drone 1-Depot & No & Yes & Yes & MILP, Metaheuristics & Maximum working time for all vehicles \\
+			\midrule
+			Schermer et al. (2019) & VRPD & m-Truck n-Drone 1-Depot & Yes & Yes & No & MILP, Matheuristic &  \\
+			\midrule
+			Wang \& Sheu (2019) & VRPD & m-Truck n-Drone 1-Depot & No & Yes & Yes & MIP, branch-and-price & Docking hubs, neglect the time of battery swap and loading \\
+			\midrule
+			Euchi \& Sadok (2021) & VRP-D & m-Truck m-Drone 1-Depot & Yes & Yes & Yes & MILP, HGA &  \\
+			\midrule
+			Lei et al. (2022) & VRPD & m-Truck m-Drone 1-Depot & Yes & Yes & Yes & Dynamical Artificial Bee Colony &  \\
+			\midrule
+			Karak et al. (2019) & HVDRP & m-Truck n-Drone 1-Depot & Yes & Yes & Yes(Drones) & MIP, Heuristics &  Vehicles only act as stations for the drones\\
+			\midrule
+			Kuo et al. (2022) & VRPDTW & m-Truck m-Drone 1-Depot & Yes & Yes & Yes & MIP, VNS &  \\
+			\midrule
+			Stodola et al. (2024) & MDVRP-D & m-Truck m-Drone m-Depot & Yes & Yes & Yes & ACO &  \\
+			\bottomrule
+		\end{tabular}%
+	}
+\end{table*}

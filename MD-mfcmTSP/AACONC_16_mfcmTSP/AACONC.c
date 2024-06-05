@@ -13,7 +13,6 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants, int n_freq, int n_si
              double T_update, double a_update, double p_min, double p_max, double d, double a, double b)
 {
 
-    //omp_set_num_threads(300);
 /* Initialize 4-D pheromone array */
     double *phMatrix;
     if(NULL == (phMatrix = malloc(sizeof *phMatrix * G->n_depots*G->n_differentTypes*G->n_nodes*G->n_nodes))){
@@ -120,7 +119,6 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants, int n_freq, int n_si
     int iter = 0, edge_sum = 0, stop_cond = 0, best_iter = -1;
     double term_condition = 1.0, foundtime = 0.0;
     time_t begin = time(NULL), loop = time(NULL), loop_time = difftime(loop, begin);
-
     /********** Main loop **********/
     while(stop_cond < 10000 && iter < 200000 && term_condition > (0.01 - epsilon) && loop_time < 3600)
     {

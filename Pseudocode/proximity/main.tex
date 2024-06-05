@@ -3,13 +3,33 @@
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage{multicol, relsize, geometry}
 \usepackage{booktabs}
+\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \usepackage{caption}
 \usepackage{pgfplotstable}
 \usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage[none]{hyphenat}
+
+\singlespacing
+% Adjust spacing between paragraphs
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 \setlength\parindent{24pt}
+
+% Add packages for font and encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx} % Times New Roman font
+
+% Set font size and line spacing
+\usepackage{setspace}
+\fontsize{10}{12}\selectfont % 10pt font size with 12pt leading
+\singlespacing % Ensure single spacing within paragraphs
+% Needs to be last
+\usepackage[table]{xcolor}
+
 \DontPrintSemicolon
 \SetKwFor{For}{for}{do}{end for}
 \SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{end if}%
@@ -17,27 +37,130 @@
 \SetKwFor{ForEach}{for each}{}{end for}
 \geometry{top=1cm, bottom=2cm, left=1cm, right=1cm}
 \newcommand{\pluseq}{\mathrel{+}=}
-\title{MD-mfcmTSP algorithm}
+\title{A heterogeneous vehicle routing problem with drones and multiple depots}
 \author{Panagiotis Zachos}
-\date{May 2024}
+\date{June 2024}
 
 \begin{document}
 	\maketitle
 	
+	\section*{ABSTRACT}
+	The rapid growth of e-commerce and the increasing demand for efficient delivery systems have underscored the importance of optimizing logistics and routing strategies. In this context, the integration of drones into last-mile delivery services is anticipated to expand significantly, fueled by technological innovations, economic advantages, and the escalating need for rapid and efficient delivery solutions. This growing relevance of drones in logistics motivates the study of novel problems that incorporate the unique capabilities and constraints of drones, aiming to enhance delivery efficiency and meet evolving customer expectations. Motivated by the above, this paper introduces a novel and complex problem within the logistics and routing sector, which we term the "Multi-Depot Mixed Fleet Capacitated TSP" (MD-mfcmTSP), whereby a set of heterogeneous vehicles located in different depots must deliver a set of homogeneous parcels to customers in the minimum time. All vehicle types have capacity measured as the parcels they can carry. A distinctive feature of this problem is the incorporation of accessibility restrictions to certain vehicles, which add significant complexity and aim to reflect real-world challenges faced by logistics companies, such as a heterogeneous fleet and delivery constraints.
+	This paper aims to formalize the MD-mfcmTSP, provide a comprehensive analysis of its components, and propose both heuristic and metaheuristic approaches for its solution. By addressing this problem, we contribute to the Travelling Salesman Problem and Vehicle Routing Problem research and the field of logistics and routing by introducing a realistic and challenging problem that considers the practical limitations and requirements of different vehicle types used in last-mile delivery. The proposed algorithms have the potential to improve efficiency and reduce costs for logistics companies operating in increasingly complex delivery environments.
+	\par
+	In modern logistics, the efficient delivery of parcels from multiple depots to numerous customer locations is a critical challenge. This study introduces a novel routing problem that extends the characteristics of routing problems such as the PDSTSP and VRPD by incorporating multiple vehicle types and multiple depots. This hybrid problem is particularly relevant to contemporary urban logistics scenarios, where various vehicles, such as trucks, motorbikes, and drones, are deployed from multiple last-mile depots to ensure timely deliveries. The objective of this research is to minimize the total delivery time across all customers.
+	\par
+	
+	\section*{Keywords}
+	Travelling Salesman Problem, TSP, Vehicle Routing Problem, VRP, Multi-Depot Vehicle Routing Problem, MDVRP, Multiple Travelling Salesman Problem, mTSP, Flying Sidekick Travelling Salesman Problem, FSTSP, Fleet Size and Mix VRP, mfcmTSP, last-mile delivery, city logistics, drone delivery, Parallel Drone Scheduling TSP, PDSTSP, mixed fleet delivery
+	
 	\section{Introduction}
-	The rapid growth of e-commerce and the increasing demand for efficient delivery systems have underscored the importance of optimizing logistics and routing strategies. This paper introduces a novel problem within the logistics and routing sector, which we term the "Multi-Depot Mixed Fleet Capacitated TSP" (MD-mfcmTSP). A distinctive feature of this problem is the incorporation of accessibility restrictions which add complexity to the problem and aim to reflect real-world challenges faced by logistics companies.
+	TSP is undoubtedly one of the most studied problem in combinatorics with applications spanning various fields. A generic statement of TSP in graph algorithmic terms is as follows: given a weighted unidirectional fully connected graph G(V , E) and a starting vertex, define a path of minimum length such that all vertices are visited exactly once and the path ends at the starting vertex.
+	
+	The Traveling Salesman Problem (TSP) is a well-studied optimization problem in combinatorial optimization, where the objective is to determine the shortest possible route that visits a set of cities and returns to the origin city. With the advent of drone technology, numerous variations of the TSP have been proposed to leverage the capabilities of drones in conjunction with traditional delivery vehicles. These variations aim to optimize delivery routes, minimize operational costs, and improve overall efficiency in logistics.
+	\section{Literature Review}
+	The FSTSP is a generalization of the traveling salesman problem (TSP) and the vehicle routing problem (VRP).
+	\subsection{Drone-related TSP}
+	\subsubsection{Flying Sidekick TSP}
+	The Flying Sidekick Travelling Salesman Problem (FSTSP) was first introduced by Murray \& Chu (2015), who proposed using a combination of trucks and drones to optimize parcel delivery. The FSTSP involves a truck that can deploy and retrieve a drone to perform deliveries, thus reducing the overall delivery time and improving efficiency. The authors used MILP to model the problem and employed heuristic algorithms to solve larger instances of the FSTSP. Freitas \& Penna (2018) employed a Variable Neighborhood Search (VNS) heuristic for the FSTSP, achieving substantial improvements in delivery times. Dell’Amico et al. (2019) provided new formulations for the FSTSP and demonstrated their effectiveness through extensive computational experiments, solving benchmark instances to optimality and improving upon existing solutions. Boccia et al. (2021) proposed  new integer linear programming formulations for both the FSTSP and PDSTSP and a column-and-row generation approach to handle synchronization issues between the truck and drone solving to optimizality and improving upon instances with up to 20 customers. Kuroswiski et al. (2023) presented a hybrid Genetic Algorithm combined with Mixed Integer Linear Programming (MILP) to efficiently solve the FSTSP for up to ten customers. Pilcher (2023) proposed a self-adaptive genetic algorithm and introduced a novel two-stage mutation process designed to address the complexities of the FSTSP.
 	\par
-	This paper aims to formalize the MD-mfcmTSP, provide a comprehensive analysis of its components, and propose both heuristic and metaheuristic approaches for its solution. By addressing this problem, we contribute to the field of logistics and routing by introducing a realistic and challenging problem that considers the practical limitations of different vehicle types used in last-mile delivery.
+	\subsubsection{Parallel Drone Scheduling TSP}
+	The Parallel Drone Scheduling Traveling Salesman Problem (PDSTSP) has garnered significant attention in recent years due to its potential to revolutionize logistics and delivery systems by incorporating drones alongside traditional delivery vehicles. The PDSTSP, also introduced by Murray \& Chu in the same paper, extends the concept of the FSTSP by involving multiple drones and optimizing the delivery process through parallel drone operations. In contrast to the FSTSP, the drones act independently from the truck and launch from and return to the depot. The authors proposed a  MILP formulation and employed heuristic algorithms to solve larger instances of the PDSTSP. Mbiadou Saleu et al. (2018) proposed an iterative two-step heuristic along with a MILP formulation. Nguyen et al. (2022) proposed an efficient branch-and-cut algorithm to solve the problem. The authors broke new ground by achieving optimal solutions for instances up to 783 customers for the first time.
+	\par 
+	Nguyen et al. (2023) introduced a new variant of the parallel drone scheduling traveling salesman problem that aims to increase the utilization of drones, particularly for heavy item deliveries, which they termed the PDSTSP with collective drones (PDSTSP-c).
+	The authors developed a two-index MILP formulation to solve small-size instances to optimality and proposed a ruin-and-recreate metaheuristic to efficiently handle larger problem instances. Montemanni et al. (2024) expanded on the research for the PDSTSP-c and introduced a MILP and constraint programming approach.
+	\par 
+	Constraint programming models have been effectively utilized to handle the scheduling complexities of drone-assisted TSP variants. Ham (2018) extended the PDSTSP by considering drone drops and pickups and time-window constraints for which the author proposed a constraint programming approach to handle the problem's complexity. Montemanni and Dell’Amico (2023) presented a constraint programming model for the PDSTSP, achieving optimal solutions for various instances.
+	\par 
+	Hybrid optimization techniques have also been explored to solve drone-assisted TSP variants. Dinh et al. (2021) proposed a hybrid ant colony optimization metaheuristic for the PDSTSP, achieving several new best-known solutions. 
+	\subsubsection{TSP-D}
+	Agatz et al. (2018) introduced the Travelling Salesman Problem with Drones (TSP-D). While the TSP-D shares mostly the same characteristics as the FSTSP, the key distinction between the TSP-D and the FSTSP is that the latter requires the distinctive location between launch point and recovery point of the drone, while the former allows the drone to be launched and recovered by the truck in the same location. The authors model the problem and propose an IP model which solves instances with up to 12 customers to optimality, along with several fast heuristics to solve larger instances of the problem. Yurek et al. (2018) contributed to the TSP-D research by proposing a decomposition-based iterative optimization algorithm and verified its efficiency. Ha et al. (2018) introduced and solved the min-cost TSP-D, whose objective is to minimize the total operational costs, which include  transportation costs and waiting penalties. The authors proposed a MILP formulation and two heuristic methods to solve the problem.
+	\subsubsection{Other}
+	Schermer et al. (2019) introduced the Traveling Salesman Drone Station Location Problem (TSDSLP), combining TSP, facility location, and parallel machine scheduling problems to minimize operational costs. 
+	Kim \& Moon (2019) introduced a mixed integer programming model for the TSP with a drone station (TSP-DS), which extends the operational range of drones. 
+	\par 
+	\input{Drone-related_TSP.tex}
+	\subsection{VRP}
+	The Vehicle Routing Problem (VRP) is a cornerstone in the field of combinatorial optimization and logistics, focusing on the optimal routing of a fleet of vehicles to service a set of customers with known demands. Since its introduction by Dantzig \& Ramser (1959), numerous variants and extensions of the VRP have been developed to address practical and complex logistics challenges.
+	The Capacitated VRP (CVRP), seeks to determine the optimal set of routes for a fleet of vehicles located in a single depot node to deliver goods to a set of customers, minimizing the total cost while satisfying constraints such as vehicle capacity and customer demand. The cost is typically defined as either the total distance, time, vehicle utilization or a combination of those.
+	The primary distinction between the Vehicle Routing Problem (VRP) and the Traveling Salesman Problem (TSP) lies in the capacity constraint of the vehicles. When vehicles have unlimited or sufficiently large capacity as to not restrict the movement of the vehicle(s), the CVRP effectively reduces to a multiple Traveling Salesman Problem (mTSP). Therefore, in this paper, we will refer to the CVRP simply as the VRP.
+	\subsubsection{Drone-related VRP}
+	The rapid advancement of drone technology has spurred significant interest in its application to logistics and transportation, particularly in addressing the complexities of last-mile delivery. Vehicle Routing Problems with Drones (VRP-D) represent an innovative extension of traditional Vehicle Routing Problems (VRP), where drones are deployed alongside traditional delivery vehicles to enhance efficiency and reduce operational costs. This integration leverages the agility and speed of drones to complement the capacity and range of trucks, presenting new challenges and opportunities in route optimization. The VRP-D and its variants focus on optimizing the coordinated routes of both vehicles and drones to ensure timely and cost-effective deliveries, considering constraints such as drone battery life, payload capacity, and synchronization requirements. This literature review explores the foundational concepts of VRP-D, the evolution of algorithmic approaches, and the diverse applications and implications of integrating drones into vehicle routing problems.
+	\par 
+	Wang et al. (2017) introduced the vehicle routing problem with drones (VRPD) in which a fleet of homogeneous trucks, each equipped with one or more drones, delivers packages to customers. Drones can be dispatched from and picked up by their corresponding trucks at either the depot or any of the customer locations. The objective is to minimize the time needed to serve all customers. The authors highlight the potential efficiency gains and limitations of integrating drones into vehicle routing systems by analyzing worst-case scenarios.
+	\subsubsection{VRP Variants}
+	The VRP has numerous variants, each addressing different practical constraints and objectives.
+	Sharma et al. (2018) reviewed 117 articles, highlighting key research areas in CVRP, multi-depot VRP, VRPTW, VRP with Split-Delivery and VRP with pickup and delivery.
+	\input{Drone-related_VRP.tex}
+	\section{Maybe}
+	The Flying Sidekick Traveling Salesman Problem (FSTSP) is an extension of the classic Traveling Salesman Problem (TSP), integrating the use of drones in conjunction with trucks to optimize delivery routes. This problem has garnered significant interest in logistics, particularly for its potential to reduce delivery times and operational costs in last-mile logistics. The FSTSP involves complex routing decisions, synchronization constraints between the truck and drone, and considerations of drone payload capacity and battery life. Kuroswiski et al. (2023) introduced a hybrid Genetic Algorithm combined with Mixed Integer Linear Programming (MILP) to solve the FSTSP. Freitas and Penna (2018) employed a Variable Neighborhood Search (VNS) heuristic, Chen and Lei (2021) developed a hybrid immune algorithm, Pilcher (2023) presented a self-adaptive genetic algorithm Mahmoudinazlou and Kwon (2023) introduced a hybrid genetic algorithm with type-aware chromosomes, Rinaldi et al. (2023) developed heuristic approaches for the multiple FSTSP, demonstrating significant time savings over traditional truck-only delivery models.
 	\par
+	Xiao et al. (2013) developed a similar two-step heuristic algorithm for facility layout problems, showing the effectiveness of a two-step approach in solving complex optimization problems (Xiao et al., 2013).
+	\par 
+	Numerical results indicate that optimizing battery weight and reusing drones are important considerations for drone delivery (Dorling 2016).
+	\par 
+	We thank Dr. Eddie Cheng for asking about faster drones versus more drones.
+	\par 
+	\textbf{IMPORTANT}
+	At the same time, it is important that we address flight range limitations. Such limitations have important roles in much of
+	the existing drone routing research. However, even he first drones developed by Amazon and JD.com ahad a flight range of 15
+	to 20 miles [33, 56]. Such a range is suitable to allow out and back travel in the medium-sized cities in which the authors live,
+	Braunschweig, Germany, and Iowa City, United States. In fact, it is suitable for many larger cities such as Hamburg, Munich,
+	and Paris. Thus, in contrast to other drone applications, in this work, we do not consider flight range as a limiting factor.
+	\par 
+	Wang et al. [12] introduced the Vehicle Routing Problem with Drones (VRPD), where a ﬂeet of trucks, each truck equipped with a given number of drones, delivers packages to customers. According to the classiﬁcation of Toth and Vigo, the VRPD can be classiﬁed as a variant of the Distance-Constrained Capacitated Vehicle Routing Problem (DCVRP) with a set of heterogeneous
+	vehicles.
+	\par 
+	Among the several features considered, the drone endurance is the one that
+	has the stronger influence on the convergence of the algorithm, a smaller endurance
+	allows the algorithms to have better performances, while reducing the number of
+	feasible sorties.
+	\par 
+	A problem very similar to the FS-TSP is the TSP with drones (TSP-D) defined for the first time in Agatz et al. (2018). The only
+	difference between the TSP-D and the FS-TSP consists in the fact that in the first the truck can visit the same customer more than once in
+	order to recover the drone, which, in turn, may be launched and return to the same location (Boccia et al. 2021)
+	\input{Complete_drone_literature.tex}
+	
+	\section{Multi-Depot mixed fleet capacitated multiple TSP}
+	We are not aware of any work in the class of drone-assisted routing operations which considers heterogeneous fleet of vehicles.
+	Further, other than the MDVRP-D introduced by Stodola et al. (2024) we are not aware of any other work in the class of drone-assisted routing operations which consider multiple depots. 
+	Given a set of Depots each of which have a heterogeneous fleet of vehicles, of which the number of vehicles of each type is predetermined, and a set of customers which all have a demand of 1 parcel, simultaneously determine the optimal allocation of parcels to each depot and complete the last-mile delivery of parcels to the set of customers in the minimum possible time.
+	\par
+	The problem takes as input a set of nodes, comprising customer nodes and depot nodes. Each depot may be equipped with a heterogeneous fleet of vehicles: Trucks, Motorbikes, and Drones. Each vehicle type has a specific capacity k, representing the number of parcels it can carry. The vehicles initiate their routes from their respective depots, fully loaded with parcels, and visit customer nodes, each with a demand of one parcel. Upon completing a route, either due to no customers remaining or reaching capacity,  the vehicle returns to its depot, where it is reloaded to full capacity and can be dispatched again if there are remaining customers. The aim is to visit all customers in the minimum possible time, with no restriction on the total number of parcels available at each depot, thus differing from traditional MDVRP constraints.
+	\par
+	Consider a parcel delivery company operating in Greece, with depots located in two major cities: Athens and Thessaloniki. The company manages numerous last-mile delivery shops in these cities, which serve as depots in the routing problem. For instance, a customer in Thessaloniki sends a parcel to a friend in Athens by visiting a nearby shop. After the shop stops receiving parcels for the day, a truck collects the parcels and delivers them to the Thessaloniki distribution center. Parcels destined for Athens are then transported overnight to the Athens distribution center.
+	Upon arrival, parcels are sorted based on their delivery areas and sent to the appropriate last-mile shops in Athens. These shops, acting as depots, dispatch vehicles (Trucks, Motorbikes, Drones) to deliver the parcels to their final destinations. The MD-mfcmTSP addresses how these vehicles can be optimally routed to minimize delivery time, while simultaneously solving the problem of parcel allocation in each last-mile shop.
+	\par
+	To tackle the problem we employ a heuristic and a metaheuristic.
+	\subsubsection{Heuristic}
+	We employ the mfcmTSP heuristic introduced by Oikonomou et al. (2019) and expand it to support multiple depots. The algorithm (\ref{alg:MDmfcmTSP}) handles the problem by using the \textit{cluster first-route second} technique. The number of clusters is equal to the number of depots in any given instance. Each cluster is assigned to its closest depot. The clusters also take into account customer accessibility, i.e if a cluster contains a customer that is only accessible by motorbike but the cluster's closest depot does not have a motorbike availabe then that customer is assigned to the nearest depot with a motorbike available. We proceed to the routing phase by dividing the problem into $|D|$ single depot mfcmTSP problems and solve iteratively for each depot. Initially, the truck of the depot constructs routes using the Nearest Neighbour algorithm, visiting every customer possible in the cluster. If there exist customers in the cluster which cannot be visited by truck, then other availabe vehicles are deployed [9-18](\ref{alg:initialization}). Then, the heuristic iteratively attempts to balance the makespan of the vehicles by offloading customers from the truck and onto the other vehicles available. This happens as long as the makespan of the depot is given by the makespan of the truck(s) i.e the truck(s) spends the most time visiting customers, or there exist no other vehicles to which the truck(s) can offload customers to. In each iteration, the vehicle type with the current minimum time spent is chosen. We initially set the minimum makespan $M_{min}$ to be equal to the makespan of the truck(s), as that is true. Starting from the first customer in the truck route, the algorithm considers $N$ successive customer nodes, where $N$ equals the chosen vehicle's capacity, such as to create a new route. If successive nodes were successfully found, the value of offloading the customers is calculated (lines 23-29), considering the trips from and to the depot as well. If the resulting makespan $M_{max}$ is less than the original $M_{min}$, then the route is stored in $r_{best}$ and $M_{min}$ takes the value of $M_{max}$ (lines 30-33). After all possible routes have been evaluated, if the minimum makespan $M_{min}$ is less than the original, which was given by the truck(s), the swap is made (lines 38-42) and local optimization for the affected routes is called (lines 43-44). At the end of the heuristic, the total time (makespan) is calculated (lines 51-54). 
+	\subsubsection{Metaheuristic}
+	
+	
+	\section{Problem description}
+	\begin{itemize}
+		\item Each customer must be visited exactly once
+		\item Each vehicle can serve at most as many customers per trip as its capacity
+		\item Some customers may not be available for delivery via uav or larger vehicles
+		\item Each depot must be equipped with at least one truck
+		\item The composition of each depot's fleet is known
+		\item Depots act as a start, finish and reload point for their fleet
+		\item Each vehicle may perform unlimited routes (multi-trip)
+	\end{itemize}
+	\begin{figure}[t]
+		\caption[width=\textwidth]{Parcel movement}
+		\includegraphics[width=0.5\columnwidth, height=\textheight]{Use-case-flowchart}
+		\centering
+	\end{figure}
 	
 	\section{Pseudocode for the MD-mfcmTSP}
 	At the end of Algorithm 1, a local optimization function (3) is called which in addition to moving nodes in different places in the same route, also moves nodes between routes of different depots and different vehicle types.\;
 	\begin{algorithm}
-
 		\small
 		\caption{MD-mfcmTSP heuristic}
+		\label{alg:MDmfcmTSP}
 		\KwIn{$G_T, G_M, ..., G_D$}
-		\KwOut{$Sol = \{Sol^i = \{R_T^i, R_M^i, ...,R_D^i\}, Sol^{i+1}, ..., Sol^m\}$ for each $i\in D$}
+		\KwOut{$M_{total}$, $Sol = \{Sol^i = \{R_T^i, R_M^i, ...,R_D^i\}, Sol^{i+1}, ..., Sol^m\}$ for each $i\in D$}
 		
 		Create clusters $K^i$ of customer nodes for each depot $d^i\in D$\;
 		by assigning each customer to the closest possible depot\;
@@ -82,8 +205,8 @@
 					$M_T = R_T^i$ 's makespan\;
 					$R_{vt}^i\pluseq r_{best}$\;
 					$M_{vt} = R_{vt}^i$ 's makespan\;
-					Call $local\_optimization(R_T^i)$\;
-					Call $local\_optimization(R_{vt}^i)$\;
+					Call $local\_optimization(R_T^i, n_{max})$\;
+					Call $local\_optimization(R_{vt}^i, n_{max})$\;
 				}\Else{ 
 					$stop = true$\;
 				}
@@ -94,11 +217,13 @@
 		$M_M = MAX(M_M^i, M_M^{i+1}, ..., M_M^m)$\;
 		$M_D = MAX(M_D^i, M_D^{i+1}, ..., M_D^m)$\;
 		$M_{total} = MAX(M_T, M_M, ..., M_D)$\;
+		Call $local\_opt\_full(Sol, n_{max})$
 	\end{algorithm}
 
 	\begin{algorithm}
 		\small
 		\caption{Initialization($d^i, K^i$)}
+		\label{alg:initialization}
 		\While{$\{K^i\}\cap \{G_T\}\neq \emptyset$}{
 			$R_T^i\pluseq NearestNeighbour(\{K^i\}\cap \{G_T\})$\;
 		}
@@ -213,6 +338,23 @@
 		\includegraphics[width=\textwidth]{kmeans-01}
 		\centering
 	\end{figure}
+	\twocolumn
+	\section{Experiment results}
+	\subsection{Algorithms comparison}
+	The objective value (measure in seconds), which is the total tour time of the delivery service, and four other performance indicators are detailed reported in Appendix 1. For each heuristic approach, such as GA, SA, or OR-Tools, we summarize the average values of the total tour time of 30 iterations for each setting, i.e., urban, suburban, and countryside areas. The results indicate that OR-Tools achieves the best outcomes among algorithms in our experiment. The mean difference of each instance upon three heuristic approaches is further checked by ANOVA-F testing, 87\% of cases then show the mean differences are
+	significant at least $\alpha$ = 5 \% (OR-Tools values in bold). The results are presented in Appendix 2. We note that TSP-0D denotes the truck only and TSP-1D to TSP-5D stands for one to five drones equipped with the truck. We then analyze the outcomes in the rest of the article following the OR-Tools.
+	
+	
+	\section{Conclusion}
+	This novel routing problem contributes to logistics research by offering a new perspective on urban delivery systems. Unlike traditional models with fixed capacities and single vehicle types, this problem accounts for multiple vehicle types and depots with unlimited parcel supplies. 
+	\par 
+	The insights gained from solving this problem can enhance operational efficiency in real-world scenarios, such as:
+	\begin{itemize}
+		\item Optimized Vehicle Utilization: Efficiently managing different types of vehicles to reduce delivery times and operational costs.
+		\item Scalable Solutions: Developing algorithms that can handle large-scale urban delivery networks with multiple depots and dynamic customer demands.
+		\item Sustainable Logistics: Promoting the use of environmentally friendly vehicles like drones and motorbikes for last-mile delivery, reducing carbon footprints.
+	\end{itemize}
+	By addressing these aspects, the research offers practical solutions for improving parcel delivery systems, making it highly relevant for logistics companies seeking to enhance their service efficiency in densely populated urban areas.
 	
 
 \end{document}

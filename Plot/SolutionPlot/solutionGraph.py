@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 # Load data
-nodes_df = pd.read_csv('p01_nodes.csv')
-clusters_df = pd.read_csv('kmeans-01-clusters.csv')
-ivt1_df = pd.read_csv('kmeans-01-ivt_1.csv')
-ivt2_df = pd.read_csv('kmeans-01-ivt_2.csv')
-ivt3_df = pd.read_csv('kmeans-01-ivt_3.csv')
+nodes_df = pd.read_csv('p11_nodes.csv')
+clusters_df = pd.read_csv('kmeans-11-clusters.csv')
+ivt1_df = pd.read_csv('kmeans-11-ivt_1.csv')
+ivt2_df = pd.read_csv('kmeans-11-ivt_2.csv')
+ivt3_df = pd.read_csv('kmeans-11-ivt_3.csv')
 
 # Create an undirected graph
 G = nx.Graph()
@@ -42,7 +42,7 @@ for _, row in ivt3_df.iterrows():
     G.add_edge(row['StartNode'], row['EndNode'], vehicle='drone')
 
 # Define colors for clusters and vehicles
-cluster_colors = ['red', 'green', 'blue', 'purple']
+cluster_colors = ['red', 'green', 'blue', 'purple', 'magenta', 'cyan', 'lightblue']
 vehicle_colors = {'truck': 'orange', 'motorbike': 'cyan', 'drone': 'magenta'}
 
 # Get positions and cluster labels
@@ -75,6 +75,10 @@ centroid_pos = [(row['X'], row['Y']) for _, row in clusters_df.iterrows() if row
 centroid_x, centroid_y = zip(*centroid_pos)
 plt.scatter(centroid_x, centroid_y, color='grey', s=100, label='Centroid', alpha=0.8, edgecolors='black')
 
+# Add node labels inside nodes
+#labels = {node: str(node) for node in G.nodes()}
+#nx.draw_networkx_labels(G, pos, labels=labels, font_color='gray', font_size=10, font_weight='bold')
+
 # Add legend and show plot
 plt.legend(fontsize='medium', loc='upper left')
 #plt.title("Vehicle Routes and Clusters", fontsize=18, fontweight='bold')
@@ -84,5 +88,5 @@ plt.xticks(fontsize=12)
 plt.yticks(fontsize=12)
 plt.grid(True, which='both', linestyle='--', linewidth=0.5)
 plt.tight_layout()
-plt.savefig('vehicle_routes_clusters.png', dpi=600)
+#plt.savefig('vehicle_routes_clusters.png', dpi=600)
 plt.show()

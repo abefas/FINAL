@@ -96,7 +96,7 @@ void assign_centroids_to_depots(Point *centroids, Point *depots, int k) {
     bool *depot_assigned = calloc(k, sizeof(bool));
 
     for (int i = 0; i < k; i++) {
-        double min_distance = DBL_MAX;
+        double min_distance = HUGE_VAL;
         int nearest_depot = -1;
         int nearest_centroid = -1;
 
@@ -184,8 +184,8 @@ ClusterData k_means(SON *G) {
     // Assign centroids to the nearest depot ensuring every depot gets assigned
     assign_centroids_to_depots(centroids, dep_points, k);
 
-    // Print the nearest depot assignment for each centroid
     /*
+    // Print the nearest depot assignment for each centroid
     printf("\nCentroid to Depot Assignments:\n");
     for (int i = 0; i < k; i++) {
         printf("Centroid %d is assigned to Depot %d\n", i, centroids[i].cluster);
