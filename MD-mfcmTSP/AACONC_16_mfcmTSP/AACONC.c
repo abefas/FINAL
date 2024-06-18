@@ -120,7 +120,7 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants, int n_freq, int n_si
     double term_condition = 1.0, foundtime = 0.0;
     time_t begin = time(NULL), loop = time(NULL), loop_time = difftime(loop, begin);
     /********** Main loop **********/
-    while(stop_cond < 10000 && iter < 200000 && term_condition > (0.01 - epsilon) && loop_time < 3600)
+    while(stop_cond < 10000 && iter < 2000000 && term_condition > (0.01 - epsilon) && loop_time < 3600)
     {
         R_best.total_makespan = HUGE_VAL;
         int edge_sum = 0;
@@ -166,11 +166,9 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants, int n_freq, int n_si
             free(Ra_local.a_VT);
         }
 
-        /*
         for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
             printf("Type %d: %0.3lf\n", ivt+1, R_best.a_VT[ivt].makespan);
         }
-        */
         printf("R_best = %0.3lf\n", R_best.total_makespan);
         printf("R = %0.3lf\n", R.total_makespan);
 

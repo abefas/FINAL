@@ -1,10 +1,10 @@
 \begin{table}[h!]
 	\centering
 	\caption{4 routes that need to be assigned to a depot's 2 trucks}
-	\resizebox{0.4\columnwidth}{!}{%
+	\resizebox{0.12\columnwidth}{!}{%
 		\begin{tabular}{@{}cc@{}}
 			\toprule
-			\textbf{Route} & \textbf{Route cost} \\ 
+			\textbf{Route} & \textbf{Cost} \\ 
 			\midrule
 			1 & 5 \\
 			\midrule 
@@ -17,34 +17,15 @@
 		\end{tabular}%
 	}
 \end{table}
-\begin{table}[h!]
-	\centering
-	\caption{Optimal split}
-	\resizebox{0.5\columnwidth}{!}{%
-		\begin{tabular}{@{}ccc@{}}
-			\toprule
-			\textbf{Route} & \textbf{Route cost} & \textbf{Truck} \\ 
-			\midrule
-			1 & 5 & 1\\
-			\midrule 
-			2 & 6 & 2\\
-			\midrule 
-			3 & 2 & 2\\
-			\midrule 
-			4 & 3 & 1\\
-			\bottomrule
-		\end{tabular}%
-	}
-\end{table}
 \newline
 \textbf{Procedure for the assignment of 4 routes to 2 trucks of the same depot:}
 \begin{table}[h!]
 	\centering
 	\caption{Sort routes in descending order based on cost}
-	\resizebox{0.4\columnwidth}{!}{%
+	\resizebox{0.12\columnwidth}{!}{%
 		\begin{tabular}{@{}cc@{}}
 			\toprule
-			\textbf{Route} & \textbf{Route cost} \\ 
+			\textbf{Route} & \textbf{Cost} \\ 
 			\midrule
 			2 & 6 \\
 			\midrule 
@@ -60,10 +41,10 @@
 \begin{table}[h!]
 	\centering
 	\caption{Iteratively assign routes to Trucks}
-	\resizebox{\columnwidth}{!}{%
+	\resizebox{0.5\columnwidth}{!}{%
 		\begin{tabular}{@{}cccccc@{}}
 			\toprule
-			\textbf{Iteration} & \textbf{Route} & \textbf{Route cost} & \textbf{Truck} & \textbf{Truck 1 ms} & \textbf{Truck 2 ms}\\ 
+			\textbf{Iteration} & \textbf{Route} & \textbf{Cost} & \textbf{Truck} & \textbf{Truck 1 ms} & \textbf{Truck 2 ms}\\ 
 			\midrule
 			1 & 2 & 6 & 1 & 6 & 0\\
 			\midrule 
@@ -74,27 +55,6 @@
 			4 & 3 & 2 & 1 & 8 & 8\\
 			\midrule
 			\multicolumn{6}{@{}c@{}}{Total makespan = 8 (optimal)}\\
-			\bottomrule
-		\end{tabular}%
-	}
-\end{table}
-\begin{table}[h!]
-	\centering
-	\caption{Non-optimal assignment with routes sorted in increasing order}
-	\resizebox{\columnwidth}{!}{%
-		\begin{tabular}{@{}cccccc@{}}
-			\toprule
-			\textbf{Iteration} & \textbf{Route} & \textbf{Route cost} & \textbf{Truck} & \textbf{Truck 1 ms} & \textbf{Truck 2 ms}\\ 
-			\midrule
-			1 & 3 & 2 & 1 & 2 & 0\\
-			\midrule 
-			2 & 4 & 3 & 2 & 2 & 3\\
-			\midrule 
-			3 & 1 & 5 & 2 & 7 & 3\\
-			\midrule 
-			4 & 2 & 6 & 1 & 7 & 9\\
-			\midrule
-			\multicolumn{6}{@{}c@{}}{Total makespan = 9 (non-optimal)}\\
 			\bottomrule
 		\end{tabular}%
 	}

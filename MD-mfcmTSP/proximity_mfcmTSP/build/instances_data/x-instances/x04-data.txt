@@ -1,0 +1,16 @@
+x_max = 10000.00
+y_max = 9996.00
+
+x_min = 0.00
+y_min = 0.00
+
+Dimensions: 10000.00 x 9996.00
+
+number of customers = 1000
+number of depots = 4
+
+Type 1: 903 customers, 90.30% 
+
+Type 2: 1000 customers, 100.00% 
+
+Type 3: 855 customers, 85.50% 

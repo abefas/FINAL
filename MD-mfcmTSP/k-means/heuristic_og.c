@@ -225,12 +225,14 @@ void heuristic_og(SON *G, VType *VT, int **da_access, asolution *Rz, plotCluster
 
                 remove_duplicate_nodes(&R.a_VT[0].a_depots[IDEPOT].routelist);
                 remove_duplicate_nodes(&R.a_VT[type].a_depots[IDEPOT].routelist);
+                /*
                 double ms1 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 1);
                 double ms2 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 2);
                 if(type != 2){
                     ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
                     ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
+                */
             }else{
                 //printf("min_cost %0.2lf\n", min_ms);
                 //printf("STOPPED\n");
@@ -264,7 +266,7 @@ void heuristic_og(SON *G, VType *VT, int **da_access, asolution *Rz, plotCluster
             R.total_makespan = R.a_VT[ivt].makespan;
     }
 
-    R.total_makespan = local_opt_full2(&R, G, da_access, VT);
+    //R.total_makespan = local_opt_full2(&R, G, da_access, VT);
 
     //printf("total makespan = %0.2lf\n", R.total_makespan);
 

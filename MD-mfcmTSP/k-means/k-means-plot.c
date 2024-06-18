@@ -134,7 +134,7 @@ ClusterData k_means(SON *G) {
 
     int num_points = G->n_customers;
     int k = G->n_depots;
-    int max_iterations = 100;
+    int max_iterations = 50;
 
     Point *points, *dep_points;
     if(NULL == (points = malloc(sizeof *points * G->n_customers))){

@@ -1,3 +1,0 @@
-/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles/DBSCAN.dir
-/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles/edit_cache.dir
-/home/abefas/Desktop/FINAL/MD-mfcmTSP/DBSCAN/build/CMakeFiles/rebuild_cache.dir

@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
     /* Read file and store all info */
     char input[100];
-    sprintf(input, "../../../../Instances/myInstances/x%02d.MDmfcmTSP", instance_id);
+    sprintf(input, "../../../../Instances/Cordeau_mfcmTSP/p%02d.MDmfcmTSP", instance_id);
     FILE *fp = fopen(input, "r");
     if(!fp){
         perror("Error while opening the file.\n");
@@ -146,7 +146,7 @@ int main(int argc, char **argv) {
 
     /* Get Instance data *
     char file_name[50];
-    sprintf(file_name, "p%02d-data.txt", instance_id);
+    sprintf(file_name, "x%02d-data.txt", instance_id);
     FILE *fp_1;
     if(NULL == (fp_1 = fopen(file_name, "w")))
     {
@@ -184,9 +184,10 @@ int main(int argc, char **argv) {
     */
 
 
-    heuristic_v1_2(&G, VT, da_access);
+    //heuristic_v1_2(&G, VT, da_access);
 
-    //heuristic_prox(&G, VT, da_access);
+    heuristic_prox(&G, VT, da_access);
+
     /*
     heuristic_prox_2(&G, VT, da_access);
     heuristic_v1(&G, VT, da_access);

@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 
     /* Read file and store all info */
     char input[100];
-    sprintf(input, "../../../../Instances/myInstances/x%02d.MDmfcmTSP", instance_id);
+    sprintf(input, "../../../../../Instances/Cordeau_mfcmTSP/p%02d.MDmfcmTSP", instance_id);
     FILE *fp = fopen(input, "r");
     if(!fp){
         perror("Error while opening the file.\n");
@@ -182,7 +182,7 @@ int main(int argc, char **argv) {
 
     //Run Algorithm
     #pragma omp parallel for
-    for(int i = 0; i < 20 * G.n_customers; i++){
+    for(int i = 0; i < 2000; i++){
         asolution R_local;
         R_local.total_makespan = HUGE_VAL;
         if(NULL == (R_local.a_VT = malloc(sizeof *R_local.a_VT * G.n_differentTypes))){
@@ -211,8 +211,8 @@ int main(int argc, char **argv) {
         pl_local.points = malloc(G.n_customers * sizeof *pl_local.points);
         pl_local.centroids = malloc(G.n_depots * sizeof *pl_local.centroids);
 
-        //heuristic(&G, VT, da_access, &R_local, &pl_local);
-        heuristic_og(&G, VT, da_access, &R_local, &pl_local);
+        heuristic(&G, VT, da_access, &R_local, &pl_local);
+        //heuristic_og(&G, VT, da_access, &R_local, &pl_local);
 
         #pragma omp critical
         {
@@ -247,6 +247,7 @@ int main(int argc, char **argv) {
     time_t finish = time(NULL);
     double runtime = difftime(finish, begin);
 
+    printf("Total makespan = %0.2lf\n", R.total_makespan);
     fprint_results(&R, &G, VT);
     fprint_data(runtime);
     plot_clusters(pl.points, pl.centroids, G.a_depots, G.n_customers, G.n_depots);

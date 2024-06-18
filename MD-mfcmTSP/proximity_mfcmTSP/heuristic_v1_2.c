@@ -16,23 +16,6 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
     //goes into the second closest depot's cluster
     ClusterData cd = createClusters(G, da_access);
 
-    /* Generate files to visualize the clustering *
-    char fn[15];
-    for(int dep = 0; dep < G->n_depots; dep++){
-        printf("depot %d:\n", dep);
-        sprintf(fn, "dep_%d.csv", dep);
-        FILE *fp = fopen(fn, "w");
-        fprintf(fp, "NodeID,Xposition,Yposition\n");
-        for(int l = 0; l < cd.limit[dep]; l++){
-            printf(" %d", cd.cluster[dep][l]);
-            fprintf(fp, "%d,%d,%d\n", cd.cluster[dep][l], G->a_combined[cd.cluster[dep][l]-1].x, G->a_combined[cd.cluster[dep][l]-1].y);
-        }
-        if(fclose(fp) != 0){ printf("Error closing fp!\n"); exit(1); }
-        printf("\n");
-    }
-    */
-
-
     asolution R;
     R.total_makespan = 0.0;
     if(NULL == (R.a_VT = malloc(sizeof *R.a_VT * G->n_differentTypes))){
@@ -232,12 +215,14 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
 
                 remove_duplicate_nodes(&R.a_VT[0].a_depots[IDEPOT].routelist);
                 remove_duplicate_nodes(&R.a_VT[type].a_depots[IDEPOT].routelist);
+                /*
                 double ms1 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 1);
                 double ms2 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 2);
                 if(type != 2){
-                    ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
-                    ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
+                    double ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
+                    double ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
+                */
             }else{
                 printf("min_cost %0.2lf\n", min_ms);
                 printf("STOPPED\n");
@@ -252,12 +237,14 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
 
 
 
+    /*
     //Remove unnecessary nodes(depot to depot) and ready for final local opt
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         for(int idep = 0; idep < G->n_depots; idep++){
            remove_duplicate_nodes(&R.a_VT[ivt].a_depots[idep].routelist);
         }
     }
+    */
 
 
     //Get Vehicle types' makespans - were not needed/used until now 

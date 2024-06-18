@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Read the CSV data into a DataFrame
-data = pd.read_csv('local_opt_time_comp_kmeans.csv')
+data = pd.read_csv('Comp_times.csv')
 
 # Set the style and color palette
 sns.set(style="whitegrid")
-palette = sns.color_palette("husl", 4)  # Using a Husl color palette
+palette = sns.color_palette("deep")  # Using a Husl color palette
 
 # Create a line plot with enhanced aesthetics
 plt.figure(figsize=(14, 8))
@@ -18,8 +18,8 @@ for idx, column in enumerate(data.columns[1:]):
 
 # Customize the plot
 plt.xlabel('Instance', fontsize=14)
-plt.ylabel('Optimization time (seconds)', fontsize=14)
-plt.title('Local Optimization impact on computational time', fontsize=16, weight='bold')
+plt.ylabel('Time in seconds', fontsize=14)
+#plt.title('', fontsize=16, weight='bold')
 plt.legend(title='Algorithm', fontsize=12)
 plt.xticks(rotation=45, fontsize=12)
 

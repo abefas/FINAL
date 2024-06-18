@@ -181,7 +181,8 @@ void fprint_results(asolution *R, SON *G, VType *VT){
                     if(temp->next->data > G->n_customers){
                         append(&vehicleRoute, 0);
                         fprintf(fp, "type %d  depot %d  route %2d  time %10.2lf\t", ivt+1, idep+G->n_customers+1, vehicle, v_ms);
-                        fprintf(fp_1, "%d,%d\n", temp->data, temp->next->data);
+                        if(ivt != 2)
+                            fprintf(fp_1, "%d,%d\n", temp->data, temp->next->data);
                         fprintList(vehicleRoute, fp);
                         deleteList(&vehicleRoute);
                         vehicle++;	

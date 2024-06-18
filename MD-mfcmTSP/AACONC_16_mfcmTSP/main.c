@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 
     /* Read file and store all info */
     char input[100];
-    sprintf(input, "../../../../Instances/Cordeau_mfcmTSP/p%02d.MDmfcmTSP", instance_id);
+    sprintf(input, "../../../../Instances/myInstances/x%02d.MDmfcmTSP", instance_id);
     FILE *fp = fopen(input, "r");
     if(!fp){
         perror("Error while opening the file.\n");
@@ -151,7 +151,7 @@ int main(int argc, char **argv) {
 
     // n_prim * n_size must not exceed total number of customers
     int n_ants = 192;
-    int n_freq = 10;
+    int n_freq = 5;
     int n_size = 24;
     int n_sect = 16;
     int n_prim = 4;

@@ -1,0 +1,9 @@
+No local opt after offloading customers to Motorbike in AACONC
+p_min = 0.001
+p_max = 0.01
+d = 1
+T_update = 0.2
+stop_cond = 10000
+iterations = 1M
+term_condition = 0.01
+time = 3600 seconds

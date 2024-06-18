@@ -1,0 +1,41 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table}[h]
+	\begin{minipage}{\columnwidth}
+		\centering
+		\caption{Performance Comparison (Standard Local Optimization)}
+		\resizebox{0.5\textwidth}{!}{%
+			\begin{tabular}{@{}cccccc@{}}
+				\toprule
+				\textbf{Instance} & \textbf{Hybrid} & \textbf{New (v1)} & \textbf{gap(\%)} & \textbf{Original} & \textbf{gap(\%)} \\
+				\midrule
+				p01 & 173.99 & 215.15 & 23.66 & 232.34 & 33.54 \\
+				\midrule
+				p02 & 178.37 & 218.40 & 22.44 & 221.55 & 24.21 \\
+				\midrule
+				p03 & 172.24 & 202.43 & 17.53 & 218.73 & 26.99 \\
+				\midrule
+				p04 & 628.26 & 711.80 & 13.30 & 740.45 & 17.86 \\
+				\midrule
+				p05 & 589.68 & 655.40 & 11.15 & 713.39 & 20.98 \\
+				\midrule
+				p06 & 381.72 & 431.32 & 12.99 & 471.61 & 23.55 \\
+				\midrule
+				p07 & 278.07 & 349.19 & 25.58 & 359.18 & 29.17 \\
+				\midrule
+				p08 & 2842.74 & 3079.58 & 8.33 & 3380.67 & 18.92 \\
+				\midrule
+				p09 & 1768.27 & 2102.98 & 18.93 & 2157.10 & 21.99 \\
+				\midrule
+				p10 & 1293.53 & 1525.37 & 17.92 & 1614.27 & 24.80 \\
+				\midrule
+				p11 & 979.30 & 1101.33 & 12.46 & 1096.74 & 11.99 \\
+				\midrule
+				\textbf{Avg} & 844.20 & 963.00 & 16.75 & 1018.73 & 23.09 \\
+				\bottomrule
+			\end{tabular}%
+		}
+		\label{tab:standard_comp_all_results}
+	\end{minipage}
+\end{table}

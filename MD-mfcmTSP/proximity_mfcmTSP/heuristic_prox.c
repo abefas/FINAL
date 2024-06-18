@@ -90,7 +90,7 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
         initialization1(G, &R, VT, da_access, adj_matrix, cd.cluster[IDEPOT], cd.limit[IDEPOT], G->a_depots[IDEPOT].id);
         //We have makespan of each type for IDEPOT at this point so just run mfcmTSP heuristic here
 
-    /***** MAIN HEURISTIC FUNCTION BEGINS HERE *****/
+    /***** MAIN HEURISTIC FUNCTION BEGINS HERE *****
         int stop = 0, type, capacity;
         while(  G->a_depots[IDEPOT].n_VT[0] != 0    //IDEPOT has Truck(s)
                 &&
@@ -141,7 +141,7 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
             int nn_length = listLength(R.a_VT[0].a_depots[IDEPOT].routelist);
             //While s points to a customer
             //Find the minimum cost route that can be added to selected type from Truck route
-            while(index_nn < nn_length - capacity - 1){
+            while(index_nn < nn_length - 1){
                 if(s->data > G->n_customers || da_access[type][s->data - 1] != 1){   //s not able to switch
                     s = s->next;
                     index_nn++;
@@ -228,8 +228,8 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
                 double ms1 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 1);
                 double ms2 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 2);
                 if(type != 2){
-                    ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
-                    ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
+                    double ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
+                    double ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
             }else{
                 printf("min_cost %0.2lf\n", min_ms);
@@ -237,7 +237,7 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
                 stop = 1;
             }
             deleteList(&route_best);    //best route was added to motorcycle or drone
-        }
+        }*/
         //Continue to next depot
         deleteAdjLists(adj_matrix, G->n_nodes);
     }
@@ -245,12 +245,14 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
 
 
 
+    /*
     //Remove unnecessary nodes(depot to depot) and ready for final local opt
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         for(int idep = 0; idep < G->n_depots; idep++){
            remove_duplicate_nodes(&R.a_VT[ivt].a_depots[idep].routelist);
         }
     }
+    */
 
 
     //Get Vehicle types' makespans - were not needed/used until now 
@@ -264,7 +266,7 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
             R.total_makespan = R.a_VT[ivt].makespan;
     }
 
-    R.total_makespan = local_opt_full2(&R, G, da_access, VT);
+    //R.total_makespan = local_opt_full2(&R, G, da_access, VT);
 
     printf("total makespan = %0.2lf\n", R.total_makespan);
 

@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib.ticker import MultipleLocator
 
 # Load the data from CSV
-data = pd.read_csv('heuristics_gaps_to_BEST.csv')
+data = pd.read_csv('H-AACONC_localOpt_comparison_to_Standard_gaps.csv')
 
 # Create a bar width and positions
 bar_width = 0.2
@@ -22,15 +22,15 @@ colors = {
 fig, ax = plt.subplots(figsize=(14, 8))
 
 # Bars for each algorithm with chosen colors and a thin border
-bars1 = ax.bar(index - 1.5*bar_width, data['heuristic (proximity)'], bar_width, label='Heuristic (proximity)', color=colors['bar1'], edgecolor='black', linewidth=0.5)
-bars2 = ax.bar(index - 0.5*bar_width, data['heuristic (k-means)'], bar_width, label='Heuristic (k-means)', color=colors['bar2'], edgecolor='black', linewidth=0.5)
-#bars3 = ax.bar(index + 0.5*bar_width, data['heuristic (k-means)'], bar_width, label='Heuristic (k-means)', color=colors['bar3'], edgecolor='black', linewidth=0.5)
+bars1 = ax.bar(index - 1.5*bar_width, data['+Swap Best'], bar_width, label='+Swap Best', color=colors['bar1'], edgecolor='black', linewidth=0.5)
+bars2 = ax.bar(index - 0.5*bar_width, data['No Local Opt Best'], bar_width, label='No Local Opt Best', color=colors['bar2'], edgecolor='black', linewidth=0.5)
+#bars3 = ax.bar(index + 0.5*bar_width, data['No Local Opt Best'], bar_width, label='No Local Opt Best', color=colors['bar3'], edgecolor='black', linewidth=0.5)
 #bars4 = ax.bar(index + 1.5*bar_width, data['heuristic_kmeans'], bar_width, label='Heuristic k-means', color=colors['bar4'], edgecolor='black', linewidth=0.5)
 
 # Add labels, title, and legend
-ax.set_title('Gaps to AACONC+ best')
-ax.set_xlabel('Instances')
-ax.set_ylabel('Result')
+ax.set_title('H-AACONC Local Opt Comparison')
+ax.set_xlabel('Instance')
+ax.set_ylabel('Gap (%)')
 
 ax.set_xticks(index)
 ax.set_xticklabels(data['Instance'], rotation=45, ha='right')

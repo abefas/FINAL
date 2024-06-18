@@ -1,0 +1,38 @@
+\begin{table}[h]
+	\begin{minipage}{\columnwidth}
+		\centering
+		\caption{Performance Comparison (+Swap Local Optimization)}
+		\resizebox{0.5\textwidth}{!}{%
+			\begin{tabular}{@{}cccccc@{}}
+				\toprule
+				\textbf{Instance} & \textbf{Hybrid} & \textbf{New (v1)} & \textbf{gap(\%)} & \textbf{Original} & \textbf{gap(\%)} \\
+				\midrule
+				p01 & 180.03 & 217.42 & 20.77 & 243.72 & 35.38 \\
+				\midrule
+				p02 & 179.90 & 219.20 & 21.85 & 243.72 & 35.48 \\
+				\midrule
+				p03 & 174.47 & 214.84 & 23.14 & 277.50 & 59.05 \\
+				\midrule
+				p04 & 628.73 & 668.81 & 6.37 & 711.00 & 13.09 \\
+				\midrule
+				p05 & 583.01 & 630.78 & 8.19 & 713.00 & 22.30 \\
+				\midrule
+				p06 & 369.07 & 435.42 & 17.98 & 481.20 & 30.38 \\
+				\midrule
+				p07 & 271.82 & 309.48 & 13.85 & 322.29 & 18.57 \\
+				\midrule
+				p08 & 2809.48 & 3333.93 & 18.67 & 3448.84 & 22.76 \\
+				\midrule
+				p09 & 1753.60 & 1917.82 & 9.36 & 2201.39 & 25.54 \\
+				\midrule
+				p10 & 1259.76 & 1493.13 & 18.52 & 1630.94 & 29.46 \\
+				\midrule
+				p11 & 985.47 & 1145.75 & 16.26 & 1211.33 & 22.92 \\
+				\midrule
+				\textbf{Avg} & 835.94 & 962.42 & 15.91 & 1044.08 & 28.63 \\
+				\bottomrule
+			\end{tabular}%
+		}
+		\label{+Swap_comp_all_results}
+	\end{minipage}
+\end{table}

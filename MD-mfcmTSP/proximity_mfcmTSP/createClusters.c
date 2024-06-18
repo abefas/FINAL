@@ -2,6 +2,8 @@
 #include "header_files/heuristic_misc_functions.h"
 #include "header_files/structs.h"
 
+void save_clustering_to_csv(SON *G, int *assign_cluster);
+
 ClusterData createClusters(SON *G, int **da_access){
 
     int *assign_cluster;
@@ -11,10 +13,8 @@ ClusterData createClusters(SON *G, int **da_access){
     }
 
     for(int i = 0; i < G->n_customers; i++){
-        for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-            int depotID = find_closest_depot(i+1, G, da_access);
-            assign_cluster[i] = depotID;
-        }
+        int depotID = find_closest_depot(i+1, G, da_access);
+        assign_cluster[i] = depotID;
     }
 
     int **cluster, *counter, *limit;
@@ -48,7 +48,7 @@ ClusterData createClusters(SON *G, int **da_access){
         cluster[idepot][counter[idepot]] = i+1;
         counter[idepot]++;
     }
-
+    save_clustering_to_csv(G, assign_cluster);
     free(counter);
     free(assign_cluster);
 
@@ -58,3 +58,36 @@ ClusterData createClusters(SON *G, int **da_access){
     
     return result;
 }
+extern int instance_id;
+// Function to save clustering results to a CSV file
+void save_clustering_to_csv(SON *G, int *assign_cluster) {
+    char file_name[20];
+    sprintf(file_name, "veronoi-%02d.clusters", instance_id);
+    FILE *fp;
+    if(NULL == (fp = fopen(file_name, "w")))
+    {
+        printf("Couldn't open file fp at save_clustering_to_csv\n");
+        exit(1);
+    }
+
+    // Write header
+    fprintf(fp, "Type,X,Y,Cluster\n");
+
+    // Write points
+    for (int i = 0; i < G->n_customers; i++) {
+        fprintf(fp, "Point,%f,%f,%d\n", G->a_customers[i].x, G->a_customers[i].y, assign_cluster[i]-G->n_customers-1);
+    }
+
+    // Write centroids
+    for (int j = 0; j < G->n_depots; j++) {
+        fprintf(fp, "Centroid,%f,%f,%d\n", G->a_depots[j].x, G->a_depots[j].y, j);
+    }
+
+    // Write depots
+    for (int j = 0; j < G->n_depots; j++) {
+        fprintf(fp, "Depot,%f,%f,%d\n", G->a_depots[j].x, G->a_depots[j].y, j);
+    }
+
+    fclose(fp);
+}
+

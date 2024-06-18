@@ -1,27 +1,27 @@
 \documentclass{article}
 \usepackage[linesnumbered,ruled,longend]{algorithm2e}
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage[LGR, T1]{fontenc}
+\usepackage[utf8]{inputenc}   % For UTF-8 encoding
+\usepackage[greek,english]{babel}
+\usepackage{mathptmx} % Times New Roman font
 \usepackage{multicol, relsize, geometry}
 \usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{pgfplots}
-\usepackage{pgfplotstable}
-\usepackage{caption}
-\usepackage{pgfplotstable}
+\usepackage{pgfplotstable, caption, array}
 \usepackage{indentfirst}
 \usepackage{setspace}
+\usepackage[fracspacing]{newpxmath}
 \usepackage[none]{hyphenat}
+\sloppy
+
 
 \singlespacing
 % Adjust spacing between paragraphs
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 \setlength\parindent{24pt}
-
-% Add packages for font and encoding
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{mathptmx} % Times New Roman font
 
 % Set font size and line spacing
 \usepackage{setspace}
@@ -35,26 +35,63 @@
 \SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{end if}%
 % Redefine \ForEach to display a vertical line under it
 \SetKwFor{ForEach}{for each}{}{end for}
+\SetKwRepeat{Do}{do}{while}
 \geometry{top=1cm, bottom=2cm, left=1cm, right=1cm}
 \newcommand{\pluseq}{\mathrel{+}=}
+
+
 \title{A heterogeneous vehicle routing problem with drones and multiple depots}
 \author{Panagiotis Zachos}
 \date{June 2024}
 
 \begin{document}
 	\maketitle
-	
-	\section{Multi-Depot mixed fleet capacitated multiple TSP}
-	The problem takes as input a set of nodes, comprising of customer nodes and depot nodes. Each depot may be equipped with a heterogeneous fleet of vehicles: Trucks, Motorbikes, and Drones. Each vehicle type has a specific capacity k, representing the number of parcels it can carry. The vehicles initiate their routes from their respective depots, fully loaded with parcels, and visit customer nodes, each with a demand of one parcel. Upon completing a route, either due to no customers remaining or reaching capacity,  the vehicle returns to its depot, where it is reloaded to full capacity and can be dispatched again if there are remaining customers. The aim is to visit all customers in the minimum possible time, with \textbf{no restriction on the total number of parcels available at each depot}, thus differing from traditional MDVRP constraints.
+	\selectlanguage{greek}
+	\section{Στόχος}
+	Επέκταση του \selectlanguage{english}mixed fleet capacitated multiple TSP (mfcmTSP) (Oikonomou et al. 2019) \selectlanguage{greek} όπου ένα φορτηγό με απεριόριστη χωρητικότητα, μία μοτοσυκλέτα με αυθαίρετη χωρητικότητα και ένα \selectlanguage{english}drone \selectlanguage{greek}με χωρητικότητα 1, πρέπει να επισκεφτούν πελάτες, οι οποίοι έχουν ζήτηση 1 δέμα ο καθένας, στον μικρότερο δυνατό χρόνο.\;
+	\newline
 	\par
+	
+	\textbf{Κύρια χαρακτηριστικά του νέου προβλήματος \selectlanguage{english}(Multi-Depot mfcmTSP):}
+	\begin{itemize}
+		\item \selectlanguage{greek}Ανάθεση χωρητικότητας στα φορτηγά (έναντι απεριόριστης).\;
+		\item \selectlanguage{greek}Οι μοτοσυκλέτες μπορούν να επισκεφτούν όλους τους πελάτες.\; 
+		\item Τα φορτηγά μπορούν να επισκεφτούν μερικούς πελάτες μόνο, λόγω μεγάλου μεγέθους (στενοί δρόμοι, σοκάκια) \selectlanguage{english}(\textasciitilde 90\%).\;
+		\item \selectlanguage{greek}Τα \selectlanguage{english}drones \selectlanguage{greek}μπορούν να επισκεφτούν μερικούς πελάτες μόνο, λόγω ακατάλληλων συνθηκών προσγείωσης ή λόγω προτίμησης πελατών \selectlanguage{english}(\textasciitilde 85\%).
+		\item \selectlanguage{greek}Πολλαπλές αποθήκες \selectlanguage{english}(>1), \selectlanguage{greek}με την κάθε αποθήκη να διαθέτει τον δικό της στόλο οχημάτων.\;
+		Συγκεκριμένα, η κάθε αποθήκη μπορεί να έιναι εξοπλισμένη με [1,$\infty$] φορτηγά, [0,$\infty$] μοτοσυκλέτες και [0,$\infty$] \selectlanguage{english}drones. \selectlanguage{greek}Ωστόσο, τουλάχιστον μία αποθήκη θα πρέπει να εμπεριέχει στον στόλο της τουλάχιστον μία μοτοσυκλέτα έτσι ώστε να μπορούν να εξυπηρετηθούν όλοι οι πελάτες.\;
+	\end{itemize}
+	\par
+	\selectlanguage{english}
 	\begin{figure}[h]
-		\caption{Solution example}
+		\caption{Solution example with 50 customers and 4 depots}
 		\centering
-		\includegraphics[width=\textwidth]{Solution-example}
+		\includegraphics[width=0.9\textwidth]{p01_best_solution}
 	\end{figure}
-	\twocolumn
-	\subsection{Objective}
-	The objective of the MD-mfcmTSP is to minimize the total makespan in which all customers have been served i.e min $M_{total}$.\;
+	\selectlanguage{greek}
+	\section{Περιεχόμενα}
+	\begin{itemize}
+		\item \selectlanguage{greek}Υλοποίηση του \selectlanguage{english}mfcmTSP (2019) heuristic \selectlanguage{greek}, 
+		με προσθήκη υποστήριξης πολλαπλών οχημάτων κάθε είδους σε κάθε αποθήκη, και χρήση τεχνικής \selectlanguage{english}cluster first-route second \selectlanguage{greek} για την προσαρμογή του αλγορίθμου στην εκδοχή του προβλήματος με πολλαπλές αποθήκες.\;
+		\item Βελτίωση του αλγορίθμου και σύγκριση αποτελεσμάτων.\;
+		\item Χρήση \selectlanguage{english}local search optimization \selectlanguage{greek}για την περαιτέρω βελτίωση αποτελεσμάτων.\;
+		\item Παρουσίαση ενός υβριδικού \selectlanguage{english}metaheuristic \selectlanguage{greek}που κάνει χρήση του \selectlanguage{english}Ant Colony Optimization \selectlanguage{greek}σε συνδυασμό με το \selectlanguage{english} heuristic.\;
+		\item \selectlanguage{greek}Σύγκριση των αλγορίθμων.\;
+	\end{itemize}
+	\selectlanguage{english}
+	\newpage
+	\subsection{Motivation / Use case}
+	Consider a parcel delivery company operating in Greece, with depots located in two major cities: Athens and Thessaloniki. The company manages numerous last-mile delivery shops in these cities, which serve as depots in the routing problem. For instance, a customer in Thessaloniki sends a parcel to a friend in Athens by visiting a nearby shop. After the shop stops receiving parcels for the day, a truck collects the parcels and delivers them to the Thessaloniki distribution center. Parcels destined for Athens are then transported overnight to the Athens distribution center.
+	Upon arrival, parcels are sorted based on their delivery areas and sent to the appropriate last-mile shops in Athens. These shops, acting as depots in our problem, dispatch vehicles (Trucks, Motorbikes, Drones) to deliver the parcels to their final destinations. \textbf{The MD-mfcmTSP addresses how these vehicles can be optimally routed to minimize delivery time, while simultaneously solving the problem of parcel allocation in each last-mile shop}.
+	\par
+	\begin{figure}[h!]
+		\caption{Life of a parcel}
+		\centering
+		\includegraphics[width=0.40\textwidth, height=0.50\textheight]{Parcel-Life}
+	\end{figure}
+	\newpage
+	\section{Objective}
+	The objective of the MD-mfcmTSP is to minimize the total makespan in which all customers are visited/served i.e min $M_{total}$.\;
 	\newline
 	\newline
 	\textbf{Notation}\;
@@ -64,49 +101,27 @@
 		\item $R_T^i$ : Truck route of depot $i\in D$ \;
 		\item $R_M^i$ : Motorbike route of depot $i\in D$ \;
 		\item $R_D^i$ : Drone route of depot $i\in D$ \;
-		\item $M_T^i$ : Makespan of Truck route of depot $i\in D$ \;
-		\item $M_M^i$ : Makespan of Motorbike route of depot $i\in D$ \;
-		\item $M_D^i$ : Makespan of Drone route of depot $i\in D$ \;
+		\item $M_T^i$ : Time of the Truck's route(s) ($N^i_{T}=1$) or Makespan of the Trucks' route(s) ($N^i_{T}>1$) of depot $i\in D$ \;
+		\item $M_M^i$ : Time of the Motorbike's route(s) ($N^i_{M}=1$) or Makespan of Motorbikes' route(s) ($N^i_{M}>1$) of depot $i\in D$ \;
+		\item $M_D^i$ : Time of the Drone's route(s) ($N^i_{D}=1$) or Makespan of Drones' route(s) ($N^i_{D}>1$) of depot $i\in D$ \;
+		\item $M^i_{total}=max(M_T^i,M_M^i,M_D^i)$ : Makespan of depot $i\in D$\; 
 		\item $M_T$ = $max(M_T^i, M_T^{i+1}, ..., M_T^m)$ : Makespan of Trucks \;
 		\item $M_M$ = $max(M_M^i, M_M^{i+1}, ..., M_M^m)$ : Makespan of Motorbikes \;
 		\item $M_D$ = $max(M_D^i, M_D^{i+1}, ..., M_D^m)$ : Makespan of Drones \;
 		\item $M_{total}$ = $max(M_T, M_M, M_D)$ : Total makespan \;
+		\item $M_{total}$ = $max(M_{total}^i, M_{total}^{i+1}, ..., M_{total}^m)$ : Total makespan\;
 	\end{itemize}
 	\input{makespan_example.tex}
-	\twocolumn
-	\section{Makespan calculations}
-	In the case where a depot is equipped with more than 1 vehicle of either type, the makespan calculations are explained below.
+	\newpage
+	\subsection{Makespan calculations}
+	In the case where a depot is equipped with more than 1 vehicle of any type (excluding vehicles with capacity = 1 i.e drones), and two or more routes need to be assigned to them, a \textbf{job scheduling problem} arises, where the routes are the jobs that need to be assigned to machines (vehicles). Since the vehicles are identical, it's more specifically an \textbf{identical-machines scheduling problem}. Minimizing the maximum completion time (makespan) is NP-hard. Many exact and approximation algorithms are known. We use the \textbf{longest-processing-time-first (LPT)} greedy algorithm, which orders the jobs by descending order of their cost and then schedules each job in this sequence into the machine of which the current load is smallest.
+	An example is given below.
 	Assume 4 routes that need to be assigned to two trucks. Each route has a time cost associated with it. The route assignment needs to be done in such a way that the trucks' makespan is minimized. We first sort the routes based on their cost in a descending order. Then, starting from the route with the maximum cost, we assign it to the truck with the currently minimum makespan. This is done iteratively until all routes have been assigned to a vehicle. 
 	\input{makespan_calculations.tex}
-	
-	\onecolumn
-	\clearpage
-	\subsection{Motivation / Use case}
-	By introducing this problem, we contribute to the Travelling Salesman Problem and Vehicle Routing Problem research and the field of logistics and routing by introducing a realistic and challenging problem that considers the practical limitations and requirements of different vehicle types used in last-mile delivery. The proposed algorithms have the potential to improve efficiency and reduce costs for logistics companies operating in increasingly complex delivery environments.
-	\par 
-	Consider a parcel delivery company operating in Greece, with depots located in two major cities: Athens and Thessaloniki. The company manages numerous last-mile delivery shops in these cities, which serve as depots in the routing problem. For instance, a customer in Thessaloniki sends a parcel to a friend in Athens by visiting a nearby shop. After the shop stops receiving parcels for the day, a truck collects the parcels and delivers them to the Thessaloniki distribution center. Parcels destined for Athens are then transported overnight to the Athens distribution center.
-	Upon arrival, parcels are sorted based on their delivery areas and sent to the appropriate last-mile shops in Athens. These shops, acting as depots in our problem, dispatch vehicles (Trucks, Motorbikes, Drones) to deliver the parcels to their final destinations. The MD-mfcmTSP addresses how these vehicles can be optimally routed to minimize delivery time, while simultaneously solving the problem of parcel allocation in each last-mile shop.
-	\par
-	\begin{figure}[h!]
-		\caption{Life of a parcel}
-		\centering
-		\includegraphics[width=0.40\textwidth, height=0.50\textheight]{Parcel-Life}
-	\end{figure}
-	\clearpage
+	\newpage
 	\twocolumn
-	\section{Problem description}
-	\begin{itemize}
-		\item Each customer must be visited exactly once
-		\item Each vehicle can serve at most as many customers per trip as its capacity
-		\item Some customers may not be available for delivery via uav or larger vehicles
-		\item Each depot must be equipped with at least one truck
-		\item The composition of each depot's fleet is known
-		\item Depots act as a start, finish and reload point for their fleet
-		\item Each vehicle may perform unlimited routes (multi-trip)
-	\end{itemize}
 	
-	\section{Pseudocode for the MD-mfcmTSP}
-	At the end of Algorithm 1, a local optimization function (3) is called which in addition to moving nodes in different places in the same route, also moves nodes between routes of different depots and different vehicle types.\;
+	\section{Pseudocode for the MD-mfcmTSP heuristic}
 	\begin{algorithm}
 		\small
 		\caption{MD-mfcmTSP heuristic}
@@ -157,6 +172,7 @@
 					$M_T = R_T^i$ 's makespan\;
 					$R_{vt}^i\pluseq r_{best}$\;
 					$M_{vt} = R_{vt}^i$ 's makespan\;
+					(+Swap)\;
 					Call $local\_optimization(R_T^i, n_{max})$\;
 					Call $local\_optimization(R_{vt}^i, n_{max})$\;
 				}\Else{ 
@@ -201,6 +217,7 @@
 	\begin{algorithm}
 		\small
 		\caption{$optimization\_full(Sol, n_{max})$}
+		\Do{any route improves}{
 		Call $vt\_optimization(Sol, n_{max} = 2)$\;
 		\For{each $vt$}{
 			\For{each $i\in D$}{
@@ -208,7 +225,7 @@
 			}
 			Call $mutual\_depot\_optimization(R_{vt}, n_{max}=2)$\;
 		}
-		Call $vt\_optimization(Sol, n_{max} = 2)$\;
+	}
 	\end{algorithm}
 	
 	\begin{algorithm}
@@ -264,61 +281,81 @@
 		\Return{$Sol$}\;
 	\end{algorithm}
 	\clearpage
+	\section{Solving the MD-mfcmTSP}
+	In this section, we introduce the two algorithmic approaches to address the MD-mfcmTSP. The first approach which is used to tackle the problem comprises of a clustering phase, which transforms the multi-depot problem into multiple single-depot mfcmTSP problems, and a routing phase which calls the mfcmTSP heuristic for each depot. The second approach leverages a hybrid metaheuristic, combining Ant Colony Optimization (ACO) with the mfcmTSP heuristic.
+	\subsection{MD-mfcmTSP heuristic}
+	To manage the complexity of multi-depot routing problems, a widely used approach is their transformation to multiple single-depot routing problems. Although a naive approach, it provides feasible solutions of which the results are used as a baseline for comparison with other solution methods.
+	\par 
+	For this purpose, we use a straightforward constrained proximity clustering to assign customers to depots, and then run the mfcmTSP heuristic for each depot. Each customer is assigned to the closest \textit{possible} depot, creating clusters where each depot serves the customers nearest to it. Specifically, vehicle availability at each depot may limit the customers that are assigned to its cluster. The reason is that the initialization phase of the heuristic, which is based on these clusters, must form routes that visit every node $c_i\in C$. Therefore, while the assignment is based on proximity, we must adjust the clustering to account for these constraints. This means that some customers may need to be assigned to a more distant depot if the nearest depot lacks the vehicle that can serve them. For example, a customer only accessible by motorbike will be assigned to a more distant depot when the closest to them doesn't have a motorbike available in its fleet.
 	\begin{figure*}[h]
-		\caption[width=\textwidth]{p11 Initialization example using k-means clustering}
+		\caption[width=\textwidth]{Initialization example}
+		\includegraphics[width=\textwidth]{Initialization_example_p01}
+		\centering
+	\end{figure*}
+	\begin{figure*}[h]
+		\caption[width=\textwidth]{Initialization example}
 		\includegraphics[width=\textwidth]{Initialization_example_p11}
 		\centering
 	\end{figure*}
 	\begin{figure*}[h]
-		\caption[width=\textwidth]{p01 initialization using k-means clustering}
-		\includegraphics[width=\textwidth]{initialization_example_p01}
-		\centering
-	\end{figure*}
-	\begin{figure*}[h]
-		\caption[width=\textwidth]{p01 solution using k-means clustering}
-		\includegraphics[width=\textwidth]{solution-p01}
+		\caption[width=\textwidth]{Solution after mutual depot optimization}
+		\includegraphics[width=\textwidth]{solution_p01_prox}
 		\centering
 	\end{figure*}
 	\clearpage
-	\section{AACONC+}
-	\input{AACO.tex}\;
-	\input{createClusters.tex}\;
-	\input{antSolution.tex}\;
-	\input{selectVehicle.tex}\;
-	\clearpage
+	\subsection{Hybrid Ant Colony Optimization}
+	For the second approach to solve the MD-mfcmTSP we introduce a novel hybrid metaheuristic based on the principles of Ant Colony Optimization combined with the mfcmTSP heuristic. Specifically, we employ a modified version of the Adaptive Ant Colony Optimization with Node Clustering (AACONC) (Stodola et al. 2022) which was developed for the Multi-Depot Vehicle Routing Problem and showed promising results. From now on, we refer to this algorithm as the H-AACONC.
+	\par 
+	\subsubsection{H-AACONC Algorithm}
+	The Ant Colony part of the algorithm disregards accessibility constraints and assumes that all customers must be served by trucks such as to minimize the total time (makespan). As such, the pheromone matrix, node clustering and the AntSolution function remain the same as in AACONC and are used to create an initial trucks-only solution which is stored in $Rt$. Then, with  frequency $n_{freq}$, which is one of the AACONC control parameters, the single and mutual colony local optimization procedures may be called. In the resulting solution $Rt$, customers that are not accessible by trucks are then offloaded to the motorbike(s) of the same depot if possible, else to the closest depot with atleast one motorbike in its fleet. The resulting routes are inserted into $R_{best}$ and the MD-mfcmTSP heuristic is called, while skipping the clustering and initialization phase.
+	\subsubsection{Pheromone matrix update}
+	One key distinction between the AACONC and the H-AACONC is the pheromone matrix update procedure.
+	The pheromone matrix update procedure uses the same logic as the AACONC. The Simulated Annealing principle in combination with the Metropolis criterion probabilistically decide which solution will be used for the update. Although in the H-AACONC, while solutions $R$ and $R_{best}$ are used to make this decision, it is then truck solutions $Rt$ and $Rt_{best}$ respectively that are used to update the pheromone matrix.
+	\begin{equation}
+		p(R^{best}) = 1 - p(R) = 
+		\begin{cases}
+			e^{-\frac{(|R^{best}| - |R|)/|R|}{T_{update}}} & \text{for } |R^{best}| > |R|, \\
+			1 & \text{otherwise}
+		\end{cases}
+	\label{eq:SA}
+	\end{equation}
+	\begin{equation}
+	 	T_{\text{update}}(iter + 1) = \alpha_{\text{update}} \cdot T_{\text{update}}(iter)
+	\label{eq:Tupdate}
+	\end{equation}
+	The solution for updating the pheromone matrix $R^{update}$ is selected based on the calculated probabilities:
+	$R^{update} = R^{best}$ and $Rt^{update} = Rt^{best}$with $p(R^{best})$ or $R^{update} = R$ and $Rt^{update} = Rt$ with $p(R) = 1 - p(R^{best})$.The update itself is then conducted using (\ref{eq:phUpdate}); the pheromone trails lying on the routes are increased in proportion to the pheromone
+	updating coefficient $\delta$ and the quality of the updating route (a ratio of $R$ to $R^{update}$).
+	\begin{equation}
+			\tau_{ij}^k = \tau_{ij}^k + \chi_{ij}\cdot \delta \cdot \frac{|R|}{|R^{update}|} \text{ for all } v_i,v_j \in V \text{ and } d_k\in D
+			\label{eq:phUpdate}
+	\end{equation}
+	\begin{equation}
+		\chi_{ij} = 
+		\begin{cases}
+			1 & \text{if there is an edge between }v_i \text{ and }v_j \text{ in }Rt^{update},\\
+			0 & \text{otherwise}
+		\end{cases}
+	\end{equation}
+	\input{Hybrid_algorithm.tex}\;
 	\onecolumn
 	\section{Instances}
 	\input{instances_table.tex}\;
+	\input{x-instances_table.tex}\;
 	\clearpage
-	\begin{figure}[h!]
-		\centering
-		\caption{Regular Layout Instance}
-		\includegraphics[width=\columnwidth]{p12_aco-1}
-	\end{figure}
-
-	\onecolumn
 	\section{Results}
-	\subsection{New heuristic vs old heuristic}
+	\subsection{New heuristic vs original heuristic}
 	\textbf{mfcmTSP heuristic (original) : } Finds and swaps the minimum cost route in each iteration \\ \;
 	\\
 	\par
 	\textbf{MD-mfcmTSP heuristic (v1) : } Finds and swaps the route which minimizes the depot's makespan in each iteration \\ \;
-	\begin{figure*}[hb!]
-		\centering
-		\caption{Comparison between new and original heuristic}
-		\includegraphics[width=\textwidth]{heuristics_comp_gaps_lineGraph_kmeans}
-	\end{figure*}
-	\begin{figure*}[hb!]
-		\centering
-		\caption{Comparison between new and original heuristic}
-		\includegraphics[width=\textwidth]{heuristics_comp_gaps_boxGraph_kmeans}
-	\end{figure*}
-	\begin{figure*}[hb!]
-		\centering
-		\caption{Comparison between new and original heuristic}
-		\includegraphics[width=\textwidth]{heuristics_comp_gaps_barGraph_kmeans}
-	\end{figure*}
+	\par 
+	Results show that the new (v1) heuristic performs better than the original.
+	\input{heuristics_comparison_table_prox.tex}\;
+	\input{heuristics20_comparison_table_prox.tex}\;
+	%\input{heuristics_comparison_table_kmeans.tex}\;
 	
+
 	
 	
 	\clearpage
@@ -326,84 +363,56 @@
 	\subsection{Local optimization impact on the heuristic}
 	\subsubsection{Proximity clustering}
 	\input{TABLE1.tex}\;
-	\begin{figure*}[hb!]
-		\centering
-		\caption{Gaps to full local optimization (proximity clustering)}
-		\includegraphics[width=\textwidth]{local_opt_comp_to_full_proximity}
-	\end{figure*}
-	\begin{figure*}[hb!]
-		\centering
-		\caption{Results using proximity clustering}
-		\includegraphics[width=\textwidth]{Results_proximity}
-	\end{figure*}
-
 	\clearpage
-	\subsubsection{k-means clustering}
-	\input{TABLE3.tex}\;
-	\begin{figure*}[hb!]
-		\caption{Comparison to full local optimization (k-means clustering)}
+	%\subsubsection{k-means clustering}
+	%\input{TABLE3.tex}\;
+	%\clearpage
+	\section{New Hybrid AACONC algorithm}
+	\input{Hybrid_algorithm.tex}\;
+	\subsection{Pheromone matrix \& update}
+	\selectlanguage{greek}
+    Στον αλγόριθμο \selectlanguage{english}AACONC (Stodola, 2022), \selectlanguage{greek}ο πίνακας φερομόνων χρησιμοποιείται για την εύρεση μιας ολοκληρωμένης λύσης για το πρόβλημα \selectlanguage{english}MDVRP. \selectlanguage{greek} Στον αλγόριθμο \selectlanguage{english}(Hybrid AACONC) \selectlanguage{greek}ο πινακας φερομόνων χρησιμοποιείται για την εύρεση λύσης $Rt_{best}$, που δεν αποτελεί τελική λύση του προβλήματος, αλλά μια αρχική (συνήθως ανέφικτη) λύση. 
+	Η ενημέρωση του πίνακα φερομόνων χρησιμοποιεί την αρχή της προσομοίωσης ανόπτησης \selectlanguage{english}(simulated annealing). \selectlanguage{greek}Συγκεκριμένα, χρησιμοποιείται το \selectlanguage{english}Metropolis criterion \selectlanguage{greek}για να αποφασιστεί αν θα χρησιμοποιηθεί η καλύτερη λύση που έχει βρεθεί ως τώρα ($R$) ή η λύση της τωρινής γενιάς ($R_{best}$). Αν η τωρινή γενιά βελτιώνει το αποτέλεσμα, τότε αυτή πάντα αντικαθιστά την καλύτερη λύση ($R=R_{best}$) και χρησιμοποιείται για την ενημέρωση. Όμως υπάρχει πιθανότητα να επιλεχθεί ακόμα και αν είναι χειρότερη από την μέχρι τώρα καλύτερη λύση. Αυτό βοηθάει στη διατήρηση της ποικιλομορφίας του πληθυσμού, επεκτείνοντας έτσι τον χώρο αναζήτησης \selectlanguage{english}(search space) \selectlanguage{greek}και αποτρέποντας τον αλγόριθμο από το να βρεθεί σε τοπικό βέλτιστο \selectlanguage{english}(local optima).
+	\selectlanguage{greek}Είναι σημαντικό να σημειωθεί, οτι ενώ η επιλογή της λύσης βάση της οποίας θα ενημερωθεί ο πίνακας φερομόνων εξαρτάται από τα $R,R_{best}$, τα δρομολόγια τα οποία χρησιμοποιούνται για την ενημέρωση είναι αυτά των $Rt,Rt_{best}$ αντίστοιχα. Επομένως, στο \selectlanguage{english}AACONC(MDVRP) \selectlanguage{greek} καθώς και σε αυτόν τον αλγόριθμο, ο πίνακας φερομόνων έχει σημαντικό ρόλο, στον τελευταίο χρησιμοποιείται για την παραγωγή μίας αρχικής λύσης ενώ στον πρώτο για την παραγωγή μιας ολοκληρωμένης λύσης.
+	\selectlanguage{english}
+	\newpage
+	\subsection{Results}
+	\subsubsection{Motorbike speed = 20}
+	\input{hybrid_resultsM20_Standard}\;
+	\input{hybrid_resultsM20_NoLocal}\;
+	\input{hybrid_resultsM20_+Swap}\;
+	\input{H-AACONC_best_results_comp}\;
+	\newpage
+	\subsubsection{Motorbike speed = 25}
+	\input{hybrid_results_Standard.tex}\;
+	\input{hybrid_results_+Swap.tex}\;
+	\input{hybrid_best_results_comp.tex}\;
+	\newpage
+	\subsubsection{Comparison of algorithms}
+	\input{comparison_all_standard_results.tex}\;
+	\begin{figure*}[h]
+		\caption[width=\textwidth]{Error percentage of the two versions to the best result found by H-AACONC (Standard version of  Local Optimization)}
+		\includegraphics[width=\textwidth]{gaps_to_Hybrid_Standard}
 		\centering
-		\includegraphics[width=\textwidth]{local_opt_comp_to_full_kmeans}
-	\end{figure*}
-	\begin{figure*}[hb!]
-		\caption{Results using k-means clustering}
-		\centering
-		\includegraphics[width=\textwidth]{Results_kmeans}
-	\end{figure*}
-	\begin{figure*}[hb!]
-		\caption{Local optimization impact on computational time (k-means)}
-		\centering
-		\includegraphics[width=\textwidth]{optimization_times_kmeans}
-	\end{figure*}
-
-	
-	
-	
-	\clearpage
-	\subsection{AACONC+ Results and Comparison to heuristics}
-	\input{TABLE2.tex}\;
-	\input{AACONC_comp_table.tex}\;
-	\captionsetup{justification=centering}  % Center the captions
-	\begin{figure*}[h!]
-		\centering
-		\caption{Comparison to the best solution found by AACONC+}
-		\includegraphics[width=\textwidth]{gaps_to_aco_best}
-	\end{figure*}
-	\begin{figure*}[h!]
-		\centering
-		\caption{Comparison of best results found}
-		\includegraphics[width=\textwidth]{best_results_comp_barGraph}
-	\end{figure*}
-
-	\begin{figure*}[h!]
-		\centering
-		\caption{Comparison to the best solution found by AACONC+}
-		\includegraphics[width=\textwidth]{heuristics_comp_to_best_gaps}
-	\end{figure*}
-	\begin{figure*}[h!]
-		\centering
-		\caption{Comparison to the average solution found by AACONC+}
-		\includegraphics[width=\textwidth]{heuristics_comp_to_avg_gaps}
-	\end{figure*}
-	\begin{figure*}[h!]
-		\centering
-		\caption{Comparison to the worst solution found by AACONC+}
-		\includegraphics[width=\textwidth]{heuristics_comp_to_worst_gaps}
-	\end{figure*}
-	\begin{figure*}[h!]
-		\centering
-		\caption{Comparison of best results found}
-		\includegraphics[width=\textwidth]{best_results_all_lineGraph}
-	\end{figure*}
-	\begin{figure*}[h!]
-		\centering
-		\caption{}
-		\includegraphics[width=\textwidth]{optimization_times}
 	\end{figure*}
 	
+	\input{comparison_all_+Swap_results.tex}\;
+	\begin{figure*}[h]
+		\caption[width=\textwidth]{Error percentage of the two versions to the best result found by H-AACONC (+Swap version of  Local Optimization)}
+		\includegraphics[width=\textwidth]{gaps_to_Hybrid_+Swap}
+		\centering
+	\end{figure*}
+	\begin{figure*}[h]
+		\caption[width=\textwidth]{Results (Standard Local Optimization)}
+		\includegraphics[width=\textwidth]{best_results_all_Standard}
+		\centering
+	\end{figure*}
+	\begin{figure*}[h]
+		\caption[width=\textwidth]{Results (+Swap Local Optimization)}
+		\includegraphics[width=\textwidth]{best_results_all_+Swap}
+		\centering
+	\end{figure*}
 	
-	
-	\clearpage
 	
 	\twocolumn
 	
@@ -415,6 +424,17 @@
 	Braunschweig, Germany, and Iowa City, United States. In fact, it is suitable for many larger cities such as Hamburg, Munich,
 	and Paris. Thus, in contrast to other drone applications, in this work, we do not consider flight range as a limiting factor (Ulmer \& Thomas (2018)).
 	
-	
+	\clearpage
+	\section{Initial approach to AACONC+}
+	\input{AACO.tex}\;
+	\input{antSolution.tex}\;
+	\input{selectVehicle.tex}\;
+	\newpage
+	\subsection{AACONC+ Results and Comparison to heuristics}
+	\input{TABLE2.tex}\;
+	\input{AACONC_comp_table.tex}\;
+	\captionsetup{justification=centering}  % Center the captions
+
+
 	
 \end{document}

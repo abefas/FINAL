@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 # Load data
-nodes_df = pd.read_csv('p11_nodes.csv')
-clusters_df = pd.read_csv('kmeans-11-clusters.csv')
-ivt1_df = pd.read_csv('kmeans-11-ivt_1.csv')
-ivt2_df = pd.read_csv('kmeans-11-ivt_2.csv')
-ivt3_df = pd.read_csv('kmeans-11-ivt_3.csv')
+nodes_df = pd.read_csv('p01_nodes.csv')
+clusters_df = pd.read_csv('veronoi-01-clusters.csv')
+ivt1_df = pd.read_csv('prox01-v1-ivt_1.csv')
+ivt2_df = pd.read_csv('prox01-v1-ivt_2.csv')
+ivt3_df = pd.read_csv('prox01-v1-ivt_3.csv')
 
 # Create an undirected graph
 G = nx.Graph()
@@ -71,13 +71,13 @@ for vehicle, color in vehicle_colors.items():
         nx.draw_networkx_edges(G, pos, edgelist=edges, edge_color=color, width=2, label=f'{vehicle.capitalize()} route', alpha=0.7)
 
 # Extract centroid positions for plotting separately
-centroid_pos = [(row['X'], row['Y']) for _, row in clusters_df.iterrows() if row['Type'] == 'Centroid']
-centroid_x, centroid_y = zip(*centroid_pos)
-plt.scatter(centroid_x, centroid_y, color='grey', s=100, label='Centroid', alpha=0.8, edgecolors='black')
+#centroid_pos = [(row['X'], row['Y']) for _, row in clusters_df.iterrows() if row['Type'] == 'Centroid']
+#centroid_x, centroid_y = zip(*centroid_pos)
+#plt.scatter(centroid_x, centroid_y, color='grey', s=100, label='Centroid', alpha=0.8, edgecolors='black')
 
 # Add node labels inside nodes
-#labels = {node: str(node) for node in G.nodes()}
-#nx.draw_networkx_labels(G, pos, labels=labels, font_color='gray', font_size=10, font_weight='bold')
+labels = {node: str(node) for node in G.nodes()}
+nx.draw_networkx_labels(G, pos, labels=labels, font_color='gray', font_size=10, font_weight='bold')
 
 # Add legend and show plot
 plt.legend(fontsize='medium', loc='upper left')

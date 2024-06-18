@@ -1,0 +1,40 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+\begin{table}[h]
+	\begin{minipage}{\textwidth}
+		\centering
+		\caption{H-AACONC Results (Standard)}
+		\resizebox{0.6\textwidth}{!}{%
+			\begin{tabular}{@{}ccccccc@{}}
+				\toprule
+				\textbf{Instance} & \textbf{Best} & \textbf{Average} & \textbf{gap(\%)} & \textbf{Worst} & \textbf{gap(\%)} & \textbf{Average time(s)} \\
+				\midrule
+				p01 & 173.99 & 177.12 & 1.80 & 183.97 & 5.74 & 121 \\
+				\midrule
+				p02 & 178.37 & 185.19 & 3.82 & 193.80 & 8.65 & 130 \\
+				\midrule
+				p03 & 172.24 & 175.30 & 1.78 & 181.28 & 5.25 & 329 \\
+				\midrule
+				p04 & 628.26 & 638.38 & 1.61 & 650.05 & 3.47 & 596 \\
+				\midrule
+				p05 & 589.68 & 595.86 & 1.05 & 598.88 & 1.56 & 480 \\
+				\midrule
+				p06 & 381.72 & 385.05 & 0.87 & 389.24 & 1.97 & 498 \\
+				\midrule
+				p07 & 278.07 & 282.09 & 1.44 & 284.58 & 2.34 & 517 \\
+				\midrule
+				p08 & 2842.74 & 2947.65 & 3.69 & 3141.88 & 10.52 & 3600 \\
+				\midrule
+				p09 & 1768.27 & 1813.98 & 2.59 & 1874.42 & 6.00 & 3519 \\
+				\midrule
+				p10 & 1293.53 & 1343.61 & 3.87 & 1368.75 & 5.82 & 3573 \\
+				\midrule
+				p11 & 979.30 & 1000.54 & 2.17 & 1017.26 & 3.88 & 3485 \\
+				\midrule
+				\textbf{Average} & 844.20 & 867.71 & 2.24 & 898.56 & 5.02 & 1532 \\ \bottomrule
+			\end{tabular}%
+		}
+		\label{tab:hybrid_standard}
+	\end{minipage}
+\end{table}

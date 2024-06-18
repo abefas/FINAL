@@ -2,10 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load data
-df = pd.read_csv('p12_nodes.csv')
-df_connections_T = pd.read_csv('p12_1_ivt_1.csv')
-df_connections_M = pd.read_csv('p12_1_ivt_2.csv')
-df_connections_D = pd.read_csv('p12_1_ivt_3.csv')
+df = pd.read_csv('p01_nodes.csv')
+df_connections_T = pd.read_csv('prox01-v1-ivt_1.csv')
+df_connections_M = pd.read_csv('prox01-v1-ivt_2.csv')
+df_connections_D = pd.read_csv('prox01-v1-ivt_3.csv')
 
 # Extract node positions and names
 x = df['Xposition']
@@ -56,7 +56,7 @@ for _, connection in df_connections_D.iterrows():
 # Customize the plot
 plt.xlabel('X-axis', fontsize=16, color=dark_gray)
 plt.ylabel('Y-axis', fontsize=16, color=dark_gray)
-plt.title('p12 Solution', fontsize=16, fontweight='bold', color=dark_gray)
+plt.title('p01 Solution (original)', fontsize=16, fontweight='bold', color=dark_gray)
 plt.grid(False)
 plt.xticks(fontsize=12, color=dark_gray)
 plt.yticks(fontsize=12, color=dark_gray)
