@@ -51,7 +51,7 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
 
     //Run heuristic for each depot and its clustered customers
     for(int IDEPOT = 0; IDEPOT < G->n_depots; IDEPOT++){
-
+        //int swapcount = 0;
         //Adjacency matrix with customers in current cluster
         for(int i = 0; i < cd.limit[IDEPOT]; i++){
             adj_matrix[cd.cluster[IDEPOT][i] - 1] = create_adj_list(cd.cluster[IDEPOT][i], G, cd.cluster[IDEPOT], cd.limit[IDEPOT]);
@@ -223,6 +223,12 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
                     double ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
                 */
+                /*
+                swapcount++; 
+                if(swapcount == 2){
+                    break;
+                }
+                */
             }else{
                 printf("min_cost %0.2lf\n", min_ms);
                 printf("STOPPED\n");
@@ -258,7 +264,7 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
             R.total_makespan = R.a_VT[ivt].makespan;
     }
 
-    R.total_makespan = local_opt_full2(&R, G, da_access, VT);
+    //R.total_makespan = local_opt_full2(&R, G, da_access, VT);
 
     printf("total makespan = %0.2lf\n", R.total_makespan);
 

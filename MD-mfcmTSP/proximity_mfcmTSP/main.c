@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 
     /* Read file and store all info */
     char input[100];
-    sprintf(input, "../../../../Instances/Cordeau_mfcmTSP/p%02d.MDmfcmTSP", instance_id);
+    sprintf(input, "../../../../Instances/Cordeau_mfcmTSPSSInf/p%02d.MDmfcmTSP", instance_id);
     FILE *fp = fopen(input, "r");
     if(!fp){
         perror("Error while opening the file.\n");

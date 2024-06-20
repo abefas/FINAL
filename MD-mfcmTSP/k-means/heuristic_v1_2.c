@@ -7,9 +7,9 @@
 #include "header_files/listFunctions.h"
 #include "header_files/local_opt.h"
 
-void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz, plotClusters *pl){
+void heuristic(SON *G, VType *VT, int **da_access){
 
-    //time_t begin = time(NULL);
+    time_t begin = time(NULL);
 
     //Generate clusters - takes into consideration depots' vehicle availability
     //e.g. if closest depot has only drones but customer cannot be accessed by drones then customer 
@@ -234,12 +234,14 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz, plotClusters *
 
                 remove_duplicate_nodes(&R.a_VT[0].a_depots[IDEPOT].routelist);
                 remove_duplicate_nodes(&R.a_VT[type].a_depots[IDEPOT].routelist);
+                /*
                 double ms1 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 1);
                 double ms2 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 2);
                 if(type != 2){
                     ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
                     ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
+                */
             }else{
                 //printf("min_cost %0.2lf\n", min_ms);
                 //printf("STOPPED\n");
@@ -252,14 +254,18 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz, plotClusters *
     }
     free(adj_matrix);
 
+    plot_clusters(cd.points, cd.centroids, G->a_depots, G->n_customers, G->n_depots);
+    save_clustering_to_csv(cd.points, cd.centroids, G->a_depots, G->n_customers, G->n_depots);
 
 
+    /*
     //Remove unnecessary nodes(depot to depot) and ready for final local opt
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         for(int idep = 0; idep < G->n_depots; idep++){
            remove_duplicate_nodes(&R.a_VT[ivt].a_depots[idep].routelist);
         }
     }
+    */
 
 
     //Get Vehicle types' makespans - were not needed/used until now 
@@ -268,34 +274,20 @@ void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz, plotClusters *
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         R.a_VT[ivt].makespan = get_makespan_VT(G, &R.a_VT[ivt]);
 
-        //printf("vt %d makespan: %0.2lf\n", ivt, R.a_VT[ivt].makespan);
+        printf("vt %d makespan: %0.2lf\n", ivt, R.a_VT[ivt].makespan);
         if(R.total_makespan < R.a_VT[ivt].makespan)
             R.total_makespan = R.a_VT[ivt].makespan;
     }
 
-    R.total_makespan = local_opt_full2(&R, G, da_access, VT);
+    //R.total_makespan = local_opt_full2(&R, G, da_access, VT);
 
-    //printf("total makespan = %0.2lf\n", R.total_makespan);
+    printf("total makespan = %0.2lf\n", R.total_makespan);
 
-    //time_t finish = time(NULL);
-    //double runtime = difftime(finish, begin);
+    time_t finish = time(NULL);
+    double runtime = difftime(finish, begin);
 
-    //if(R.total_makespan < Rz->total_makespan - epsilon){
-        memcpy(pl->points, cd.points, G->n_customers * sizeof *cd.points);
-        memcpy(pl->centroids, cd.centroids, G->n_depots * sizeof *cd.centroids);
-        for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-            for(int idep = 0; idep < G->n_depots; idep++){
-                deleteList(&Rz->a_VT[ivt].a_depots[idep].routelist);
-                Rz->a_VT[ivt].a_depots[idep].routelist = copyList(R.a_VT[ivt].a_depots[idep].routelist);
-                Rz->a_VT[ivt].a_depots[idep].makespan = R.a_VT[ivt].a_depots[idep].makespan;
-            }
-            Rz->a_VT[ivt].makespan = R.a_VT[ivt].makespan;
-        }
-        Rz->total_makespan = R.total_makespan;
-    //}
-
-    //fprint_results(&R, G, VT);
-    //fprint_data(runtime);
+    fprint_results(&R, G, VT);
+    fprint_data(runtime);
 
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         for(int idep = 0; idep < G->n_depots; idep++){

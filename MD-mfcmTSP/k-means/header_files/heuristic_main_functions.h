@@ -7,9 +7,9 @@ ClusterData DBSCAN_plus_kmeans(SON *G);
 
 ClusterData k_means(SON *G);
 
-void heuristic_og(SON *G, VType *VT, int **da_access, asolution *Rz, plotClusters *pl);
+void heuristic_og(SON *G, VType *VT, int **da_access);
 
-void heuristic(SON *G, VType *VT, int **da_access, asolution *Rz, plotClusters *pl);
+void heuristic(SON *G, VType *VT, int **da_access);
 
 ClusterData createClusters(SON *G, int **da_access);
 

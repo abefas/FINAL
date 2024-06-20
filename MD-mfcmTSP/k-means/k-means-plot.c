@@ -13,36 +13,6 @@ double euclidean_distance(Point a, Point b) {
     return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
 }
 
-// Function to initialize centroids using k-means++ algorithm
-void initialize_centroids(Point *points, Point *centroids, int num_points, int k) {
-    centroids[0] = points[rand() % num_points];
-    for (int i = 1; i < k; i++) {
-        double *distances = malloc(num_points * sizeof(double));
-        double total_distance = 0.0;
-        for (int j = 0; j < num_points; j++) {
-            double min_distance = DBL_MAX;
-            for (int m = 0; m < i; m++) {
-                double dist = euclidean_distance(points[j], centroids[m]);
-                if (dist < min_distance) {
-                    min_distance = dist;
-                }
-            }
-            distances[j] = min_distance;
-            total_distance += min_distance;
-        }
-        //Assign a random node as the next centroid
-        double r = ((double) rand() / (RAND_MAX)) * total_distance;
-        for (int j = 0; j < num_points; j++) {
-            r -= distances[j];
-            if (r <= 0) {
-                centroids[i] = points[j];
-                break;
-            }
-        }
-        free(distances);
-    }
-}
-
 // Function to assign points to the nearest centroid
 void assign_clusters(Point *points, Point *centroids, int num_points, int k) {
     for (int i = 0; i < num_points; i++) {
@@ -161,8 +131,13 @@ ClusterData k_means(SON *G) {
         printf("Error mallocing centroids[]\n");
         exit(1);
     }
+    //Initialize centroids to depots
+    for(int i = 0; i < G->n_depots; i++){
+        centroids[i].x = G->a_depots[i].x;
+        centroids[i].y = G->a_depots[i].y;
+        centroids[i].cluster = i;
+    }
 
-    initialize_centroids(points, centroids, num_points, k);
 
     kmeans_plus_plus(points, centroids, num_points, k, max_iterations);
 

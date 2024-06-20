@@ -74,7 +74,7 @@ plt.gca().add_artist(legend_edges[0])  # Ensure both legends are displayed
 # Customize the plot
 plt.xlabel('X-axis', fontsize=16, color='#333333')
 plt.ylabel('Y-axis', fontsize=16, color='#333333')
-plt.title('p07 Initial routes', fontsize=16, fontweight='bold', color='#333333')
+plt.title('p07: Initialization Same Speeds +Infinite Truck capacity', fontsize=16, fontweight='bold', color='#333333')
 plt.xticks(fontsize=12, color='#333333')
 plt.yticks(fontsize=12, color='#333333')
 plt.grid(False)
