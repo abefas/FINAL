@@ -144,7 +144,7 @@
 					$vt = D$\;
 					$cap =$ 1\;
 				}
-				$M_{min} = M_T^i$\;
+				$M_{dep} = M_T^i$\;
 				$r_{best} = \emptyset$\;
 				\For{$j=1$ to $|R_T^i| - cap$}{
 					$successive\_nodes = \emptyset$\;
@@ -159,8 +159,8 @@
 						${R'}_T^i = R_T^i - \{successive\_nodes\}$\;
 						${M'}_T = {R'}_T^i$ 's makespan\;
 						$M_{new} = MAX({M'}_T, {M'}_{vt})$\;
-						\If{$M_{new} < M_{min}$}{
-							$M_{min} = M_{new}$\;
+						\If{$M_{new} < M_{dep}$}{
+							$M_{dep} = M_{new}$\;
 							$r_{best} = r_{new}$\;
 						}
 						$r_{new} = \emptyset$\;

@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage[linesnumbered,ruled,longend]{algorithm2e}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[LGR, T1]{fontenc}
+\usepackage[utf8]{inputenc}   % For UTF-8 encoding
+\usepackage[greek,english]{babel}
+\usepackage{mathptmx} % Times New Roman font
+\usepackage{multicol, relsize, geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable, caption, array}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage[fracspacing]{newpxmath}
+\usepackage[none]{hyphenat}
+\sloppy
+
+
+\singlespacing
+% Adjust spacing between paragraphs
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setlength\parindent{24pt}
+
+% Set font size and line spacing
+\usepackage{setspace}
+\fontsize{10}{12}\selectfont % 10pt font size with 12pt leading
+\singlespacing % Ensure single spacing within paragraphs
+% Needs to be last
+\usepackage[table]{xcolor}
+
+\DontPrintSemicolon
+\SetKwFor{For}{for}{do}{end for}
+\SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{end if}%
+% Redefine \ForEach to display a vertical line under it
+\SetKwFor{ForEach}{for each}{}{end for}
+\SetKwRepeat{Do}{do}{while}
+\geometry{top=1cm, bottom=2cm, left=1cm, right=1cm}
+\newcommand{\pluseq}{\mathrel{+}=}
+
+
+\title{A heterogeneous vehicle routing problem with drones and multiple depots}
+\author{Panagiotis Zachos}
+\date{June 2024}
+\twocolumn
+\begin{document}
+	\maketitle
+	\section{INTRODUCTION}
+	
+	
+	\section{Related Work}
+	\textit{Introductory statement on why routing problems (TSP, VRP) are fundamental in the field of operations research and logistics, why they receive much attention from the academic community, in what practical applications are they used in}
+	
+	\subsection{The Traveling Salesman Problem with UAVs}
+	The Traveling Salesman Problem (TSP) is a classic, widely researched optimization problem where the objective is to determine the shortest possible route that allows a salesman, starting from an origin city, to visit a set of cities exactly once and then end the tour by returning to the origin city. The TSP is known for its computational complexity, being an NP-hard problem, which means that the time required to solve it increases exponentially with the number of cities.
+	(\textbf{Make the point that a truck with unlimited capacity can take on the role of the salesman}) 
+	Murray and Chu were the first researchers who formalized and extensively studied the concept of UAVs working alongside trucks in routing problems in 2015. In their seminal paper \textbf{\{ADD REFERENCE\}} the authors introduced the Flying Sidekick Traveling Salesman Problem (FSTSP) and the Parallel Drone Scheduling Traveling Salesman Problem (PDSTSP). The two problems are similar in their use of a single truck alongside one or more UAVs but there are key differences between the two. 
+	
+	\subsubsection{The Flying Sidekick Traveling Salesman Problem} 
+	The FSTSP involves a  truck which takes on the role of the salesman, and is equipped with a single UAV (drone) which the driver can utilize by dispatching it to serve drone-eligible customers. The objective is to minimize the total time in which all customers are serviced. \{\textbf{This is general and concerns every problem so it could be placed in the introduction (2.1)}\{The underlying principle is that by making use of a lower-cost vehicle which is also not bound by road conditions (drone), the total time of the operation can be reduced substantially, leading to increased efficiency and thus profitability for the distributor but also increased customer satisfaction and reduced environmental footprint. By adding a drone to the operation, the distance that the truck needs to travel is reduced, leading to overall cost reduction of the operation (fuel consumption, working hours) while also limiting CO2 emissions.\}\}
+	In the FSTSP, a truck and a drone are called to begin from a depot, although not necessarily in tandem, visit a set of customers exactly once, and then end their tour by returning to the depot. The driver is considered to load the UAV with the parcel of the intended customer inbetween traveling i.e when the truck has stopped at a customer location to deliver a parcel. Then, the driver dispatches the UAV and immediately continues with the truck onto the next customer(s), thus creating a time window in which both the truck and UAV are traveling simulaneously. After the UAV has delivered its parcel, it must return to the truck to be retrieved by the driver, or if flight endurance limitations allow, it can return to the depot, thus ending its tour. The retrieval of the UAV by the truck must be performed at a customer location assigned to the truck, which must be different from the launch location i.e the truck cannot remain stationary after launching the drone. In this phase, synchronization between the truck and drone is required. This means that the two vehicles must adjust their traveling speed so that they arrive at the retrieval location at the same time. Furthermore, the drone is associated with a retrieval time cost which must be considered in the synchronization and a maximum flight endurance value (battery capacity) which must be respected when assigning customers to the drone.
+	\par
+	The authors used MILP to model the problem and noted that, deriving from the NP-hard nature of the problem, MILP solvers in certain cases required several hours even for instances with as low as 10 customers. Consequently, they proposed a \textit{route and re-assign} heuristic. The heuristic begins by solving a TSP that assigns the truck to visit all customers. This TSP subproblem was solved using various techniques, namely \textit{Integer Programming} (IP), and the  \textit{Clarke-Wright Savings}, \textit{Nearest Neighbour}, \textit{Sweep} heuristics. Once the truck route is established, the heuristic attempts to improve the solution by re-assigning customers to the drone. The algorithm iterates through each pair of consecutive stops in the truck route, and for each pair, it considers the possibility of sending the drone from the first stop to the second stop. It calculates the savings in travel time that would result from making this change, while considering the drone's and truck's travel time as well as the time required to retrieve the drone. If the resulting savings are greater than zero, the customer at the second stop is reassigned to the drone and the truck route is updated accordingly. The heuristic continues to iterate through all pairs of stops in the truck route, re-assigning customers to the drone whenever possible, until no further improvements can be made. 
+	\par 
+	The authors' findings show that this \textit{route and re-assign} heuristic provides a framework for solving the FSTSP in a reasonable amount of time, while still achieving good solutions. Especially in the version where the initial truck route is solved with Integer Programming (IP), the proposed heuristic, on average, outperformed the MILP solver. Based on these results, the authors highlight the impact of the initial TSP tour towards the final solution and how effective TSP solution approaches show promise in positively impacting the performance of their algorithm. Regarding the remaining approaches, the use of the \textit{Clarke-Wright Savings} heuristic yielded good results with minimal computation time whereas the use of the \textit{Nearest Neighbour} and \textit{Sweep} heuristics did not provide competitive results.
+	\par
+	Ha et. al (2015) researched the FSTSP, although under a different name; the "Traveling Salesman Problem with Drone". They proposed two heuristics using two opposite concepts; (i) \textit{cluster first - route second} and (ii) \textit{route first - cluster second}. The clustering step consists of determining the set of drone routes that should be in the final solution. To solve this, the authors propose a Mixed Integer Linear Programming (MILP) model where the objective function is to maximize the profit generated by selecting specific drone routes. 
+	In the first approach, the MILP model is initially solved, to identify the optimal set of drone routes. Once those are determined, the heuristic then constructs the truck's route, using the Concorde TSP solver, by integrating the drone's routes with the remaining customer locations, producing the final solution. In the second \textit{route first - cluster second} approach, the truck route is first solved (Concorde), visiting all customers. The truck's route is then used as the basis to identify potential drone routes. The MILP model used in the clustering step is adapted to include constraints that ensure that any drone route selected is part of the truck's predetermined tour and that the nodes that form the drone \textit{sortie} are arranged in the same order as they appear in the truck's route. \textbf{Results} Experiments compared the two heuristics to the FSTSP model and the standard TSP without drones, using 2 newly generated datasets with 10 and 100 customers. The results show that the proposed heuristics are competitive compared to the FSTSP model, especially as customer size increases and indicate that drones servicing more distant customers from the TSP route is more beneficial.
+	\par
+	Freitas \& Penna (2018) \textbf{\{Add reference\}} extended the FSTSP research and employed a hybrid heuristic termed \textit{Randomized Variable Neighborhood Descent Framework} (RVNDF) to solve the problem. This heuristic makes use of a three-step approach. Similar to the previous heuristic by Murray \& Chu, the RVNDF begins by generating the optimal solution for the TSP where all of the customers are serviced by the truck only. To achieve this, they use the widely known in the field Concorde TSP solver \textbf{\{ADD REFERENCE\}}. The second phase consists of creating an initial solution which makes use of the drone, by assigning it to random drone-eligible customers while respecting the drone's flight endurance. Finally, in the third step, the \textit{Randomized Variable Neighborhoods Descent} (RVND) algorithm is called, which is the core of the heuristic and as the name implies, a randomized variant of the VND \textbf{\{ADD REFERENCE\}} algorithm, where the order of the neighborhood visits is not predetermined. RVND aims to improve the initial solution by systematically exploring different neighboring solutions. It does this by applying five different "neighborhoods" or local search operations, each designed to modify the current solution in a specific way. These neighborhoods consist of the following 5 operations: (i) \textit{Reinsertion}: Moving a truck customer to a different position on its route, (ii) \textit{Exchange}: Swap the positions of two truck customers, (iii) \textit{Exchange(2,1)}: Swap the positions of two consecutive customers and  an other one, (iv) \textit{2-Opt}: Remove two non-adjacent arcs from the truck's route and insert two new arcs such as to create a new route, (v) \textit{RelocateCustomer}: Transfer a customer from the truck's route to the drone's route. The RVNDF evaluates all possible moves within each neighborhood, ensuring that the drone's flight range and customer accessibility constraints are respected. After each operation, the resulting solution is either accepted and used to update the current solution if the overall delivery time improves, or discarded otherwise. \textbf{Report results or not?} \{To evaluate their algorithm's quality, they solved 11 instances ranging from 50 to 99 customers, running the RVNDF ten times for each one. The authors then compared the FSTSP solutions to the TSP solution where only a truck is used. Results varied, improving by as high as 19.28\% on a certain instance, while not being able to improve in the case where the distances between customers exceed the drone's flight endurance.\}
+	
+	
+	Variable Neighborhood Search (VNS) heuristic for the FSTSP, achieving substantial improvements in delivery times. Dell’Amico et al. (2019) provided new formulations for the FSTSP and demonstrated their effectiveness through extensive computational experiments, solving benchmark instances to optimality and improving upon existing solutions. Boccia et al. (2021) proposed  new integer linear programming formulations for both the FSTSP and PDSTSP and a column-and-row generation approach to handle synchronization issues between the truck and drone solving to optimizality and improving upon instances with up to 20 customers. Kuroswiski et al. (2023) presented a hybrid Genetic Algorithm combined with Mixed Integer Linear Programming (MILP) to efficiently solve the FSTSP for up to ten customers. Pilcher (2023) proposed a self-adaptive genetic algorithm and introduced a novel two-stage mutation process designed to address the complexities of the FSTSP.
+	
+	
+	\subsubsection{The Parallel Drone Scheduling Traveling Salesman Problem}
+	 The PDSTSP, extends the concept of the FSTSP by involving multiple drones and optimizing the delivery process through parallel drone operations. In contrast to the FSTSP, the drones act independently from the truck and launch from and return to the depot. It was designed for scenarios where a significant portion of the customers are located within the UAV's flight range from the depot. The authors proposed a  MILP formulation and employed heuristic algorithms to solve larger instances of the PDSTSP. Mbiadou Saleu et al. (2018) proposed an iterative two-step heuristic along with a MILP formulation. Nguyen et al. (2022) proposed an efficient branch-and-cut algorithm to solve the problem. The authors broke new ground by achieving optimal solutions for instances up to 783 customers for the first time.
+	\par 
+	Nguyen et al. (2023) introduced a new variant of the parallel drone scheduling traveling salesman problem that aims to increase the utilization of drones, particularly for heavy item deliveries, which they termed the PDSTSP with collective drones (PDSTSP-c).
+	The authors developed a two-index MILP formulation to solve small-size instances to optimality and proposed a ruin-and-recreate metaheuristic to efficiently handle larger problem instances. Montemanni et al. (2024) expanded on the research for the PDSTSP-c and introduced a MILP and constraint programming approach.
+	\par 
+	Constraint programming models have been effectively utilized to handle the scheduling complexities of drone-assisted TSP variants. Ham (2018) extended the PDSTSP by considering drone drops and pickups and time-window constraints for which the author proposed a constraint programming approach to handle the problem's complexity. Montemanni and Dell’Amico (2023) presented a constraint programming model for the PDSTSP, achieving optimal solutions for various instances.
+	\par 
+	Hybrid optimization techniques have also been explored to solve drone-assisted TSP variants. Dinh et al. (2021) proposed a hybrid ant colony optimization metaheuristic for the PDSTSP, achieving several new best-known solutions. 
+	\subsubsection{TSP-D}
+	Agatz et al. (2018) introduced the Travelling Salesman Problem with Drones (TSP-D). While the TSP-D shares mostly the same characteristics as the FSTSP, the key distinction between the TSP-D and the FSTSP is that the latter requires the distinctive location between launch point and recovery point of the drone, while the former allows the drone to be launched and recovered by the truck in the same location. The authors model the problem and propose an IP model which solves instances with up to 12 customers to optimality, along with several fast heuristics to solve larger instances of the problem. Yurek et al. (2018) contributed to the TSP-D research by proposing a decomposition-based iterative optimization algorithm and verified its efficiency. Ha et al. (2018) introduced and solved the min-cost TSP-D, whose objective is to minimize the total operational costs, which include  transportation costs and waiting penalties. The authors proposed a MILP formulation and two heuristic methods to solve the problem.
+	\subsubsection{Other}
+	Schermer et al. (2019) introduced the Traveling Salesman Drone Station Location Problem (TSDSLP), combining TSP, facility location, and parallel machine scheduling problems to minimize operational costs. 
+	Kim \& Moon (2019) introduced a mixed integer programming model for the TSP with a drone station (TSP-DS), which extends the operational range of drones. 
+	\par 
+	\par 
+	Numerical results indicate that optimizing battery weight and reusing drones are important considerations for drone delivery (Dorling 2016).
+	\par 
+	\textbf{We thank Dr. Eddie Cheng for asking about faster drones versus more drones.}
+	\par
+	At the same time, it is important that we address flight range limitations. Such limitations have important roles in much of the existing drone routing research. However, even he first drones developed by Amazon and JD.com ahad a flight range of 15 to 20 miles [33, 56]. Such a range is suitable to allow out and back travel in the medium-sized cities in which the authors live, Braunschweig, Germany, and Iowa City, United States. In fact, it is suitable for many larger cities such as Hamburg, Munich and Paris. Thus, in contrast to other drone applications, in this work, we do not consider flight range as a limiting factor. (Sacramento, 2019)
+	
+	
+	
+	\subsection{The Vehicle Routing Problem}
+	While the TSP is concerned with finding a single optimal tour for one vehicle, the Vehicle Routing Problem (VRP), generalizes this concept by involving multiple vehicles and additional constraints, making it more applicable to real-world logistics scenarios.
+	\par
+	Therefore, the VRP extends the TSP by considering multiple vehicles, each with a specific capacity, to service a set of customers with known demands. The goal is to determine the optimal set of routes for a fleet of vehicles such as to deliver goods to or to collect goods from customers while minimizing the total cost, which is often determined as the vehicles' travel distance, time, fuel consumption, pollution or a combination of those. 
+	\subsubsection{VRP Variants}
+	The VRP can also include various constraints like vehicle capacities, delivery time windows, and the requirement for all vehicles to start and end their routes at a central depot.
+	\subsubsection{Drone-related VRP Research}
+	Wang et al. [12] introduced the Vehicle Routing Problem with Drones (VRPD), where a ﬂeet of trucks, each truck equipped with a given number of drones, delivers packages to customers. According to the classiﬁcation of Toth and Vigo, the VRPD can be classiﬁed as a variant of the Distance-Constrained Capacitated Vehicle Routing Problem (DCVRP) with a set of heterogeneous vehicles.
+	\par 
+	Among the several features considered, the drone endurance is the one that
+	has the stronger influence on the convergence of the algorithm, a smaller endurance
+	allows the algorithms to have better performances, while reducing the number of
+	feasible sorties.
+	\par 
+	A problem very similar to the FS-TSP is the TSP with drones (TSP-D) defined for the first time in Agatz et al. (2018). The only
+	difference between the TSP-D and the FS-TSP consists in the fact that in the first the truck can visit the same customer more than once in
+	order to recover the drone, which, in turn, may be launched and return to the same location (Boccia et al. 2021)
+	\section{The Novel Problem}
+	
+\end{document}

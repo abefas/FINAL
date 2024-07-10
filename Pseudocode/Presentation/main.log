@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  18 JUN 2024 19:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  2 JUL 2024 10:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1674,7 +1674,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--124
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 129.
 
-LaTeX Warning: Float too large for page by 43.03241pt on input line 189.
+LaTeX Warning: Float too large for page by 45.42041pt on input line 189.
 
 [6
 
@@ -1874,7 +1874,7 @@ s/grmn1440.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr
 ts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/type1/urw/times/ut
 mb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (27 pages, 1291774 bytes).
+Output written on main.pdf (27 pages, 1291786 bytes).
 PDF statistics:
  686 PDF objects out of 1000 (max. 8388607)
  612 compressed objects within 7 object streams
