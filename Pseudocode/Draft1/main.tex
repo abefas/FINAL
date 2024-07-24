@@ -140,22 +140,221 @@
 	\par 
 	Schermer et al. (2018) \textbf{\{ADD REF\}} address a modified version of the above VRPD. In this paper, the authors assume that the drones have a limited flight range due to battery capacity and that they cannot be recovered at the same node location where they were launched from. The authors introduce the \textit{Two-Phase Heuristic} (TPH) and the \textit{Single-Phase Heuristic} (SPH) to solve the problem. The TPH begins by constructing a good VRP tour using the \textit{Nearest Neighbor} heuristic. This initial tour includes all customer vertices and is then split into segments corresponding to the number of available \textit{m} trucks. In the first phase, the algorithm focuses on improving the VRP solution by employing improvement techniques such as \textit{2-opt} local search and \textit{String Mix} (SM), a combination of \textit{String Exchange} and \textit{String Relocation} \textbf{\{EXPLAIN\}}. After a predetermined amount of time has passed, the algorithm enters the second phase, where drones are integrated into the constructed routes. This involves two procedures: \textit{Drone Insertion} (DI); drones are inserted into the existing tours based on the first feasible sortie that reduces the overall completion time and \textit{Delivery Exchange} (DE); attempts to change the delivery method of one tour between the truck and the drone, ensuring that the time to complete the tour is minimized. Similarly, the SPH starts with the NN heuristic to create an initial tour that includes all vertices. Unlike the former, the SPH inserts drones into the routing solution right after the initial tour is created. This means that the drone operations are considered throughout the entire optimization process along with the truck operations, and the algorithm iteratively calls the aforementioned optimization procedures (2-opt, SM, DI, DE) until a stopping criterion is met. \textbf{\{RESULTS\}} The authors conducted experiments to evaluate the performance of their proposed heuristics utilizing 3 trucks with unlimited capacity and each equipped with 1 drone with a capacity of 1 parcel. The results indicate that the TPH generally outperforms the SPH across a range of scenarios, particularly in larger instances. However, the SPH demonstrates competitive performance in specific cases, suggesting that the choice of heuristic may depend on the problem's constraints and parameters.
 	\par 
+	The same authors in \textbf{\{ADD REF\}} 2019 introduced for the first time a MILP formulation for the VRPD which supports multiple drones per truck and cyclic drone operations (drones may return to the same node they were launched from). To enhance the performance of MILP solvers, the authors propose several sets of valid inequalities that significantly improve the solver's ability to find optimal solutions for small instances. However, they acknowledge the limitations of MILP formulations for larger instances, prompting the development of a matheuristic approach. This matheuristic effectively exploits the problem structure of the VRPD and incorporates the Drone Assignment and Scheduling Problem (DASP) as a key component, which optimizes the assignment and scheduling of drones based on existing truck routes. The authors conduct extensive computational experiments to evaluate the performance of their proposed methods, with the results highlighting the value of drone usage in last-mile delivery scenarios. They also conduct a sensitivity analysis on relevant drone parameters, providing insights into how variations in drone capabilities like speed and flight range affect overall performance.
+	\par
 	Sacramento et al. (2019) expanded the research by introducing additional constraints to further simulate real-world challenges. The authors take into account time constraints associated with the launch and recovery of the drone, service times for customer deliveries, limited truck capacity and a truck maximum route duration. In the VRP-D proposed, a fleet of homogenous trucks, each equipped with a single drone must service a set of customers with known demands while minimizing the total operational cost. This cost is defined as the sum of the transportation costs incurred by both the trucks and the drones. Specifically, the cost for the truck is related to the fuel price and consumption rate, while the cost for the drone is set as a factor of the truck's cost, reflecting that using the UAV is considerably cheaper than using the truck. The authors propose a mathematical model that extends the Mixed Integer Programming (MIP) formulation of the FSTSP, incorporating multiple trucks and capacity and time constraints. To solve the problem, the authors employ an Adaptive Large Neighborhood Search (ALNS) metaheuristic. This algorithm iteratively enhances an initial solution by utilizing a systematic approach that combines destruction and repair methods. The initial solution is generated through a three-phase process. First, the \textit{Nearest Neighbor} heuristic is used to obtain a truck-only solution. Then, a \textit{String Relocation} local search algorithm is employed to refine the truck-only solution. Finally, a drone addition algorithm is called which considers all drone-eligible customers to be swapped from the truck to the drone, and iteratively makes swaps that provide the maximum possible savings until no improvement is possible. The ALNS operates by first destroying a portion of the current solution, allowing for exploration of new solution spaces, with the destruction controlled by parameters that determine the number of customers to remove. The algorithm adapts the choice of destruction and repair methods based on their historical performance, facilitating dynamic search processes that can escape local optima. The ALNS incorporates an acceptance criterion inspired by Simulated Annealing, permitting the acceptance of worse solutions with a certain probability, particularly in the early search stages. \textbf{\{RESULTS\}} Extensive experiments demonstrate the algorithm's effectiveness in significantly improving initial solutions and achieving substantial cost savings compared to traditional truck-only delivery approaches, highlighting its potential for practical applications in logistics and delivery operations.
 	\par 
-	According to the classiﬁcation of Toth and Vigo, the VRPD can be classiﬁed as a variant of the Distance-Constrained Capacitated Vehicle Routing Problem (DCVRP) with a set of heterogeneous vehicles.
+	Wang \& Sheu (2019) \textbf{\{ADD REF\}} propose a novel arc-based MIP model along with a branch-and-price algorithm to solve the VRPD. Due to the complexity and large number of constraints in this model, the authors reformulate the problem into a path-based model, focusing on feasible paths for both trucks and drones, allowing for a more efficient solution process. Then, the authors introduce a branch-and-price algorithm which consists of three key components. First, a pricing sub-problem which aims to find the minimum reduced cost paths for both trucks and drones. The authors design a specialized network that distinguishes between different types of paths and nodes, facilitating the identification of optimal routes. Next, the algorithm employs column generation techniques to manage the large number of potential paths efficiently. This involves generating new columns (paths) iteratively based on variables from the restricted master problem. Finally, to mitigate slow convergence issues, the authors implement stabilization techniques, including the computation of alternative Lagrangian lower bounds and the application of column generation stabilization methods. Extensive computational experiments demonstrate the algorithm's effectiveness, achieving optimal solutions significantly faster than traditional methods, while also revealing substantial cost savings and reduced delivery times when utilizing drones in urban logistics.
 	\par 
-	
-	
-	
-	
-	Among the several features considered, the drone endurance is the one that
-	has the stronger influence on the convergence of the algorithm, a smaller endurance
-	allows the algorithms to have better performances, while reducing the number of
-	feasible sorties.
+	Lei et al. (2022) \textbf{\{ADD REF\}} address the VRPD by proposing a Dynamic Artificial Bee Colony (DABC) algorithm, which solves the problem by dynamically managing two swarms of artificial bees - employed bees and onlooker bees - based on the quality of solutions. Initially, the algorithm generates two swarms and identifies the best solution among them. The algorithm iteratively evaluates the swarms to determine which solutions belong to the employed bee group (EB) and the onlooker bee group (OB). In the employed bee phase, each solution in EB undergoes a Variable Neighborhood Descent (VND) process, which utilizes 15 distinct neighborhood structures to explore and refine solutions. In the onlooker bee phase, solutions in OB are assessed against the average objective value of the group, and if a solution is below this average, it is also subjected to VND; otherwise, a probabilistic decision is made to either perform VND or replace the solution with one from EB through a binary tournament. The algorithm incorporates a scout phase, where solutions that fail to improve after a set number of trials are replaced with new random solutions. This dynamic adjustment of the bee groups and the application of VND in different manners across the two phases enhance the exploration and exploitation capabilities of the algorithm, ultimately leading to an improved solution quality. The authors compare their DABC algorithm against several comparative algorithms, including the ALNS proposed by Sacramento \textbf{\{ADD REF\}}, showing promising results.
 	\par 
-	A problem very similar to the FS-TSP is the TSP with drones (TSP-D) defined for the first time in Agatz et al. (2018). The only
-	difference between the TSP-D and the FS-TSP consists in the fact that in the first the truck can visit the same customer more than once in
-	order to recover the drone, which, in turn, may be launched and return to the same location (Boccia et al. 2021)
+	Stodola (2024) \textbf{\{ADD REF\}}
+	\par 
 	\section{The Novel Problem}
+	The MD-mfcmTSP can be modeled as an undirected weighted graph $G$ = $\{V,E\}$ where $V$ = $\{C,D\}$ is the set of vertices of both customers and depots, and $E$ is the set of edges. Vehicles starting from each depot must visit every customer in $C$ exactly once and then finish their tour(s) at their depot, in the minimum time. Considering 3 different vehicle types (Truck, Motorbike, Drone), customer restrictions (trucks cannot visit some customers due to alleys, drones cannot visit some customers due to customer preference, safe landing space limitations) and the fact that vehicles cannot visit depots other than their own, there are several induced subgraphs  $G_v$ = $\{G_v^i\cup G_v^{i+1}\cup ...\cup G_v^{m}\}$ produced for each vehicle type $v$ and each depot $d^i\in D$. For each vehicle type $v$, $G_v$ contains all customer nodes that are accessible by $v$ and all depot nodes which are equipped with a vehicle $v$. The weight of each edge $e_{ij}$ is calculated as the euclidean distance $d_{ij}$ divided by the velocity of vehicle $v$, $s_v$; ($e_{ij}$ = $d_{ij}$/$s_v$). In the case of vehicles with capacity > 1 these graphs are fully connected, allowing travel between customers. In the case of drones travel between customers is not possible due to capacity = 1, thus each $G_D^i$, $d^i\in D$ is a star graph. The objective is to minimize the total completion time in which all of the customers are serviced i.e $M_{total} = max(M_T, M_M, M_D)$.
+	\par
+	\subsection{Makespan Calculations}
+	In the case where a depot is equipped with more than 1 vehicle of any type (excluding vehicles with capacity = 1 i.e drones), and two or more routes need to be assigned to them, a \textit{job scheduling problem} arises, where the routes are the jobs that need to be assigned to machines (vehicles). Since the vehicles are identical, it's more specifically an \textit{identical-machines scheduling} problem. Minimizing the maximum completion time (makespan) is NP-hard. Many exact and approximation algorithms are known. We use the \textit{Longest Processing Time first} (LPT) greedy algorithm, which orders the jobs by descending order of their cost and then schedules each job in this sequence into the machine of which the current load is smallest.
+	\par
+	\section{Solving the MD-mfcmTSP}
+	In this section, we introduce the two algorithmic approaches to address the MD-mfcmTSP. The first approach which is used to tackle the problem comprises of a clustering phase, which transforms the multi-depot problem into multiple single-depot mfcmTSP problems, and a routing phase which calls the mfcmTSP heuristic for each depot. The second approach leverages a hybrid metaheuristic, combining Ant Colony Optimization (ACO) with the mfcmTSP heuristic.
+	\subsection{MD-mfcmTSP heuristic}
+	To manage the complexity of multi-depot routing problems, a widely used approach is their transformation to multiple single-depot routing problems. Although a naive approach, it provides feasible solutions of which the results are used as a baseline for comparison with other solution methods.
+	\par 
+	For this purpose, we use a straightforward constrained proximity clustering to assign customers to depots, and then run the mfcmTSP heuristic for each depot. Each customer is assigned to the closest \textit{possible} depot, creating clusters where each depot serves the customers nearest to it. Specifically, vehicle availability at each depot may limit the customers that are assigned to its cluster. The reason is that the initialization phase of the heuristic, which is based on these clusters, must form routes that visit every node $c_i\in C$. Therefore, while the assignment is based on proximity, we must adjust the clustering to account for these constraints. This means that some customers may need to be assigned to a more distant depot if the nearest depot lacks the vehicle that can serve them. For example, a customer only accessible by motorbike will be assigned to a more distant depot when the closest to them doesn't have a motorbike available in its fleet.
+	\subsection{Pseudocode for the MD-mfcmTSP Heuristic}
+	\begin{algorithm}
+		\small
+		\caption{MD-mfcmTSP heuristic}
+		\label{alg:MDmfcmTSP}
+		\KwIn{$G_T, G_M, ..., G_D$}
+		\KwOut{$M_{total}$, $Sol = \{Sol^i = \{R_T^i, R_M^i, ...,R_D^i\}, Sol^{i+1}, ..., Sol^m\}$ for each $i\in D$}
+		
+		Create clusters $K^i$ of customer nodes for each depot $d^i\in D$\;
+		by assigning each customer to the closest possible depot\;
+		\For{each $d^i\in D$}{
+			
+			Call $Initialization(d^i, K^i)$\;
+			\While{$(M_T^i > M_M^i\parallel M_T^i > M_D^i)$ $\&\&$ $stop\neq true$}{
+				$diff_M = M_T^i - M_M^i$\;
+				$diff_D = M_T^i - M_D^i$\;
+				\uIf{$diff_M\ge diff_D$}{
+					$vt = M$\;
+					$cap =$ Motorbike's capacity\;
+				}\Else{
+					$vt = D$\;
+					$cap =$ 1\;
+				}
+				$M_{dep} = M_T^i$\;
+				$r_{best} = \emptyset$\;
+				\For{$j=1$ to $|R_T^i| - cap$}{
+					$successive\_nodes = \emptyset$\;
+					$load = 0$\;
+					\While{$load + v_j^{demand} \leq cap$ $\&\&$ $v_j\in G_{vt}$}{
+						$successive\_nodes \pluseq v_j$\;
+					}
+					\If{$|successive\_nodes| == cap$}{
+						$r_{new} = R_T^i[0] + \{successive\_nodes\} + R_T^i[0]$\;
+						${R'}_{vt}^i = R_{vt}^i + r_{new}$\;
+						${M'}_{vt} = {R'}_{vt}^i$ 's makespan\;
+						${R'}_T^i = R_T^i - \{successive\_nodes\}$\;
+						${M'}_T = {R'}_T^i$ 's makespan\;
+						$M_{new} = MAX({M'}_T, {M'}_{vt})$\;
+						\If{$M_{new} < M_{dep}$}{
+							$M_{dep} = M_{new}$\;
+							$r_{best} = r_{new}$\;
+						}
+						$r_{new} = \emptyset$\;
+					}
+					$j\pluseq 1$\;
+				}
+				\uIf{$r_{best} \neq \emptyset$}{
+					$R_T^i = R_T^i - \{r_{best}^{customers}\}$\;
+					$M_T = R_T^i$ 's makespan\;
+					$R_{vt}^i\pluseq r_{best}$\;
+					$M_{vt} = R_{vt}^i$ 's makespan\;
+					(+Swap)\;
+					Call $local\_optimization(R_T^i, n_{max})$\;
+					Call $local\_optimization(R_{vt}^i, n_{max})$\;
+				}\Else{ 
+					$stop = true$\;
+				}
+			}
+			$Sol^i = \{R_T^i, R_M^i, ..., R_D^i\}$\;
+		}
+		$M_T = MAX(M_T^i, M_T^{i+1}, ..., M_T^m)$\;
+		$M_M = MAX(M_M^i, M_M^{i+1}, ..., M_M^m)$\;
+		$M_D = MAX(M_D^i, M_D^{i+1}, ..., M_D^m)$\;
+		$M_{total} = MAX(M_T, M_M, ..., M_D)$\;
+		Call $optimization\_full(Sol, n_{max})$
+	\end{algorithm}	
 	
+	\begin{algorithm}
+		\small
+		\caption{Initialization($d^i, K^i$)}
+		\label{alg:initialization}
+		\While{$\{K^i\}\cap \{G_T\}\neq \emptyset$}{
+			$R_T^i\pluseq NearestNeighbour(\{K^i\}\cap \{G_T\})$\;
+		}
+		$M_T^i = R_T^i$ 's makespan\;
+		$v_{free} = \{K^i\} - \{G_T\}$\;
+		\uIf{$v_{free} = \emptyset$}{
+			\Return{$R_T^i$}\;
+		}\Else{
+			\While{$v_{free}\neq \emptyset$}{
+				\uIf{$M_T - M_M\geq M_T - M_D \parallel G_D = \emptyset$}{
+					$R_M^i\pluseq NearestNeighbour(\{K^i\}\cap \{G_M\})$\;
+					$v_{free} = v_{free} - \{R_M^i\}$\;
+					$M_M^i = R_M^i$ 's makespan\;
+				}\Else{
+					$R_D^i\pluseq closest(\{K^i\}\cap \{G_D\})$\;
+					$M_D^i = R_D^i$ 's makespan\;
+				}
+			}
+		}
+		\Return{$Sol^i$}\;
+	\end{algorithm}
+	
+	\begin{algorithm}
+		\small
+		\caption{$optimization\_full(Sol, n_{max})$}
+		\Do{any route improves}{
+			Call $vt\_optimization(Sol, n_{max} = 2)$\;
+			\For{each $vt$}{
+				\For{each $i\in D$}{
+					Call $local\_optimization(R_{vt}^i, n_{max}=2)$\;
+				}
+				Call $mutual\_depot\_optimization(R_{vt}, n_{max}=2)$\;
+			}
+		}
+	\end{algorithm}
+	
+	\begin{algorithm}
+		\small
+		\caption{$local\_optimization(r, n_{max})$}
+		\For{$n=1$ to $n_{max}$}{
+			\ForEach{combination of $n$ successive nodes on the route}{
+				move the node(s) to a different place on the same route\;
+				evaluate the new route\;
+				\uIf{this route is better than the original and all constraints are satisfied}{
+					replace the original route with the new one\;
+				}
+				continue in point 3 unless all possible places in the route have been evaluated\;
+			}
+		}
+		\Return{$r$}\;
+	\end{algorithm}
+	
+	\begin{algorithm}
+		\small
+		\caption{$mutual\_depot\_optimization(R_{vt}, n_{max})$}
+		\For{$n = 1$ to $n_{max}$}{
+			\ForEach{possible pair of depots $c1$ and $c2$}{
+				\ForEach{combination of $n$ successive nodes in the route of c1}{
+					remove the nodes from the route of c1 and insert them into c2\;
+					evaluate the newly-created routes\;
+					\uIf{$MAX(|{R'}_{vt}^{c1}|, |{R'}_{vt}^{c2}|) < MAX(|{R}_{vt}^{c1}|, |{R}_{vt}^{c2}|)$ and all constraints are satisfied}{
+						replace the original routes with the new ones\;
+					}
+					continue in point 4 unless all possible places in c2 have been evaluated\;
+				}
+			}
+		}
+		\Return{$R_{VT}$}\;
+	\end{algorithm}
+	
+	\begin{algorithm}
+		\small
+		\caption{$vt\_optimization(Sol, n_{max})$}
+		\For{$n = 1$ to $n_{max}$}{
+			\ForEach{depot $i\in D$}{
+				\ForEach{possible pair of vehicle types $t1,t2\in VT$}{
+					\ForEach{combination of $n$ successive nodes in $R_{t1}^i$}{
+						remove the nodes from $R_{t1}^i$ and insert them in $R_{t2}^i$\;
+						\uIf{$MAX(|{R'}_{t1}^i|, |{R'}_{t2}^i|) < MAX(|{R}_{t1}^i|, |{R}_{t2}^i|)$ and all constraints are satisfied}{
+							replace the original routes with the new ones\;
+						}
+						continue in point 5 unless all possible places in $R_{t2}^i$ have been evaluated\;
+					}
+				}
+			}
+		}
+		\Return{$Sol$}\;
+	\end{algorithm}
+	\clearpage
+	\subsection{Hybrid Ant Colony Optimization}
+	For the second approach to solve the MD-mfcmTSP we introduce a novel hybrid metaheuristic based on the principles of Ant Colony Optimization combined with the mfcmTSP heuristic. Specifically, we employ a modified version of the Adaptive Ant Colony Optimization with Node Clustering (AACONC) (Stodola et al. 2022) which was developed for the Multi-Depot Vehicle Routing Problem and showed promising results. From now on, we refer to this algorithm as the H-AACONC.
+	\par 
+	\subsubsection{H-AACONC Algorithm}
+	The Ant Colony part of the algorithm disregards accessibility constraints and assumes that all customers must be served by trucks such as to minimize the total time (makespan). As such, the pheromone matrix, node clustering and the AntSolution function remain the same as in AACONC and are used to create an initial trucks-only solution which is stored in $Rt$. Then, with  frequency $n_{freq}$, which is one of the AACONC control parameters, the single and mutual colony local optimization procedures may be called. In the resulting solution $Rt$, customers that are not accessible by trucks are then offloaded to the motorbike(s) of the same depot if possible, else to the closest depot with atleast one motorbike in its fleet. The resulting routes are inserted into $R_{best}$ and the MD-mfcmTSP heuristic is called, while skipping the clustering and initialization phase.
+	\subsubsection{Pheromone matrix update}
+	One key distinction between the AACONC and the H-AACONC is the pheromone matrix update procedure.
+	The pheromone matrix update procedure uses the same logic as the AACONC. The Simulated Annealing principle in combination with the Metropolis criterion probabilistically decide which solution will be used for the update. Although in the H-AACONC, while solutions $R$ and $R_{best}$ are used to make this decision, it is then truck solutions $Rt$ and $Rt_{best}$ respectively that are used to update the pheromone matrix.
+	\begin{equation}
+		p(R^{best}) = 1 - p(R) = 
+		\begin{cases}
+			e^{-\frac{(|R^{best}| - |R|)/|R|}{T_{update}}} & \text{for } |R^{best}| > |R|, \\
+			1 & \text{otherwise}
+		\end{cases}
+		\label{eq:SA}
+	\end{equation}
+	\begin{equation}
+		T_{\text{update}}(iter + 1) = \alpha_{\text{update}} \cdot T_{\text{update}}(iter)
+		\label{eq:Tupdate}
+	\end{equation}
+	The solution for updating the pheromone matrix $R^{update}$ is selected based on the calculated probabilities:
+	$R^{update} = R^{best}$ and $Rt^{update} = Rt^{best}$with $p(R^{best})$ or $R^{update} = R$ and $Rt^{update} = Rt$ with $p(R) = 1 - p(R^{best})$.The update itself is then conducted using (\ref{eq:phUpdate}); the pheromone trails lying on the routes are increased in proportion to the pheromone
+	updating coefficient $\delta$ and the quality of the updating route (a ratio of $R$ to $R^{update}$).
+	\begin{equation}
+		\tau_{ij}^k = \tau_{ij}^k + \chi_{ij}\cdot \delta \cdot \frac{|R|}{|R^{update}|} \text{ for all } v_i,v_j \in V \text{ and } d_k\in D
+		\label{eq:phUpdate}
+	\end{equation}
+	\begin{equation}
+		\chi_{ij} = 
+		\begin{cases}
+			1 & \text{if there is an edge between }v_i \text{ and }v_j \text{ in }Rt^{update},\\
+			0 & \text{otherwise}
+		\end{cases}
+	\end{equation}
+	\input{Hybrid_algorithm.tex}\;
 \end{document}

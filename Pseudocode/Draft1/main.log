@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  22 JUL 2024 14:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  24 JUL 2024 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1869,29 +1869,67 @@ Underfull \hbox (badness 1902) in paragraph at lines 136--138
 \T1/ptm/m/n/10 ex-plores the foun-da-tional con-cepts of VRP with Drones, the
  []
 
-[6] [7] (./main.aux)
+[6]
+Underfull \hbox (badness 3138) in paragraph at lines 143--144
+\T1/ptm/m/n/10 ef-fec-tively ex-ploits the prob-lem struc-ture of the VRPD and
+ []
+
+
+Underfull \hbox (badness 1721) in paragraph at lines 147--148
+\T1/ptm/m/n/10 gen-er-at-ing new columns (paths) it-er-a-tively based on vari-a
+bles
+ []
+
+[7]
+Underfull \hbox (badness 2726) in paragraph at lines 164--165
+[]\T1/ptm/m/n/10 For this pur-pose, we use a straight-for-ward con-strained
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
+
+LaTeX Warning: Float too large for page by 45.42041pt on input line 230.
+
+[8{/usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}] [9] [10
+
+]
+Underfull \hbox (badness 1097) in paragraph at lines 326--327
+[]\T1/ptm/m/n/10 For the sec-ond ap-proach to solve the MD-mfcmTSP we
+ []
+
+
+Underfull \hbox (badness 7907) in paragraph at lines 331--333
+[]\T1/ptm/m/n/10 One key dis-tinc-tion be-tween the AA-CONC and the
+ []
+
+(./Hybrid_algorithm.tex) [11
+
+] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8F08EC405FD6811C462F1704FE0AB172;1881.
+(rerunfilecheck)             Checksum: 7B4E49B1AA41DC9D6D17C07F8F40292D;3200.
  ) 
 Here is how much of TeX's memory you used:
- 39063 strings out of 476000
- 860819 string characters out of 5792234
- 1951187 words of memory out of 5000000
- 60535 multiletter control sequences out of 15000+600000
- 610601 words of font info for 127 fonts, out of 8000000 for 9000
+ 39329 strings out of 476000
+ 864392 string characters out of 5792234
+ 1982187 words of memory out of 5000000
+ 60590 multiletter control sequences out of 15000+600000
+ 641075 words of font info for 169 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 99i,9n,107p,2794b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/t
-exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/u
-rw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 96287 bytes).
+ 99i,24n,107p,2794b,783s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf
+-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsy
+s.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
+/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (11 pages, 161260 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 204 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
 
