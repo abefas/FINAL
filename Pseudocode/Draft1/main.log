@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  24 JUL 2024 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  29 JUL 2024 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1881,43 +1881,60 @@ bles
  []
 
 [7]
-Underfull \hbox (badness 2726) in paragraph at lines 164--165
+Underfull \hbox (badness 1019) in paragraph at lines 158--160
+\T1/ptm/m/n/10 = $\OML/npxmi/m/it/10 max\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 M
+[]; M[]; M[]\LMS/npxsy/m/n/10 º$ \T1/ptm/m/n/10 de-notes the makespan of de-pot
+ $\OML/npxmi/m/it/10 i$\T1/ptm/m/n/10 , then
+ []
+
+
+Underfull \hbox (badness 2726) in paragraph at lines 166--167
 []\T1/ptm/m/n/10 For this pur-pose, we use a straight-for-ward con-strained
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 170.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 172.
 
-LaTeX Warning: Float too large for page by 45.42041pt on input line 230.
+LaTeX Warning: Float too large for page by 45.42041pt on input line 232.
 
 [8{/usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}] [9] [10
 
 ]
-Underfull \hbox (badness 1097) in paragraph at lines 326--327
+Underfull \hbox (badness 1097) in paragraph at lines 328--329
 []\T1/ptm/m/n/10 For the sec-ond ap-proach to solve the MD-mfcmTSP we
  []
 
 
-Underfull \hbox (badness 7907) in paragraph at lines 331--333
+Underfull \hbox (badness 7907) in paragraph at lines 333--335
 []\T1/ptm/m/n/10 One key dis-tinc-tion be-tween the AA-CONC and the
  []
 
 (./Hybrid_algorithm.tex) [11
+
+] [12
+
 
 ] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7B4E49B1AA41DC9D6D17C07F8F40292D;3200.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: AD8C4C98E4EA127820DF59020122911F;3356
+(rerunfilecheck)             After:  19F612DE739BD443E6BAFD8E76E204B8;3450.
  ) 
 Here is how much of TeX's memory you used:
- 39329 strings out of 476000
- 864392 string characters out of 5792234
+ 39334 strings out of 476000
+ 864444 string characters out of 5792234
  1982187 words of memory out of 5000000
- 60590 multiletter control sequences out of 15000+600000
- 641075 words of font info for 169 fonts, out of 8000000 for 9000
+ 60591 multiletter control sequences out of 15000+600000
+ 642153 words of font info for 170 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  99i,24n,107p,2794b,783s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texmf
@@ -1926,10 +1943,10 @@ e1/public/newpx/pxmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newpx/pxsy
 s.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw
 /times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 161260 bytes).
+Output written on main.pdf (12 pages, 162850 bytes).
 PDF statistics:
- 388 PDF objects out of 1000 (max. 8388607)
- 355 compressed objects within 4 object streams
- 204 named destinations out of 1000 (max. 500000)
- 149 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 364 compressed objects within 4 object streams
+ 207 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
