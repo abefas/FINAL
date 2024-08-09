@@ -5,7 +5,7 @@
 
 void offload_to_motorbikes(SON *G, VType *VT, asolution *R_best, vt_solution *Rt_best, int **da_access, int m_capacity){
     for(int i = 0; i < G->n_depots; i++){
-        int route_customers = 0;    //Keeps track of the number of customers the motorbike serves
+        int route_customers = 0;    //Keeps track of the number of customers the motorbike serves such as to close the route
         node *p = Rt_best->a_depots[i].routelist;
         while(p && p->next){
             bool drone = false;

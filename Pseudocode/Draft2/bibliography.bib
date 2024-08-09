@@ -33,9 +33,7 @@ author = {J{\'u}lia C{\'a}ria {de Freitas} and Puca Huachi Vaz Penna},
 keywords = {Unmanned aerial vehicle, Traveling Salesman Problem, Drone Delivery, last mile delivery, Randomized Variable Neighborhood Descent},
 }
 @article{DellAmico2019,
-author={Dell'Amico, Mauro
-and Montemanni, Roberto
-and Novellani, Stefano},
+author={Dell'Amico, Mauro and Montemanni, Roberto and Novellani, Stefano},
 title={Drone-assisted deliveries: new formulations for the flying sidekick traveling salesman problem},
 journal={Optimization Letters},
 year={2021},
@@ -191,7 +189,7 @@ year = {2018},
 issn = {0968-090X},
 doi = {https://doi.org/10.1016/j.trc.2018.04.009},
 url = {https://www.sciencedirect.com/science/article/pii/S0968090X18304662},
-author = {Emine {Es Yurek} and H. Cenk Ozmutlu},
+author = {Yurek, Emine Es and Ozmutlu, H. Cenk},
 keywords = {TSP, Drone, Drone delivery, Decomposition, Iterative algorithm, MIP},
 abstract = {This study investigates a new delivery problem that has emerged after the attempts of several e-commerce and logistics firms to deploy drones in their operations to increase efficiency and reduce delivery times. In this problem, a delivery truck that carries a drone on its roof serves customers in coordination with a drone. The drone is considered to complement the truck due to its cost-efficiency and ability to access difficult terrains and to travel without exposure to congestion. This study presents an iterative algorithm that is based on a decomposition approach to minimize delivery completion time. In the first stage of the proposed methodology, the truck route and the customers assigned to the drone are determined. In the second stage, a mixed-integer linear programming model is solved to optimize the drone route by fixing the routing and the assignment decisions that are made in the first stage. Beginning with the shortest truck route, the assignment and the routing decisions are iteratively improved. The solution times of our algorithm are compared with the solution times of the state-of-the-art formulations that are solved by CPLEX. The results demonstrate that our algorithm yields shorter solution times for the instances that we generated with the specified parameters. An optimization-based heuristic algorithm, which obtains solutions for medium-sized instances, is developed by reducing the feasible search area.}
 }
@@ -319,7 +317,7 @@ author={Stodola, Petr},
 title={Hybrid ant colony optimization algorithm applied to the multi-depot vehicle routing problem},
 journal={Natural Computing},
 year={2020},
-month={Jun},
+month={6},
 day={01},
 volume={19},
 number={2},
@@ -342,7 +340,7 @@ url = {https://doi.org/10.1109/TEVC.2022.3230042},
 doi = {10.1109/TEVC.2022.3230042},
 abstract = {This article deals with the novel metaheuristic algorithm based on the ant colony optimization (ACO) principle. It implements several novel mechanisms that improve its overall performance, lower the optimization time, and reduce the negative behavior which is typically connected with ACO-based algorithms (such as prematurely falling into local optima, or the impact of setting of control parameters on the convergence for different problem configurations). The most significant novel techniques, implemented for the first time to solve the multidepot vehicle routing problem (MDVRP), are as follows: 1) node clustering where transition vertices are organized into a set of candidate lists called clusters and 2) adaptive pheromone evaporation which is adapted during optimization according to the diversity of the population of ant solutions (measured by information entropy). Moreover, a new termination condition, based also on the population diversity, is formulated. The effectiveness of the proposed algorithm for the MDVRP is evaluated via a set of experiments on 23 well-known benchmark instances. Performance is compared with several state-of-the-art metaheuristic methods; the results show that the proposed algorithm outperforms these methods in most cases. Furthermore, the novel mechanisms are analyzed and discussed from points of view of performance, optimization time, and convergence. The findings achieved in this article bring new contributions to the very popular ACO-based algorithms; they can be applied to solve not only the MDVRP, but also, if adapted, to related complex NP-hard problems.},
 journal = {Trans. Evol. Comp},
-month = {dec},
+month = {12},
 pages = {1866–1880},
 numpages = {15}
 }
@@ -359,12 +357,169 @@ author = {Petr Stodola and Libor Kutěj},
 keywords = {Multi-Depot Vehicle Routing Problem with Drones, Adaptive Ant Colony Optimization, Metaheuristics, Unmanned Aerial Vehicles, Last-mile delivery},
 abstract = {The use of Unmanned Aerial Vehicles (UAVs) is expected to grow rapidly in the coming years, driven by technological advancements, cost-effectiveness, and the increasing demand for faster and more efficient delivery solutions. This article deals with the mathematical formulation of the Multi-Depot Vehicle Routing Problem with Drones (MDVRP-D), whereby a set of heterogeneous trucks, each paired with a UAV, are located in different depots. Both types of vehicles deliver goods to customers; UAVs are dispatched from trucks while en route to make the last-mile delivery. A metaheuristic algorithm based on the Ant Colony Optimization (ACO) principle is proposed as the solution. This algorithm has been adapted for this newly proposed problem; the novel mechanics include the probabilistic decision to dispatch an UAV, the selection of a customer to be served, and local search optimization. Extensive computational experiments are performed to verify the proposed algorithm. First, its performance is compared with Adaptive Large Neighborhood Search (ALNS) metaheuristics on a set of Vehicle Routing Problem with Drones (VRP-D) benchmarks. A set of various benchmark instances are subsequently proposed for the newly formulated MDVRP-D (differing in complexity and graph topology). Finally, the behavior of the proposed algorithm is thoroughly analyzed, especially in respect of features connected with UAVs. The findings presented in this article provide valuable contributions to the NP-hard models related to the Travelling Salesman Problem (TSP) and to the very popular ACO-based algorithms.}
 }
-
-
-
-
-
-
+@article{CW1964,
+title={Scheduling of Vehicles from a Central Depot to a Number of Delivery Points},
+author={Clarke, G. and Wright, J.W.},
+journal={Operations Research},
+volume={12},
+number={4},
+pages={568-581},
+year={1964}
+}
+@article{biCriteriaSP,
+title = {A bicriterion shortest path algorithm},
+journal = {European Journal of Operational Research},
+volume = {11},
+number = {4},
+pages = {399-404},
+year = {1982},
+issn = {0377-2217},
+doi = {https://doi.org/10.1016/0377-2217(82)90205-3},
+url = {https://www.sciencedirect.com/science/article/pii/0377221782902053},
+author = {João Carlos {Namorado Climaco} and Ernesto {Queirós Vieira Martins}},
+abstract = {Among the network models, one of the more popular is the so called shortest path problem. This model is used whenever it is intended to minimize a linear function which represents a distance between a predetermined pair of nodes in a given network. Often a single objective function is not sufficient to completely characterize some real-world problems. For instance, in a road network two parameters - as cost and time - can be assigned to each arc. Clearly the fastest path may be too costly. Nevertheless the decision-maker must choose one solution, possibly not the best for both criteria. In this paper we present an algorithm for this problem. With this algorithm a special set of paths (the set of Pareto optimal paths) is determined. One objective for any Pareto optimal path can not be improved without worsening the other one.}
+}
+@article{MST1957,
+  author={Prim, R. C.},
+  journal={The Bell System Technical Journal}, 
+  title={Shortest connection networks and some generalizations}, 
+  year={1957},
+  volume={36},
+  number={6},
+  pages={1389-1401},
+  keywords={},
+  doi={10.1002/j.1538-7305.1957.tb01515.x}
+}
+@article{ColumnRow1960,
+  author = {George B. Dantzig and Philip Wolfe},
+  title = {Decomposition Principle for Linear Programs},
+  journal = {Operations Research},
+  volume = {8},
+  number = {1},
+  pages = {101-111},
+  year = {1960}
+}
+@incollection{TSP1932,
+  author    = {K. Menger},
+  title     = {Das Botenproblem},
+  booktitle = {Ergebnisse eines Mathematischen Kolloquiums},
+  editor    = {K. Menger},
+  volume    = {2},
+  year      = {1932},
+  publisher = {Teubner},
+  location  = {Leipzig},
+  pages     = {11-12},
+}
+@misc{rose2013,
+  author = {Rose, Charlie},
+  title = {Amazon's Jeff Bezos Looks to the Future},
+  year = {2013},
+  url = {http://www.cbsnews.com/news/amazons-jeff-bezos-looks-to-the-future/},
+}
+@article{AssignmentProblemSurvey2006,
+author = {Temel Öncan},
+title = {A Survey of the Generalized Assignment Problem and Its Applications},
+journal = {INFOR: Information Systems and Operational Research},
+volume = {45},
+number = {3},
+pages = {123--141},
+year = {2007},
+publisher = {Taylor \& Francis},
+doi = {10.3138/infor.45.3.123},
+URL = {https://doi.org/10.3138/infor.45.3.123},
+eprint = {https://doi.org/10.3138/infor.45.3.123}
+}
+@article{Lin-Kernighan2000,
+title = {An effective implementation of the Lin–Kernighan traveling salesman heuristic},
+journal = {European Journal of Operational Research},
+volume = {126},
+number = {1},
+pages = {106-130},
+year = {2000},
+issn = {0377-2217},
+doi = {https://doi.org/10.1016/S0377-2217(99)00284-2},
+url = {https://www.sciencedirect.com/science/article/pii/S0377221799002842},
+author = {Keld Helsgaun},
+keywords = {Traveling salesman problem, Heuristics, Lin–Kernighan},
+abstract = {This paper describes an implementation of the Lin–Kernighan heuristic, one of the most successful methods for generating optimal or near-optimal solutions for the symmetric traveling salesman problem (TSP). Computational tests show that the implementation is highly effective. It has found optimal solutions for all solved problem instances we have been able to obtain, including a 13,509-city problem (the largest non-trivial problem instance solved to optimality today).}
+}
+@Inbook{Black-BoxSolvers,
+author="Duarte, Abraham and Laguna, Manuel and Mart{\'i}, Rafael",
+title="Black-Box Solvers",
+bookTitle="Metaheuristics for Business Analytics: A Decision Modeling Approach",
+year="2018",
+publisher="Springer International Publishing",
+address="Cham",
+pages="105--136",
+abstract="Linear programming is perhaps the best-known tool for optimization. Linear programming is a general-purpose framework that allows a real system to be abstracted as a model with a linear objective function subject to a set of linear constraints.",
+isbn="978-3-319-68119-1",
+doi="10.1007/978-3-319-68119-1_5",
+url="https://doi.org/10.1007/978-3-319-68119-1_5"
+}
+@article{Sweep1974,
+  author = {Gillett, Billy E. and Miller, Leland R.},
+  title = {A Heuristic Algorithm for the Vehicle-Dispatch Problem},
+  journal = {Operations Research},
+  volume = {22},
+  number = {2},
+  pages = {340--349},
+  year = {1974}
+}
+@article{CheapestInsertion1976,
+	author = {Mole, R.H. and Jameson, S.H.},
+	title = {SEQUENTIAL ROUTE-BUILDING ALGORITHM EMPLOYING A GENERALISED SAVINGS CRITERION.},
+	year = {1976},
+	journal = {Operational Research Quarterly},
+	volume = {27},
+	number = {2},
+	pages = {503 – 511},
+	url = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-0017151741&partnerID=40&md5=52eadfa9a220074de252bf9348a9b0d0},
+	type = {Article},
+	publication_stage = {Final},
+	source = {Scopus},
+}
+@inproceedings{Oikonomou2021,
+author = {Oikonomou, Panagiotis and Tziritas, Nikos and Kolomvatsos, Kostas and Loukopoulos, Thanasis},
+title = {Fast Heuristics for Mixed Fleet Capacitated Multiple TSP with Applications to Location Based Games and Drone Assisted Transportation},
+year = {2022},
+isbn = {9781450395557},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3503823.3503878},
+doi = {10.1145/3503823.3503878},
+abstract = {The Travelling Salesman Problem (TSP) is one of the most known problems in combinatorics and consists of finding a route so that a salesman visits all destination points exactly once with minimum cost. Applications of the problem have long been studied in various fields of computer science, however, with the modernization of transportation means as manifested by autonomous vehicles and drone based delivery, variations of TSP have seen renewed interest. Simultaneously, in location based games such as Pokemon GO, the problem of defining optimal routes in order to direct a single player or a team of players into visiting a set of locations, leads to solving TSP variations. Inspired by the above, in this paper we tackle the problem of Mixed Fleet Capacitated Multiple TSP (mfcmTSP), whereby a set of couriers (using different vehicle types or drones) must deliver a set of homogeneous parcels to predefined destinations with minimum makespan. All transportation means have capacity measured as the number of parcels they can carry. We motivate mfcmTSP considering a scenario whereby all parcels are available at a single base station and a fleet of one truck with unlimited capacity, a motorbike with k capacity and a drone with capacity of one parcel are available to fulfill delivery orders. We present a fast heuristic to obtain good solution quality with negligible running time overhead and compare it against a yardstick strategy whereby only the truck is used. Experiments demonstrate the merits of our approach.},
+booktitle = {Proceedings of the 25th Pan-Hellenic Conference on Informatics},
+pages = {294–299},
+numpages = {6},
+keywords = {PDSTSP, city logistics, drone delivery, heuristic, mixed fleet delivery},
+location = {Volos, Greece},
+series = {PCI '21}
+}
+@article{Lu2022,
+title = {Improving the efficiency of last-mile delivery with the flexible drones traveling salesman problem},
+journal = {Expert Systems with Applications},
+volume = {209},
+pages = {118351},
+year = {2022},
+issn = {0957-4174},
+doi = {https://doi.org/10.1016/j.eswa.2022.118351},
+url = {https://www.sciencedirect.com/science/article/pii/S0957417422014701},
+author = {Shih-Hao Lu and R.J. Kuo and Yi-Ting Ho and Anh-Tu Nguyen},
+keywords = {Bisecting -means Algorithm, OR-Tools, Genetic Algorithm, Simulated Annealing, Last-mile delivery, Unmanned aerial vehicle}
+}
+@article{Lan2024,
+author = {Lan, Bo and Suzuki, Yoshinori},
+title = {Using intermediate points in parcel delivery operations with truck-based autonomous drones},
+journal = {Decision Sciences},
+volume = {n/a},
+number = {n/a},
+pages = {},
+keywords = {drones, intermediate point, last-mile logistics, parcel delivery, routing, scheduling},
+doi = {https://doi.org/10.1111/deci.12628},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/deci.12628},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/deci.12628},
+abstract = {Abstract Autonomous drones are no longer science fiction but are becoming reality. Prior studies have investigated how an autonomous drone can be used in conjunction with a parcel delivery truck, but they all restricted the drones’ launch/recovery sites to customer nodes visited by a truck. In practice, parcel carriers are considering the use of intermediate points (IPs), the sites found along the arcs connecting customer nodes, as drones' launch/recovery points. This means that the academic literature currently lags the industry practice. This article extends the previous works on truck-and-drone last-mile delivery by investigating the conditions under which the use of IPs is beneficial by using both theoretical and empirical approaches. Our results show that, although using IPs is an effective concept that can save the cost (time) of package deliveries by 2.189\% on average, the cost saving realized by using IPs can vary notably across carriers depending on their network characteristics. Specifically, our results suggest that the benefit of using IPs becomes high when a network has the following characteristics: (1) low customer density (a small number of customers served per square mile), and (2) large number of time-sensitive packages (subject to time window constraints). Based on these findings, we provide normative implications on if, when, where, and to what extent IPs can be beneficial for the truck-and-drone joint operations in last-mile logistics.}
+}
 
 
 

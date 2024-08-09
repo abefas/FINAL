@@ -1,0 +1,18 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'main.blg'
+[35] biber:340> INFO - === Thu Aug  1, 2024, 12:44:58
+[42] Biber.pm:419> INFO - Reading 'main.bcf'
+[71] Biber.pm:979> INFO - Found 27 citekeys in bib section 0
+[79] Biber.pm:4419> INFO - Processing section 0
+[83] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[85] bibtex.pm:1713> INFO - LaTeX decoding ...
+[102] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[212] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[212] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[212] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[212] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[225] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[231] bbl.pm:763> INFO - Output to main.bbl
+[231] Biber.pm:131> WARN - legacy month field 'dec' in entry 'Stodola2022' is not an integer - this will probably not sort properly.
+[231] Biber.pm:131> WARN - legacy month field 'Jun' in entry 'Stodola2020' is not an integer - this will probably not sort properly.
+[231] Biber.pm:133> INFO - WARNINGS: 2
