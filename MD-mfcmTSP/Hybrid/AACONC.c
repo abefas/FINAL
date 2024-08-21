@@ -9,6 +9,8 @@
 #include "header_files/listFunctions.h"
 #include "header_files/local_opt.h"
 
+extern int instance_id, AACORUN;
+
 void AACONC(SON *G, VType *VT, int **da_access, int n_ants, 
             int n_freq, int n_size, int n_sect, int n_prim, double T_update, double a_update, 
             double p_min, double p_max, double d, double a, double b)
@@ -137,11 +139,11 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
     }
 
     int iter = 0, stop_cond = 0, best_iter = -1, edge_sum;
-    double term_condition = 1.0, foundtime = 0.0;
-    time_t begin = time(NULL), loop = time(NULL), loop_time = difftime(loop, begin);
+    double term_condition = 1.0, foundtime = 0.0, loop_time = 0.0;
+    clock_t begin = clock();
 
     /********** Main loop **********/
-    while(stop_cond < 5000 && iter < 1000000 && term_condition > (0.01 - epsilon) && loop_time < 3600)
+    while(stop_cond < 5000 && iter < 1000000 && term_condition > (0.01 - epsilon) && loop_time < 3)
     {
         Rt_best.makespan = HUGE_VAL;
         R_best.total_makespan = HUGE_VAL;
@@ -198,10 +200,6 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
                 if(Rt_best.makespan >= og)
                     flag = false;
             }
-            /*
-            if(T_update > 0.1)
-                T_update -= a_update;
-            */
         }
 
 
@@ -232,8 +230,7 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
         //printf("R = %0.2lf\n", R.total_makespan);
     
         if(R_best.total_makespan < R.total_makespan - epsilon){    
-            time_t best = time(NULL);
-            foundtime = difftime(best, begin);
+            foundtime = ((double)(clock() - begin)) / CLOCKS_PER_SEC;
             best_iter = iter;
             printf("\niter: %d\n%lf < %lf\n\n", iter, R_best.total_makespan, R.total_makespan);
             new_best(&R, &R_best, G);                       //R becomes the same as R_best
@@ -256,21 +253,33 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
         }
 
         term_condition = evaporate_pheromones(G, phMatrix, edge_matrix, edge_sum, n_ants, p_min, p_max);
-        printf("term_condition = %0.3lf\n", term_condition);
+        //printf("term_condition = %0.3lf\n", term_condition);
 
         iter++;
         stop_cond++;
-        time_t loop = time(NULL);
-        loop_time = difftime(loop, begin);
+        loop_time = ((double)(clock() - begin)) / CLOCKS_PER_SEC;
     }
     
-    fprint_results_VT(&Rt, G, VT[Rt.IVT], da_access[0]);
-    printf("\nRt Makespan: %lf", Rt.makespan);
+    double runtime = ((double)(clock() - begin)) / CLOCKS_PER_SEC;
+
+    fprint_results_VT(&Rt, G, VT, da_access[0]);
+    //printf("\nRt Makespan: %lf", Rt.makespan);
 
     fprint_results(&R, G, VT, da_access);
 
-    printf("\n\nEnd of program...\n");
-    printf("\nTerm_condition: %lf\n", term_condition);
+
+    FILE *file;
+    if((file = fopen("RESULTS_ALL.txt", "a")) == NULL){
+        printf("Error appending result to file!\n");
+        exit(1);
+    }
+    fprintf(file, "Instance %02d SPEEDS %.0lf %0.0lf %0.0lf RUN %d\nTotal Makespan = %0.2lf\nTime = %0.2lf s\n", 
+            instance_id, VT[0].speed, VT[1].speed, VT[2].speed, AACORUN, R.total_makespan, runtime);
+    fclose(file);
+
+
+    //printf("\n\nEnd of program...\n");
+    //printf("\nTerm_condition: %lf\n", term_condition);
 
     /* Free memory */
     free(phMatrix);
@@ -278,14 +287,7 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
         free(K[i]);
     free(K);
 
-    time_t end = time(NULL);
-    
-    printf("iter = %d\n", iter);
-
-    double runtime = difftime(end, begin);
-    printf("Total time = %lf\n", runtime);
-
-    fprint_data_hybrid(iter, best_iter, foundtime, runtime);
+    fprint_data_hybrid(VT, iter, best_iter, foundtime, runtime, term_condition);
 
     for(int idep = 0; idep < G->n_depots; idep++){
         deleteList(&Rt_best.a_depots[idep].routelist);

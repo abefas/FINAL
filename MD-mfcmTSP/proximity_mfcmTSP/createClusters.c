@@ -2,7 +2,7 @@
 #include "header_files/heuristic_misc_functions.h"
 #include "header_files/structs.h"
 
-void save_clustering_to_csv(SON *G, int *assign_cluster);
+//void save_clustering_to_csv(SON *G, int *assign_cluster);
 
 ClusterData createClusters(SON *G, int **da_access){
 
@@ -48,7 +48,7 @@ ClusterData createClusters(SON *G, int **da_access){
         cluster[idepot][counter[idepot]] = i+1;
         counter[idepot]++;
     }
-    save_clustering_to_csv(G, assign_cluster);
+    //save_clustering_to_csv(G, assign_cluster);
     free(counter);
     free(assign_cluster);
 
@@ -58,11 +58,13 @@ ClusterData createClusters(SON *G, int **da_access){
     
     return result;
 }
+
+/*
 extern int instance_id;
 // Function to save clustering results to a CSV file
 void save_clustering_to_csv(SON *G, int *assign_cluster) {
     char file_name[20];
-    sprintf(file_name, "veronoi-%02d.clusters", instance_id);
+    sprintf(file_name, "prox-%02d.clusters", instance_id);
     FILE *fp;
     if(NULL == (fp = fopen(file_name, "w")))
     {
@@ -90,4 +92,5 @@ void save_clustering_to_csv(SON *G, int *assign_cluster) {
 
     fclose(fp);
 }
+*/
 

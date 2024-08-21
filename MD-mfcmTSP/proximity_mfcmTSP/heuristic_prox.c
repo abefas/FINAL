@@ -7,32 +7,16 @@
 #include "header_files/listFunctions.h"
 #include "header_files/local_opt.h"
 
+extern int instance_id;
 
 void heuristic_prox(SON *G, VType *VT, int **da_access){
 
-    time_t begin = time(NULL);
+    clock_t begin = clock();
 
     //Generate clusters - takes into consideration depots' vehicle availability
     //e.g. if closest depot has only drones but customer cannot be accessed by drones then customer 
     //goes into the second closest depot's cluster
     ClusterData cd = createClusters(G, da_access);
-
-    /* Generate files to visualize the clustering *
-    char fn[15];
-    for(int dep = 0; dep < G->n_depots; dep++){
-        printf("depot %d:\n", dep);
-        sprintf(fn, "dep_%d.csv", dep);
-        FILE *fp = fopen(fn, "w");
-        fprintf(fp, "NodeID,Xposition,Yposition\n");
-        for(int l = 0; l < cd.limit[dep]; l++){
-            printf(" %d", cd.cluster[dep][l]);
-            fprintf(fp, "%d,%d,%d\n", cd.cluster[dep][l], G->a_combined[cd.cluster[dep][l]-1].x, G->a_combined[cd.cluster[dep][l]-1].y);
-        }
-        if(fclose(fp) != 0){ printf("Error closing fp!\n"); exit(1); }
-        printf("\n");
-    }
-    */
-
 
     asolution R;
     R.total_makespan = 0.0;
@@ -90,7 +74,7 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
         initialization1(G, &R, VT, da_access, adj_matrix, cd.cluster[IDEPOT], cd.limit[IDEPOT], G->a_depots[IDEPOT].id);
         //We have makespan of each type for IDEPOT at this point so just run mfcmTSP heuristic here
 
-    /***** MAIN HEURISTIC FUNCTION BEGINS HERE *****
+    /***** MAIN HEURISTIC FUNCTION BEGINS HERE *****/
         int stop = 0, type, capacity;
         while(  G->a_depots[IDEPOT].n_VT[0] != 0    //IDEPOT has Truck(s)
                 &&
@@ -177,7 +161,6 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
                     l2 = NULL;
 
                     //Check if swap has effect on Truck route
-                    //Example p09.MDmfcmTSP where node 23 has no effect on IDEPOT 0 Truck route (standalone local opt on each swap)
                     l1 = copyList(R.a_VT[0].a_depots[IDEPOT].routelist);
                     l2 = successive_nodes;
                     while(l2){
@@ -225,34 +208,26 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
 
                 remove_duplicate_nodes(&R.a_VT[0].a_depots[IDEPOT].routelist);
                 remove_duplicate_nodes(&R.a_VT[type].a_depots[IDEPOT].routelist);
+                /*
+                 * +SWAP
                 double ms1 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 1);
                 double ms2 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 2);
                 if(type != 2){
                     double ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
                     double ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
                 }
+                */
             }else{
                 printf("min_cost %0.2lf\n", min_ms);
                 printf("STOPPED\n");
                 stop = 1;
             }
             deleteList(&route_best);    //best route was added to motorcycle or drone
-        }*/
+        }
         //Continue to next depot
         deleteAdjLists(adj_matrix, G->n_nodes);
     }
     free(adj_matrix);
-
-
-
-    /*
-    //Remove unnecessary nodes(depot to depot) and ready for final local opt
-    for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        for(int idep = 0; idep < G->n_depots; idep++){
-           remove_duplicate_nodes(&R.a_VT[ivt].a_depots[idep].routelist);
-        }
-    }
-    */
 
 
     //Get Vehicle types' makespans - were not needed/used until now 
@@ -268,13 +243,24 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
 
     //R.total_makespan = local_opt_full2(&R, G, da_access, VT);
 
+    clock_t finish = clock();
+    double runtime = ((double)(finish - begin)) / CLOCKS_PER_SEC;
+
     printf("total makespan = %0.2lf\n", R.total_makespan);
 
-    time_t finish = time(NULL);
-    double runtime = difftime(finish, begin);
 
     fprint_results(&R, G, VT);
     fprint_data(runtime);
+
+
+    FILE *file;
+    if((file = fopen("RESULTS_ALL.txt", "a")) == NULL){
+        printf("Error appending result to file!\n");
+        exit(1);
+    }
+    fprintf(file, "Instance %02d SPEEDS %.0lf %0.0lf %0.0lf\nTotal Makespan = %0.2lf\nTime = %0.2lf s\n", 
+            instance_id, VT[0].speed, VT[1].speed, VT[2].speed, R.total_makespan, runtime);
+    fclose(file);
 
 
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){

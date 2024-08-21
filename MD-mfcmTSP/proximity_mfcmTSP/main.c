@@ -8,6 +8,26 @@ int instance_id;
 
 int main(int argc, char **argv) {
 
+    double S_T, S_M, S_D;
+
+    if(argc != 5){
+        printf("Usage: %s <instance_id> <Truck Speed> <Motorbike Speed> <Drone Speed>\n", argv[0]);
+        exit(1);
+    }else{
+        if( sscanf(argv[1], "%02d", &instance_id) != 1) {
+            printf("Invalid instance ID\n");
+            exit(EXIT_FAILURE);
+        }
+        // Parse the double arguments
+        if(sscanf(argv[2], "%lf", &S_T) != 1 ||
+            sscanf(argv[3], "%lf", &S_M) != 1 ||
+            sscanf(argv[4], "%lf", &S_D) != 1) {
+            printf("Invalid speed arguments\n");
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    /*
     if(argc != 2){
         printf("Usage: %s <instance_id>\n", argv[0]);
         exit(1);
@@ -17,10 +37,11 @@ int main(int argc, char **argv) {
             exit(EXIT_FAILURE);
         }
     }
+    */
 
     /* Read file and store all info */
     char input[100];
-    sprintf(input, "../../../../Instances/Cordeau_mfcmTSPSSInf/p%02d.MDmfcmTSP", instance_id);
+    sprintf(input, "../../../../Instances/FINAL_instances/p%02d.MDmfcmTSP", instance_id);
     FILE *fp = fopen(input, "r");
     if(!fp){
         perror("Error while opening the file.\n");
@@ -55,7 +76,10 @@ int main(int argc, char **argv) {
     fscanf(fp, "%d %d %d\n", &VT[0].capacity, &VT[1].capacity, &VT[2].capacity);
 
     /* Get speed of each vehicle type */
-    fscanf(fp, "%lf %lf %lf\n", &VT[0].speed, &VT[1].speed, &VT[2].speed);
+    VT[0].speed = S_T;
+    VT[1].speed = S_M;
+    VT[2].speed = S_D;
+    //fscanf(fp, "%lf %lf %lf\n", &VT[0].speed, &VT[1].speed, &VT[2].speed);
 
     /* da_access[ivt] has length n_customers and contains 1 in cell ID-1 if
    * customer can be visited by ivt */
@@ -184,9 +208,9 @@ int main(int argc, char **argv) {
     */
 
 
-    //heuristic_v1_2(&G, VT, da_access);
+    heuristic_v1_2(&G, VT, da_access);
 
-    heuristic_prox(&G, VT, da_access);
+    //heuristic_prox(&G, VT, da_access);
 
     /*
     heuristic_prox_2(&G, VT, da_access);

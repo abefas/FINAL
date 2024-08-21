@@ -513,8 +513,8 @@ void fprint_results(asolution *R, SON *G, VType *VT, int **da_access){
     for(int i = 0; i < G->n_customers; i++)
         detect_dup[i] = 0;
 
-    char file_name[30], fn[30];
-    sprintf(file_name, "p%02d-%d.res", instance_id, AACORUN);
+    char file_name[40], fn[40];
+    sprintf(file_name, "p%02d-%d-%d-%d_run-%d.res", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed, AACORUN);
 
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
@@ -527,7 +527,7 @@ void fprint_results(asolution *R, SON *G, VType *VT, int **da_access){
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        sprintf(fn, "p%02d-%d_ivt_%d.csv", instance_id, AACORUN, ivt+1);
+        sprintf(fn, "p%02d-%d-%d-%d_run-%d_ivt_%d.csv", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed, AACORUN, ivt);
         double ivt_ms = 0.0, dep_ms = 0.0;
         if(NULL == (fp_1 = fopen(fn, "w"))){
             perror("Error opening fp_1!\n");
@@ -594,14 +594,14 @@ void fprint_results(asolution *R, SON *G, VType *VT, int **da_access){
     return;
 }
 
-void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access){
+void fprint_results_VT(vt_solution *R, SON *G, VType *VT, int *da_access){
 
     int detect_dup[G->n_customers];
     for(int i = 0; i < G->n_customers; i++)
         detect_dup[i] = 0;
 
-    char file_name[30], fn[30];
-    sprintf(file_name, "p%02d-%d_TRUCK.res", instance_id, AACORUN);
+    char file_name[40], fn[40];
+    sprintf(file_name, "p%02d-%d-%d-%d_run-%d_TRUCK.res", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed, AACORUN);
 
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
@@ -613,7 +613,7 @@ void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access){
     fprintf(fp, "total makespan: %0.2lf\n", R->makespan);
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
-    sprintf(fn, "p%02d-%d_AACONC.csv", instance_id, AACORUN);
+    sprintf(fn, "p%02d-%d-%d-%d_run-%d_TRUCK.csv", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed, AACORUN);
     if(NULL == (fp_1 = fopen(fn, "w"))){
         perror("Error opening fp_1!\n");
         exit(1);
@@ -630,7 +630,7 @@ void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access){
             temp = R->a_depots[idep].routelist;
             double v_ms = 0.0;
             while(temp->next){
-                v_ms += G->t_matrix[VT.IVT][temp->data - 1][temp->next->data - 1];
+                v_ms += G->t_matrix[0][temp->data - 1][temp->next->data - 1];
                 distance += G->d_matrix[temp->data - 1][temp->next->data - 1];
                 if(temp->next->data > G->n_customers){
                     append(&vehicleRoute, 0);
@@ -675,16 +675,20 @@ void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access){
     return;
 }
 
-void fprint_data_hybrid(int iterations, int best_iter, double foundtime, double runtime){
-    char file_name[25];
-    sprintf(file_name, "p%02d-%d_hybrid.data", instance_id, AACORUN);
+void fprint_data_hybrid(VType *VT, int iterations, int best_iter, double foundtime, double runtime, double term_condition){
+    char file_name[40];
+    sprintf(file_name, "p%02d-%d-%d-%d_run-%d.data", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed, AACORUN);
     FILE *fp;
     if(NULL == (fp = fopen(file_name, "w"))){
         perror("Error opening data file!\n");
         exit(1);
     }
 
-    fprintf(fp, "Solution found in: %.2lf seconds in iteration %d\n\nTotal runtime: %.2lf seconds\nTotal iterations: %d",foundtime, best_iter, runtime, iterations);
+    fprintf(fp, "Solution found in: %.2lf seconds in iteration %d\n"
+                "Total runtime: %.2lf seconds\n"
+                "Total iterations: %d\n"
+                "Termination condition = %0.4lf\n",
+                foundtime, best_iter, runtime, iterations, term_condition);
     
     if(fclose(fp) != 0){
         perror("Error closing data file!\n");

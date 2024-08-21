@@ -57,8 +57,8 @@ double evaporate_pheromones(SON *G, double *phMatrix, int *edge_matrix, int edge
 
 void fprint_results(asolution *R, SON *G, VType *VT, int **da_access);
 
-void fprint_results_VT(vt_solution *R, SON *G, VType VT, int *da_access);
+void fprint_results_VT(vt_solution *R, SON *G, VType *VT, int *da_access);
 
-void fprint_data_hybrid(int iterations, int best_iter, double foundtime, double runtime);
+void fprint_data_hybrid(VType *VT, int iterations, int best_iter, double foundtime, double runtime, double term_condition);
 
 #endif

@@ -6,10 +6,11 @@
 #include "header_files/listFunctions.h"
 #include "header_files/local_opt.h"
 
+extern int instance_id;
 
 void heuristic_v1_2(SON *G, VType *VT, int **da_access){
 
-    time_t begin = time(NULL);
+    clock_t begin = clock();
 
     //Generate clusters - takes into consideration depots' vehicle availability
     //e.g. if closest depot has only drones but customer cannot be accessed by drones then customer 
@@ -215,7 +216,7 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
 
                 remove_duplicate_nodes(&R.a_VT[0].a_depots[IDEPOT].routelist);
                 remove_duplicate_nodes(&R.a_VT[type].a_depots[IDEPOT].routelist);
-                /*
+                /* +SWAP
                 double ms1 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 1);
                 double ms2 = k_optimization2(&R.a_VT[0].a_depots[IDEPOT], G, VT[0], 2);
                 if(type != 2){
@@ -264,16 +265,24 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
             R.total_makespan = R.a_VT[ivt].makespan;
     }
 
-    //R.total_makespan = local_opt_full2(&R, G, da_access, VT);
+    R.total_makespan = local_opt_full2(&R, G, da_access, VT);
+
+    clock_t finish = clock();
+    double runtime = ((double)(finish - begin)) / CLOCKS_PER_SEC;
 
     printf("total makespan = %0.2lf\n", R.total_makespan);
-
-    time_t finish = time(NULL);
-    double runtime = difftime(finish, begin);
 
     fprint_results(&R, G, VT);
     fprint_data(runtime);
 
+    FILE *file;
+    if((file = fopen("RESULTS_ALL.txt", "a")) == NULL){
+        printf("Error appending result to file!\n");
+        exit(1);
+    }
+    fprintf(file, "Instance %02d SPEEDS %.0lf %0.0lf %0.0lf\nTotal Makespan = %0.2lf\nTime = %0.2lf s\n", 
+            instance_id, VT[0].speed, VT[1].speed, VT[2].speed, R.total_makespan, runtime);
+    fclose(file);
 
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
         for(int idep = 0; idep < G->n_depots; idep++){

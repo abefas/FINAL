@@ -22,8 +22,6 @@ void fprint_results(asolution *R, SON *G, VType *VT);
 
 void fprint_data(double runtime);
 
-int addToRoute(SON *G, node **route, int customerID, int capacity, double speed);
-
 //quickSort functions
 void quickSort(double *arr, int low, int high);
 

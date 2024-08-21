@@ -140,15 +140,14 @@ bool not_empty(int *array, int length){
 }
 
 
-static int version = 1;
 void fprint_results(asolution *R, SON *G, VType *VT){
 
     int detect_dup[G->n_customers];
     for(int i = 0; i < G->n_customers; i++)
         detect_dup[i] = 0;
 
-    char file_name[20], fn[30];
-    sprintf(file_name, "prox%02d-v%d.res", instance_id, version);
+    char file_name[30], fn[30];
+    sprintf(file_name, "prox%02d-%d-%d-%d.res", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed);
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
     {
@@ -160,7 +159,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        sprintf(fn, "prox%02d-v%d-ivt_%d.csv", instance_id, version, ivt+1);
+        sprintf(fn, "prox%02d-%d-%d-%d-ivt_%d.csv", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed, ivt);
         if(NULL == (fp_1 = fopen(fn, "w"))){
             perror("Error opening fp_1!\n");
             exit(1);
@@ -220,6 +219,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
 
     free(vehicleRoute);
 
+
     return;
 }
 
@@ -239,46 +239,7 @@ void fprint_data(double runtime){
         exit(1); 
     }
     
-    version++;
     return;
-}
-//
-//Adds customer to pre-existing depot route if possible
-//To the route to which it adds the least time
-int addToRoute(SON *G, node **route, int customerID, int capacity, double speed){
-    printf("addToRoute %d\n", customerID);
-    printList(*route);
-    int added = 0;
-    if(!*route) return added;
-    node *p = (*route)->next, *prev = p, *min_p = NULL;
-    int load = 0;
-    double curr, min = HUGE_VAL;
-    while(p){
-        printf("p = %d\t prev->data = %d\n", p->data, prev->data);
-        if(p->data <= G->n_customers){
-            load += G->a_customers[p->data-1].demand;
-        }else if(p->data > G->n_customers){
-            if(load + G->a_customers[customerID-1].demand <= capacity){
-                curr = 0.0;
-                curr += G->d_matrix[prev->data - 1][customerID - 1];
-                curr += G->d_matrix[customerID - 1][p->data - 1];
-                if(curr < min - epsilon){
-                    min = curr;
-                    min_p = prev;
-                }
-                added = 1;
-            }
-            load = 0;
-        }
-        prev = p; 
-        p = p->next;
-    }
-    if(added == 1)
-        insertAfterNode(min_p, customerID);
-    printf("After:\n");
-    printList(*route);
-
-    return added;
 }
 
 //quickSort

@@ -1,0 +1,44 @@
+
+
+
+
+
+
+(- +Swap)
+
+sto 4 kefalaio 
+
+emfasi sto road network tou motorbike
+
+5.1 pws setara ta peiramata
+    metavlites S_T, S_M, S_D klp
+5.2 eikones, perigrafi
+
+
+pinakas me instances
+
+
+
+
+grafiki poy na deixnei apodosi metaksy algorithmwn (mfcmTSP, MD, MD*, ACO)
+idia grafiki me taxutita diaforetiki tou drone 
+idia grafiki me taxutita diaforetiki k tis motorbike
+
+grafiki 
+
+
+
+
+1) grafikes gia na solidify tis apodoseis twn algorithmwn
+2) grafikes gia na deiksoume an sumferei na uparxei ston stolo deutero drone
+15-20-30
+
+3) grafikes gia na deiksoume an sumferei na uparxoun 4 drones i 2 drones me megaluteri taxutita
+
+
+
+1 grafiki   
+
+Experiments:
+na eksigisw tis pithanotites gia to truck kai gia to drone
+10-10-1 sugkrisi (mfcmTSP, MD, MD*, ACO) me percentage improvement
