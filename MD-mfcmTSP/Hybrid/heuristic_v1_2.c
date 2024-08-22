@@ -12,7 +12,6 @@ void heuristic_v1_2(SON *G, VType *VT, asolution *R, int **da_access){
 
 
     // heuristic for each depot and its clustered customers
-    #pragma omp parallel for
     for(int IDEPOT = 0; IDEPOT < G->n_depots; IDEPOT++){
 
     /***** MAIN HEURISTIC FUNCTION BEGINS HER-> *****/
@@ -183,7 +182,7 @@ void heuristic_v1_2(SON *G, VType *VT, asolution *R, int **da_access){
             R->total_makespan = R->a_VT[ivt].makespan;
     }
 
-    //R->total_makespan = local_opt_full(R, G, da_access, VT);
+    R->total_makespan = local_opt_full(R, G, da_access, VT);
 
     return;
 }

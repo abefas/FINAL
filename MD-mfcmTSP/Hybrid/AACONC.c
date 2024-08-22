@@ -140,10 +140,10 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
 
     int iter = 0, stop_cond = 0, best_iter = -1, edge_sum;
     double term_condition = 1.0, foundtime = 0.0, loop_time = 0.0;
-    clock_t begin = clock();
+    time_t begin = time(NULL);
 
     /********** Main loop **********/
-    while(stop_cond < 5000 && iter < 1000000 && term_condition > (0.01 - epsilon) && loop_time < 3)
+    while(stop_cond < 5000 && iter < 1000000 && term_condition > (0.01 - epsilon) && loop_time < 3600)
     {
         Rt_best.makespan = HUGE_VAL;
         R_best.total_makespan = HUGE_VAL;
@@ -186,7 +186,6 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
             double og;
             bool flag = true;
             while(flag){
-                #pragma omp parallel for
                 for (int idep = 0; idep < G->n_depots; idep++) {
                     if(G->a_depots[idep].n_VT[0] != 0){
                         double ms1 = k_optimization2(&Rt_best.a_depots[idep], G, VT[0], 1);
@@ -213,7 +212,6 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
         offload_to_motorbikes(G, VT, &R_best, &Rt_best, da_access, VT[1].capacity);
 
         //Get R_best makespan for Truck and Motorbikes
-        #pragma omp parallel for
         for(int i = 0; i < G->n_depots; i++){
             R_best.a_VT[0].a_depots[i].makespan = get_makespan_depot_VT(G, R_best.a_VT[0].a_depots[i].routelist, G->a_depots[i].n_VT[0], 0);
             R_best.a_VT[1].a_depots[i].makespan = get_makespan_depot_VT(G, R_best.a_VT[1].a_depots[i].routelist, G->a_depots[i].n_VT[1], 1);
@@ -230,7 +228,7 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
         //printf("R = %0.2lf\n", R.total_makespan);
     
         if(R_best.total_makespan < R.total_makespan - epsilon){    
-            foundtime = ((double)(clock() - begin)) / CLOCKS_PER_SEC;
+            foundtime = difftime(time(NULL), begin);
             best_iter = iter;
             printf("\niter: %d\n%lf < %lf\n\n", iter, R_best.total_makespan, R.total_makespan);
             new_best(&R, &R_best, G);                       //R becomes the same as R_best
@@ -257,10 +255,10 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
 
         iter++;
         stop_cond++;
-        loop_time = ((double)(clock() - begin)) / CLOCKS_PER_SEC;
+        loop_time = difftime(time(NULL), begin);
     }
     
-    double runtime = ((double)(clock() - begin)) / CLOCKS_PER_SEC;
+    double runtime = difftime(time(NULL), begin);
 
     fprint_results_VT(&Rt, G, VT, da_access[0]);
     //printf("\nRt Makespan: %lf", Rt.makespan);

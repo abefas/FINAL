@@ -14,7 +14,6 @@ double local_opt_full(asolution *R, SON *G, int **da_access, VType *VT){
         R->total_makespan = depot_VT_optimization(R,  G, VT, da_access, 2);
         for (int ivt = 0; ivt < G->n_differentTypes; ivt++) {
             if (ivt != 2) {
-                #pragma omp parallel for
                 for (int idep = 0; idep < G->n_depots; idep++) {
                     if(G->a_depots[idep].n_VT[ivt] != 0){
                         double ms1 = k_optimization2(&R->a_VT[ivt].a_depots[idep], G, VT[ivt], 1);
