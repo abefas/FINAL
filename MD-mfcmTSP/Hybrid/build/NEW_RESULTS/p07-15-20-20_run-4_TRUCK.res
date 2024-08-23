@@ -1,0 +1,7 @@
+total makespan: 628.20
+type 1 depot 101 route 1 q_served 27 time 628.20	    0 83 8 47 49 36 46 45 17 84 61 85 5 93 99 96 59 92 98 37 100 91 44 14 38 86 16 60 0 
+type 1 depot 102 route 1 q_served 24 time 595.60	    0 80 68 12 26 4 39 67 25 55 54 24 29 78 34 35 71 9 51 81 33 79 3 77 76 0 
+type 1 depot 103 route 1 q_served 28 time 596.46	    0 2 57 41 22 74 75 23 56 72 73 21 40 58 53 28 27 52 18 89 6 94 13 95 97 87 42 43 15 0 
+type 1 depot 104 route 1 q_served 21 time 611.02	    0 69 1 50 70 30 20 65 66 32 90 63 64 11 19 48 82 7 88 62 10 31 0 
+type 1 makespan 628.20
+distance 36469.162
