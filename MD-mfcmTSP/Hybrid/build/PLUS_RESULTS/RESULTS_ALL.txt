@@ -1,0 +1,9 @@
+Instance 08 SPEEDS 15 20 20 RUN 3
+Total Makespan = 3122.26
+Time = 2346.00 s
+Instance 08 SPEEDS 15 20 20 RUN 4
+Total Makespan = 3038.87
+Time = 3153.00 s
+Instance 08 SPEEDS 15 20 20 RUN 5
+Total Makespan = 3098.95
+Time = 3600.00 s
