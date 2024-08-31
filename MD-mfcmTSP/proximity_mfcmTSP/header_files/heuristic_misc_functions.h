@@ -20,7 +20,7 @@ bool not_empty(int *array, int length);
 
 void fprint_results(asolution *R, SON *G, VType *VT);
 
-void fprint_data(double runtime);
+void fprint_data(double runtime, VType *VT, int N_D);
 
 //quickSort functions
 void quickSort(double *arr, int low, int high);

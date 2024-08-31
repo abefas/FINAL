@@ -123,7 +123,7 @@ void heuristic_local_opt(SON *G, VType *VT, int **da_access){
     double runtime = difftime(finish, begin);
 
     fprint_results(&R, G, VT);
-    fprint_data(runtime);
+    //fprint_data(runtime);
 
 
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){

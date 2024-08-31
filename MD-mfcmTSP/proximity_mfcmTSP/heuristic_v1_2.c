@@ -273,7 +273,7 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
     printf("total makespan = %0.2lf\n", R.total_makespan);
 
     fprint_results(&R, G, VT);
-    fprint_data(runtime);
+    fprint_data(runtime, VT, G->a_depots[0].n_VT[2]);
 
     FILE *file;
     if((file = fopen("RESULTS_ALL.txt", "a")) == NULL){

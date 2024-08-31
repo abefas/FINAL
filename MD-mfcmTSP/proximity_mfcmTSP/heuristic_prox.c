@@ -250,7 +250,7 @@ void heuristic_prox(SON *G, VType *VT, int **da_access){
 
 
     fprint_results(&R, G, VT);
-    fprint_data(runtime);
+    fprint_data(runtime, VT, G->a_depots[0].n_VT[0]);
 
 
     FILE *file;

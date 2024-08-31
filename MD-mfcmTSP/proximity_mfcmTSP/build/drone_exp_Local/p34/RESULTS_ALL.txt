@@ -1,0 +1,36 @@
+Instance 34 SPEEDS 15 15 15
+Total Makespan = 3790.86
+Time = 15.18 s
+Instance 34 SPEEDS 15 15 15
+Total Makespan = 3599.32
+Time = 12.10 s
+Instance 34 SPEEDS 15 15 15
+Total Makespan = 3344.55
+Time = 9.23 s
+Instance 34 SPEEDS 15 15 15
+Total Makespan = 2880.39
+Time = 4.92 s
+Instance 34 SPEEDS 15 15 20
+Total Makespan = 3689.91
+Time = 18.12 s
+Instance 34 SPEEDS 15 15 20
+Total Makespan = 3525.09
+Time = 9.29 s
+Instance 34 SPEEDS 15 15 20
+Total Makespan = 3145.75
+Time = 7.30 s
+Instance 34 SPEEDS 15 15 20
+Total Makespan = 2569.10
+Time = 4.33 s
+Instance 34 SPEEDS 15 15 30
+Total Makespan = 3495.74
+Time = 27.37 s
+Instance 34 SPEEDS 15 15 30
+Total Makespan = 3293.85
+Time = 11.10 s
+Instance 34 SPEEDS 15 15 30
+Total Makespan = 2806.43
+Time = 13.42 s
+Instance 34 SPEEDS 15 15 30
+Total Makespan = 2289.89
+Time = 4.04 s

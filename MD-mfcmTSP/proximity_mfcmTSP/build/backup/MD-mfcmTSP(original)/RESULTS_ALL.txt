@@ -1,0 +1,144 @@
+Instance 01 SPEEDS 15 15 15
+Total Makespan = 431.65
+Time = 0.00 s
+Instance 02 SPEEDS 15 15 15
+Total Makespan = 429.50
+Time = 0.00 s
+Instance 03 SPEEDS 15 15 15
+Total Makespan = 432.00
+Time = 0.00 s
+Instance 04 SPEEDS 15 15 15
+Total Makespan = 919.61
+Time = 0.00 s
+Instance 05 SPEEDS 15 15 15
+Total Makespan = 1136.26
+Time = 0.01 s
+Instance 06 SPEEDS 15 15 15
+Total Makespan = 830.23
+Time = 0.00 s
+Instance 07 SPEEDS 15 15 15
+Total Makespan = 604.14
+Time = 0.00 s
+Instance 08 SPEEDS 15 15 15
+Total Makespan = 4726.54
+Time = 0.01 s
+Instance 09 SPEEDS 15 15 15
+Total Makespan = 3255.26
+Time = 0.01 s
+Instance 10 SPEEDS 15 15 15
+Total Makespan = 2574.94
+Time = 0.00 s
+Instance 11 SPEEDS 15 15 15
+Total Makespan = 1767.60
+Time = 0.00 s
+Instance 31 SPEEDS 15 15 15
+Total Makespan = 2673.54
+Time = 0.02 s
+Instance 32 SPEEDS 15 15 15
+Total Makespan = 2485.50
+Time = 0.01 s
+Instance 33 SPEEDS 15 15 15
+Total Makespan = 2183.52
+Time = 0.01 s
+Instance 34 SPEEDS 15 15 15
+Total Makespan = 4414.16
+Time = 0.10 s
+Instance 35 SPEEDS 15 15 15
+Total Makespan = 3364.31
+Time = 0.05 s
+Instance 01 SPEEDS 15 20 20
+Total Makespan = 378.95
+Time = 0.00 s
+Instance 02 SPEEDS 15 20 20
+Total Makespan = 429.50
+Time = 0.00 s
+Instance 03 SPEEDS 15 20 20
+Total Makespan = 366.82
+Time = 0.00 s
+Instance 04 SPEEDS 15 20 20
+Total Makespan = 910.02
+Time = 0.00 s
+Instance 05 SPEEDS 15 20 20
+Total Makespan = 971.62
+Time = 0.00 s
+Instance 06 SPEEDS 15 20 20
+Total Makespan = 743.18
+Time = 0.00 s
+Instance 07 SPEEDS 15 20 20
+Total Makespan = 596.87
+Time = 0.00 s
+Instance 08 SPEEDS 15 20 20
+Total Makespan = 4427.83
+Time = 0.01 s
+Instance 09 SPEEDS 15 20 20
+Total Makespan = 2918.58
+Time = 0.00 s
+Instance 10 SPEEDS 15 20 20
+Total Makespan = 2485.88
+Time = 0.00 s
+Instance 11 SPEEDS 15 20 20
+Total Makespan = 1672.68
+Time = 0.00 s
+Instance 31 SPEEDS 15 20 20
+Total Makespan = 2563.13
+Time = 0.02 s
+Instance 32 SPEEDS 15 20 20
+Total Makespan = 2251.43
+Time = 0.02 s
+Instance 33 SPEEDS 15 20 20
+Total Makespan = 1985.05
+Time = 0.01 s
+Instance 34 SPEEDS 15 20 20
+Total Makespan = 4158.82
+Time = 0.10 s
+Instance 35 SPEEDS 15 20 20
+Total Makespan = 3120.39
+Time = 0.05 s
+Instance 01 SPEEDS 15 20 30
+Total Makespan = 410.50
+Time = 0.00 s
+Instance 02 SPEEDS 15 20 30
+Total Makespan = 382.31
+Time = 0.00 s
+Instance 03 SPEEDS 15 20 30
+Total Makespan = 347.80
+Time = 0.00 s
+Instance 04 SPEEDS 15 20 30
+Total Makespan = 884.39
+Time = 0.00 s
+Instance 05 SPEEDS 15 20 30
+Total Makespan = 892.01
+Time = 0.00 s
+Instance 06 SPEEDS 15 20 30
+Total Makespan = 743.18
+Time = 0.00 s
+Instance 07 SPEEDS 15 20 30
+Total Makespan = 465.17
+Time = 0.00 s
+Instance 08 SPEEDS 15 20 30
+Total Makespan = 4230.43
+Time = 0.01 s
+Instance 09 SPEEDS 15 20 30
+Total Makespan = 2931.93
+Time = 0.01 s
+Instance 10 SPEEDS 15 20 30
+Total Makespan = 2192.32
+Time = 0.01 s
+Instance 11 SPEEDS 15 20 30
+Total Makespan = 1590.39
+Time = 0.01 s
+Instance 31 SPEEDS 15 20 30
+Total Makespan = 2541.62
+Time = 0.03 s
+Instance 32 SPEEDS 15 20 30
+Total Makespan = 2295.28
+Time = 0.02 s
+Instance 33 SPEEDS 15 20 30
+Total Makespan = 1860.61
+Time = 0.02 s
+Instance 34 SPEEDS 15 20 30
+Total Makespan = 4040.46
+Time = 0.13 s
+Instance 35 SPEEDS 15 20 30
+Total Makespan = 2878.58
+Time = 0.07 s

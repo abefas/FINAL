@@ -59,6 +59,6 @@ void fprint_results(asolution *R, SON *G, VType *VT, int **da_access);
 
 void fprint_results_VT(vt_solution *R, SON *G, VType *VT, int *da_access);
 
-void fprint_data_hybrid(VType *VT, int iterations, int best_iter, double foundtime, double runtime, double term_condition);
+void fprint_data_hybrid(VType *VT, int iterations, int best_iter, double foundtime, double runtime, double term_condition, int ND);
 
 #endif

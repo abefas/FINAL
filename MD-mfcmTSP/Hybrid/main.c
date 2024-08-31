@@ -11,9 +11,10 @@ int instance_id, AACORUN = 1;
 int main(int argc, char **argv) {
 
     double S_T, S_M, S_D;
+    int N_D;
 
-    if(argc != 5){
-        printf("Usage: %s <instance_id> <Truck Speed> <Motorbike Speed> <Drone Speed>\n", argv[0]);
+    if(argc != 6){
+        printf("Usage: %s <instance_id> <S_T> <S_M> <S_D> <Num_Drones>\n", argv[0]);
         exit(1);
     }else{
         if( sscanf(argv[1], "%02d", &instance_id) != 1) {
@@ -23,8 +24,9 @@ int main(int argc, char **argv) {
         // Parse the double arguments
         if(sscanf(argv[2], "%lf", &S_T) != 1 ||
             sscanf(argv[3], "%lf", &S_M) != 1 ||
-            sscanf(argv[4], "%lf", &S_D) != 1) {
-            printf("Invalid speed arguments\n");
+            sscanf(argv[4], "%lf", &S_D) != 1 ||
+            sscanf(argv[5], "%d", &N_D) != 1) {
+            printf("Invalid arguments!\n");
             exit(EXIT_FAILURE);
         }
     }
@@ -122,6 +124,9 @@ int main(int argc, char **argv) {
                &G.a_depots[i].y, &G.a_depots[i].n_VT[0], &G.a_depots[i].n_VT[1],
                &G.a_depots[i].n_VT[2]);
 
+        //Exec argument for second series of experiments
+        G.a_depots[i].n_VT[2] = N_D;
+
         for (int ivt = 0; ivt < G.n_differentTypes; ivt++) {
             /* Get number of vehicles of this type */
             VT[ivt].n_vehicles += G.a_depots[i].n_VT[ivt]; 
@@ -205,7 +210,7 @@ int main(int argc, char **argv) {
 
     srand(time(NULL));
 
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 1; i++){
 
         AACONC(&G, VT, da_access, n_ants, n_freq, n_size,
                n_sect, n_prim, T_update, a_update, p_min, p_max, d, a, b);
