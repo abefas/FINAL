@@ -42,6 +42,9 @@
 % Redefine \ForEach to display a vertical line under it
 \SetKwFor{ForEach}{for each}{}{end for}
 \SetKwRepeat{Do}{do}{while}
+\SetKwFor{ParallelFor}{\textbf{parallel for}}{do}{end for} % Bold keyword
+\SetKwBlock{KwCritical}{\textbf{\#pragma omp critical}}{end}
+
 \geometry{top=1cm, bottom=2cm, left=1cm, right=1cm}
 \newcommand{\pluseq}{\mathrel{+}=}
 
@@ -148,15 +151,10 @@
 	\citeauthor{Stodola2024} \cite{Stodola2024} were the first to research the multi-depot concept in routing problems with drones, using the term MDVRP-D. The authors introduced a mathematical formulation and proposed an Ant Colony Optimization (ACO) algorithm to efficiently solve instances of the problem. More specifically, the authors expand on their previous work on the Multi-Depot Vehicle Routing Problem \cite{Stodola2022}, for which they have proposed the Adaptive Ant Colony Optimization with Node Clustering (AACONC) algorithm, by adding drones to the equation. In the MDVRP-D, each depot is equipped with 1 or more trucks, each of which is equipped with 1 drone, similar to the FSTSP. They study two objective functions, minimizing the total completion time of the operation and minimizing the total cost of the operation. The principle of Ant Colony Optimization involves simulating the behavior of ant colonies searching for optimal paths between an ant nest and food sources using pheromone trails. In this context, ants represent the trucks equipped with drones and pheromone trails represent the attractiveness or optimality of a particular route. To adapt for the use of drones, two pheromone matrices are used; one for the trucks and an additional one for the drones. The algorithm begins by initializing these matrices and proceeds by creating clusters of transition vertices for each vertex in the graph, using the \textit{node clustering} principle \cite{Stodola2020} to group vertices based on their probability of belonging to the optimal solution. The algorithm then iteratively generates ant solutions, each representing a potential route configuration for trucks and drones. Each ant solution is constructed iteratively, probabilistically selecting the next node (customer) to be serviced based on the pheromone matrices; First, it probabilistically selects a depot based on pheromone potential. It then builds routes by using a two-phase approach: selecting a cluster based on pheromone trails and then choosing a customer within the cluster. During this route construction, the algorithm also makes probabilistic decisions to dispatch drones based on the strength of pheromone trails associated with candidate customers. If a drone is dispatched, the algorithm utilizes the node clustering principle again to select a customer within a cluster for the drone to service. After a set amount of ant solutions have been produced, the best one of this generation is kept while the others are discarded. Periodically, the algorithm performs local search optimization on this solution, adjusting the routes of trucks and drones to further improve the solution quality. This optimization phase involves exchanging customers between truck routes and drone routes, as well as adjusting the launch and recovery points of drone sorties to enhance their efficiency. At the end of each ant generation, the algorithm updates the pheromone matrices based on the quality of the generated ant solutions, employing the simulated annealing principle and an adaptive pheromone evaporation procedure to prevent convergence on local optima. The algorithm terminates either when a predetermined amount of generations have passed or when the diversity of the population of the solution set approaches its lower limit, indicating a near-optimal solution has been found. This termination condition ensures the algorithm explores the solution space adequately while preventing unnecessary iterations. 
 	\par 
 	\input{bibliography_table.tex}\;
-	\section{The Novel Problem}
-	\subsection{Problem description}
-	The MD-mfcmTSP can be modeled as an undirected weighted graph $G$ = $\{V,E\}$ where $V$ = $\{C,D\}$ is the set of vertices of both customers and depots, and $E$ is the set of edges. The objective is for a fleet of vehicles, starting at the same time from multiple depots, to complete as many routes as needed, such as to to visit every $c_i\in C$, in the minimum time possible. Each route is comprised of the depot node from where the vehicle departs, followed by an amount $\geq 1$ of customers to which it delivers a parcel, and finally the same depot node from which the vehicle started, this time representing the end of the route. We consider 3 different vehicle types: trucks, motorbikes and UAVs, each with different capacity and speed values, and customer accessibility constraints; motorbikes may service every customer due to their agility while trucks cannot visit some customers considered to be located in alleys, and drones cannot visit some customers due to customer preference or safe landing space unavailability. Furthermore, the fleet composition of each depot may vary: each depot may be equipped with [1,n] trucks, [0,$\lambda$] motorbikes and [0,m] drones, although at least one motorbike must exist in any depot to ensure that a feasible solution is obtainable when customers only accessible by motorbikes exist. The above coupled with the fact that vehicles cannot visit depots other than their own, means that there are several induced subgraphs  $G_v$ = $\{G_v^i\cup G_v^{i+1}\cup ...\cup G_v^{m}\}$ derived from $G$ = $\{V,E\}$ for each vehicle type $v$ and each depot $d^i\in D$. For each vehicle type $v$, $G_v$ contains all customer nodes that are accessible by $v$ and all depot nodes which are equipped with a vehicle of type $v$. The weight of each edge $e_{ij}$ is calculated as the euclidean distance $d_{ij}$ divided by the velocity of a vehicle $\in v$, $s_v$ ($e_{ij}$ = $d_{ij}$/$s_v$). If the capacity of $v$ is denoted as $k_v$, then in the case where $k_v > 1$, $G_v$ is fully connected, allowing movement between customers. Otherwise, in the case of drones where $k_v=1$ parcel, traveling between customers is not possible, thus each $G_D^i$, $d^i\in D$ is a star graph. The objective is to minimize the total completion time (makespan) $M_{total}$ in which all of the customers are serviced.
+	\section{Problem Formulation}
+	The multi-depot mixed fleet capacitated multiple TSP can be modeled as an undirected weighted graph $G$ = $\{V,E\}$ where $V$ = $\{C,D\}$ is the set of vertices of both customers and depots, and $E$ is the set of edges. The objective is for a fleet of vehicles, starting at the same time from multiple depots, to complete as many routes as needed, such as to to visit every $c_i\in C$, in the minimum time possible. Each route is comprised of the depot node from where the vehicle departs, followed by an amount $\geq 1$ of customers to which it delivers a parcel, and finally the same depot node from which the vehicle started, this time representing the end of the route. We consider 3 different vehicle types: trucks, motorbikes and UAVs, each with different capacity and speed values, and customer accessibility constraints; motorbikes may service every customer due to their agility while trucks cannot visit some customers considered to be located in alleys, and drones cannot visit some customers due to customer preference or safe landing space unavailability. Furthermore, the fleet composition of each depot may vary: each depot may be equipped with [1,n] trucks, [0,$\lambda$] motorbikes and [0,m] drones, although at least one motorbike must exist in any depot to ensure that a feasible solution is obtainable when customers only accessible by motorbikes exist. The above coupled with the fact that vehicles cannot visit depots different than their own, means that there are several induced subgraphs  $G_v$ = $\{G_v^i\cup G_v^{i+1}\cup ...\cup G_v^{m}\}$ derived from $G$ = $\{V,E\}$ for each vehicle type $v$ and each depot $d^i\in D$. For each vehicle type $v$, $G_v$ contains all customer nodes that are accessible by $v$ and all depot nodes which are equipped with a vehicle of type $v$. The weight of each edge $e_{ij}$ is calculated as the euclidean distance $d_{ij}$ divided by the velocity of a vehicle $\in v$, $s_v$ ($e_{ij}$ = $d_{ij}$/$s_v$). If the capacity of $v$ is denoted as $k_v$, then in the case where $k_v > 1$, $G_v$ is fully connected, allowing movement between customers. Otherwise, in the case of drones where $k_v=1$ parcel, traveling between customers is not possible, thus each $G_D^i$, $d^i\in D$ is a star graph, allowing the drone to only move from its depot to a customer and back. The objective of the MD-mfcmTSP is to minimize the total completion time (makespan) $M_{total}$ in which all of the customers are serviced.
 	\par
-	\subsection{Makespan Calculations}
-	If $M_v^i$ denotes the total completion time of vehicle type $v$ of depot $i$ then $M_v$ = $max(M_v^i, M_v^{i+1}, ..., M_v^m)$ denotes the makespan of $v$. Furthermore, if $M_{d^i}$ = $max(M_T^i, M_M^i, M_D^i)$ denotes the makespan of depot $i$, then $M_{total} = max(M_T, M_M, M_D) = max(M_{d^i}, M_{d^{i+1}}, ..., M_{d^m})$. In the case where a depot $i$ contains no more than 1 vehicle of a vehicle type $v$ (e.g 1 truck), then $M_v^i$ is simply equal to the time it takes for $v$ to complete its route(s).
-	In the case where a depot is equipped with more than 1 vehicle of any type $v$, and two or more routes need to be assigned to this type, a job scheduling problem arises, where the routes are the jobs that need to be assigned to machines (vehicles $v$). In fact, because we assume that all vehicles of the same type share the same characteristics, it's more specifically an identical-machines scheduling problem. Since our aim is to minimize the makespan ($M_v^i$), this is an NP-hard problem. A prominent approach to tackle this problem is the Longest Processing Time first (LPT) greedy algorithm, first prioritizing jobs by arranging them in descending order based on their processing (traveling) time and subsequently assigning each job to the machine with the current smallest load, thereby aiming to balance the workload across all vehicles $v$ of $d^i\in D$.
-	\par
-			\begin{algorithm}
+	\begin{algorithm}
 		\small
 		\caption{MD-mfcmTSP heuristic}
 		\label{alg:MDmfcmTSP}
@@ -178,7 +176,7 @@
 					$v = D$\;
 					$cap = 1$\;
 				}
-				$M_{dep} = M_T^i$\;
+				$M^{i}_{current} = M_T^i$\;
 				$r_{best} = \emptyset$\;
 				\For{$j=1$ to $|R_T^i| - cap$}{
 					$successive\_nodes = \emptyset$\;
@@ -192,9 +190,9 @@
 						${M'}_{v} = {R'}_{v}^i$ 's makespan\;
 						${R'}_T^i = R_T^i - \{successive\_nodes\}$\;
 						${M'}_T = {R'}_T^i$ 's makespan\;
-						$M_{new} = MAX({M'}_T, {M'}_{v})$\;
-						\If{$M_{new} < M_{dep}$}{
-							$M_{dep} = M_{new}$\;
+						$M^i_{new} = MAX({M'}_T, {M'}_{v})$\;
+						\If{$M^i_{new} < M^i_{current}$}{
+							$M^i_{current} = M^i_{new}$\;
 							$r_{best} = r_{new}$\;
 						}
 						$r_{new} = \emptyset$\;
@@ -206,9 +204,6 @@
 					$M_T = R_T^i$ 's makespan\;
 					$R_{v}^i\pluseq r_{best}$\;
 					$M_{v} = R_{v}^i$ 's makespan\;
-					(+Swap)\;
-					Call $local\_optimization(R_T^i, n_{max})$\;
-					Call $local\_optimization(R_{v}^i, n_{max})$\;
 				}\Else{ 
 					$stop = true$\;
 				}
@@ -219,19 +214,7 @@
 		$M_M = MAX(M_M^i, M_M^{i+1}, ..., M_M^m)$\;
 		$M_D = MAX(M_D^i, M_D^{i+1}, ..., M_D^m)$\;
 		$M_{total} = MAX(M_T, M_M, ..., M_D)$\;
-		Call $optimization\_full(Sol, n_{max})$
 	\end{algorithm}	
-	\section{Solving the MD-mfcmTSP}
-	In this section, we introduce the two algorithmic approaches to address the MD-mfcmTSP. The first approach which is used to tackle the problem comprises of a clustering phase, which transforms the multi-depot problem into multiple single-depot  problems, and a routing phase which calls the heuristic for each depot. The second approach leverages a hybrid metaheuristic, combining Ant Colony Optimization (ACO) with the mfcmTSP heuristic.
-	\subsection{MD-mfcmTSP heuristic}
-	To manage the complexity of multi-depot routing problems, a widely used approach is their transformation to multiple single-depot routing problems. Although a naive approach, this technique provides feasible solutions of which the results may at worst be used as a baseline for comparison with other solution methods.
-	\par 
-	For this purpose, we use a straightforward constrained proximity clustering to assign customers to depots, and then run the mfcmTSP heuristic for each depot. Each customer is assigned to the closest \textit{possible} depot, creating clusters where each depot serves the customers nearest to it [line 1]. Specifically, vehicle availability at each depot may limit the customers that are assigned to its cluster. The reason is that the initialization phase of the heuristic, which is based on these clusters, must form routes that visit every node $c_i\in C$. Therefore, while the assignment is based on proximity, we must adjust the clustering to account for these constraints. This means that some customers may need to be assigned to a more distant depot if the nearest depot lacks the vehicle that can serve them. For example, a customer only accessible by motorbike will be assigned to a more distant depot when the closest to them doesn't have a motorbike available in its fleet.
-	\par 
-	After the customers have been placed into clusters, each depot is called sequentially, running the single-depot mfcmTSP heuristic. First, the initialization function (\ref{alg:initialization}) is called, where the Nearest Neighbor algorithm is used to construct routes, visiting every customer in the cluster using the depot's fleet of vehicles. The algorithm then tries to minimize the depot's makespan by balancing the traveling time of the vehicles [lines 4-48]. This takes place in an iterative manner, by offloading customers from the truck route to the other vehicles, each time choosing the type with the currently minimum traveling time [lines 4-13]. The decision to offload customers from the truck route is made because it is the type with the biggest capacity and the smallest speed, thus if available in the depot it initially also yields the depot's makespan [line 14]. Next, the task is to select which customer(s) will be the ones offloaded. This is decided by iteratively considering every feasible sequence of successive customer nodes in the truck route [lines 16-21,35] and calculating the savings in makespan that the swap would offer [lines 22-34]. This resembles a job assignment problem, trying to balance jobs between different machines such as to minimize the makespan of an operation. Thus, the successive nodes, equal in number to $k_v$, are chosen based on the Longest Processing Time first (LPT) algorithm, choosing the customers which offer the most savings and placing them in $r_{best}$ [lines 15,28-32]. After this procedure, if it's been determined that a swap is possible, the offloading procedure takes place, removing the nodes from the truck route and placing them into the chosen vehicle type's route list [lines 37-41]. If a swap is not possible then the procedure is terminated and the heuristic moves on to consider the next depot [lines 45-47]. In the $+Swap$ version of the heuristic, a local optimization function (\ref{alg:local_opt}) is called after each swap, making node relocation moves to the truck route and to the chosen type's route if $k_v > 1$ [lines 42-44]. After all of the depots have been processed, the total makespan $M_{total}$ is calculated and a local search procedure \ref{alg:opt_full} is called to refine the final solution [lines 51-55]. This procedure consists of a sequence of k-node relocation moves, moving customer nodes to different places in the same route, to routes of different depots but same vehicle type, and to routes of different depots and vehicle types. 
-	\par
-	Algorithms \ref{alg:local_opt} and \ref{alg:mutualLO} are originally presented in \cite{Stodola2020} as Single conlony optimization and Mutual colony optimization respectively. The proposed \ref{alg:vtOpt} local search function is inspired by the aforementioned to allow for k-node relocation moves between vehicle types, catering to the heterogeneous fleet in our problem. We should also note that \ref{alg:local_opt} does not benefit UAVs, as their routes comprise of only one customer at a time. Algorithm \ref{alg:opt_full} was developed out of need to include a refinement step for the final solution yielded by our heuristic. It was formulated after empirically evaluating different combinations and sequences of the previously mentioned local search functions.
-
 	\begin{algorithm}
 		\small
 		\caption{Initialization($d^i, K^i$)}
@@ -257,26 +240,41 @@
 		}
 		\Return{$Sol^i$}\;
 	\end{algorithm}
-	
+	\subsection{Makespan Calculations}
+	If $M_v^i$ denotes the total completion time of vehicle type $v$ of depot $i$ then $M_v$ = $max(M_v^i, M_v^{i+1}, ..., M_v^m)$ denotes the makespan of $v$. Furthermore, if $M^i$ = $max(M_T^i, M_M^i, M_D^i)$ denotes the makespan of depot $i$, then $M_{total} = max(M_T, M_M, M_D) = max(M^i, M^{i+1}, ..., M^{m})$. In the case where a depot $i$ contains no more than 1 vehicle of a vehicle type $v$ (e.g 1 truck), then $M_v^i$ is simply equal to the time it takes for $v$ to complete its route(s).
+	In the case where a depot is equipped with more than 1 vehicle of any type $v$, and two or more routes need to be assigned to this type, a job scheduling problem arises, where the routes are the jobs that need to be assigned to machines (vehicles $v$). In fact, because we assume that all vehicles of the same type share the same characteristics, it's more specifically an identical-machines scheduling problem. Since our aim is to minimize the makespan ($M_v^i$), this is an NP-hard problem. A prominent approach to tackle this problem is the Longest Processing Time first (LPT) greedy algorithm, first prioritizing jobs by arranging them in descending order based on their processing -in our case traveling- time and subsequently assigning each job to the machine with the current smallest load, thereby aiming to balance the workload across all vehicles $v$ of $d^i\in D$.
+	\par
+	\section{Solving the MD-mfcmTSP}
+	In this section, we introduce the two algorithmic approaches to address the MD-mfcmTSP. The first approach which is used to tackle the problem comprises of a clustering phase, which transforms the multi-depot problem into multiple single-depot  problems, and a routing phase which calls the heuristic for each depot. The second approach leverages a hybrid metaheuristic, combining an Ant Colony Optimization (ACO) algorithm with the mfcmTSP heuristic.
+	\subsection{MD-mfcmTSP heuristic}
+	To manage the complexity of multi-depot routing problems, a widely used approach is their transformation to multiple single-depot routing problems. Although a naive approach, this technique provides feasible solutions of which the results may at worst be used as a baseline for comparison with other solution methods.
+	\par 
+	For this purpose, we use a straightforward constrained proximity clustering to assign customers to depots, and then run the mfcmTSP heuristic for each depot. Each customer is assigned to the closest \textit{possible} depot, creating clusters where each depot serves the customers nearest to it (line 1). Specifically, vehicle availability at each depot may limit the customers that are assigned to its cluster. The reason is that the initialization phase of the heuristic, which is based on these clusters, must form routes that visit every node $c_i\in C$. Therefore, while the assignment is based on proximity, we must adjust the clustering to account for these constraints. This means that some customers may need to be assigned to a more distant depot if the nearest depot lacks the vehicle that can serve them. For example, a customer only accessible by motorbike will be assigned to a more distant depot when the closest to them doesn't have a motorbike available in its fleet.
+	\par 
+	After the customers have been placed into clusters, each depot is called sequentially, running the single-depot mfcmTSP heuristic. First, the initialization function (\ref{alg:initialization}) is called, where the Nearest Neighbor algorithm is used to construct routes, visiting every customer in the cluster using the depot's fleet of vehicles. The algorithm then tries to minimize the depot's makespan by balancing the traveling time of the vehicles. This takes place in an iterative manner, by offloading customers from the truck route to the other vehicles, choosing each time the vehicle type with the currently minimum traveling time (lines 4-13). The decision to offload customers from the truck route is made because it is the vehicle with the biggest capacity, thus it initially also yields the depot's makespan (line 14) as it services the majority of the customer pool. Next, the task is to select which customer(s) will be the ones offloaded. This is decided by iteratively considering every feasible sequence of successive customer nodes in the truck route (lines 16-21,35) and calculating the savings in completion time that the swap would offer (lines 22-34). This resembles a job assignment problem, trying to balance jobs between different machines such as to minimize the makespan of an operation. Thus, the successive nodes, equal in number to $k_v$, are chosen based on the Longest Processing Time first (LPT) algorithm, choosing the customers which offer the most savings and placing them in $r_{best}$ (lines 15,28-32). After this procedure, if it's been determined that a swap is beneficial, the offloading procedure takes place, removing the nodes from the truck route and placing them into the chosen vehicle type's route list (lines 37-41). If a swap is not possible then the procedure is terminated and the heuristic moves on to consider the next depot (lines 45-47). After all of the depots have been processed, the total makespan $M_{total}$ is calculated according to the constructed routes and the solution is returned. 
+	\par
+	\subsection{Local Search Optimizations}
+	After the described heuristic has achieved a solution, a local optimization routine then may be called to refine it. This routine, shown in \ref{alg:opt_full}, consists of a sequence of k-node relocation moves, moving customer nodes to different places in the same route, to routes of different depots but same vehicle type, and to routes of different depots and vehicle types.
+	\par
+	Algorithms \ref{alg:route_opt} and \ref{alg:mutual_depot} are originally presented in \cite{Stodola2020} as Single colony optimization and Mutual colony optimization respectively. The proposed \ref{alg:vtOpt} local search function is inspired by the aforementioned to allow for k-node relocation moves between vehicle types, catering to the heterogeneous fleet in our problem. We should also note that \ref{alg:route_opt} does not benefit UAVs, as their routes comprise of only one customer at a time. Algorithm \ref{alg:opt_full} was developed out of need to include a refinement step for the final solution yielded by our heuristic. It was formulated after empirically evaluating different combinations and sequences of the mentioned local search functions. Specifically, it aims to address weaknesses of our heuristic which are not allowing to swap customers between the motorbikes and UAVs, not allowing to swap a number of customers which is smaller than the motorbike's capacity from the truck to the motorbike route. Additionally, the incorporation of the mutual depot optimization offers a solution to the initial assumption that the optimal depot assignment to a customer is always the closest one.
 	\begin{algorithm}
 		\small
-		\caption{$optimization\_full(Sol, n_{max})$}
+		\caption{$local\_search\_optimization(Sol, n_{max})$}
 		\label{alg:opt_full}
 		\Do{any route improves}{
-			Call $vt\_optimization(Sol, n_{max} = 2)$\;
+			Call $mutual\_vehicle\_type\_optimization(Sol, n_{max} = 2)$\;
 			\For{each $vt$}{
 				\For{each $i\in D$}{
-					Call $local\_optimization(R_{vt}^i, n_{max}=2)$\;
+					Call $route\_optimization(R_{vt}^i, n_{max}=2)$\;
 				}
 				Call $mutual\_depot\_optimization(R_{vt}, n_{max}=2)$\;
 			}
 		}
 	\end{algorithm}
-	
 	\begin{algorithm}
 		\small
-		\caption{$local\_optimization(r, n_{max})$}
-		\label{alg:local_opt}
+		\caption{$route\_optimization(r, n_{max})$}
+		\label{alg:route_opt}
 		\For{$n=1$ to $n_{max}$}{
 			\ForEach{combination of $n$ successive nodes on the route}{
 				move the node(s) to a different place on the same route\;
@@ -289,11 +287,10 @@
 		}
 		\Return{$r$}\;
 	\end{algorithm}
-	
 	\begin{algorithm}
 		\small
 		\caption{$mutual\_depot\_optimization(R_{vt}, n_{max})$}
-		\label{alg:mutualLO}
+		\label{alg:mutual_depot}
 		\For{$n = 1$ to $n_{max}$}{
 			\ForEach{possible pair of depots $c1$ and $c2$}{
 				\ForEach{combination of $n$ successive nodes in the route of c1}{
@@ -308,10 +305,9 @@
 		}
 		\Return{$R_{VT}$}\;
 	\end{algorithm}
-	
 	\begin{algorithm}
 		\small
-		\caption{$vt\_optimization(Sol, n_{max})$}
+		\caption{$mutual\_vehicle\_type\_optimization(Sol, n_{max})$}
 		\label{alg:vtOpt}
 		\For{$n = 1$ to $n_{max}$}{
 			\ForEach{depot $i\in D$}{
@@ -329,11 +325,11 @@
 		\Return{$Sol$}\;
 	\end{algorithm}
 	\subsection{Hybrid Ant Colony Optimization}
-	 For our second approach to solve the MD-mfcmTSP we introduce a novel hybrid metaheuristic based on the principles of Ant Colony Optimization (ACO) coupled with the previously presented heuristic. Specifically, we make use of the Adaptive Ant Colony Optimization with Node Clustering (AACONC) \cite{Stodola2022} which was developed for the Multi-Depot Vehicle Routing Problem and showed promising results. We refer to this new algorithm for the MD-mfcmTSP as the H-AACONC. The motive behind using this ACO algorithm is to provide progressively \textbf{\{intelligent?\}} initial routes that benefit the overall solution.
+	 For our second approach to solve the MD-mfcmTSP we introduce a novel hybrid metaheuristic based on the principles of Ant Colony Optimization (ACO) coupled with the previously presented heuristic. Specifically, we make use of the Adaptive Ant Colony Optimization with Node Clustering (AACONC) \cite{Stodola2022} which was developed for the Multi-Depot Vehicle Routing Problem and showed promising results. We refer to this adapted algorithm for the MD-mfcmTSP as the H-AACONC. The motive behind using this ACO algorithm is to provide progressively intelligently created initial routes to be inserted to our heuristic such as to benefit the overall solution.
 	\par 
 	\subsubsection{H-AACONC Algorithm}
-	The ACO part of the algorithm disregards accessibility constraints and assumes that all customers must be serviced by trucks such as to minimize the total time (makespan). As such, the pheromone matrix, node clustering and the AntSolution function remain the same as in the original AACONC and are used to create an initial trucks-only solution which is stored in $Rt$ [lines 1-15]. Then, with frequency $n_{freq}$, which is one of the AACONC control parameters, the single \ref{alg:local_opt} and mutual depot \ref{alg:mutualLO} local search procedures may be called [lines 16-19]. It is important to note that these local search functions may be called more than once, as every time that the second one yields a better solution the routes are altered, so the former may also then find an improvement i.e the algorithm exits this local search phase when the mutual depot optimization does not find a move that improves the solution. In the resulting solution $Rt_{best}$, customers that are not eligible for truck service are then offloaded probabilistically to feasible vehicles of the same depot if possible, or else to the closest depot which has the selected vehicle in its fleet. This offloading procedure [lines 20-21] considers the total number of vehicles $num^{v}$ that exist for each vehicle type $v$ and the accessibility of each customer: If a customer node can only be visited by motorbike, then a new motorbike route is created at the closest available depot and the node is inserted into it while being removed from its original truck route. If a customer node is accessible for both drones and motorbikes, then the probability to be assigned to each vehicle type is given by the ratio $\frac{num^{drones}}{num^{motorbikes}}$. The above is done iteratively for each customer $c\notin G_T$ until $Rt_{best}$ contains only feasible routes comprising of $c\in G_T$.
-	The resulting routes are inserted into $R_{best}$ and the MD-mfcmTSP heuristic is called [line 22], while skipping the clustering and initialization phase. If the processed solution of this generation $R_{best}$ is better than the best found so far $R$ then the latter is replaced with the new one.
+	The Ant Colony Optimization part of the proposed algorithm disregards accessibility constraints and assumes that all customers must be serviced by trucks such as to minimize the total time (makespan). As such, the pheromone matrix, node clustering and the AntSolution function remain the same as in the original AACONC and are used to create an initial trucks-only solution which is stored in $Rt$ (lines 1-15). Then, with frequency $n_{freq}$, which is one of the AACONC control parameters, the single \ref{alg:route_opt} and mutual depot \ref{alg:mutual_depot} local search procedures may be called (lines 16-19). It is important to note that these local search functions may be called more than once, as every time that the second one yields a better solution the routes are altered, so the former may also then find an improvement i.e the algorithm exits this local search phase when the mutual depot optimization does not find a move that improves the solution. In the resulting solution $Rt_{best}$, customers that are not eligible for truck service are then offloaded probabilistically to feasible vehicles of the same depot if possible, or else to the closest depot which has the selected vehicle in its fleet. This offloading procedure (lines 20-21) considers the total number of vehicles $num^{v}$ that exist for each vehicle type $v$ and the accessibility of each customer: If a customer node can only be visited by motorbike, then a new motorbike route is created at the closest available depot and the node is inserted into it while being removed from its original truck route. If a customer node is accessible for both drones and motorbikes, then the probability to be assigned to each vehicle type is given by the ratio $\frac{num^{drones}}{num^{motorbikes}}$. The above is done iteratively for each customer $c\notin G_T$ until $Rt_{best}$ contains only feasible routes comprising of $c\in G_T$.
+	The resulting routes are inserted into $R_{best}$ and the MD-mfcmTSP heuristic is called (line 22), while skipping the clustering and initialization phase. If the processed solution of this generation $R_{best}$ is better than the best found so far $R$ then the latter is replaced with the new one.
 	\input{Hybrid_algorithm.tex}\;
 	\subsubsection{Pheromone matrix update}
 	The pheromone matrix update procedure uses the same logic as the original AACONC algorithm. The Simulated Annealing principle in combination with the Metropolis criterion probabilistically decide which solution will be used for the update. Although in the H-AACONC, while MD-mfcmTSP solutions $R$ and $R_{best}$ are used to make this decision, it is then truck-only solutions $Rt$ and $Rt_{best}$ respectively that are used to update the pheromone matrix as seen in \ref{eq:diff}.
@@ -375,8 +371,10 @@
 	As the pheromone matrix is only concerned with truck-only pheromone trails and thus solutions, the evaporation procedure remains unchanged and the same as in AACONC. In each generation, edges traversed in $R_a$ solutions are stored and used to statistically extract the probability that an edge $e_{ij},i\neq j$ is part of any solution in this generation. With this data at hand, the population diversity is measured using the Shannon entropy mathematical formula and a minimum and maximum limit of entropy in the population is given. These limits are then used to provide an adaptive pheromone evaporation value in each generation. In this way, when the population diversity is high in the initial generations, the pheromone trails evaporate rather quickly such as to prevent poor movements, while as the algorithm progresses the evaporation value lowers, to prevent quick convergence on a local optima, allowing for space exploration.
 	\par 
 	The termination of the algorithm is controlled by three conditions: (i) Exceeding the number of generations without improving (5000), (ii) Reaching the lower limit of population diversity (0.01), (iii) Exceeding the optimization time (1 hour).
-	\subsubsection{Experiments and results}
+	\section{Experiments and results}
 	\{Begin with hardware, coding language \& compiler, include ACO control parameters here, talk about parallelization\}
+	\subsection{Instance description}
+	\subsection{Charts and what they show}
 	\clearpage
 	\printbibliography
 	

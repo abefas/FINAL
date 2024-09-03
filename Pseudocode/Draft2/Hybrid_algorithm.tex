@@ -12,11 +12,13 @@
 	$Rt=\infty,R=\infty$\;
 	\While{NOT TERMINATED}{
 		$Rt_{best}=\infty,R_{best}=\infty$\;
-		\For{$\alpha=1$ to $n_{ants}$}{
+		\ParallelFor{$\alpha=1$ to $n_{ants}$}{
 			$R_a$ = \textbf{Call AntSolution} \;
-			//which  construct routes, using Trucks, for every $c\in C$\;
-			\If{$|R_a|<|Rt_{best}|$}{
+			//which  construct routes using Trucks for every $c\in C$\;
+			\KwCritical{
+				\If{$|R_a|<|Rt_{best}|$}{
 				$Rt_{best}=R_a$\;
+				}
 			}
 		}	
 		\If{$iter$ mod $n_{freq}$=0}{
