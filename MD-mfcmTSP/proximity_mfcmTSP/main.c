@@ -9,10 +9,10 @@ int instance_id;
 int main(int argc, char **argv) {
 
     double S_T, S_M, S_D;
-    int N_D;
+    int N_M, C_M;
 
-    if(argc != 6){
-        printf("Usage: %s <instance_id> <S_T> <S_M> <S_D> <N_D>\n", argv[0]);
+    if(argc != 7){
+        printf("Usage: %s <instance_id> <S_T> <S_M> <S_D> <N_M> <C_M>\n", argv[0]);
         exit(1);
     }else{
         if( sscanf(argv[1], "%02d", &instance_id) != 1) {
@@ -23,7 +23,8 @@ int main(int argc, char **argv) {
         if(sscanf(argv[2], "%lf", &S_T) != 1 ||
             sscanf(argv[3], "%lf", &S_M) != 1 ||
             sscanf(argv[4], "%lf", &S_D) != 1 || 
-            sscanf(argv[5], "%d", &N_D) != 1) {
+            sscanf(argv[5], "%d", &N_M) != 1 || 
+            sscanf(argv[6], "%d", &C_M) != 1) {
         
             printf("Invalid arguments\n");
             exit(EXIT_FAILURE);
@@ -78,6 +79,9 @@ int main(int argc, char **argv) {
     /* Get capacity of each vehicle type */
     fscanf(fp, "%d %d %d\n", &VT[0].capacity, &VT[1].capacity, &VT[2].capacity);
 
+    //Motorbike experiments
+    VT[1].capacity = C_M;
+
     /* Get speed of each vehicle type */
     VT[0].speed = S_T;
     VT[1].speed = S_M;
@@ -127,8 +131,8 @@ int main(int argc, char **argv) {
                &G.a_depots[i].y, &G.a_depots[i].n_VT[0], &G.a_depots[i].n_VT[1],
                &G.a_depots[i].n_VT[2]);
 
-        //Exec argument for series 2 experiments with varying drone numbers
-        G.a_depots[i].n_VT[2] = N_D;
+        //Experiments with varying Motorbike numbers
+        G.a_depots[i].n_VT[1] = N_M;
 
         for (int ivt = 0; ivt < G.n_differentTypes; ivt++) {
             /* Get number of vehicles of this type */

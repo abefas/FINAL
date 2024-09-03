@@ -273,15 +273,15 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
     printf("total makespan = %0.2lf\n", R.total_makespan);
 
     fprint_results(&R, G, VT);
-    fprint_data(runtime, VT, G->a_depots[0].n_VT[2]);
+    fprint_data(runtime, VT, G->a_depots[0].n_VT[1]);
 
     FILE *file;
     if((file = fopen("RESULTS_ALL.txt", "a")) == NULL){
         printf("Error appending result to file!\n");
         exit(1);
     }
-    fprintf(file, "Instance %02d SPEEDS %.0lf %0.0lf %0.0lf\nTotal Makespan = %0.2lf\nTime = %0.2lf s\n", 
-            instance_id, VT[0].speed, VT[1].speed, VT[2].speed, R.total_makespan, runtime);
+    fprintf(file, "Instance %02d N_M %d C_M %d\nTotal Makespan = %0.2lf\nTime = %0.2lf s\n", 
+            instance_id, G->a_depots[0].n_VT[1], VT[1].capacity, R.total_makespan, runtime);
     fclose(file);
 
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){

@@ -31,6 +31,8 @@ Time = 159.00 s
 Instance 07 SPEEDS 15 15 30 N_D 8
 Total Makespan = 254.56
 Time = 197.00 s
+
+
 Instance 34 SPEEDS 15 15 15 N_D 2
 Total Makespan = 4635.71
 Time = 3689.00 s
@@ -64,3 +66,38 @@ Time = 3669.00 s
 Instance 34 SPEEDS 15 15 30 N_D 8
 Total Makespan = 3040.12
 Time = 3931.00 s
+
+
+Instance 11 SPEEDS 15 15 15 N_D 2
+Total Makespan = 1120.76
+Time = 3600.00 s
+Instance 11 SPEEDS 15 15 15 N_D 4
+Total Makespan = 969.38
+Time = 2171.00 s
+Instance 11 SPEEDS 15 15 15 N_D 8
+Total Makespan = 812.15
+Time = 2153.00 s
+Instance 11 SPEEDS 15 15 20 N_D 1
+Total Makespan = 1205.39
+Time = 3588.00 s
+Instance 11 SPEEDS 15 15 20 N_D 2
+Total Makespan = 1036.85
+Time = 3183.00 s
+Instance 11 SPEEDS 15 15 20 N_D 4
+Total Makespan = 923.29
+Time = 1868.00 s
+Instance 11 SPEEDS 15 15 20 N_D 8
+Total Makespan = 755.75
+Time = 2033.00 s
+Instance 11 SPEEDS 15 15 30 N_D 1
+Total Makespan = 1142.99
+Time = 2268.00 s
+Instance 11 SPEEDS 15 15 30 N_D 2
+Total Makespan = 984.84
+Time = 2441.00 s
+Instance 11 SPEEDS 15 15 30 N_D 4
+Total Makespan = 799.27
+Time = 2842.00 s
+Instance 11 SPEEDS 15 15 30 N_D 8
+Total Makespan = 625.76
+Time = 3106.00 s

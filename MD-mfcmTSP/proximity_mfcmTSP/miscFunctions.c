@@ -147,7 +147,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
         detect_dup[i] = 0;
 
     char file_name[40], fn[40];
-    sprintf(file_name, "prox%02d-%d-%d-%d_ND%d.res", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed, G->a_depots[0].n_VT[2]);
+    sprintf(file_name, "prox%02d_NM%d_CM%d.res", instance_id, G->a_depots[0].n_VT[1], VT[1].capacity);
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
     {
@@ -159,7 +159,7 @@ void fprint_results(asolution *R, SON *G, VType *VT){
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        sprintf(fn, "prox%02d-%d-%d-%d_ND%d-ivt_%d.csv", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed, G->a_depots[0].n_VT[2], ivt);
+        sprintf(fn, "prox%02d_NM%d_CM%d-ivt_%d.csv", instance_id, G->a_depots[0].n_VT[1], VT[1].capacity, ivt);
         if(NULL == (fp_1 = fopen(fn, "w"))){
             perror("Error opening fp_1!\n");
             exit(1);
@@ -223,9 +223,9 @@ void fprint_results(asolution *R, SON *G, VType *VT){
     return;
 }
 
-void fprint_data(double runtime, VType *VT, int N_D){
+void fprint_data(double runtime, VType *VT, int N_M){
     char file_name[40];
-    sprintf(file_name, "prox%02d_%d-%d-%d_ND%d.data", instance_id, (int)VT[0].speed, (int)VT[1].speed, (int)VT[2].speed, N_D);
+    sprintf(file_name, "prox%02d_NM%d_CM%d.data", instance_id, N_M, VT[1].capacity);
     FILE *fp;
     if(NULL == (fp = fopen(file_name, "w"))){ 
         perror("Couldn't open file fp at fprint_data\n"); 
