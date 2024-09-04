@@ -1,0 +1,36 @@
+Instance 35 SPEEDS 15 15 15
+Total Makespan = 2684.84
+Time = 13.86 s
+Instance 35 SPEEDS 15 15 15
+Total Makespan = 2578.44
+Time = 8.69 s
+Instance 35 SPEEDS 15 15 15
+Total Makespan = 2218.73
+Time = 7.49 s
+Instance 35 SPEEDS 15 15 15
+Total Makespan = 1913.43
+Time = 4.85 s
+Instance 35 SPEEDS 15 15 20
+Total Makespan = 2642.96
+Time = 7.84 s
+Instance 35 SPEEDS 15 15 20
+Total Makespan = 2440.49
+Time = 16.31 s
+Instance 35 SPEEDS 15 15 20
+Total Makespan = 2021.63
+Time = 12.92 s
+Instance 35 SPEEDS 15 15 20
+Total Makespan = 1768.03
+Time = 2.62 s
+Instance 35 SPEEDS 15 15 30
+Total Makespan = 2491.24
+Time = 14.51 s
+Instance 35 SPEEDS 15 15 30
+Total Makespan = 2261.10
+Time = 5.23 s
+Instance 35 SPEEDS 15 15 30
+Total Makespan = 1920.74
+Time = 4.57 s
+Instance 35 SPEEDS 15 15 30
+Total Makespan = 1503.95
+Time = 2.14 s

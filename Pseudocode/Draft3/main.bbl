@@ -1,0 +1,1557 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Agatz2018}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9496570845455e860b129b87bfd0c4ad}{%
+           family={Agatz},
+           familyi={A\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod}}}%
+        {{hash=fd09f122ea1e9c75cda204cb487a3ee3}{%
+           family={Bouman},
+           familyi={B\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=42a7f5bc22f0ea14f9d8b9f007563456}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Marie},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5fdf494cfe285073bf8766f75e62340}
+      \strng{fullhash}{3005f0bfce79c436e5d0b5ef44708534}
+      \strng{bibnamehash}{f5fdf494cfe285073bf8766f75e62340}
+      \strng{authorbibnamehash}{f5fdf494cfe285073bf8766f75e62340}
+      \strng{authornamehash}{f5fdf494cfe285073bf8766f75e62340}
+      \strng{authorfullhash}{3005f0bfce79c436e5d0b5ef44708534}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The fast and cost-efficient home delivery of goods ordered online is logistically challenging. Many companies are looking for new ways to cross the last mile to their customers. One technology-enabled opportunity that recently has received much attention is the use of drones to support deliveries. An innovative last-mile delivery concept in which a truck collaborates with a drone to make deliveries gives rise to a new variant of the traveling salesman problem (TSP) that we call the TSP with drone. In this paper, we model this problem as an integer program and develop several fast route-first, cluster-second heuristics based on local search and dynamic programming. We prove worst-case approximation ratios for the heuristics and test their performance by comparing the solutions to the optimal solutions for small instances. In addition, we apply our heuristics to several artificial instances with different characteristics and sizes. Our experiments show that substantial savings are possible with this concept compared to truck-only delivery. The online appendix is available at https://doi.org/10.1287/trsc.2017.0791.}
+      \field{journaltitle}{Transportation Science}
+      \field{number}{4}
+      \field{title}{Optimization Approaches for the Traveling Salesman Problem with Drone}
+      \field{volume}{52}
+      \field{year}{2018}
+      \field{pages}{965\bibrangedash 981}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1287/trsc.2017.0791
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1287/trsc.2017.0791
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1287/trsc.2017.0791
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1287/trsc.2017.0791
+      \endverb
+    \endentry
+    \entry{ConcordeTSP}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=5d8cfb264869018ff5f8e671c8f6006a}{%
+           family={Applegate},
+           familyi={A\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=48bc0a96e7a40c5d24f28caba64435ea}{%
+           family={Cook},
+           familyi={C\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{159289e61810db8419cadae258744b94}
+      \strng{fullhash}{159289e61810db8419cadae258744b94}
+      \strng{bibnamehash}{159289e61810db8419cadae258744b94}
+      \strng{authorbibnamehash}{159289e61810db8419cadae258744b94}
+      \strng{authornamehash}{159289e61810db8419cadae258744b94}
+      \strng{authorfullhash}{159289e61810db8419cadae258744b94}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Concorde TSP solver}
+      \field{year}{2006}
+    \endentry
+    \entry{Boccia2021}{article}{}
+      \name{author}{4}{}{%
+        {{hash=07668b9e34cd4aab2eac567dd1f1aac0}{%
+           family={Boccia},
+           familyi={B\bibinitperiod},
+           given={Maurizio},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0a1579fd6b0261290f15701e027d5fdb}{%
+           family={Masone},
+           familyi={M\bibinitperiod},
+           given={Adriano},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1f0c18f93ab7503d8448fecd96bd586a}{%
+           family={Sforza},
+           familyi={S\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8bb3e06848b7b2b1303e0ee63da41d43}{%
+           family={Sterle},
+           familyi={S\bibinitperiod},
+           given={Claudio},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{db0fe7c3ba0e3c1dfde55c84ade306fd}
+      \strng{fullhash}{ffec69f56754ddf0dc6b7e2124b7f422}
+      \strng{bibnamehash}{db0fe7c3ba0e3c1dfde55c84ade306fd}
+      \strng{authorbibnamehash}{db0fe7c3ba0e3c1dfde55c84ade306fd}
+      \strng{authornamehash}{db0fe7c3ba0e3c1dfde55c84ade306fd}
+      \strng{authorfullhash}{ffec69f56754ddf0dc6b7e2124b7f422}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The flying sidekick traveling salesman problem (FS-TSP) is a parcel delivery problem arising in the last-mile logistics, where the distribution plan of a driver-operated truck assisted by a drone (unmanned aerial vehicle, UAV) has to be defined. The FS-TSP is a variant of the TSP where routing decisions are integrated with customer-to-drone and customer-to-truck assignment decisions and truck-and-drone synchronization constraints. The objective is the minimization of the time required to serve all the customers, taking into account drone payload capacity and battery power constraints. In this work we provide a new representation of the FS-TSP based on the definition of an extended graph. This representation allows to model the problem by a new and compact integer linear programming formulation, where the synchronization issue is tackled in a column generation fashion, thus avoiding the usage of big-M constraints, representing one of the main drawbacks of the models present in literature. The proposed formulation has been solved by an exact approach which combines a Branch-and-Cut algorithm and a column generation procedure, strengthened by variable fixing strategies and new valid inequalities specifically defined for the problem. The proposed method has been experienced on a large set of benchmark instances. Computational results show that the proposed approach either is competitive or outperforms the best exact approach present in literature for the FS-TSP. Indeed, it is able to provide the optimal solution for all small size instances with 10 customers and for several medium size instances with 20 customers, some of them never solved before.}
+      \field{issn}{0968-090X}
+      \field{journaltitle}{Transportation Research Part C: Emerging Technologies}
+      \field{title}{A column-and-row generation approach for the flying sidekick travelling salesman problem}
+      \field{volume}{124}
+      \field{year}{2021}
+      \field{pages}{102913}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.trc.2020.102913
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X20308123
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X20308123
+      \endverb
+      \keyw{Flying sidekick TSP,Branch-and-cut,Column generation,Valid inequalities}
+    \endentry
+    \entry{CW1964}{article}{}
+      \name{author}{2}{}{%
+        {{hash=445ba8f64f3060ba5092e32bbf81b911}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=a30ff28753bfc8f9b1620a8ab57bfee2}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={J.W.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a487b46de73fb75e974dc89d46462a7}
+      \strng{fullhash}{3a487b46de73fb75e974dc89d46462a7}
+      \strng{bibnamehash}{3a487b46de73fb75e974dc89d46462a7}
+      \strng{authorbibnamehash}{3a487b46de73fb75e974dc89d46462a7}
+      \strng{authornamehash}{3a487b46de73fb75e974dc89d46462a7}
+      \strng{authorfullhash}{3a487b46de73fb75e974dc89d46462a7}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Operations Research}
+      \field{number}{4}
+      \field{title}{Scheduling of Vehicles from a Central Depot to a Number of Delivery Points}
+      \field{volume}{12}
+      \field{year}{1964}
+      \field{pages}{568\bibrangedash 581}
+      \range{pages}{14}
+    \endentry
+    \entry{Cordeau1997}{article}{}
+      \name{author}{3}{}{%
+        {{hash=122bc0701f8ccc79203f3a4cd374dcc8}{%
+           family={Cordeau},
+           familyi={C\bibinitperiod},
+           given={Jean-François},
+           giveni={J\bibinithyphendelim F\bibinitperiod}}}%
+        {{hash=d4ebdd3fdc985c36f68c8295c5664c74}{%
+           family={Gendreau},
+           familyi={G\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1d6e9fe0f2d8b8a132ebe0ace7645d51}{%
+           family={Laporte},
+           familyi={L\bibinitperiod},
+           given={Gilbert},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{54d96eb6a28d1b10a3ae625134d5965a}
+      \strng{fullhash}{3b95e690c87586edebaf7c3c36c6e3d0}
+      \strng{bibnamehash}{54d96eb6a28d1b10a3ae625134d5965a}
+      \strng{authorbibnamehash}{54d96eb6a28d1b10a3ae625134d5965a}
+      \strng{authornamehash}{54d96eb6a28d1b10a3ae625134d5965a}
+      \strng{authorfullhash}{3b95e690c87586edebaf7c3c36c6e3d0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Networks: An International Journal}
+      \field{number}{2}
+      \field{title}{A tabu search heuristic for periodic and multi-depot vehicle routing problems}
+      \field{volume}{30}
+      \field{year}{1997}
+      \field{pages}{105\bibrangedash 119}
+      \range{pages}{15}
+    \endentry
+    \entry{ColumnRow1960}{article}{}
+      \name{author}{2}{}{%
+        {{hash=212fe65a17e797b6dbce0c3731498b2c}{%
+           family={Dantzig},
+           familyi={D\bibinitperiod},
+           given={George\bibnamedelima B.},
+           giveni={G\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=09b7052a004ffe87013041cbf6aa40ae}{%
+           family={Wolfe},
+           familyi={W\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{130609e52996ced0b9494129bd0eeb72}
+      \strng{fullhash}{130609e52996ced0b9494129bd0eeb72}
+      \strng{bibnamehash}{130609e52996ced0b9494129bd0eeb72}
+      \strng{authorbibnamehash}{130609e52996ced0b9494129bd0eeb72}
+      \strng{authornamehash}{130609e52996ced0b9494129bd0eeb72}
+      \strng{authorfullhash}{130609e52996ced0b9494129bd0eeb72}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Operations Research}
+      \field{number}{1}
+      \field{title}{Decomposition Principle for Linear Programs}
+      \field{volume}{8}
+      \field{year}{1960}
+      \field{pages}{101\bibrangedash 111}
+      \range{pages}{11}
+    \endentry
+    \entry{DeFreitas2018}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8eb1ee815aeab216ec23f043c20607ea}{%
+           family={{de Freitas}},
+           familyi={d\bibinitperiod},
+           given={Júlia\bibnamedelima Cária},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=80f65c8ec8662821748f7ed9483220b7}{%
+           family={Penna},
+           familyi={P\bibinitperiod},
+           given={Puca\bibnamedelimb Huachi\bibnamedelima Vaz},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{a5dc5d680f33720b5f1fd4da18137ebe}
+      \strng{fullhash}{a5dc5d680f33720b5f1fd4da18137ebe}
+      \strng{bibnamehash}{a5dc5d680f33720b5f1fd4da18137ebe}
+      \strng{authorbibnamehash}{a5dc5d680f33720b5f1fd4da18137ebe}
+      \strng{authornamehash}{a5dc5d680f33720b5f1fd4da18137ebe}
+      \strng{authorfullhash}{a5dc5d680f33720b5f1fd4da18137ebe}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1571-0653}
+      \field{journaltitle}{Electronic Notes in Discrete Mathematics}
+      \field{note}{5th International Conference on Variable Neighborhood Search}
+      \field{title}{A Randomized Variable Neighborhood Descent Heuristic to Solve the Flying Sidekick Traveling Salesman Problem}
+      \field{volume}{66}
+      \field{year}{2018}
+      \field{pages}{95\bibrangedash 102}
+      \range{pages}{8}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.endm.2018.03.013
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1571065318300593
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1571065318300593
+      \endverb
+      \keyw{Unmanned aerial vehicle,Traveling Salesman Problem,Drone Delivery,last mile delivery,Randomized Variable Neighborhood Descent}
+    \endentry
+    \entry{DellAmico2019}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ea2fb219da654d57df4e5b7d91bacd43}{%
+           family={Dell'Amico},
+           familyi={D\bibinitperiod},
+           given={Mauro},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5e2607b70540fed57438e3b6eed12558}{%
+           family={Montemanni},
+           familyi={M\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cbc65f1723230dc31f93a366a5dbcc4e}{%
+           family={Novellani},
+           familyi={N\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{386cc314b206ffa2848ca61ea9e442f6}
+      \strng{fullhash}{dcc820fe2d5a4c80029759ecbbf176a0}
+      \strng{bibnamehash}{386cc314b206ffa2848ca61ea9e442f6}
+      \strng{authorbibnamehash}{386cc314b206ffa2848ca61ea9e442f6}
+      \strng{authornamehash}{386cc314b206ffa2848ca61ea9e442f6}
+      \strng{authorfullhash}{dcc820fe2d5a4c80029759ecbbf176a0}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we consider a problem related to deliveries assisted by an unmanned aerial vehicle, so-called drone. In particular we consider the Flying Sidekick Traveling Salesman Problem, in which a truck and a drone cooperate to deliver parcels to customers minimizing the completion time. In the following we improve the formulation found in the related literature. We propose three-indexed and two-indexed formulations and a set of inequalities that can be implemented in a branch-and-cut fashion. The methods that we propose are able to find the optimal solution for most of the literature instances. Moreover, we consider two versions of the problem: one in which the drone is allowed to wait at the customers, as in the literature, and one in which waiting is allowed only in flying mode. The solving methodologies are adapted to both versions and a comparison between the two is provided.}
+      \field{issn}{1862-4480}
+      \field{journaltitle}{Optimization Letters}
+      \field{month}{7}
+      \field{number}{5}
+      \field{title}{Drone-assisted deliveries: new formulations for the flying sidekick traveling salesman problem}
+      \field{volume}{15}
+      \field{year}{2021}
+      \field{pages}{1617\bibrangedash 1648}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1007/s11590-019-01492-z
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s11590-019-01492-z
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s11590-019-01492-z
+      \endverb
+    \endentry
+    \entry{DellAmico2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=7452fa432729b5f5b9ed7f4648c854e4}{%
+           family={Dell’Amico},
+           familyi={D\bibinitperiod},
+           given={Mauro},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5e2607b70540fed57438e3b6eed12558}{%
+           family={Montemanni},
+           familyi={M\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cbc65f1723230dc31f93a366a5dbcc4e}{%
+           family={Novellani},
+           familyi={N\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{07135714223a2281b76a22d1fd557ad2}
+      \strng{fullhash}{1679c8a80882f822e950d7c85241686d}
+      \strng{bibnamehash}{07135714223a2281b76a22d1fd557ad2}
+      \strng{authorbibnamehash}{07135714223a2281b76a22d1fd557ad2}
+      \strng{authornamehash}{07135714223a2281b76a22d1fd557ad2}
+      \strng{authorfullhash}{1679c8a80882f822e950d7c85241686d}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The use of drones in urban logistics is gaining more and more interest. In this paper we consider the flying sidekick traveling salesman problem, where some customers require a delivery and they can be served either by a truck or by a drone. The aim is minimizing the total time required to service all the customers. We present a branch and bound algorithm especially designed to efficiently target small instances up to 15 customers and a heuristic algorithm, using the branch and bound as a subroutine, to attack larger instances. Extensive experimental results suggest the effectiveness of the exact solver for small instances and shows that the heuristic is able to provide state-of-the-art results for medium/large instances.}
+      \field{issn}{0305-0483}
+      \field{journaltitle}{Omega}
+      \field{title}{Algorithms based on branch and bound for the flying sidekick traveling salesman problem}
+      \field{volume}{104}
+      \field{year}{2021}
+      \field{pages}{102493}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.omega.2021.102493
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S030504832100102X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S030504832100102X
+      \endverb
+      \keyw{Traveling salesman problem,Drone-assisted deliveries,Branch and bound,Heuristic algorithms}
+    \endentry
+    \entry{Dinh2021}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=bb8931bc74aee3baf1953920441a67a2}{%
+           family={Dinh},
+           familyi={D\bibinitperiod},
+           given={Quoc\bibnamedelima Trung},
+           giveni={Q\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=42c0c5c32eaf83ccced79fc31d62cfec}{%
+           family={Do},
+           familyi={D\bibinitperiod},
+           given={Duc\bibnamedelima Dong},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=0f8c52d275d8788be120567cdc82290b}{%
+           family={Hà},
+           familyi={H\bibinitperiod},
+           given={Minh\bibnamedelima Hoàng},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Lille, France}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{bec7f24ef1ef66993bee918e4a8f883e}
+      \strng{fullhash}{39e91ddd03c68f11c8d46883095fc9f3}
+      \strng{bibnamehash}{bec7f24ef1ef66993bee918e4a8f883e}
+      \strng{authorbibnamehash}{bec7f24ef1ef66993bee918e4a8f883e}
+      \strng{authornamehash}{bec7f24ef1ef66993bee918e4a8f883e}
+      \strng{authorfullhash}{39e91ddd03c68f11c8d46883095fc9f3}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this work, we are interested in studying the parallel drone scheduling traveling salesman problem (PDSTSP), where deliveries are split between a truck and a fleet of drones. The truck performs a common delivery tour, while the drones are forced to perform back and forth trips between customers and a depot. The objective is to minimize the completion time coming back to the depot of all the vehicles. We present a hybrid ant colony optimization (HACO) metaheuristic to solve the problem. Our algorithm is based on an idea from the literature that represents a PDSTSP solution as a permutation of all customers. And then a dynamic programming is used to decompose the customer sequence into a tour for the truck and trips for the drones. We propose a new dynamic programming combined with other problem-tailored components to efficiently solve the problem. When being tested on benchmark instances from the literature, the HACO algorithm outperforms state-of-the-art algorithms in terms of both running time and solution quality. More remarkably, we find 23 new best known solutions out of 90 instances considered.}
+      \field{booktitle}{Proceedings of the Genetic and Evolutionary Computation Conference}
+      \field{isbn}{9781450383509}
+      \field{series}{GECCO '21}
+      \field{title}{Ants can solve the parallel drone scheduling traveling salesman problem}
+      \field{year}{2021}
+      \field{pages}{14\bibrangedash 21}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1145/3449639.3459342
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3449639.3459342
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3449639.3459342
+      \endverb
+      \keyw{traveling salesman problem,parallel drone scheduling,dynamic programming,ant colony optimization}
+    \endentry
+    \entry{Black-BoxSolvers}{inbook}{}
+      \name{author}{3}{}{%
+        {{hash=de34420e4b036ea9a8137cabe0ca8520}{%
+           family={Duarte},
+           familyi={D\bibinitperiod},
+           given={Abraham},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c12e2e0c624a02cec0a327a3d097ed38}{%
+           family={Laguna},
+           familyi={L\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7fd8dcfc9dbf729387bc490da8d9c1a5}{%
+           family={Martí},
+           familyi={M\bibinitperiod},
+           given={Rafael},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{4edf4eec70f1b4bb526c9f83d7183309}
+      \strng{fullhash}{a437afb811087f77f240b0ec4f01cba7}
+      \strng{bibnamehash}{4edf4eec70f1b4bb526c9f83d7183309}
+      \strng{authorbibnamehash}{4edf4eec70f1b4bb526c9f83d7183309}
+      \strng{authornamehash}{4edf4eec70f1b4bb526c9f83d7183309}
+      \strng{authorfullhash}{a437afb811087f77f240b0ec4f01cba7}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Linear programming is perhaps the best-known tool for optimization. Linear programming is a general-purpose framework that allows a real system to be abstracted as a model with a linear objective function subject to a set of linear constraints.}
+      \field{booktitle}{Metaheuristics for Business Analytics: A Decision Modeling Approach}
+      \field{isbn}{978-3-319-68119-1}
+      \field{title}{Black-Box Solvers}
+      \field{year}{2018}
+      \field{pages}{105\bibrangedash 136}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.1007/978-3-319-68119-1_5
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-68119-1_5
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-68119-1_5
+      \endverb
+    \endentry
+    \entry{Sweep1974}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2c03332c124148f3c1cfe1f198428f21}{%
+           family={Gillett},
+           familyi={G\bibinitperiod},
+           given={Billy\bibnamedelima E.},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=a1ab96a47f8552ff29244908564dea4f}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Leland\bibnamedelima R.},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{ff9b40007d12cc9c0f589f510a1d5af6}
+      \strng{fullhash}{ff9b40007d12cc9c0f589f510a1d5af6}
+      \strng{bibnamehash}{ff9b40007d12cc9c0f589f510a1d5af6}
+      \strng{authorbibnamehash}{ff9b40007d12cc9c0f589f510a1d5af6}
+      \strng{authornamehash}{ff9b40007d12cc9c0f589f510a1d5af6}
+      \strng{authorfullhash}{ff9b40007d12cc9c0f589f510a1d5af6}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Operations Research}
+      \field{number}{2}
+      \field{title}{A Heuristic Algorithm for the Vehicle-Dispatch Problem}
+      \field{volume}{22}
+      \field{year}{1974}
+      \field{pages}{340\bibrangedash 349}
+      \range{pages}{10}
+    \endentry
+    \entry{Ha2015}{article}{}
+      \name{author}{4}{}{%
+        {{hash=9f8c40514aa4550c483db85c0d3400e3}{%
+           family={Ha},
+           familyi={H\bibinitperiod},
+           given={Quang\bibnamedelima Minh},
+           giveni={Q\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=52933b3e7c4e4277be0f88e9ffd5ebbc}{%
+           family={Deville},
+           familyi={D\bibinitperiod},
+           given={Yves},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=4726cf7361ffb58074cf5d179362fb5c}{%
+           family={Dung},
+           familyi={D\bibinitperiod},
+           given={Pham\bibnamedelima Quang},
+           giveni={P\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+        {{hash=0f8c52d275d8788be120567cdc82290b}{%
+           family={Hà},
+           familyi={H\bibinitperiod},
+           given={Minh\bibnamedelima Hoàng},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{91205d0c3bc723bb1c5791258233f51d}
+      \strng{fullhash}{a63eac2a9fe957cb3f6728905e3b749b}
+      \strng{bibnamehash}{91205d0c3bc723bb1c5791258233f51d}
+      \strng{authorbibnamehash}{91205d0c3bc723bb1c5791258233f51d}
+      \strng{authornamehash}{91205d0c3bc723bb1c5791258233f51d}
+      \strng{authorfullhash}{a63eac2a9fe957cb3f6728905e3b749b}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ArXiv}
+      \field{title}{Heuristic methods for the Traveling Salesman Problem with Drone}
+      \field{volume}{abs/1509.08764}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://api.semanticscholar.org/CorpusID:17566606
+      \endverb
+      \verb{url}
+      \verb https://api.semanticscholar.org/CorpusID:17566606
+      \endverb
+    \endentry
+    \entry{Ha2018}{article}{}
+      \name{author}{4}{}{%
+        {{hash=9f8c40514aa4550c483db85c0d3400e3}{%
+           family={Ha},
+           familyi={H\bibinitperiod},
+           given={Quang\bibnamedelima Minh},
+           giveni={Q\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=52933b3e7c4e4277be0f88e9ffd5ebbc}{%
+           family={Deville},
+           familyi={D\bibinitperiod},
+           given={Yves},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=fca2198a7fb0aa54b5e578cf198cb3c9}{%
+           family={Pham},
+           familyi={P\bibinitperiod},
+           given={Quang\bibnamedelima Dung},
+           giveni={Q\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=0f8c52d275d8788be120567cdc82290b}{%
+           family={Hà},
+           familyi={H\bibinitperiod},
+           given={Minh\bibnamedelima Hoàng},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{91205d0c3bc723bb1c5791258233f51d}
+      \strng{fullhash}{7aecc9f76a984ac71efecef65cd50ac0}
+      \strng{bibnamehash}{91205d0c3bc723bb1c5791258233f51d}
+      \strng{authorbibnamehash}{91205d0c3bc723bb1c5791258233f51d}
+      \strng{authornamehash}{91205d0c3bc723bb1c5791258233f51d}
+      \strng{authorfullhash}{7aecc9f76a984ac71efecef65cd50ac0}
+      \field{extraname}{2}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Over the past few years, unmanned aerial vehicles (UAV), also known as drones, have been adopted as part of a new logistic method in the commercial sector called “last-mile delivery”. In this novel approach, they are deployed alongside trucks to deliver goods to customers to improve the quality of service and reduce the transportation cost. This approach gives rise to a new variant of the traveling salesman problem (TSP), called TSP with drone (TSP-D). A variant of this problem that aims to minimize the time at which truck and drone finish the service (or, in other words, to maximize the quality of service) was studied in the work of Murray and Chu (2015). In contrast, this paper considers a new variant of TSP-D in which the objective is to minimize operational costs including total transportation cost and one created by waste time a vehicle has to wait for the other. The problem is first formulated mathematically. Then, two algorithms are proposed for the solution. The first algorithm (TSP-LS) was adapted from the approach proposed by Murray and Chu (2015), in which an optimal TSP solution is converted to a feasible TSP-D solution by local searches. The second algorithm, a Greedy Randomized Adaptive Search Procedure (GRASP), is based on a new split procedure that optimally splits any TSP tour into a TSP-D solution. After a TSP-D solution has been generated, it is then improved through local search operators. Numerical results obtained on various instances of both objective functions with different sizes and characteristics are presented. The results show that GRASP outperforms TSP-LS in terms of solution quality under an acceptable running time.}
+      \field{issn}{0968-090X}
+      \field{journaltitle}{Transportation Research Part C: Emerging Technologies}
+      \field{title}{On the min-cost Traveling Salesman Problem with Drone}
+      \field{volume}{86}
+      \field{year}{2018}
+      \field{pages}{597\bibrangedash 621}
+      \range{pages}{25}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.trc.2017.11.015
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X17303327
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X17303327
+      \endverb
+      \keyw{Traveling Salesman Problem with Drone,Minimize operational cost,Integer programming,Heuristic,GRASP}
+    \endentry
+    \entry{Lin-Kernighan2000}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7fbfbebe86f859a1b603e7c7e6672add}{%
+           family={Helsgaun},
+           familyi={H\bibinitperiod},
+           given={Keld},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{7fbfbebe86f859a1b603e7c7e6672add}
+      \strng{fullhash}{7fbfbebe86f859a1b603e7c7e6672add}
+      \strng{bibnamehash}{7fbfbebe86f859a1b603e7c7e6672add}
+      \strng{authorbibnamehash}{7fbfbebe86f859a1b603e7c7e6672add}
+      \strng{authornamehash}{7fbfbebe86f859a1b603e7c7e6672add}
+      \strng{authorfullhash}{7fbfbebe86f859a1b603e7c7e6672add}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper describes an implementation of the Lin–Kernighan heuristic, one of the most successful methods for generating optimal or near-optimal solutions for the symmetric traveling salesman problem (TSP). Computational tests show that the implementation is highly effective. It has found optimal solutions for all solved problem instances we have been able to obtain, including a 13,509-city problem (the largest non-trivial problem instance solved to optimality today).}
+      \field{issn}{0377-2217}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{number}{1}
+      \field{title}{An effective implementation of the Lin–Kernighan traveling salesman heuristic}
+      \field{volume}{126}
+      \field{year}{2000}
+      \field{pages}{106\bibrangedash 130}
+      \range{pages}{25}
+      \verb{doi}
+      \verb https://doi.org/10.1016/S0377-2217(99)00284-2
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0377221799002842
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0377221799002842
+      \endverb
+      \keyw{Traveling salesman problem,Heuristics,Lin–Kernighan}
+    \endentry
+    \entry{Kuroswiski2023}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=1e3d6c93d45fd62ae88c27b24eb3b51b}{%
+           family={Kuroswiski},
+           familyi={K\bibinitperiod},
+           given={André\bibnamedelima Rossi},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=56efb897a72d11f19ae0e660d0ccae8b}{%
+           family={Pires},
+           familyi={P\bibinitperiod},
+           given={Humberto\bibnamedelima Baldessarini},
+           giveni={H\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=e49ec33659f89d00aea7d926015af310}{%
+           family={Passaro},
+           familyi={P\bibinitperiod},
+           given={Angelo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1cb5441d6182546229dea41bcdcb0842}{%
+           family={Frutuoso},
+           familyi={F\bibinitperiod},
+           given={Lamartine\bibnamedelima Nogueira},
+           giveni={L\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=bb54268c9248fe93d0be1ce45252fd42}{%
+           family={Senne},
+           familyi={S\bibinitperiod},
+           given={Edson\bibnamedelimb Luiz\bibnamedelima França},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{606b75d7407f9b870df999facfaaa94b}
+      \strng{fullhash}{c9003c31ddf1f173c85f5e917b245af8}
+      \strng{bibnamehash}{606b75d7407f9b870df999facfaaa94b}
+      \strng{authorbibnamehash}{606b75d7407f9b870df999facfaaa94b}
+      \strng{authornamehash}{606b75d7407f9b870df999facfaaa94b}
+      \strng{authorfullhash}{c9003c31ddf1f173c85f5e917b245af8}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.NE}
+      \field{eprinttype}{arXiv}
+      \field{title}{Hybrid Genetic Algorithm and Mixed Integer Linear Programming for Flying Sidekick TSP}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2304.13832
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2304.13832
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2304.13832
+      \endverb
+    \endentry
+    \entry{Lei2022}{article}{}
+      \name{author}{3}{}{%
+        {{hash=bb7bab3ebac6b7f3617bfcd71a76864e}{%
+           family={Lei},
+           familyi={L\bibinitperiod},
+           given={Deming},
+           giveni={D\bibinitperiod}}}%
+        {{hash=70f2d1313cb884c9cf801f49022a08a6}{%
+           family={Cui},
+           familyi={C\bibinitperiod},
+           given={Zhengzhi},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=dbe83fd8da75338203d4e8dd0e20be17}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Ming},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f62f473eb141daa16a3c0f6db2197ce6}
+      \strng{fullhash}{74c8600c5a044331281b5d3b7551a5ab}
+      \strng{bibnamehash}{f62f473eb141daa16a3c0f6db2197ce6}
+      \strng{authorbibnamehash}{f62f473eb141daa16a3c0f6db2197ce6}
+      \strng{authornamehash}{f62f473eb141daa16a3c0f6db2197ce6}
+      \strng{authorfullhash}{74c8600c5a044331281b5d3b7551a5ab}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Truck-drone hybrid delivery is a hybrid one combining the advantages including large capacity of truck and high travel speed of drone together. Vehicle routing problem with drones (VRP-D) is a common one in the above delivery system. In this paper, VRP-D is addressed and a new dynamical artificial bee colony (DABC) is employed to minimize the overall operational cost. Two bee swarms are produced and an effective evaluation process is used to determine employed bee swarm and onlooker bee swarm dynamically. Variable neighborhood descent is constructed by using 15 neighborhood structures and adopted in employed bee phase and onlooker bee phase in different ways. A number of experiments are conducted on 112 instances and the computational results reveal that DABC provides new best solutions for 37 instances and has promising advantages on VRP-D.}
+      \field{issn}{0952-1976}
+      \field{journaltitle}{Engineering Applications of Artificial Intelligence}
+      \field{title}{A dynamical artificial bee colony for vehicle routing problem with drones}
+      \field{volume}{107}
+      \field{year}{2022}
+      \field{pages}{104510}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.engappai.2021.104510
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0952197621003584
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0952197621003584
+      \endverb
+      \keyw{Vehicle routing problem,Drone,Artificial bee colony}
+    \endentry
+    \entry{Lu2022}{article}{}
+      \name{author}{4}{}{%
+        {{hash=65a0ff83d40ecfac260dbcad7da95442}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Shih-Hao},
+           giveni={S\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=b409d464c964ef13e949be8644327fb7}{%
+           family={Kuo},
+           familyi={K\bibinitperiod},
+           given={R.J.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=28d9286e9c32ec53bb909a7f9b56f730}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={Yi-Ting},
+           giveni={Y\bibinithyphendelim T\bibinitperiod}}}%
+        {{hash=cdc7b6f5f6c7f211abccd74e60d69d39}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Anh-Tu},
+           giveni={A\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{960f6573803a60b0e1d52db735a00a03}
+      \strng{fullhash}{d75fa2b420fa2e19f1bbb62457edeeb9}
+      \strng{bibnamehash}{960f6573803a60b0e1d52db735a00a03}
+      \strng{authorbibnamehash}{960f6573803a60b0e1d52db735a00a03}
+      \strng{authornamehash}{960f6573803a60b0e1d52db735a00a03}
+      \strng{authorfullhash}{d75fa2b420fa2e19f1bbb62457edeeb9}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0957-4174}
+      \field{journaltitle}{Expert Systems with Applications}
+      \field{title}{Improving the efficiency of last-mile delivery with the flexible drones traveling salesman problem}
+      \field{volume}{209}
+      \field{year}{2022}
+      \field{pages}{118351}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.eswa.2022.118351
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417422014701
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417422014701
+      \endverb
+      \keyw{Bisecting -means Algorithm,OR-Tools,Genetic Algorithm,Simulated Annealing,Last-mile delivery,Unmanned aerial vehicle}
+    \endentry
+    \entry{MbiadouSaleu2018}{article}{}
+      \name{author}{5}{}{%
+        {{hash=c23cf5027389d3a90ee22e8c6cf12761}{%
+           family={Mbiadou\bibnamedelima Saleu},
+           familyi={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Raïssa\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=6dda2a08847104e4252e9acc931af5a7}{%
+           family={Deroussi},
+           familyi={D\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f48bde3a77cd2db46cdb15aef89b27d2}{%
+           family={Feillet},
+           familyi={F\bibinitperiod},
+           given={Dominique},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1a84a163d46c4daeecf4befee0f103eb}{%
+           family={Grangeon},
+           familyi={G\bibinitperiod},
+           given={Nathalie},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f711efb3209713c6db0df91722e38024}{%
+           family={Quilliot},
+           familyi={Q\bibinitperiod},
+           given={Alain},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{28259279bdd5d969b5c1ce6cffca635b}
+      \strng{fullhash}{4e6b8b1bfe365bbad9ca66ccca55fd2a}
+      \strng{bibnamehash}{28259279bdd5d969b5c1ce6cffca635b}
+      \strng{authorbibnamehash}{28259279bdd5d969b5c1ce6cffca635b}
+      \strng{authornamehash}{28259279bdd5d969b5c1ce6cffca635b}
+      \strng{authorfullhash}{4e6b8b1bfe365bbad9ca66ccca55fd2a}
+      \field{extraname}{1}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A recent evolution in urban logistics involves the usage of drones. In this article, we address a heuristic solution of the parallel drone scheduling traveling salesman problem, recently introduced by Murray and Chu. In this problem, deliveries are split between a vehicle and drones. The vehicle performs a classical delivery tour, while the drones are constrained to perform back and forth trips. The objective is to minimize completion time. We propose an iterative two-step heuristic, composed of: a coding step that transforms a solution into a customer sequence, and a decoding step that decomposes the customer sequence into a tour for the vehicle and trips for the drones. Decoding is expressed as a bicriteria shortest path problem and is carried out by dynamic programming. Experiments conducted on benchmark instances confirm the efficiency of the approach and give some insights on this drone delivery system.}
+      \field{journaltitle}{Networks}
+      \field{number}{4}
+      \field{title}{An iterative two-step heuristic for the parallel drone scheduling traveling salesman problem}
+      \field{volume}{72}
+      \field{year}{2018}
+      \field{pages}{459\bibrangedash 474}
+      \range{pages}{16}
+      \verb{doi}
+      \verb https://doi.org/10.1002/net.21846
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.1002/net.21846
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/net.21846
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/net.21846
+      \endverb
+      \keyw{city logistics,drone delivery,dynamic programming,heuristic,PDSTSP,vehicle routing problem}
+    \endentry
+    \entry{MbiadouSaleu2022}{article}{}
+      \name{author}{5}{}{%
+        {{hash=c23cf5027389d3a90ee22e8c6cf12761}{%
+           family={{Mbiadou Saleu}},
+           familyi={M\bibinitperiod},
+           given={Raïssa\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=6dda2a08847104e4252e9acc931af5a7}{%
+           family={Deroussi},
+           familyi={D\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f48bde3a77cd2db46cdb15aef89b27d2}{%
+           family={Feillet},
+           familyi={F\bibinitperiod},
+           given={Dominique},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1a84a163d46c4daeecf4befee0f103eb}{%
+           family={Grangeon},
+           familyi={G\bibinitperiod},
+           given={Nathalie},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f711efb3209713c6db0df91722e38024}{%
+           family={Quilliot},
+           familyi={Q\bibinitperiod},
+           given={Alain},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{28259279bdd5d969b5c1ce6cffca635b}
+      \strng{fullhash}{4e6b8b1bfe365bbad9ca66ccca55fd2a}
+      \strng{bibnamehash}{28259279bdd5d969b5c1ce6cffca635b}
+      \strng{authorbibnamehash}{28259279bdd5d969b5c1ce6cffca635b}
+      \strng{authornamehash}{28259279bdd5d969b5c1ce6cffca635b}
+      \strng{authorfullhash}{4e6b8b1bfe365bbad9ca66ccca55fd2a}
+      \field{extraname}{2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Delivery of goods into urban areas constitutes an important issue for logistics service providers. One of the most talked-about developments in recent years has been the potential use of unmanned aerial vehicles, or drones, for transporting packages, food, medicine, and other goods. Delivery by drones offers new possibilities, but also induces new challenging routing problems. In this paper, we address and extend the so-called Parallel Drone Scheduling Traveling Salesman Problem. Basically, in this problem, deliveries are split between a vehicle and one or several drones. The vehicle performs a classical delivery tour from the depot, while the drones are constrained to perform back and forth trips. The objective is to minimize the completion time. We extend the problem by considering several vehicles. We call it Parallel Drone Scheduling Multiple Traveling Salesman Problem. We propose a hybrid metaheuristic for its solution. The procedure starts by building a giant tour visiting all customers. Then, the giant tour is split in order to determine a set of vehicles tours (each vehicle tour following the order defined by the giant tour) and a set of customers assigned to drones. Thirdly, an improvement step move customers between vehicles or between vehicles and drones. We also propose a Mixed Integer Linear Programming formulation and a simple branch-and-cut approach. The proposed approach is validated via an experimental campaign on instances taken from the CVRPLIB11Capacited Vehicle Routing Problem LIBrary library. Computational experiments comparing several variants of the hybrid metaheuristic give some insights on this drone delivery system.}
+      \field{issn}{0377-2217}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{number}{2}
+      \field{title}{The parallel drone scheduling problem with multiple drones and vehicles}
+      \field{volume}{300}
+      \field{year}{2022}
+      \field{pages}{571\bibrangedash 589}
+      \range{pages}{19}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.ejor.2021.08.014
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0377221721006822
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0377221721006822
+      \endverb
+      \keyw{Routing,Drone delivery,City logistics,m-TSP,ILS,Dynamic programming}
+    \endentry
+    \entry{CheapestInsertion1976}{article}{}
+      \name{author}{2}{}{%
+        {{hash=81e891432b031ab450925d28ad65a9cb}{%
+           family={Mole},
+           familyi={M\bibinitperiod},
+           given={R.H.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=5970d349a1a3d28aa3a3b0b63d021c4b}{%
+           family={Jameson},
+           familyi={J\bibinitperiod},
+           given={S.H.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b076b8f4bf44d3e07a683d66fe75fae}
+      \strng{fullhash}{5b076b8f4bf44d3e07a683d66fe75fae}
+      \strng{bibnamehash}{5b076b8f4bf44d3e07a683d66fe75fae}
+      \strng{authorbibnamehash}{5b076b8f4bf44d3e07a683d66fe75fae}
+      \strng{authornamehash}{5b076b8f4bf44d3e07a683d66fe75fae}
+      \strng{authorfullhash}{5b076b8f4bf44d3e07a683d66fe75fae}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Operational Research Quarterly}
+      \field{number}{2}
+      \field{title}{SEQUENTIAL ROUTE-BUILDING ALGORITHM EMPLOYING A GENERALISED SAVINGS CRITERION.}
+      \field{type}{Article}
+      \field{volume}{27}
+      \field{year}{1976}
+      \field{pages}{503\bibrangedash 511}
+      \range{pages}{9}
+      \verb{urlraw}
+      \verb https://www.scopus.com/inward/record.uri?eid=2-s2.0-0017151741&partnerID=40&md5=52eadfa9a220074de252bf9348a9b0d0
+      \endverb
+      \verb{url}
+      \verb https://www.scopus.com/inward/record.uri?eid=2-s2.0-0017151741&partnerID=40&md5=52eadfa9a220074de252bf9348a9b0d0
+      \endverb
+    \endentry
+    \entry{Montemanni2023}{article}{}
+      \name{author}{2}{}{%
+        {{hash=5e2607b70540fed57438e3b6eed12558}{%
+           family={Montemanni},
+           familyi={M\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7452fa432729b5f5b9ed7f4648c854e4}{%
+           family={Dell’Amico},
+           familyi={D\bibinitperiod},
+           given={Mauro},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{df2b68c592e72269e7feb3b824456de0}
+      \strng{fullhash}{df2b68c592e72269e7feb3b824456de0}
+      \strng{bibnamehash}{df2b68c592e72269e7feb3b824456de0}
+      \strng{authorbibnamehash}{df2b68c592e72269e7feb3b824456de0}
+      \strng{authornamehash}{df2b68c592e72269e7feb3b824456de0}
+      \strng{authorfullhash}{df2b68c592e72269e7feb3b824456de0}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Drones are currently seen as a viable way of improving the distribution of parcels in urban and rural environments, while working in coordination with traditional vehicles, such as trucks. In this paper, we consider the parallel drone scheduling traveling salesman problem, where a set of customers requiring a delivery is split between a truck and a fleet of drones, with the aim of minimizing the total time required to serve all the customers. We propose a constraint programming model for the problem, discuss its implementation and present the results of an experimental program on the instances previously cited in the literature to validate exact and heuristic algorithms. We were able to decrease the cost (the time required to serve customers) for some of the instances and, for the first time, to provide a demonstrated optimal solution for all the instances considered. These results show that constraint programming can be a very effective tool for attacking optimization problems with traveling salesman components, such as the one discussed.}
+      \field{issn}{1999-4893}
+      \field{journaltitle}{Algorithms}
+      \field{number}{1}
+      \field{title}{Solving the Parallel Drone Scheduling Traveling Salesman Problem via Constraint Programming}
+      \field{volume}{16}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.3390/a16010040
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1999-4893/16/1/40
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1999-4893/16/1/40
+      \endverb
+    \endentry
+    \entry{Murray2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=af6d26350c3de304db90af5f7595fb49}{%
+           family={Murray},
+           familyi={M\bibinitperiod},
+           given={Chase\bibnamedelima C.},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=d1ee067472cdf7047b38d574019e3184}{%
+           family={Chu},
+           familyi={C\bibinitperiod},
+           given={Amanda\bibnamedelima G.},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f8d7590a46c2942e9e3d1e82aafa141}
+      \strng{fullhash}{4f8d7590a46c2942e9e3d1e82aafa141}
+      \strng{bibnamehash}{4f8d7590a46c2942e9e3d1e82aafa141}
+      \strng{authorbibnamehash}{4f8d7590a46c2942e9e3d1e82aafa141}
+      \strng{authornamehash}{4f8d7590a46c2942e9e3d1e82aafa141}
+      \strng{authorfullhash}{4f8d7590a46c2942e9e3d1e82aafa141}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Once limited to the military domain, unmanned aerial vehicles are now poised to gain widespread adoption in the commercial sector. One such application is to deploy these aircraft, also known as drones, for last-mile delivery in logistics operations. While significant research efforts are underway to improve the technology required to enable delivery by drone, less attention has been focused on the operational challenges associated with leveraging this technology. This paper provides two mathematical programming models aimed at optimal routing and scheduling of unmanned aircraft, and delivery trucks, in this new paradigm of parcel delivery. In particular, a unique variant of the classical vehicle routing problem is introduced, motivated by a scenario in which an unmanned aerial vehicle works in collaboration with a traditional delivery truck to distribute parcels. We present mixed integer linear programming formulations for two delivery-by-drone problems, along with two simple, yet effective, heuristic solution approaches to solve problems of practical size. Solutions to these problems will facilitate the adoption of unmanned aircraft for last-mile delivery. Such a delivery system is expected to provide faster receipt of customer orders at less cost to the distributor and with reduced environmental impacts. A numerical analysis demonstrates the effectiveness of the heuristics and investigates the tradeoffs between using drones with faster flight speeds versus longer endurance.}
+      \field{issn}{0968-090X}
+      \field{journaltitle}{Transportation Research Part C: Emerging Technologies}
+      \field{title}{The flying sidekick traveling salesman problem: Optimization of drone-assisted parcel delivery}
+      \field{volume}{54}
+      \field{year}{2015}
+      \field{pages}{86\bibrangedash 109}
+      \range{pages}{24}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.trc.2015.03.005
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X15000844
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X15000844
+      \endverb
+      \keyw{Unmanned aerial vehicle,Vehicle routing problem,Traveling salesman problem,Logistics,Integer programming,Heuristics}
+    \endentry
+    \entry{biCriteriaSP}{article}{}
+      \name{author}{2}{}{%
+        {{hash=96b432bee069d23e199462946a204980}{%
+           family={{Namorado Climaco}},
+           familyi={N\bibinitperiod},
+           given={João\bibnamedelima Carlos},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=714e8430811daab22f7bb5287049bb71}{%
+           family={{Queirós Vieira Martins}},
+           familyi={Q\bibinitperiod},
+           given={Ernesto},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{39e028b899ded30ea441acdc4c22114d}
+      \strng{fullhash}{39e028b899ded30ea441acdc4c22114d}
+      \strng{bibnamehash}{39e028b899ded30ea441acdc4c22114d}
+      \strng{authorbibnamehash}{39e028b899ded30ea441acdc4c22114d}
+      \strng{authornamehash}{39e028b899ded30ea441acdc4c22114d}
+      \strng{authorfullhash}{39e028b899ded30ea441acdc4c22114d}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Among the network models, one of the more popular is the so called shortest path problem. This model is used whenever it is intended to minimize a linear function which represents a distance between a predetermined pair of nodes in a given network. Often a single objective function is not sufficient to completely characterize some real-world problems. For instance, in a road network two parameters - as cost and time - can be assigned to each arc. Clearly the fastest path may be too costly. Nevertheless the decision-maker must choose one solution, possibly not the best for both criteria. In this paper we present an algorithm for this problem. With this algorithm a special set of paths (the set of Pareto optimal paths) is determined. One objective for any Pareto optimal path can not be improved without worsening the other one.}
+      \field{issn}{0377-2217}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{number}{4}
+      \field{title}{A bicriterion shortest path algorithm}
+      \field{volume}{11}
+      \field{year}{1982}
+      \field{pages}{399\bibrangedash 404}
+      \range{pages}{6}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0377-2217(82)90205-3
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0377221782902053
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0377221782902053
+      \endverb
+    \endentry
+    \entry{AssignmentProblemSurvey2006}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0ce2b036729a08e91141de8826e187bd}{%
+           family={Öncan},
+           familyi={Ö\bibinitperiod},
+           given={Temel},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{0ce2b036729a08e91141de8826e187bd}
+      \strng{fullhash}{0ce2b036729a08e91141de8826e187bd}
+      \strng{bibnamehash}{0ce2b036729a08e91141de8826e187bd}
+      \strng{authorbibnamehash}{0ce2b036729a08e91141de8826e187bd}
+      \strng{authornamehash}{0ce2b036729a08e91141de8826e187bd}
+      \strng{authorfullhash}{0ce2b036729a08e91141de8826e187bd}
+      \field{sortinit}{Ö}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{INFOR: Information Systems and Operational Research}
+      \field{number}{3}
+      \field{title}{A Survey of the Generalized Assignment Problem and Its Applications}
+      \field{volume}{45}
+      \field{year}{2007}
+      \field{pages}{123\bibrangedash 141}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.3138/infor.45.3.123
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.3138/infor.45.3.123
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3138/infor.45.3.123
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3138/infor.45.3.123
+      \endverb
+    \endentry
+    \entry{Pilcher2023}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2a7c2791fe59f6abe2424df55eb27ab3}{%
+           family={Pilcher},
+           familyi={P\bibinitperiod},
+           given={Ted},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{2a7c2791fe59f6abe2424df55eb27ab3}
+      \strng{fullhash}{2a7c2791fe59f6abe2424df55eb27ab3}
+      \strng{bibnamehash}{2a7c2791fe59f6abe2424df55eb27ab3}
+      \strng{authorbibnamehash}{2a7c2791fe59f6abe2424df55eb27ab3}
+      \strng{authornamehash}{2a7c2791fe59f6abe2424df55eb27ab3}
+      \strng{authorfullhash}{2a7c2791fe59f6abe2424df55eb27ab3}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.NE}
+      \field{eprinttype}{arXiv}
+      \field{title}{A self-adaptive genetic algorithm for the flying sidekick travelling salesman problem}
+      \field{year}{2023}
+      \verb{eprint}
+      \verb 2310.14713
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2310.14713
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2310.14713
+      \endverb
+    \endentry
+    \entry{MST1957}{article}{}
+      \name{author}{1}{}{%
+        {{hash=257748b7d3be872319701a5e6fe0059d}{%
+           family={Prim},
+           familyi={P\bibinitperiod},
+           given={R.\bibnamedelimi C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{257748b7d3be872319701a5e6fe0059d}
+      \strng{fullhash}{257748b7d3be872319701a5e6fe0059d}
+      \strng{bibnamehash}{257748b7d3be872319701a5e6fe0059d}
+      \strng{authorbibnamehash}{257748b7d3be872319701a5e6fe0059d}
+      \strng{authornamehash}{257748b7d3be872319701a5e6fe0059d}
+      \strng{authorfullhash}{257748b7d3be872319701a5e6fe0059d}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Bell System Technical Journal}
+      \field{number}{6}
+      \field{title}{Shortest connection networks and some generalizations}
+      \field{volume}{36}
+      \field{year}{1957}
+      \field{pages}{1389\bibrangedash 1401}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1002/j.1538-7305.1957.tb01515.x
+      \endverb
+    \endentry
+    \entry{rose2013}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=1cef18ea841b0addd037b6797af42c82}{%
+           family={Rose},
+           familyi={R\bibinitperiod},
+           given={Charlie},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{1cef18ea841b0addd037b6797af42c82}
+      \strng{fullhash}{1cef18ea841b0addd037b6797af42c82}
+      \strng{bibnamehash}{1cef18ea841b0addd037b6797af42c82}
+      \strng{authorbibnamehash}{1cef18ea841b0addd037b6797af42c82}
+      \strng{authornamehash}{1cef18ea841b0addd037b6797af42c82}
+      \strng{authorfullhash}{1cef18ea841b0addd037b6797af42c82}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Amazon's Jeff Bezos Looks to the Future}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb http://www.cbsnews.com/news/amazons-jeff-bezos-looks-to-the-future/
+      \endverb
+      \verb{url}
+      \verb http://www.cbsnews.com/news/amazons-jeff-bezos-looks-to-the-future/
+      \endverb
+    \endentry
+    \entry{Sacramento2019}{article}{}
+      \name{author}{3}{}{%
+        {{hash=014c66a038a59798e838a299ab76a879}{%
+           family={Sacramento},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=27c28bde78e62d4964a22364b7887154}{%
+           family={Pisinger},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2938a57825fdb9a5a7f8c36d8fa2e37d}{%
+           family={Ropke},
+           familyi={R\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d6089b0035d15f9bda343b6debe5b56}
+      \strng{fullhash}{d52e18c988321cd18ce1197e35a2ff7e}
+      \strng{bibnamehash}{1d6089b0035d15f9bda343b6debe5b56}
+      \strng{authorbibnamehash}{1d6089b0035d15f9bda343b6debe5b56}
+      \strng{authornamehash}{1d6089b0035d15f9bda343b6debe5b56}
+      \strng{authorfullhash}{d52e18c988321cd18ce1197e35a2ff7e}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Unmanned Aerial Vehicles, commonly known as drones, have attained considerable interest in recent years due to the potential of revolutionizing transport and logistics. Amazon were among the first to introduce the idea of using drones to deliver goods, followed by several other distribution companies working on similar services. The Traveling Salesman Problem, frequently used for planning last-mile delivery operations, can easily be modified to incorporate drones, resulting in a routing problem involving both the truck and aircraft. Introduced by Murray and Chu (2015), the Flying Sidekick Traveling Salesman Problem considers a drone and truck collaborating. The drone can be launched and recovered at certain visits on the truck route, making it possible for both vehicles to deliver goods to customers in parallel. This generalization considerably decreases the operational cost of the routes, by reducing the total fuel consumption for the truck, as customers on the routes can be serviced by drones without covering additional miles for the trucks, and hence increase productivity. In this paper a mathematical model is formulated, defining a problem similar to the Flying Sidekick Traveling Salesman Problem, but for the capacitated multiple-truck case with time limit constraints and minimizing cost as objective function. The corresponding problem is denoted the Vehicle Routing Problem with Drones. Due to the difficulty of solving large instances to optimality, an Adaptive Large Neighborhood Search metaheuristic is proposed. Finally, extensive computational experiments are carried out. The tests investigate, among other things, how beneficial the inclusion of the drone-delivery option is compared to delivering all items using exclusively trucks. Moreover, a detailed sensitivity analysis is performed on several drone-parameters of interest.}
+      \field{issn}{0968-090X}
+      \field{journaltitle}{Transportation Research Part C: Emerging Technologies}
+      \field{title}{An adaptive large neighborhood search metaheuristic for the vehicle routing problem with drones}
+      \field{volume}{102}
+      \field{year}{2019}
+      \field{pages}{289\bibrangedash 315}
+      \range{pages}{27}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.trc.2019.02.018
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X18303218
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X18303218
+      \endverb
+      \keyw{Delivery operations,Vehicle Routing Problems with Drones,UAVs,ALNS}
+    \endentry
+    \entry{Schermer2018}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=beaae0980c59e768ff2ef0a437ab6a95}{%
+           family={Schermer},
+           familyi={S\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f746913d66e1185221df792695a02aaa}{%
+           family={Moeini},
+           familyi={M\bibinitperiod},
+           given={Mahdi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=20a5e3847e2ddd6b0f1a6e6dbca80ec7}{%
+           family={Wendt},
+           familyi={W\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+      }
+      \name{editor}{5}{}{%
+        {{hash=ec43c1136c3902f6ba2d9f3e6f1fd9b7}{%
+           family={Nguyen},
+           familyi={N\bibinitperiod},
+           given={Ngoc\bibnamedelima Thanh},
+           giveni={N\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=43dc860685ea06cc0c4221d6a8ec3874}{%
+           family={Hoang},
+           familyi={H\bibinitperiod},
+           given={Duong\bibnamedelima Hung},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=9fe5497d3927179e0c1068712c871d55}{%
+           family={Hong},
+           familyi={H\bibinitperiod},
+           given={Tzung-Pei},
+           giveni={T\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=f1cacd0a51fe343b269c5b8b6123071f}{%
+           family={Pham},
+           familyi={P\bibinitperiod},
+           given={Hoang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d615923fb488b6e9b1b15f59a1d390f6}{%
+           family={Trawiński},
+           familyi={T\bibinitperiod},
+           given={Bogdan},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{3a5fae9b21f7eba83d932b469e09322f}
+      \strng{fullhash}{8c7b67c96f218424cbcba34b038d36d5}
+      \strng{bibnamehash}{3a5fae9b21f7eba83d932b469e09322f}
+      \strng{authorbibnamehash}{3a5fae9b21f7eba83d932b469e09322f}
+      \strng{authornamehash}{3a5fae9b21f7eba83d932b469e09322f}
+      \strng{authorfullhash}{8c7b67c96f218424cbcba34b038d36d5}
+      \strng{editorbibnamehash}{9b878faa79daf3ef03877a3cc77083c1}
+      \strng{editornamehash}{9b878faa79daf3ef03877a3cc77083c1}
+      \strng{editorfullhash}{2f239067203026b8f13fbf724504c1e5}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Vehicle Routing Problem (VRP) and its variants are well-studied problems in Operations Research. They are related to many real-world applications. Recently, several companies like Amazon, UPS, and Deutsche Post AG showed interest in the integration of autonomous drones in delivery of parcels. This motivates researchers to extend the classical VRP to the Vehicle Routing Problem with Drones (VRPD), where a drone works in tandem with a vehicle to reduce delivery times. In this paper, we focus on solving the VRPD. In particular, we introduce two heuristic algorithms for solving this problem and, through numerical experiments on large-scale instances, we evaluate the performance of the heuristics and show the potential benefit that can be expected when using drones.}
+      \field{booktitle}{Intelligent Information and Database Systems}
+      \field{isbn}{978-3-319-75417-8}
+      \field{title}{Algorithms for Solving the Vehicle Routing Problem with Drones}
+      \field{year}{2018}
+      \field{pages}{352\bibrangedash 361}
+      \range{pages}{10}
+    \endentry
+    \entry{Stodola2020}{article}{}
+      \name{author}{1}{}{%
+        {{hash=371ba9d11daa740245ef273efec17a92}{%
+           family={Stodola},
+           familyi={S\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{371ba9d11daa740245ef273efec17a92}
+      \strng{fullhash}{371ba9d11daa740245ef273efec17a92}
+      \strng{bibnamehash}{371ba9d11daa740245ef273efec17a92}
+      \strng{authorbibnamehash}{371ba9d11daa740245ef273efec17a92}
+      \strng{authornamehash}{371ba9d11daa740245ef273efec17a92}
+      \strng{authorfullhash}{371ba9d11daa740245ef273efec17a92}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The article deals with the hybrid Ant Colony Optimization algorithm and its application to the Multi-Depot Vehicle Routing Problem (MDVRP). The algorithm combines both probabilistic and exact techniques. The former implements the bio-inspired approach based on the behaviour of ants in the nature when searching for food together with simulated annealing principles. The latter complements the former. The algorithm explores the search space in a finite number of iterations. In each iteration, the deterministic local optimization process may be used to improve the current solution. Firstly, the key parts and features of the algorithm are presented, especially in connection with the exact optimization process. Next, the article deals with the results of experiments on MDVRP problems conducted to verify the quality of the algorithm; moreover, these results are compared to other state-of-the-art methods. As experiments, Cordreau's benchmark instances were used. The experiments showed that the proposed algorithm overcomes the other methods as it has the smallest average error (the difference between the found solution and the best known solution) on the entire set of benchmark instances.}
+      \field{issn}{1572-9796}
+      \field{journaltitle}{Natural Computing}
+      \field{month}{6}
+      \field{number}{2}
+      \field{title}{Hybrid ant colony optimization algorithm applied to the multi-depot vehicle routing problem}
+      \field{volume}{19}
+      \field{year}{2020}
+      \field{pages}{463\bibrangedash 475}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1007/s11047-020-09783-6
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s11047-020-09783-6
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s11047-020-09783-6
+      \endverb
+    \endentry
+    \entry{Stodola2024}{article}{}
+      \name{author}{2}{}{%
+        {{hash=371ba9d11daa740245ef273efec17a92}{%
+           family={Stodola},
+           familyi={S\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=eba3bfd567cd44b9f0b219beb7460ef0}{%
+           family={Kutěj},
+           familyi={K\bibinitperiod},
+           given={Libor},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{9441f15ffbabbd056490826698416bae}
+      \strng{fullhash}{9441f15ffbabbd056490826698416bae}
+      \strng{bibnamehash}{9441f15ffbabbd056490826698416bae}
+      \strng{authorbibnamehash}{9441f15ffbabbd056490826698416bae}
+      \strng{authornamehash}{9441f15ffbabbd056490826698416bae}
+      \strng{authorfullhash}{9441f15ffbabbd056490826698416bae}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The use of Unmanned Aerial Vehicles (UAVs) is expected to grow rapidly in the coming years, driven by technological advancements, cost-effectiveness, and the increasing demand for faster and more efficient delivery solutions. This article deals with the mathematical formulation of the Multi-Depot Vehicle Routing Problem with Drones (MDVRP-D), whereby a set of heterogeneous trucks, each paired with a UAV, are located in different depots. Both types of vehicles deliver goods to customers; UAVs are dispatched from trucks while en route to make the last-mile delivery. A metaheuristic algorithm based on the Ant Colony Optimization (ACO) principle is proposed as the solution. This algorithm has been adapted for this newly proposed problem; the novel mechanics include the probabilistic decision to dispatch an UAV, the selection of a customer to be served, and local search optimization. Extensive computational experiments are performed to verify the proposed algorithm. First, its performance is compared with Adaptive Large Neighborhood Search (ALNS) metaheuristics on a set of Vehicle Routing Problem with Drones (VRP-D) benchmarks. A set of various benchmark instances are subsequently proposed for the newly formulated MDVRP-D (differing in complexity and graph topology). Finally, the behavior of the proposed algorithm is thoroughly analyzed, especially in respect of features connected with UAVs. The findings presented in this article provide valuable contributions to the NP-hard models related to the Travelling Salesman Problem (TSP) and to the very popular ACO-based algorithms.}
+      \field{issn}{0957-4174}
+      \field{journaltitle}{Expert Systems with Applications}
+      \field{title}{Multi-Depot Vehicle Routing Problem with Drones: Mathematical formulation, solution algorithm and experiments}
+      \field{volume}{241}
+      \field{year}{2024}
+      \field{pages}{122483}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.eswa.2023.122483
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417423029858
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0957417423029858
+      \endverb
+      \keyw{Multi-Depot Vehicle Routing Problem with Drones,Adaptive Ant Colony Optimization,Metaheuristics,Unmanned Aerial Vehicles,Last-mile delivery}
+    \endentry
+    \entry{Stodola2022}{article}{}
+      \name{author}{2}{}{%
+        {{hash=371ba9d11daa740245ef273efec17a92}{%
+           family={Stodola},
+           familyi={S\bibinitperiod},
+           given={Petr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=6e8ad2573339c088b12909d5cf7c06dd}{%
+           family={Nohel},
+           familyi={N\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Press}%
+      }
+      \strng{namehash}{969fb0f29532cc06709579933bb34ada}
+      \strng{fullhash}{969fb0f29532cc06709579933bb34ada}
+      \strng{bibnamehash}{969fb0f29532cc06709579933bb34ada}
+      \strng{authorbibnamehash}{969fb0f29532cc06709579933bb34ada}
+      \strng{authornamehash}{969fb0f29532cc06709579933bb34ada}
+      \strng{authorfullhash}{969fb0f29532cc06709579933bb34ada}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article deals with the novel metaheuristic algorithm based on the ant colony optimization (ACO) principle. It implements several novel mechanisms that improve its overall performance, lower the optimization time, and reduce the negative behavior which is typically connected with ACO-based algorithms (such as prematurely falling into local optima, or the impact of setting of control parameters on the convergence for different problem configurations). The most significant novel techniques, implemented for the first time to solve the multidepot vehicle routing problem (MDVRP), are as follows: 1) node clustering where transition vertices are organized into a set of candidate lists called clusters and 2) adaptive pheromone evaporation which is adapted during optimization according to the diversity of the population of ant solutions (measured by information entropy). Moreover, a new termination condition, based also on the population diversity, is formulated. The effectiveness of the proposed algorithm for the MDVRP is evaluated via a set of experiments on 23 well-known benchmark instances. Performance is compared with several state-of-the-art metaheuristic methods; the results show that the proposed algorithm outperforms these methods in most cases. Furthermore, the novel mechanisms are analyzed and discussed from points of view of performance, optimization time, and convergence. The findings achieved in this article bring new contributions to the very popular ACO-based algorithms; they can be applied to solve not only the MDVRP, but also, if adapted, to related complex NP-hard problems.}
+      \field{issn}{1089-778X}
+      \field{journaltitle}{Trans. Evol. Comp}
+      \field{month}{12}
+      \field{number}{6}
+      \field{title}{Adaptive Ant Colony Optimization With Node Clustering for the Multidepot Vehicle Routing Problem}
+      \field{volume}{27}
+      \field{year}{2022}
+      \field{pages}{1866\bibrangedash 1880}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1109/TEVC.2022.3230042
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/TEVC.2022.3230042
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/TEVC.2022.3230042
+      \endverb
+    \endentry
+    \entry{Wang2017}{article}{}
+      \name{author}{3}{}{%
+        {{hash=59884bdaf7e7dfdb16075aeb48578898}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xingyin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=1d6ac47bbc4065b06b2c402fff029314}{%
+           family={Poikonen},
+           familyi={P\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=57fd186cef49a011ac5af72e3361a15c}{%
+           family={Golden},
+           familyi={G\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{be7cc6fdd95ab7db18e2663a75263ae9}
+      \strng{fullhash}{3d5054b826bc2b01c7746768e5060636}
+      \strng{bibnamehash}{be7cc6fdd95ab7db18e2663a75263ae9}
+      \strng{authorbibnamehash}{be7cc6fdd95ab7db18e2663a75263ae9}
+      \strng{authornamehash}{be7cc6fdd95ab7db18e2663a75263ae9}
+      \strng{authorfullhash}{3d5054b826bc2b01c7746768e5060636}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, we introduce the vehicle routing problem with drones (VRPD). A fleet of trucks equipped with drones delivers packages to customers. Drones can be dispatched from and picked up by the trucks at the depot or any of the customer locations. The objective is to minimize the maximum duration of the routes (i.e., the completion time). The VRPD is motivated by a number of highly influential companies such as Amazon, DHL, and Federal Express, actively involved in exploring the potential use of commercial drones for package delivery. After stating our simplifying assumptions, we pose a number of questions in order to study the maximum savings that can be obtained from using drones; we then derive a number of worst-case results. The worst-case results depend on the number of drones per truck and the speed of the drones relative to the speed of the truck.}
+      \field{issn}{1862-4480}
+      \field{journaltitle}{Optimization Letters}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{The vehicle routing problem with drones: several worst-case results}
+      \field{volume}{11}
+      \field{year}{2017}
+      \field{pages}{679\bibrangedash 697}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1007/s11590-016-1035-3
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s11590-016-1035-3
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s11590-016-1035-3
+      \endverb
+    \endentry
+    \entry{Yurek2018}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7bf28d2653ea6deb3b81b708a61f5029}{%
+           family={Yurek},
+           familyi={Y\bibinitperiod},
+           given={Emine\bibnamedelima Es},
+           giveni={E\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=93abd487cd9ae25a40afcbb4f787c2ed}{%
+           family={Ozmutlu},
+           familyi={O\bibinitperiod},
+           given={H.\bibnamedelimi Cenk},
+           giveni={H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c3e818972af266fceec83a7b848d154}
+      \strng{fullhash}{6c3e818972af266fceec83a7b848d154}
+      \strng{bibnamehash}{6c3e818972af266fceec83a7b848d154}
+      \strng{authorbibnamehash}{6c3e818972af266fceec83a7b848d154}
+      \strng{authornamehash}{6c3e818972af266fceec83a7b848d154}
+      \strng{authorfullhash}{6c3e818972af266fceec83a7b848d154}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This study investigates a new delivery problem that has emerged after the attempts of several e-commerce and logistics firms to deploy drones in their operations to increase efficiency and reduce delivery times. In this problem, a delivery truck that carries a drone on its roof serves customers in coordination with a drone. The drone is considered to complement the truck due to its cost-efficiency and ability to access difficult terrains and to travel without exposure to congestion. This study presents an iterative algorithm that is based on a decomposition approach to minimize delivery completion time. In the first stage of the proposed methodology, the truck route and the customers assigned to the drone are determined. In the second stage, a mixed-integer linear programming model is solved to optimize the drone route by fixing the routing and the assignment decisions that are made in the first stage. Beginning with the shortest truck route, the assignment and the routing decisions are iteratively improved. The solution times of our algorithm are compared with the solution times of the state-of-the-art formulations that are solved by CPLEX. The results demonstrate that our algorithm yields shorter solution times for the instances that we generated with the specified parameters. An optimization-based heuristic algorithm, which obtains solutions for medium-sized instances, is developed by reducing the feasible search area.}
+      \field{issn}{0968-090X}
+      \field{journaltitle}{Transportation Research Part C: Emerging Technologies}
+      \field{title}{A decomposition-based iterative optimization algorithm for traveling salesman problem with drone}
+      \field{volume}{91}
+      \field{year}{2018}
+      \field{pages}{249\bibrangedash 262}
+      \range{pages}{14}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.trc.2018.04.009
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X18304662
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0968090X18304662
+      \endverb
+      \keyw{TSP,Drone,Drone delivery,Decomposition,Iterative algorithm,MIP}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
