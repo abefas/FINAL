@@ -514,7 +514,7 @@ void fprint_results(asolution *R, SON *G, VType *VT, int **da_access){
         detect_dup[i] = 0;
 
     char file_name[40], fn[40];
-    sprintf(file_name, "p%02d_NM%d_CM%d_run-%d.res", instance_id, G->a_depots[0].n_VT[1], VT[1].capacity, AACORUN);
+    sprintf(file_name, "p%02d_SD%d_ND%d_run-%d.res", instance_id, (int)VT[2].speed, G->a_depots[0].n_VT[2], AACORUN);
 
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
@@ -527,7 +527,7 @@ void fprint_results(asolution *R, SON *G, VType *VT, int **da_access){
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
     for(int ivt = 0; ivt < G->n_differentTypes; ivt++){
-        sprintf(fn, "p%02d_NM%d_CM%d_run-%d_ivt_%d.csv", instance_id, G->a_depots[0].n_VT[1], VT[1].capacity, AACORUN, ivt);
+        sprintf(fn, "p%02d_SD%d_ND%d_run-%d_ivt_%d.csv", instance_id, (int)VT[2].speed, G->a_depots[0].n_VT[2], AACORUN, ivt);
         double ivt_ms = 0.0, dep_ms = 0.0;
         if(NULL == (fp_1 = fopen(fn, "w"))){
             perror("Error opening fp_1!\n");
@@ -601,7 +601,7 @@ void fprint_results_VT(vt_solution *R, SON *G, VType *VT, int *da_access){
         detect_dup[i] = 0;
 
     char file_name[40], fn[40];
-    sprintf(file_name, "p%02d_NM%d_CM%d_run-%d_TRUCK.res", instance_id, G->a_depots[0].n_VT[1], VT[1].capacity, AACORUN);
+    sprintf(file_name, "p%02d_SD%d_ND%d_run-%d_TRUCK.res", instance_id, (int)VT[2].speed, G->a_depots[0].n_VT[2], AACORUN);
 
     FILE *fp, *fp_1;
     if(NULL == (fp = fopen(file_name, "w")))
@@ -613,7 +613,7 @@ void fprint_results_VT(vt_solution *R, SON *G, VType *VT, int *da_access){
     fprintf(fp, "total makespan: %0.2lf\n", R->makespan);
     node *temp = NULL, *vehicleRoute = NULL;
     push(&vehicleRoute, 0);
-    sprintf(fn, "p%02d_NM%d_CM%d_run-%d_TRUCK.csv", instance_id, G->a_depots[0].n_VT[1], VT[1].capacity, AACORUN);
+    sprintf(fn, "p%02d_SD%d_ND%d_run-%d_TRUCK.csv", instance_id, (int)VT[2].speed, G->a_depots[0].n_VT[2], AACORUN);
     if(NULL == (fp_1 = fopen(fn, "w"))){
         perror("Error opening fp_1!\n");
         exit(1);
@@ -677,7 +677,7 @@ void fprint_results_VT(vt_solution *R, SON *G, VType *VT, int *da_access){
 
 void fprint_data_hybrid(VType *VT, int iterations, int best_iter, double foundtime, double runtime, double term_condition, int N_M){
     char file_name[40];
-    sprintf(file_name, "p%02d_NM%d_CM%d_run-%d.data", instance_id, N_M, VT[1].capacity, AACORUN);
+    sprintf(file_name, "p%02d_SD%d_ND%d_run-%d.data", instance_id, (int)VT[2].speed, N_M, AACORUN);
     FILE *fp;
     if(NULL == (fp = fopen(file_name, "w"))){
         perror("Error opening data file!\n");

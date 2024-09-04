@@ -271,8 +271,8 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
         printf("Error appending result to file!\n");
         exit(1);
     }
-    fprintf(file, "Instance %02d NM%d CM%d\nTotal Makespan = %0.2lf\nTime = %0.2lf s\n", 
-            instance_id, G->a_depots[0].n_VT[1], VT[1].capacity, R.total_makespan, runtime);
+    fprintf(file, "Instance %02d SD%d ND%d\nTotal Makespan = %0.2lf\nTime = %0.2lf s\n", 
+            instance_id, (int)VT[2].speed, G->a_depots[0].n_VT[2], R.total_makespan, runtime);
     fclose(file);
 
 
@@ -285,7 +285,7 @@ void AACONC(SON *G, VType *VT, int **da_access, int n_ants,
         free(K[i]);
     free(K);
 
-    fprint_data_hybrid(VT, iter, best_iter, foundtime, runtime, term_condition, G->a_depots[0].n_VT[1]);
+    fprint_data_hybrid(VT, iter, best_iter, foundtime, runtime, term_condition, G->a_depots[0].n_VT[2]);
 
     for(int idep = 0; idep < G->n_depots; idep++){
         deleteList(&Rt_best.a_depots[idep].routelist);
