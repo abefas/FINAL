@@ -13,7 +13,7 @@
 \usepackage{mathptmx} % Times New Roman font
 \usepackage{multicol, relsize, geometry}
 \usepackage{booktabs}
-\usepackage{hyperref}
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue]{hyperref}
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable, caption, array}
@@ -368,22 +368,123 @@
 
 	\ref{eq:SA}, \ref{eq:Tupdate}, \ref{eq:phUpdate} can be found in the original AACONC and are only included for clarity purposes. By following this procedure, the pheromone matrix ultimately drives the algorithm to form solid truck routes of which the node sequences are included in the final solution either as truck routes or as motorbike routes. At the same time, nodes that have been determined to be better off serviced by drones are not given the same importance when forming routes. \textbf{Provide a graphical example of this - Rt solution in a later generation}
 	\subsubsection{Pheromone evaporation}
-	As the pheromone matrix is only concerned with truck-only pheromone trails and thus solutions, the evaporation procedure remains unchanged and the same as in AACONC. In each generation, edges traversed in $R_a$ solutions are stored and used to statistically extract the probability that an edge $e_{ij},i\neq j$ is part of any solution in this generation. With this data at hand, the population diversity is measured using the Shannon entropy mathematical formula and a minimum and maximum limit of entropy in the population is given. These limits are then used to provide an adaptive pheromone evaporation value in each generation. In this way, when the population diversity is high in the initial generations, the pheromone trails evaporate rather quickly such as to prevent poor movements, while as the algorithm progresses the evaporation value lowers, to prevent quick convergence on a local optima, allowing for space exploration.
+	As the pheromone matrix is only concerned with truck-only pheromone trails and thus truck-only solutions, the evaporation procedure remains unchanged and the same as in AACONC. In each generation, edges traversed in $R_a$ solutions are stored and used to statistically extract the probability that an edge $e_{ij},i\neq j$ is part of any solution in this generation. With this data at hand, the population diversity is measured using the Shannon entropy mathematical formula and a minimum and maximum limit of entropy in the population are given by control parameters $\rho_{min}$ and $\rho_{max}$ respectively. These limits are then used to provide an adaptive pheromone evaporation value in each generation. In this way, when the population diversity is high in the initial generations, the pheromone trails evaporate rather quickly such as to prevent poor movements, while as the algorithm progresses the evaporation value lowers, to prevent quick convergence on a local optima, allowing for space exploration.
 	\par 
-	The termination of the algorithm is controlled by three conditions: (i) Exceeding the number of generations without improving (5000), (ii) Reaching the lower limit of population diversity (0.01), (iii) Exceeding the optimization time (1 hour).
+	The termination of the algorithm may be controlled by four conditions: (i) Reaching a set number of generations (ii) Reaching a set number of generations without improving, (iii) Reaching too small of a population diversity, (iv) Reaching the maximum optimization time.
 	\section{Experiments and results}
-	To report on the experimental evaluation of the proposed algorithms we relied on 16 different instances, up to 1000 customers. The first 11 involve up to 249 customers and up to 5 depots and are taken from the widely used for multi-depot problems Cordeau's \cite{Cordeau1997} benchmark instances for VRP problems. These were modified to accomodate for the differences between the two problems while keeping the topology intact. To resemble a realistic scenario, the coordinate values of the nodes where multiplied by 50, such as to depict real-life distances, in meters, for various city sizes. A more detailed description is provided in \ref{tab:instances_table}. Instances 12 to 16 are newly created and involve 500 to 1000 customers which were randomly generated, and 4 to 6 depots which were evenly distributed across the map.
+	To report on the experimental evaluation of the proposed algorithms we relied on 16 different instances, up to 1000 customers. The first 11 involve up to 249 customers and up to 5 depots and are drawn from the widely used for multi-depot problems Cordeau's \cite{Cordeau1997} benchmark instances for VRP problems. These were modified to accomodate for the differences between the two problems while keeping the topology intact. To resemble realistic scenarios, the coordinate values of the nodes where multiplied by 50, such as to depict real-life distances, in meters, for various city sizes. A more detailed description is provided in \autoref{tab:instances_table}. Instances 12 to 16 are newly created and involve 500 to 1000 customers which were randomly generated, and 4 to 6 depots which were evenly distributed across the map. In the process of instance generation, to deal with customer accessibility constraints, each customer had the following probabilites: 90\% to be accessible by truck, assuming a small percentage (10\%) of customers may be located in alleys or roads where large vehicles are not allowed, 100\% to be accessible by motorbikes, and 85\% to be accessible by UAVs, drawing from \cite{Sacramento2019} and \cite{Allain2013} that Amazon's drone can carry parcels up to 5lb (2.27kg) and that approximately 86\% of their orders meet this threshold. In \autoref{tab:instances_table} $C^{Truck}$ and $C^{UAV}$  provide the exact number of customers accessible by truck and UAV for each instance.
 	\input{instances_table.tex}
 	\par
-	The algorithms were implemented in the C programming language, with OpenMP used for the parallelization operations among 16 threads, and compiled using GCC. The optimizations were conducted on a personal computer with the following parameters: Intel Core i5-13400 CPU 4.60 GHz, 32 GB RAM.
+	The algorithms were implemented in the C programming language, with OpenMP used for the parallelization operations among 16 threads, and compiled using GCC. The experiments were conducted on a personal computer with the following parameters: Intel Core i5-13400 CPU 4.60 GHz, 32 GB RAM.
 	\par
 	The AACONC control parameters used for all of the results are the following: $n_{ants} = 192$, $n_{freq} = 10$, $n_{prim} = 4$, $n_{size} = 24$, $n_{sect} = 16$, $T_{update} = 0.2$, $a_{update} = 1$, $\rho_{min} = 0.001$, $\rho_{max} = 0.01$, $\delta = 1$, $\alpha = 1$, $\beta = 1$. Values differing from the ones presented in \parencite{Stodola2022} were changed based on experimental evaluation.
-	Due to the natural differences between our problem and the MDVRP and thus the two implementations, the original control parameters lead to premature convergence to local optima. Ultimately, parameters $T_{update}$, $\rho_{min}$, $\rho_{max}$ and $\delta$ all control the optimization's convergence speed and so were modified such as to accomodate a slower convergence in favor of a larger exploration space. For the local search optimization algorithms (\ref{alg:opt_full}, \ref{alg:route_opt}, \ref{alg:mutual_depot}, \ref{alg:vtOpt}), $n_{max}$ was set to 2.
-	
-	\{Begin with hardware, coding language \& compiler, include ACO control parameters here, talk about parallelization\}
+	Due to the natural differences between our problem and the MDVRP and thus the two implementations, the original control parameters lead to premature convergence to local optima. Ultimately, parameters $T_{update}$, $\rho_{min}$, $\rho_{max}$ and $\delta$ all control the optimization's convergence speed and so were modified such as to accomodate a slower convergence in favor of a larger exploration space. Termination conditions for the H-AACONC algorithm were set as: (i) Reaching 5000 generations without an improvement in the solution, (ii) Reaching a population diversity smaller than 0.01, (iii) Reaching the maximum optimization time set at 1 hour.
+	For the local search optimization algorithms (\ref{alg:opt_full}, \ref{alg:route_opt}, \ref{alg:mutual_depot}, \ref{alg:vtOpt}), $n_{max}$ was set to 2.
+	\par
 	\subsection{Charts and what they show}
+	The first series of experiments aim to show the performance of our proposed algorithms, based on their improvement percentage over the original mfcmTSP heuristic \cite{Oikonomou2021}. To be exact, the mentioned heuristic was implemented in C and adjusted to support multiple depots (placed in lines 4-47 of \autoref{alg:MDmfcmTSP}), without any local search optimizations used. In figures 1-6 MD-mfcmTSP refers to \autoref{alg:MDmfcmTSP}, MD-mfcmTSP* refers to \autoref{alg:MDmfcmTSP} plus local search optimizations (\autoref{alg:opt_full}) and H-AACONC refers to \autoref{alg:H-AACONC}. To measure performance we conducted experiments with varying speed values $S_T$ (Truck), $S_M$ (Motorbike), $S_D$ (Drone) in meters per second (m/s) and set capacity values $k_T=\infty$, $k_M=3$, $k_D=1$ parcels, with every depot being equipped with a fleet of 1 truck, 1 motorbike and 1 drone. We motivate the experiments from a baseline of every vehicle having the same speed \autoref{fig:15-15-15} and \autoref{fig:large_15-15-15}. 
+	We then increase the speed of the motorbikes and drones to more realistic values in \autoref{fig:15-20-20} and \autoref{fig:large_15-20-20}, assuming that the motorbikes are faster than trucks, to account for their agility - the ability of motorbikes to avoid traffic jams and filter through slow traffic, while drones do not adhere to road conditions at all. Additionally, the selection of the various drone speed values was based on JD.com's factsheet of their Drone Delivery Program \autocite{JDcom} which contains the characteristics of 7 different UAV models used in their fleet, with speeds of 15m/s, 20m/s and 28m/s, which we round up to 30 for simplicity's sake in \autoref{fig:15-20-30} and \autoref{fig:large_15-20-30}.
+	\par 
+	For instances up to 249 customers (Figures 1-3), results show significant improvement over the mfcmTSP, especially when local search optimizations are used (MD-mfcmTSP*, H\_AACONC). For the MD-mfcmTSP heuristic the smallest improvement is found in \autoref{fig:15-20-20} for instance 1 at 4.36\%, with the biggest found in the same speed configuration for instance 7 at 29.63\%. The MD-mfcmTSP* shows the smallest improvement for instance 4 in \autoref{fig:15-15-15} at 10.60\% and the biggest for instance 2 in \autoref{fig:15-20-20} at 43.05\%. Regarding the H-AACONC, it is clear that it outperforms all algorithms for instances 1-11, with the smallest improvement shown in \autoref{fig:15-15-15} for instance 4 at 21.64\% and the biggest shown in \autoref{fig:15-20-20} for instance 2 at 52.69\%, closely followed by instance 1 in \autoref{fig:15-20-30} at 52.41\%.
+	\par
+	For larger instances for 500 to 1000 customers (figures 4-6), the MD-mfcmTSP heuristic was able to improve at worst 7.21\% for instance 14 in \autoref{fig:large_15-15-15} and at best 20.88\% for instance 12 in \autoref{fig:large_15-20-30}. Refining the solution using the proposed local search optimization (\autoref{alg:opt_full}) procedure, MD-mfcmTSP* was able to improve at worst 16.07\% for instance 15 in \autoref{fig:large_15-20-20} and at best 31.57\% for instance 12 in \autoref{fig:large_15-20-30}. The H-AACONC algorithm was able to improve and keep close with the MD-mfcmTSP* in instances of 500 customers but it is evident that its performance deteriorates significantly for the larger instances (15,16) of 1000 customers, falling behind even the MD-mfcmTSP in all speed configurations and the mfcmTSP in \autoref{fig:large_15-20-20} at -2.59\% and \ref{fig:large_15-20-30} at -0.14\%. Its best result was for instance 12 in \autoref{fig:large_15-20-30}, achieving a 32.54\% improvement over the mfcmTSP and approx. 1\% improvement over the MD-mfcmTSP*.
+	\par 
+	
 	\clearpage
-	\includegraphics{small_15-20-20}\;
+	\onecolumn
+	%Small instances
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{small_15-15-15}\;
+			\caption{$S_T=15$, $S_M=15$, $S_D=15$}
+			\label{fig:15-15-15}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{small_15-20-20}\;
+			\caption{$S_T=15$, $S_M=20$, $S_D=20$}
+			\label{fig:15-20-20}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{small_15-20-30}\;
+			\caption{$S_T=15$, $S_M=20$, $S_D=30$}
+			\label{fig:15-20-30}
+		\end{minipage}
+	\end{figure}
+	
+	%Large instances
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{large_15-15-15}\;
+			\caption{$S_T=15$, $S_M=15$, $S_D=15$}
+			\label{fig:large_15-15-15}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{large_15-20-20}\;
+			\caption{$S_T=15$, $S_M=20$, $S_D=20$}
+			\label{fig:large_15-20-20}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{large_15-20-30}\;
+			\caption{$S_T=15$, $S_M=20$, $S_D=30$}
+			\label{fig:large_15-20-30}
+		\end{minipage}
+	\end{figure}
+	
+	%Motorbike experiments 07
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{p07_NM1}\;
+			\caption{Instance 7 - $N_M=1$}
+			\label{fig:p07_NM1}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{p07_NM2}\;
+			\caption{Instance 7 - $N_M=2$}
+			\label{fig:p07_NM2}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{p07_NM4}\;
+			\caption{Instance 7 - $N_M=4$}
+			\label{fig:p07_NM4}
+		\end{minipage}
+	\end{figure}
+	
+	%Motorbike experiments 11
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{p11_NM1}\;
+			\caption{Instance 11 - $N_M=1$}
+			\label{fig:p11_NM1}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{p11_NM2}\;
+			\caption{Instance 11 - $N_M=2$}
+			\label{fig:p11_NM2}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{p11_NM4}\;
+			\caption{Instance 11 - $N_M=4$}
+			\label{fig:p11_NM4}
+		\end{minipage}
+	\end{figure}
+	
+	
 	\clearpage
 	\printbibliography
 	

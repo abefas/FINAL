@@ -68,6 +68,33 @@
       \verb https://doi.org/10.1287/trsc.2017.0791
       \endverb
     \endentry
+    \entry{Allain2013}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=b287132c4b65860ce07d8caa9fdb3ca9}{%
+           family={Allain},
+           familyi={A\bibinitperiod},
+           given={Rhett},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b287132c4b65860ce07d8caa9fdb3ca9}
+      \strng{fullhash}{b287132c4b65860ce07d8caa9fdb3ca9}
+      \strng{bibnamehash}{b287132c4b65860ce07d8caa9fdb3ca9}
+      \strng{authorbibnamehash}{b287132c4b65860ce07d8caa9fdb3ca9}
+      \strng{authornamehash}{b287132c4b65860ce07d8caa9fdb3ca9}
+      \strng{authorfullhash}{b287132c4b65860ce07d8caa9fdb3ca9}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Physics of the Amazon Octocopter Drone}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb https://www.wired.com/2013/12/physics-of-the-amazon-prime-air-drone/
+      \endverb
+      \verb{url}
+      \verb https://www.wired.com/2013/12/physics-of-the-amazon-prime-air-drone/
+      \endverb
+    \endentry
     \entry{ConcordeTSP}{misc}{}
       \name{author}{2}{}{%
         {{hash=5d8cfb264869018ff5f8e671c8f6006a}{%
@@ -486,6 +513,33 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1007/978-3-319-68119-1_5
+      \endverb
+    \endentry
+    \entry{JDcom}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=f774d6028b36f244fc9cccfa63d52e03}{%
+           family={Gartner},
+           familyi={G\bibinitperiod},
+           given={Josh},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f774d6028b36f244fc9cccfa63d52e03}
+      \strng{fullhash}{f774d6028b36f244fc9cccfa63d52e03}
+      \strng{bibnamehash}{f774d6028b36f244fc9cccfa63d52e03}
+      \strng{authorbibnamehash}{f774d6028b36f244fc9cccfa63d52e03}
+      \strng{authornamehash}{f774d6028b36f244fc9cccfa63d52e03}
+      \strng{authorfullhash}{f774d6028b36f244fc9cccfa63d52e03}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Drone Delivery Program Factsheet}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://corporate.jd.com/resources/downloadFile/JD.com%2520Drone%2520Factsheet.pdf/20396782-2095-40a8-8c20-9524afb75115
+      \endverb
+      \verb{url}
+      \verb https://corporate.jd.com/resources/downloadFile/JD.com%2520Drone%2520Factsheet.pdf/20396782-2095-40a8-8c20-9524afb75115
       \endverb
     \endentry
     \entry{Sweep1974}{article}{}
@@ -1086,6 +1140,64 @@
       \verb{url}
       \verb https://www.sciencedirect.com/science/article/pii/0377221782902053
       \endverb
+    \endentry
+    \entry{Oikonomou2021}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=58041ace3b88f806e0dd3c310488e25d}{%
+           family={Oikonomou},
+           familyi={O\bibinitperiod},
+           given={Panagiotis},
+           giveni={P\bibinitperiod}}}%
+        {{hash=51104637df5c11d6e2d1bfa2682740ca}{%
+           family={Tziritas},
+           familyi={T\bibinitperiod},
+           given={Nikos},
+           giveni={N\bibinitperiod}}}%
+        {{hash=1760eff064284d7879fa71349fd4e27a}{%
+           family={Kolomvatsos},
+           familyi={K\bibinitperiod},
+           given={Kostas},
+           giveni={K\bibinitperiod}}}%
+        {{hash=6c707d81731a6a77d420841dd899495a}{%
+           family={Loukopoulos},
+           familyi={L\bibinitperiod},
+           given={Thanasis},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Volos, Greece}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{b3b2498db7e232d91e1b979b5a2605b7}
+      \strng{fullhash}{625bd629c915af2f31cd2a2ded45f426}
+      \strng{bibnamehash}{b3b2498db7e232d91e1b979b5a2605b7}
+      \strng{authorbibnamehash}{b3b2498db7e232d91e1b979b5a2605b7}
+      \strng{authornamehash}{b3b2498db7e232d91e1b979b5a2605b7}
+      \strng{authorfullhash}{625bd629c915af2f31cd2a2ded45f426}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Travelling Salesman Problem (TSP) is one of the most known problems in combinatorics and consists of finding a route so that a salesman visits all destination points exactly once with minimum cost. Applications of the problem have long been studied in various fields of computer science, however, with the modernization of transportation means as manifested by autonomous vehicles and drone based delivery, variations of TSP have seen renewed interest. Simultaneously, in location based games such as Pokemon GO, the problem of defining optimal routes in order to direct a single player or a team of players into visiting a set of locations, leads to solving TSP variations. Inspired by the above, in this paper we tackle the problem of Mixed Fleet Capacitated Multiple TSP (mfcmTSP), whereby a set of couriers (using different vehicle types or drones) must deliver a set of homogeneous parcels to predefined destinations with minimum makespan. All transportation means have capacity measured as the number of parcels they can carry. We motivate mfcmTSP considering a scenario whereby all parcels are available at a single base station and a fleet of one truck with unlimited capacity, a motorbike with k capacity and a drone with capacity of one parcel are available to fulfill delivery orders. We present a fast heuristic to obtain good solution quality with negligible running time overhead and compare it against a yardstick strategy whereby only the truck is used. Experiments demonstrate the merits of our approach.}
+      \field{booktitle}{Proceedings of the 25th Pan-Hellenic Conference on Informatics}
+      \field{isbn}{9781450395557}
+      \field{series}{PCI '21}
+      \field{title}{Fast Heuristics for Mixed Fleet Capacitated Multiple TSP with Applications to Location Based Games and Drone Assisted Transportation}
+      \field{year}{2022}
+      \field{pages}{294\bibrangedash 299}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1145/3503823.3503878
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3503823.3503878
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3503823.3503878
+      \endverb
+      \keyw{PDSTSP,city logistics,drone delivery,heuristic,mixed fleet delivery}
     \endentry
     \entry{AssignmentProblemSurvey2006}{article}{}
       \name{author}{1}{}{%

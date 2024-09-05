@@ -2424,7 +2424,11 @@
     <bcf:citekey order="61" intorder="1">Stodola2020</bcf:citekey>
     <bcf:citekey order="62" intorder="1">Stodola2022</bcf:citekey>
     <bcf:citekey order="63" intorder="1">Cordeau1997</bcf:citekey>
-    <bcf:citekey order="64" intorder="1">Stodola2022</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">Sacramento2019</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">Allain2013</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">Stodola2022</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">Oikonomou2021</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">JDcom</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

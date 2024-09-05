@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  4 SEP 2024 17:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  5 SEP 2024 20:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1057,6 +1057,7 @@ File: puenc-greek.def 2023-09-12 2.5 Greek LICRs for PDF strings
 (/usr/share/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
 File: greek-fontenc.def 2023-09-12 2.5 Common Greek font encoding definitions
 )))
+Package hyperref Info: Option `colorlinks' set `true' on input line 4062.
 Package hyperref Info: Hyper figures OFF on input line 4179.
 Package hyperref Info: Link nesting OFF on input line 4184.
 Package hyperref Info: Hyper index ON on input line 4187.
@@ -1082,7 +1083,7 @@ Package hyperref Info: Hyper figures OFF on input line 6063.
 Package hyperref Info: Link nesting OFF on input line 6068.
 Package hyperref Info: Hyper index ON on input line 6071.
 Package hyperref Info: backreferencing OFF on input line 6078.
-Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring ON on input line 6081.
 Package hyperref Info: Link coloring with OCG OFF on input line 6088.
 Package hyperref Info: PDF/A mode OFF on input line 6093.
 
@@ -1808,7 +1809,7 @@ Package biblatex Info: Reference segment=0 on input line 56.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 56.
+Package hyperref Info: Link coloring ON on input line 56.
 (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1936,7 +1937,7 @@ tial
 
 
 Underfull \hbox (badness 1859) in paragraph at lines 88--92
-[]\T1/ptm/m/n/10 {REMOVE} Dell'Amico et al. [[]8[]] pro-posed a mod-i-fied
+[]\T1/ptm/m/n/10 {REMOVE} Dell'Amico et al. [[][]9[][]] pro-posed a mod-i-fied
  []
 
 
@@ -1979,8 +1980,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 103--103
 
 
 Underfull \hbox (badness 1038) in paragraph at lines 107--108
-\T1/ptm/m/n/10 as a bi-cri-te-ria short-est path prob-lem [[]24[]] and is solve
-d us-ing
+\T1/ptm/m/n/10 as a bi-cri-te-ria short-est path prob-lem [[][]26[][]] and is s
+olved us-ing
  []
 
 [3]
@@ -2025,7 +2026,8 @@ odes,
 
 [4] [5]
 Underfull \hbox (badness 3209) in paragraph at lines 151--152
-[]\T1/ptm/m/n/10 Stodola and Kut¥j [[]32[]] were the first to re-search the
+[]\T1/ptm/m/n/10 Stodola and Kut¥j [[][]35[][]] were the first to re-search the
+
  []
 
 
@@ -2069,8 +2071,8 @@ zation\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 Sol; n[]\LMS/npxsy/m/n/10 º$
 
 
 Underfull \hbox (badness 5563) in paragraph at lines 259--327
-[]\T1/ptm/m/n/10 Algorithms []4[] and []5[] are orig-i-nally pre-sented in [[]3
-1[]]
+[]\T1/ptm/m/n/10 Algorithms [][]4[][] and [][]5[][] are orig-i-nally pre-sented
+ in [[][]34[][]]
  []
 
 
@@ -2089,223 +2091,114 @@ Underfull \hbox (badness 3601) in paragraph at lines 335--336
 \T1/ptm/m/n/10 logic as the orig-i-nal AA-CONC al-go-rithm. The Sim-u-lated
  []
 
-[10]
-Underfull \hbox (badness 1019) in paragraph at lines 371--372
-\T1/ptm/m/n/10 evap-o-ra-tion value in each gen-er-a-tion. In this way, when th
-e
- []
-
-
-Underfull \hbox (badness 1783) in paragraph at lines 373--374
-[]\T1/ptm/m/n/10 The ter-mi-na-tion of the al-go-rithm is con-trolled by three
- []
-
-
-Underfull \hbox (badness 1845) in paragraph at lines 373--374
-\T1/ptm/m/n/10 con-di-tions: (i) Ex-ceed-ing the num-ber of gen-er-a-tions with
--out
- []
-
-
-Underfull \hbox (badness 1189) in paragraph at lines 373--374
-\T1/ptm/m/n/10 im-prov-ing (5000), (ii) Reach-ing the lower limit of pop-u-la-t
-ion
- []
-
-(./instances_table.tex) [11] [12
+[10] [11] (./instances_table.tex) [12] [13
 
 ]
-<small_15-20-20.png, id=408, 340.3917pt x 187.6611pt>
+<small_15-15-15.png, id=448, 433.62pt x 252.945pt>
+File: small_15-15-15.png Graphic file (type png)
+<use small_15-15-15.png>
+Package pdftex.def Info: small_15-15-15.png  used on input line 400.
+(pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
+
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 400--401
+ [][] 
+ []
+
+<small_15-20-20.png, id=449, 433.62pt x 252.945pt>
 File: small_15-20-20.png Graphic file (type png)
 <use small_15-20-20.png>
-Package pdftex.def Info: small_15-20-20.png  used on input line 386.
-(pdftex.def)             Requested size: 340.39085pt x 187.66064pt.
+Package pdftex.def Info: small_15-20-20.png  used on input line 406.
+(pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Overfull \hbox (93.47305pt too wide) in paragraph at lines 386--387
-[][] 
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 406--407
+ [][] 
  []
 
-[13
+<small_15-20-30.png, id=450, 433.62pt x 252.945pt>
+File: small_15-20-30.png Graphic file (type png)
+<use small_15-20-30.png>
+Package pdftex.def Info: small_15-20-30.png  used on input line 412.
+(pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-
- <./small_15-20-20.png>]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 3
-88.
- (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-Underfull \hbox (badness 3838) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 Maurizio Boc-cia et al. ^^P  A column-and-row gen-er-a-tion
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 412--413
+ [][] 
  []
 
+<large_15-15-15.png, id=451, 433.62pt x 252.945pt>
+File: large_15-15-15.png Graphic file (type png)
+<use large_15-15-15.png>
+Package pdftex.def Info: large_15-15-15.png  used on input line 423.
+(pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Underfull \hbox (badness 2197) in paragraph at lines 389--389
-\T1/ptm/m/n/10 pe-ri-odic and multi-depot ve-hi-cle rout-ing prob-lems^^Q. In:
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 423--424
+ [][] 
  []
 
+<large_15-20-20.png, id=452, 433.62pt x 252.945pt>
+File: large_15-20-20.png Graphic file (type png)
+<use large_15-20-20.png>
+Package pdftex.def Info: large_15-20-20.png  used on input line 429.
+(pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Underfull \hbox (badness 4217) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 George B. Dantzig and Philip Wolfe. ^^P  De-com-po-si-tion
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 429--430
+ [][] 
  []
 
+<large_15-20-30.png, id=453, 433.62pt x 252.945pt>
+File: large_15-20-30.png Graphic file (type png)
+<use large_15-20-30.png>
+Package pdftex.def Info: large_15-20-30.png  used on input line 435.
+(pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Underfull \hbox (badness 1205) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 Júlia Cária de Fre-itas and Puca Huachi Vaz Penna. ^^P  A
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 435--436
+ [][] 
  []
 
-
-Underfull \hbox (badness 1014) in paragraph at lines 389--389
-\T1/ptm/m/n/10 Ran-dom-ized Vari-able Neigh-bor-hood De-scent Heuris-tic to
- []
-
-
-Underfull \hbox (badness 3179) in paragraph at lines 389--389
-\T1/ptm/m/n/10 for-mu-la-tions for the fly-ing side-kick trav-el-ing sales-man
- []
-
-
-Underfull \hbox (badness 7133) in paragraph at lines 389--389
-\T1/ptm/m/n/10 prob-lem^^Q. In: \T1/ptm/m/it/10 Op-ti-miza-tion Let-ters \T1/pt
-m/m/n/10 15.5 (July 2021),
- []
-
-
-Underfull \hbox (badness 1472) in paragraph at lines 389--389
-\T1/ptm/m/n/10 schedul-ing trav-el-ing sales-man prob-lem^^Q. In: \T1/ptm/m/it/
-10 Pro-ceed-ings
- []
-
-
-Underfull \hbox (badness 2689) in paragraph at lines 389--389
-\T1/ptm/m/n/10 GECCO '21. Lille, France: As-so-ci-a-tion for Com-put-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 Abraham Duarte et al. ^^P  Black-Box Solvers^^Q. In:
- []
-
-
-Underfull \hbox (badness 1831) in paragraph at lines 389--389
-\T1/ptm/m/n/10 Prob-lem with Drone^^Q. In: \T1/ptm/m/it/10 Trans-porta-tion Re-
-search Part
- []
-
-
-Underfull \hbox (badness 7667) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 Keld Hels-gaun. ^^P  An ef-fec-tive im-ple-men-ta-tion of the
- []
-
-
-Underfull \hbox (badness 2042) in paragraph at lines 389--389
-\T1/ptm/m/sc/10 issn\T1/ptm/m/n/10 : 0377-2217. \T1/ptm/m/sc/10 doi\T1/ptm/m/n/
-10 : []$\T1/cmtt/m/n/10 https : / / doi . org / 10 .
- []
-
-
-Underfull \hbox (badness 2903) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 Deming Lei et al. ^^P  A dy-nam-i-cal ar-ti-fi-cial bee colony
-
- []
-
-
-Underfull \hbox (badness 2042) in paragraph at lines 389--389
-\T1/ptm/m/sc/10 issn\T1/ptm/m/n/10 : 0952-1976. \T1/ptm/m/sc/10 doi\T1/ptm/m/n/
-10 : []$\T1/cmtt/m/n/10 https : / / doi . org / 10 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 R.H. Mole and S.H. Jame-son. ^^P  SE-QUEN-TIAL
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-\T1/ptm/m/n/10 ROUTE-BUILDING AL-GO-RITHM EM-PLOY-ING A
- []
-
-
-Underfull \hbox (badness 8075) in paragraph at lines 389--389
-\T1/ptm/m/it/10 Re-search Quar-terly \T1/ptm/m/n/10 27.2 (1976), pp. 503^^U511.
- \T1/ptm/m/sc/10 url\T1/ptm/m/n/10 :
- []
-
+<p07_NM1.png, id=454, 386.535pt x 238.491pt>
+File: p07_NM1.png Graphic file (type png)
+<use p07_NM1.png>
+Package pdftex.def Info: p07_NM1.png  used on input line 446.
+(pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
+<p07_NM2.png, id=456, 386.535pt x 238.71pt>
+File: p07_NM2.png Graphic file (type png)
+<use p07_NM2.png>
+Package pdftex.def Info: p07_NM2.png  used on input line 452.
+(pdftex.def)             Requested size: 162.34358pt x 100.2575pt.
+<p07_NM4.png, id=457, 386.535pt x 238.491pt>
+File: p07_NM4.png Graphic file (type png)
+<use p07_NM4.png>
+Package pdftex.def Info: p07_NM4.png  used on input line 458.
+(pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
+<p11_NM1.png, id=458, 386.316pt x 238.491pt>
+File: p11_NM1.png Graphic file (type png)
+<use p11_NM1.png>
+Package pdftex.def Info: p11_NM1.png  used on input line 469.
+(pdftex.def)             Requested size: 162.2516pt x 100.16553pt.
+<p11_NM2.png, id=459, 386.535pt x 238.491pt>
+File: p11_NM2.png Graphic file (type png)
+<use p11_NM2.png>
+Package pdftex.def Info: p11_NM2.png  used on input line 475.
+(pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
+<p11_NM4.png, id=460, 386.535pt x 238.491pt>
+File: p11_NM4.png Graphic file (type png)
+<use p11_NM4.png>
+Package pdftex.def Info: p11_NM4.png  used on input line 481.
+(pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
 [14
 
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
-Underfull \hbox (badness 5189) in paragraph at lines 389--389
-\T1/ptm/m/n/10 par-cel de-liv-ery^^Q. In: \T1/ptm/m/it/10 Trans-porta-tion Re-s
-earch Part C:
- []
 
+ <./small_15-15-15.png> <./small_15-20-20.png> <./small_15-20-30.png> <./large_
+15-15-15.png> <./large_15-20-20.png> <./large_15-20-30.png> <./p07_NM1.png> <./
+p07_NM2.png> <./p07_NM4.png>] [15 <./p11_NM1.png> <./p11_NM2.png> <./p11_NM4.pn
+g>]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
+89.
+ (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+) [16
 
-Underfull \hbox (badness 5622) in paragraph at lines 389--389
-\T1/ptm/m/it/10 Emerg-ing Tech-nolo-gies \T1/ptm/m/n/10 54 (2015), pp. 86^^U109
-. \T1/ptm/m/sc/10 issn\T1/ptm/m/n/10 :
- []
-
-
-Underfull \hbox (badness 1874) in paragraph at lines 389--389
-\T1/ptm/m/n/10 Prob-lem and Its Ap-pli-ca-tions^^Q. In: \T1/ptm/m/it/10 IN-FOR:
- In-for-ma-tion
- []
-
-
-Underfull \hbox (badness 4013) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 R. C. Prim. ^^P  Short-est con-nec-tion net-works and some
- []
-
-
-Underfull \hbox (badness 2050) in paragraph at lines 389--389
-\T1/ptm/m/n/10 drones^^Q. In: \T1/ptm/m/it/10 Trans-porta-tion Re-search Part C
-: Emerg-ing
- []
-
-
-Underfull \hbox (badness 1331) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 Petr Stodola. ^^P  Hy-brid ant colony op-ti-miza-tion al-go-ri
-thm
- []
-
-
-Underfull \hbox (badness 1253) in paragraph at lines 389--389
-\T1/ptm/m/n/10 ap-plied to the multi-depot ve-hi-cle rout-ing prob-lem^^Q. In:
- []
-
-
-Underfull \hbox (badness 6559) in paragraph at lines 389--389
-\T1/ptm/m/n/10 al-go-rithm and ex-per-i-ments^^Q. In: \T1/ptm/m/it/10 Ex-pert S
-ys-tems with
- []
-
-
-Underfull \hbox (badness 6910) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 Petr Stodola and Jan No-hel. ^^P  Adap-tive Ant Colony
- []
-
-
-Underfull \hbox (badness 3000) in paragraph at lines 389--389
-\T1/ptm/m/n/10 Op-ti-miza-tion With Node Clus-ter-ing for the Mul-ti-de-pot
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-[]\T1/ptm/m/n/10 Emine Es Yurek and H. Cenk Oz-mutlu. ^^P  A
- []
-
-
-Underfull \hbox (badness 2961) in paragraph at lines 389--389
-\T1/ptm/m/n/10 decomposition-based it-er-a-tive op-ti-miza-tion al-go-rithm for
-
- []
-
-
-Underfull \hbox (badness 7486) in paragraph at lines 389--389
-\T1/ptm/m/it/10 Re-search Part C: Emerg-ing Tech-nolo-gies \T1/ptm/m/n/10 91 (2
-018),
- []
-
-[15] (./main.aux)
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [17] (./main.
+aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -2317,10 +2210,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47118 strings out of 476000
- 1023551 string characters out of 5792234
- 1971187 words of memory out of 5000000
- 68276 multiletter control sequences out of 15000+600000
+ 47278 strings out of 476000
+ 1026827 string characters out of 5792234
+ 1970187 words of memory out of 5000000
+ 68427 multiletter control sequences out of 15000+600000
  647682 words of font info for 173 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  99i,25n,107p,3559b,1777s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2331,10 +2224,10 @@ s.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (15 pages, 261092 bytes).
+Output written on main.pdf (17 pages, 998737 bytes).
 PDF statistics:
- 635 PDF objects out of 1000 (max. 8388607)
- 592 compressed objects within 6 object streams
- 244 named destinations out of 1000 (max. 500000)
- 162 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 676 PDF objects out of 1000 (max. 8388607)
+ 608 compressed objects within 7 object streams
+ 253 named destinations out of 1000 (max. 500000)
+ 217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
