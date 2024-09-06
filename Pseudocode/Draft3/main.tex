@@ -378,7 +378,7 @@
 	The algorithms were implemented in the C programming language, with OpenMP used for the parallelization operations among 16 threads, and compiled using GCC. The experiments were conducted on a personal computer with the following parameters: Intel Core i5-13400 CPU 4.60 GHz, 32 GB RAM.
 	\par
 	The AACONC control parameters used for all of the results are the following: $n_{ants} = 192$, $n_{freq} = 10$, $n_{prim} = 4$, $n_{size} = 24$, $n_{sect} = 16$, $T_{update} = 0.2$, $a_{update} = 1$, $\rho_{min} = 0.001$, $\rho_{max} = 0.01$, $\delta = 1$, $\alpha = 1$, $\beta = 1$. Values differing from the ones presented in \parencite{Stodola2022} were changed based on experimental evaluation.
-	Due to the natural differences between our problem and the MDVRP and thus the two implementations, the original control parameters lead to premature convergence to local optima. Ultimately, parameters $T_{update}$, $\rho_{min}$, $\rho_{max}$ and $\delta$ all control the optimization's convergence speed and so were modified such as to accomodate a slower convergence in favor of a larger exploration space. Termination conditions for the H-AACONC algorithm were set as: (i) Reaching 5000 generations without an improvement in the solution, (ii) Reaching a population diversity smaller than 0.01, (iii) Reaching the maximum optimization time set at 1 hour.
+	Due to the natural differences between our problem and the MDVRP and thus the two implementations, the original control parameters lead to premature convergence to local optima. Ultimately, parameters $T_{update}$, $\rho_{min}$, $\rho_{max}$ and $\delta$ all control the optimization's convergence speed and so were modified such as to accomodate a slower convergence in favor of a larger exploration space. Termination conditions for the H-AACONC algorithm were set as: (i) Reaching 5000 generations without an improvement in the solution, (ii) Reaching a population diversity smaller than 0.01, (iii) Reaching the maximum optimization time set at 1 hour. Tables \{ADD TABLES H-AACONC\} show H-AACONC results over 5 runs per instance and out of which the best was used in figures 1-6. The rest of the experiments are based on only one run per configuration.
 	For the local search optimization algorithms (\ref{alg:opt_full}, \ref{alg:route_opt}, \ref{alg:mutual_depot}, \ref{alg:vtOpt}), $n_{max}$ was set to 2.
 	\par
 	\subsection{Charts and what they show}
@@ -389,6 +389,11 @@
 	\par
 	For larger instances for 500 to 1000 customers (figures 4-6), the MD-mfcmTSP heuristic was able to improve at worst 7.21\% for instance 14 in \autoref{fig:large_15-15-15} and at best 20.88\% for instance 12 in \autoref{fig:large_15-20-30}. Refining the solution using the proposed local search optimization (\autoref{alg:opt_full}) procedure, MD-mfcmTSP* was able to improve at worst 16.07\% for instance 15 in \autoref{fig:large_15-20-20} and at best 31.57\% for instance 12 in \autoref{fig:large_15-20-30}. The H-AACONC algorithm was able to improve and keep close with the MD-mfcmTSP* in instances of 500 customers but it is evident that its performance deteriorates significantly for the larger instances (15,16) of 1000 customers, falling behind even the MD-mfcmTSP in all speed configurations and the mfcmTSP in \autoref{fig:large_15-20-20} at -2.59\% and \ref{fig:large_15-20-30} at -0.14\%. Its best result was for instance 12 in \autoref{fig:large_15-20-30}, achieving a 32.54\% improvement over the mfcmTSP and approx. 1\% improvement over the MD-mfcmTSP*.
 	\par 
+	Next, we conduct experiments to provide insight such as to what effect the number of motorbikes in each depot and their capacity have on the overall makespan. We use instances 7 and 11, with 1, 2 and 4 motorbikes in each of the depots while varying their capacity from 1 up to 8 parcels. The speed values for these experiments were set at 15 m/s for all vehicle types, aiming to focus solely on the mentioned motorbike variables. Figures 7-9 concern instance 7 with 4 depots and 100 customers, out of which 97 are accessible by trucks and 83 by UAVs. The weakness of the MD-mfcmTSP is evident in these figures, where independent from the number of motorbikes, the total makespan is increasing instead of decreasing when capacity is increased to 4 and onwards. This behavior makes sense when we consider that nodes offloaded from the truck to the motorbike are successive, therefore as capacity is increased the number of customers that are inserted into a motorbike's route are also similarly increased. This problem is largely dealt with when local search optimizations are used (MD-mfcmTSP*), with the largest improvement at 56.54\% in \autoref{fig:p07_NM4} instance 6 and an average improvement of 20.35\% for $N_M=1$, 30.86\% for $N_M=2$ and 45.13\% for $N_M=4$. H-AACONC expectedly managed to yield the best results, with the total makespan decreasing as the number of motorbikes and their capacity increase. One can observe that in the $N_M=1$ case the capacity influences the outcome the most while in the cases where double or quadruple the motorbikes exist, increasing the capacity beyond a certain point (4 for $N_M=2$ and 2 for $N_M=4$) has little to no effect on the total makespan, as it stabilizes and shows minimal variations.
+	\par 
+	This is not the case for instance 11 where approximately 2.5x customers exist. In figure 12 we can see that increasing motorbike capacity from 6 to 7 offers an improvement of 8.84\% on the result for H-AACONC and 2.7\% for MD-mfcmTSP*.
+	\par 
+	In figures 13-15 we conduct experiments with various UAV numbers in each depot while changing their speed (SD), assuming different UAV models. Truck and motorbike speed values were set at 15 m/s and motorbike capacity at 3 parcels. In \autoref{fig:p07_drones} H-AACONC was able to find a close to minimum solution using only 2 drones at 30 m/s per depot and slightly improving upon the case of 4 drones at 15 m/s. Because of the instance's size, we see that like the motorbike experiments, an increase in UAV numbers and or their speed has no impact after a certain point. For this 100 customer instance it is clear that for a parcel delivery company to compose an efficient UAV fleet, their best options would be two 30 m/s UAVs or four UAVs with speed $\geq$ 15 m/s. With \autoref{fig:p11_drones} we can conclude that, at least with current available drone configurations, quantity is more beneficial than speed regarding UAVs. Even with "slow" UAVs at 15m/s, a fleet of 8 per depot manages to yield approximately the same result as 4 of the fastest UAVs at 30 m/s, with the latter showing an improvement of just 1.59\%. A fleet of 8 of the fastest UAVs per depot shows a 22.95\% improvement over 8 of the slowest, 17.20\% improvement over 8 at 20 m/s, and a 49.51\% improvement over 1 per depot at 15 m/s.
 	
 	\clearpage
 	\onecolumn
@@ -484,6 +489,32 @@
 		\end{minipage}
 	\end{figure}
 	
+	%Drone experiments 07
+	\begin{figure}[h]
+		\centering
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{p07_drones}\;
+			\caption{Instance 7}
+			\label{fig:p07_drones}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{p11_drones}\;
+			\caption{Instance 11}
+			\label{fig:p11_drones}
+		\end{minipage}
+		\begin{minipage}{0.33\textwidth}
+			\centering
+			\includegraphics[scale=0.42]{p35_drones}\;
+			\caption{Instance 16 - $N_M=4$}
+			\label{fig:p35_drones}
+		\end{minipage}
+	\end{figure}
+	
+	\input{H-AACONC_15-15-15.tex}\;
+	\input{H-AACONC_15-20-20.tex}\;
+	\input{H-AACONC_15-20-30.tex}\;
 	
 	\clearpage
 	\printbibliography

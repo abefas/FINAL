@@ -145,3 +145,6 @@ Time = 1522.00 s
 Instance 11 NM4 CM8
 Total Makespan = 657.11
 Time = 3263.00 s
+Instance 07 NM2 CM8
+Total Makespan = 257.04
+Time = 380.00 s
