@@ -43,3 +43,33 @@ Time = 230.00 s
 Instance 03 SPEEDS 15 20 30 RUN 5
 Total Makespan = 181.59
 Time = 148.00 s
+Instance 07 SPEEDS 15 15 15 RUN 1
+Total Makespan = 353.91
+Time = 163.00 s
+Instance 07 SPEEDS 15 15 15 RUN 2
+Total Makespan = 430.00
+Time = 148.00 s
+Instance 07 SPEEDS 15 15 15 RUN 3
+Total Makespan = 348.90
+Time = 300.00 s
+Instance 07 SPEEDS 15 15 15 RUN 4
+Total Makespan = 353.05
+Time = 322.00 s
+Instance 07 SPEEDS 15 15 15 RUN 5
+Total Makespan = 350.24
+Time = 272.00 s
+Instance 10 SPEEDS 15 20 30 RUN 1
+Total Makespan = 1375.78
+Time = 3600.00 s
+Instance 10 SPEEDS 15 20 30 RUN 2
+Total Makespan = 1357.21
+Time = 2215.00 s
+Instance 10 SPEEDS 15 20 30 RUN 3
+Total Makespan = 1429.91
+Time = 2083.00 s
+Instance 10 SPEEDS 15 20 30 RUN 4
+Total Makespan = 1411.48
+Time = 2817.00 s
+Instance 10 SPEEDS 15 20 30 RUN 5
+Total Makespan = 1398.92
+Time = 2041.00 s
