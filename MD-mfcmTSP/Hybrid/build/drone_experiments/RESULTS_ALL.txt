@@ -136,3 +136,14 @@ Time = 3719.00 s
 Instance 35 SPEEDS 15 15 30 N_D 8
 Total Makespan = 1982.52
 Time = 3605.00 s
+
+
+Instance 33 SPEEDS 15 15 15 N_D 2
+Total Makespan = 1569.52
+Time = 3600.00 s
+Instance 33 SPEEDS 15 15 15 N_D 4
+Total Makespan = 1376.79
+Time = 3600.00 s
+Instance 33 SPEEDS 15 15 15 N_D 8
+Total Makespan = 1138.49
+Time = 3600.00 s

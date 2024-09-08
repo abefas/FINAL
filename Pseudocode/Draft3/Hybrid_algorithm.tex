@@ -1,39 +1,40 @@
-\begin{algorithm}
-	\small
-	\caption{Hybrid AACONC}
-	\label{alg:H-AACONC}
-	\KwIn{$G_T, G_M, G_D, k_T, k_M$, AACONC control parameters}
-	\KwOut{$M_{total}$, $Sol = \{Sol^i = \{R_T^i, R_M^i, R_D^i\}, Sol^{i+1}, ..., Sol^m$ for each $i\in D\}$}
-	$iter$ = 0\;
-	Initialize pheromone matrices $\tau$\;
-	\ForEach{$v_i\in V$}{
-		$K^{(v_i)}$ = Call CreateClusters\;
-	}
-	$Rt=\infty,R=\infty$\;
-	\While{NOT TERMINATED}{
-		$Rt_{best}=\infty,R_{best}=\infty$\;
-		\ParallelFor{$\alpha=1$ to $n_{ants}$}{
-			$R_a$ = \textbf{Call AntSolution} \;
-			//which  construct routes using Trucks for every $c\in C$\;
-			\KwCritical{
-				\If{$|R_a|<|Rt_{best}|$}{
-				$Rt_{best}=R_a$\;
+
+	\begin{algorithm}[h]
+		\small
+		\caption{Hybrid AACONC}
+		\label{alg:H-AACONC}
+		\KwIn{$G_T, G_M, G_D, k_T, k_M$, AACONC control parameters}
+		\KwOut{$M_{total}$, $Sol = \{Sol^i = \{R_T^i, R_M^i, R_D^i\}, Sol^{i+1}, ..., Sol^m$ for each $i\in D\}$}
+		$iter$ = 0\;
+		Initialize pheromone matrices $\tau$\;
+		\ForEach{$v_i\in V$}{
+			$K^{(v_i)}$ = Call CreateClusters\;
+		}
+		$Rt=\infty,R=\infty$\;
+		\While{NOT TERMINATED}{
+			$Rt_{best}=\infty,R_{best}=\infty$\;
+			\ParallelFor{$\alpha=1$ to $n_{ants}$}{
+				$R_a$ = \textbf{Call AntSolution} \;
+				//which  construct routes using Trucks for every $c\in C$\;
+				\KwCritical{
+					\If{$|R_a|<|Rt_{best}|$}{
+					$Rt_{best}=R_a$\;
+					}
 				}
+			}	
+			\If{$iter$ mod $n_{freq}$=0}{
+				$Rt_{best}$ = Call $local\_optimization$\;
+				$Rt_{best}$ = Call $mutual\_depot\_optimization$\;
 			}
-		}	
-		\If{$iter$ mod $n_{freq}$=0}{
-			$Rt_{best}$ = Call $local\_optimization$\;
-			$Rt_{best}$ = Call $mutual\_depot\_optimization$\;
+			Assign customers in $Rt_{best}$ which do not belong to $G_T$ to $R_{best}^M,R_{best}^D$\;
+			$R_{best}^T=Rt_{best}-\{R_{best}^M,R_{best}^D\}$\;
+			$R_{best}$ = Call MD-mfcmTSP heuristic\;
+			\If{$|R_{best}| < |R|$}{
+				$R=R_{best}$\;
+				$Rt=Rt_{best}$\;
+			}
+			Update pheromones\;
+			Evaporate pheromones\;
+			$iter\pluseq 1$\;
 		}
-		Assign customers in $Rt_{best}$ which do not belong to $G_T$ to $R_{best}^M,R_{best}^D$\;
-		$R_{best}^T=Rt_{best}-\{R_{best}^M,R_{best}^D\}$\;
-		$R_{best}$ = Call MD-mfcmTSP heuristic\;
-		\If{$|R_{best}| < |R|$}{
-			$R=R_{best}$\;
-			$Rt=Rt_{best}$\;
-		}
-		Update pheromones\;
-		Evaporate pheromones\;
-		$iter\pluseq 1$\;
-	}
-\end{algorithm}
+	\end{algorithm}
