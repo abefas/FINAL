@@ -1,0 +1,263 @@
+total makespan: 1106.62
+type 1  depot 501  route  1  time    1098.78	    0 376 287 22 441 133 233 30 217 166 37 280 431 434 220 299 380 77 374 3 341 236 406 198 174 450 197 222 180 128 93 212 385 61 449 159 357 115 358 0 
+type 1  depot 502  route  1  time    1101.15	    0 269 228 461 215 98 439 453 194 293 18 480 305 23 340 342 33 497 455 484 214 320 100 89 423 114 66 377 140 381 493 50 43 317 249 349 288 149 177 330 417 300 389 99 42 27 103 0 
+type 1  depot 503  route  1  time    1101.62	    0 255 435 259 26 335 152 239 384 216 418 32 316 209 285 17 363 344 185 83 176 63 295 69 400 254 39 234 352 6 420 245 161 94 243 462 410 326 223 474 59 40 164 211 475 202 498 444 213 495 486 473 256 0 
+type 1  depot 504  route  1  time    1106.57	    0 393 373 387 366 135 313 470 477 97 466 332 143 183 55 131 224 458 479 465 207 437 124 274 179 8 273 265 154 248 162 10 292 190 456 383 109 356 413 347 411 188 87 395 84 173 329 64 219 49 19 0 
+type 1  depot 505  route  1  time    1099.63	    0 144 187 297 428 101 415 421 489 13 350 58 51 218 272 270 471 398 442 258 141 74 443 404 469 70 88 45 206 210 334 170 0 
+type 1 makespan 1106.57
+type 2  depot 501  route  1  time      30.98	    0 15 0 
+type 2  depot 501  route  2  time     362.60	    0 155 492 286 0 
+type 2  depot 501  route  3  time     326.53	    0 231 247 104 0 
+type 2  depot 501  route  4  time     320.81	    0 294 454 175 0 
+type 2  depot 502  route  1  time      56.23	    0 375 82 0 
+type 2  depot 502  route  2  time     494.40	    0 230 147 86 0 
+type 2  depot 502  route  3  time     536.91	    0 125 123 95 0 
+type 2  depot 503  route  1  time     325.31	    0 189 25 193 0 
+type 2  depot 503  route  2  time     103.96	    0 386 186 0 
+type 2  depot 503  route  3  time     345.28	    0 452 106 120 0 
+type 2  depot 503  route  4  time     320.64	    0 394 298 409 0 
+type 2  depot 504  route  1  time     435.81	    0 430 4 118 0 
+type 2  depot 504  route  2  time      78.49	    0 392 96 0 
+type 2  depot 504  route  3  time     592.32	    0 110 403 81 0 
+type 2  depot 505  route  1  time     158.87	    0 481 422 429 0 
+type 2  depot 505  route  2  time     724.39	    0 391 196 483 0 
+type 2  depot 505  route  3  time     188.53	    0 261 257 353 0 
+type 2 makespan 1106.62
+type 3  depot 501  route  1  time     111.76	    0 73 0 
+type 3  depot 501  route  2  time     165.44	    0 250 0 
+type 3  depot 501  route  3  time      36.71	    0 463 0 
+type 3  depot 501  route  4  time      61.05	    0 262 0 
+type 3  depot 501  route  5  time      82.96	    0 5 0 
+type 3  depot 501  route  6  time     153.88	    0 235 0 
+type 3  depot 501  route  7  time     282.20	    0 238 0 
+type 3  depot 501  route  8  time     147.39	    0 416 0 
+type 3  depot 501  route  9  time     293.72	    0 126 0 
+type 3  depot 501  route 10  time     442.02	    0 284 0 
+type 3  depot 501  route 11  time     254.22	    0 47 0 
+type 3  depot 501  route 12  time      51.08	    0 278 0 
+type 3  depot 501  route 13  time     251.92	    0 388 0 
+type 3  depot 501  route 14  time     178.64	    0 338 0 
+type 3  depot 501  route 15  time     108.56	    0 229 0 
+type 3  depot 501  route 16  time     110.73	    0 24 0 
+type 3  depot 501  route 17  time     112.68	    0 275 0 
+type 3  depot 501  route 18  time     138.47	    0 459 0 
+type 3  depot 501  route 19  time     272.32	    0 16 0 
+type 3  depot 501  route 20  time     107.60	    0 432 0 
+type 3  depot 501  route 21  time     278.22	    0 112 0 
+type 3  depot 501  route 22  time     168.70	    0 56 0 
+type 3  depot 501  route 23  time     203.32	    0 60 0 
+type 3  depot 501  route 24  time     209.56	    0 240 0 
+type 3  depot 501  route 25  time     271.43	    0 496 0 
+type 3  depot 501  route 26  time     258.35	    0 490 0 
+type 3  depot 501  route 27  time      83.90	    0 105 0 
+type 3  depot 501  route 28  time     245.82	    0 426 0 
+type 3  depot 501  route 29  time     252.88	    0 362 0 
+type 3  depot 501  route 30  time      69.49	    0 76 0 
+type 3  depot 501  route 31  time      63.87	    0 448 0 
+type 3  depot 501  route 32  time     137.48	    0 487 0 
+type 3  depot 501  route 33  time     215.38	    0 296 0 
+type 3  depot 501  route 34  time     246.02	    0 232 0 
+type 3  depot 501  route 35  time     181.85	    0 268 0 
+type 3  depot 501  route 36  time      84.12	    0 301 0 
+type 3  depot 501  route 37  time     101.24	    0 172 0 
+type 3  depot 501  route 38  time     139.15	    0 282 0 
+type 3  depot 501  route 39  time     148.64	    0 412 0 
+type 3  depot 501  route 40  time      82.96	    0 333 0 
+type 3  depot 501  route 41  time      50.31	    0 311 0 
+type 3  depot 501  route 42  time     234.33	    0 372 0 
+type 3  depot 501  route 43  time     205.06	    0 488 0 
+type 3  depot 501  route 44  time     204.74	    0 181 0 
+type 3  depot 501  route 45  time      36.70	    0 276 0 
+type 3  depot 501  route 46  time     131.72	    0 71 0 
+type 3  depot 501  route 47  time     127.02	    0 199 0 
+type 3  depot 501  route 48  time     278.45	    0 20 0 
+type 3  depot 501  route 49  time     124.34	    0 241 0 
+type 3  depot 501  route 50  time     265.47	    0 44 0 
+type 3  depot 502  route  1  time      60.38	    0 401 0 
+type 3  depot 502  route  2  time     235.95	    0 436 0 
+type 3  depot 502  route  3  time      21.15	    0 36 0 
+type 3  depot 502  route  4  time      65.97	    0 157 0 
+type 3  depot 502  route  5  time      54.65	    0 355 0 
+type 3  depot 502  route  6  time      60.02	    0 307 0 
+type 3  depot 502  route  7  time      42.68	    0 368 0 
+type 3  depot 502  route  8  time      90.90	    0 1 0 
+type 3  depot 502  route  9  time     107.12	    0 283 0 
+type 3  depot 502  route 10  time     388.51	    0 148 0 
+type 3  depot 502  route 11  time     426.27	    0 41 0 
+type 3  depot 502  route 12  time     365.66	    0 396 0 
+type 3  depot 502  route 13  time     549.82	    0 433 0 
+type 3  depot 502  route 14  time      50.60	    0 361 0 
+type 3  depot 502  route 15  time      52.02	    0 397 0 
+type 3  depot 502  route 16  time     133.62	    0 171 0 
+type 3  depot 502  route 17  time     141.31	    0 331 0 
+type 3  depot 502  route 18  time     141.29	    0 314 0 
+type 3  depot 502  route 19  time     155.64	    0 142 0 
+type 3  depot 502  route 20  time     165.17	    0 379 0 
+type 3  depot 502  route 21  time     154.10	    0 445 0 
+type 3  depot 502  route 22  time      75.18	    0 346 0 
+type 3  depot 502  route 23  time     160.02	    0 121 0 
+type 3  depot 502  route 24  time     125.79	    0 407 0 
+type 3  depot 502  route 25  time     251.90	    0 303 0 
+type 3  depot 502  route 26  time     173.03	    0 201 0 
+type 3  depot 502  route 27  time     197.42	    0 302 0 
+type 3  depot 502  route 28  time     226.50	    0 65 0 
+type 3  depot 502  route 29  time     231.51	    0 402 0 
+type 3  depot 502  route 30  time     174.63	    0 122 0 
+type 3  depot 502  route 31  time     224.70	    0 339 0 
+type 3  depot 502  route 32  time     216.03	    0 414 0 
+type 3  depot 502  route 33  time     215.77	    0 244 0 
+type 3  depot 502  route 34  time     246.12	    0 468 0 
+type 3  depot 502  route 35  time     239.29	    0 29 0 
+type 3  depot 502  route 36  time     105.82	    0 399 0 
+type 3  depot 502  route 37  time     244.85	    0 494 0 
+type 3  depot 502  route 38  time     252.66	    0 72 0 
+type 3  depot 502  route 39  time     287.66	    0 11 0 
+type 3  depot 502  route 40  time     312.33	    0 425 0 
+type 3  depot 502  route 41  time     217.20	    0 325 0 
+type 3  depot 502  route 42  time     268.91	    0 267 0 
+type 3  depot 502  route 43  time     233.63	    0 137 0 
+type 3  depot 502  route 44  time     209.93	    0 191 0 
+type 3  depot 502  route 45  time     159.01	    0 271 0 
+type 3  depot 502  route 46  time     118.99	    0 457 0 
+type 3  depot 502  route 47  time     118.78	    0 21 0 
+type 3  depot 503  route  1  time      83.26	    0 205 0 
+type 3  depot 503  route  2  time      30.75	    0 116 0 
+type 3  depot 503  route  3  time      91.81	    0 208 0 
+type 3  depot 503  route  4  time      96.63	    0 328 0 
+type 3  depot 503  route  5  time      53.84	    0 237 0 
+type 3  depot 503  route  6  time      24.77	    0 9 0 
+type 3  depot 503  route  7  time      20.40	    0 371 0 
+type 3  depot 503  route  8  time     263.01	    0 378 0 
+type 3  depot 503  route  9  time      62.90	    0 365 0 
+type 3  depot 503  route 10  time     414.51	    0 370 0 
+type 3  depot 503  route 11  time     240.28	    0 324 0 
+type 3  depot 503  route 12  time     254.82	    0 319 0 
+type 3  depot 503  route 13  time     262.48	    0 309 0 
+type 3  depot 503  route 14  time      91.45	    0 321 0 
+type 3  depot 503  route 15  time     249.16	    0 476 0 
+type 3  depot 503  route 16  time     235.29	    0 451 0 
+type 3  depot 503  route 17  time     246.13	    0 360 0 
+type 3  depot 503  route 18  time     233.23	    0 165 0 
+type 3  depot 503  route 19  time      69.50	    0 156 0 
+type 3  depot 503  route 20  time     172.68	    0 79 0 
+type 3  depot 503  route 21  time     230.84	    0 467 0 
+type 3  depot 503  route 22  time      35.78	    0 264 0 
+type 3  depot 503  route 23  time     118.18	    0 12 0 
+type 3  depot 503  route 24  time     202.50	    0 184 0 
+type 3  depot 503  route 25  time     247.53	    0 367 0 
+type 3  depot 503  route 26  time     173.58	    0 354 0 
+type 3  depot 503  route 27  time      54.99	    0 266 0 
+type 3  depot 503  route 28  time     109.77	    0 7 0 
+type 3  depot 503  route 29  time     104.61	    0 146 0 
+type 3  depot 503  route 30  time     144.61	    0 277 0 
+type 3  depot 503  route 31  time     134.80	    0 304 0 
+type 3  depot 503  route 32  time     160.97	    0 192 0 
+type 3  depot 503  route 33  time     198.12	    0 500 0 
+type 3  depot 503  route 34  time     224.09	    0 405 0 
+type 3  depot 503  route 35  time     239.03	    0 359 0 
+type 3  depot 503  route 36  time     289.28	    0 150 0 
+type 3  depot 503  route 37  time     308.25	    0 38 0 
+type 3  depot 503  route 38  time     297.25	    0 153 0 
+type 3  depot 503  route 39  time     176.60	    0 306 0 
+type 3  depot 503  route 40  time     328.95	    0 263 0 
+type 3  depot 503  route 41  time     175.84	    0 279 0 
+type 3  depot 503  route 42  time     224.88	    0 195 0 
+type 3  depot 503  route 43  time     136.31	    0 75 0 
+type 3  depot 503  route 44  time     251.12	    0 107 0 
+type 3  depot 503  route 45  time      92.10	    0 382 0 
+type 3  depot 503  route 46  time     214.92	    0 117 0 
+type 3  depot 503  route 47  time     210.70	    0 369 0 
+type 3  depot 503  route 48  time     186.74	    0 364 0 
+type 3  depot 503  route 49  time     125.90	    0 102 0 
+type 3  depot 503  route 50  time     106.45	    0 419 0 
+type 3  depot 504  route  1  time      22.97	    0 54 0 
+type 3  depot 504  route  2  time     106.21	    0 127 0 
+type 3  depot 504  route  3  time     179.21	    0 227 0 
+type 3  depot 504  route  4  time      91.65	    0 134 0 
+type 3  depot 504  route  5  time     168.48	    0 290 0 
+type 3  depot 504  route  6  time     216.89	    0 129 0 
+type 3  depot 504  route  7  time     104.78	    0 139 0 
+type 3  depot 504  route  8  time     133.44	    0 145 0 
+type 3  depot 504  route  9  time      11.87	    0 113 0 
+type 3  depot 504  route 10  time     276.40	    0 57 0 
+type 3  depot 504  route 11  time      97.64	    0 158 0 
+type 3  depot 504  route 12  time     258.18	    0 446 0 
+type 3  depot 504  route 13  time     191.88	    0 464 0 
+type 3  depot 504  route 14  time     249.98	    0 337 0 
+type 3  depot 504  route 15  time     278.88	    0 35 0 
+type 3  depot 504  route 16  time     200.50	    0 438 0 
+type 3  depot 504  route 17  time     154.25	    0 182 0 
+type 3  depot 504  route 18  time     213.99	    0 151 0 
+type 3  depot 504  route 19  time      69.94	    0 90 0 
+type 3  depot 504  route 20  time     136.06	    0 178 0 
+type 3  depot 504  route 21  time     178.74	    0 485 0 
+type 3  depot 504  route 22  time      68.21	    0 225 0 
+type 3  depot 504  route 23  time      95.54	    0 28 0 
+type 3  depot 504  route 24  time      74.82	    0 85 0 
+type 3  depot 504  route 25  time     215.78	    0 251 0 
+type 3  depot 504  route 26  time     135.52	    0 310 0 
+type 3  depot 504  route 27  time     202.59	    0 345 0 
+type 3  depot 504  route 28  time     216.56	    0 460 0 
+type 3  depot 504  route 29  time     107.57	    0 260 0 
+type 3  depot 504  route 30  time     101.66	    0 68 0 
+type 3  depot 504  route 31  time     298.17	    0 312 0 
+type 3  depot 504  route 32  time     246.81	    0 221 0 
+type 3  depot 504  route 33  time     262.10	    0 351 0 
+type 3  depot 504  route 34  time     148.13	    0 343 0 
+type 3  depot 504  route 35  time      90.64	    0 424 0 
+type 3  depot 504  route 36  time     108.72	    0 281 0 
+type 3  depot 504  route 37  time      77.36	    0 447 0 
+type 3  depot 504  route 38  time     213.09	    0 163 0 
+type 3  depot 504  route 39  time      68.31	    0 46 0 
+type 3  depot 504  route 40  time     142.13	    0 160 0 
+type 3  depot 504  route 41  time     347.31	    0 491 0 
+type 3  depot 504  route 42  time     333.28	    0 80 0 
+type 3  depot 504  route 43  time     310.26	    0 62 0 
+type 3  depot 504  route 44  time     262.18	    0 246 0 
+type 3  depot 504  route 45  time     245.91	    0 336 0 
+type 3  depot 504  route 46  time     241.25	    0 53 0 
+type 3  depot 504  route 47  time     213.94	    0 119 0 
+type 3  depot 504  route 48  time     201.21	    0 91 0 
+type 3  depot 504  route 49  time     171.00	    0 440 0 
+type 3  depot 504  route 50  time      88.16	    0 204 0 
+type 3  depot 505  route  1  time     139.95	    0 92 0 
+type 3  depot 505  route  2  time      65.23	    0 52 0 
+type 3  depot 505  route  3  time      52.64	    0 322 0 
+type 3  depot 505  route  4  time      56.70	    0 111 0 
+type 3  depot 505  route  5  time      75.70	    0 318 0 
+type 3  depot 505  route  6  time     306.30	    0 167 0 
+type 3  depot 505  route  7  time     107.14	    0 203 0 
+type 3  depot 505  route  8  time      66.18	    0 291 0 
+type 3  depot 505  route  9  time      54.03	    0 14 0 
+type 3  depot 505  route 10  time      35.39	    0 315 0 
+type 3  depot 505  route 11  time     411.20	    0 472 0 
+type 3  depot 505  route 12  time     362.31	    0 242 0 
+type 3  depot 505  route 13  time     432.92	    0 138 0 
+type 3  depot 505  route 14  time     388.70	    0 327 0 
+type 3  depot 505  route 15  time     391.99	    0 169 0 
+type 3  depot 505  route 16  time     378.82	    0 48 0 
+type 3  depot 505  route 17  time     348.88	    0 478 0 
+type 3  depot 505  route 18  time     280.90	    0 34 0 
+type 3  depot 505  route 19  time     282.56	    0 482 0 
+type 3  depot 505  route 20  time     363.15	    0 308 0 
+type 3  depot 505  route 21  time     420.66	    0 323 0 
+type 3  depot 505  route 22  time     430.19	    0 130 0 
+type 3  depot 505  route 23  time     294.36	    0 348 0 
+type 3  depot 505  route 24  time     309.15	    0 427 0 
+type 3  depot 505  route 25  time     347.59	    0 31 0 
+type 3  depot 505  route 26  time     238.05	    0 253 0 
+type 3  depot 505  route 27  time     250.80	    0 132 0 
+type 3  depot 505  route 28  time     249.41	    0 67 0 
+type 3  depot 505  route 29  time     214.30	    0 78 0 
+type 3  depot 505  route 30  time     293.60	    0 226 0 
+type 3  depot 505  route 31  time     245.79	    0 136 0 
+type 3  depot 505  route 32  time     210.38	    0 289 0 
+type 3  depot 505  route 33  time      27.01	    0 252 0 
+type 3  depot 505  route 34  time      84.15	    0 2 0 
+type 3  depot 505  route 35  time      21.76	    0 408 0 
+type 3  depot 505  route 36  time      97.35	    0 200 0 
+type 3  depot 505  route 37  time      90.34	    0 168 0 
+type 3  depot 505  route 38  time     101.80	    0 108 0 
+type 3  depot 505  route 39  time      33.91	    0 390 0 
+type 3  depot 505  route 40  time      98.91	    0 499 0 
+type 3 makespan 1100.11

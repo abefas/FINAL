@@ -46,6 +46,8 @@ Time = 0.06 s
 Instance 35 SPEEDS 15 15 15
 Total Makespan = 3044.39
 Time = 0.03 s
+
+
 Instance 01 SPEEDS 15 20 20
 Total Makespan = 362.44
 Time = 0.00 s
@@ -94,6 +96,8 @@ Time = 0.08 s
 Instance 35 SPEEDS 15 20 20
 Total Makespan = 2817.95
 Time = 0.04 s
+
+
 Instance 01 SPEEDS 15 20 30
 Total Makespan = 292.95
 Time = 0.00 s
