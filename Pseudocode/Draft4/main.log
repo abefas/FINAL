@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  12 SEP 2024 13:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  9 SEP 2024 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2326,7 +2326,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 p07_NM2.png> <./p07_NM4.png>] [15 <./p11_NM1.png> <./p11_NM2.png> <./p11_NM4.pn
 g> <./p07_drones.png> <./p11_drones.png> <./p33_drones.png>] [16]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
-56.
+55.
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
@@ -2359,7 +2359,7 @@ s.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (18 pages, 1761138 bytes).
+Output written on main.pdf (18 pages, 1760997 bytes).
 PDF statistics:
  722 PDF objects out of 1000 (max. 8388607)
  639 compressed objects within 7 object streams

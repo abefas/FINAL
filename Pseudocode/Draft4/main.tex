@@ -383,7 +383,7 @@
 		\label{eq:diff}
 	\end{equation}
 
-	Equations (\ref{eq:SA}), (\ref{eq:Tupdate}), (\ref{eq:phUpdate}) can be found in the original AACONC and are only included for clarity purposes. By following this procedure, the pheromone matrix ultimately drives the algorithm to form fundamental truck routes of which the node sequences are included in the final solution either as truck or motorbike routes. At the same time, customers that have been determined to be better off serviced by drones are not given the same importance when forming $R_a$ routes. \autoref{fig:Rt_solution} and \ref{fig:R_solution} provide an example of this, where it is evident that edges used in Rt are largely also used in the final solution either by the trucks or motorbikes, even after local search optimization procedures.
+	Equations (\ref{eq:SA}), (\ref{eq:Tupdate}), (\ref{eq:phUpdate}) can be found in the original AACONC and are only included for clarity purposes. By following this procedure, the pheromone matrix ultimately drives the algorithm to form solid truck routes of which the node sequences are included in the final solution either as truck routes or as motorbike routes. At the same time, nodes that have been determined to be better off serviced by drones are not given the same importance when forming routes. \autoref{fig:Rt_solution} and \ref{fig:R_solution} provide an example of this, where it is evident that edges used in Rt are largely also used in the final solution either by the trucks or motorbikes even after local search optimization procedures.
 	%Provide a graphical example of this - Rt solution in a later generation and how it affects R solution
 	\begin{figure}[h]
 		\centering
@@ -413,7 +413,7 @@
 	The algorithms were implemented in the C programming language, with OpenMP used for the parallelization operations among 16 threads, and compiled using GCC. The experiments were conducted on a personal computer with the following parameters: Intel Core i5-13400 CPU 4.60 GHz, 32 GB RAM.
 	\par
 	The AACONC control parameters used for all of the results are the following: $n_{ants} = 192$, $n_{freq} = 10$, $n_{prim} = 4$, $n_{size} = 24$, $n_{sect} = 16$, $T_{update} = 0.2$, $a_{update} = 1$, $\rho_{min} = 0.001$, $\rho_{max} = 0.01$, $\delta = 1$, $\alpha = 1$, $\beta = 1$. Values differing from the ones presented in \parencite{Stodola2022} were changed based on experimental evaluation.
-	Due to the natural differences between our problem and the MDVRP and thus the two implementations, the original control parameters lead to premature convergence on local optima. Ultimately, parameters $T_{update}$, $\rho_{min}$, $\rho_{max}$ and $\delta$ all control the optimization's convergence speed and so were modified such as to accomodate a slower convergence in favor of a larger exploration space. Termination conditions for the H-AACONC algorithm were set as: (i) Reaching 5000 generations without an improvement in the solution, (ii) Reaching a population diversity smaller than 0.01, (iii) Reaching the maximum optimization time set at 1 hour. Tables (\ref{table:ACO_15-15-15}), (\ref{table:ACO_15-20-20}) and (\ref{table:ACO_15-20-30}) show H-AACONC results over 5 runs per instance and out of which the best result was used for figures 1-6. Gap percentages are calculated relative to the result in column Best, and Time shows the average computation time out of the 5 runs, in seconds. The rest of the experiments are based on only one run per configuration.
+	Due to the natural differences between our problem and the MDVRP and thus the two implementations, the original control parameters lead to premature convergence to local optima. Ultimately, parameters $T_{update}$, $\rho_{min}$, $\rho_{max}$ and $\delta$ all control the optimization's convergence speed and so were modified such as to accomodate a slower convergence in favor of a larger exploration space. Termination conditions for the H-AACONC algorithm were set as: (i) Reaching 5000 generations without an improvement in the solution, (ii) Reaching a population diversity smaller than 0.01, (iii) Reaching the maximum optimization time set at 1 hour. Tables (\ref{table:ACO_15-15-15}), (\ref{table:ACO_15-20-20}) and (\ref{table:ACO_15-20-30}) show H-AACONC results over 5 runs per instance and out of which the best result was used in figures 1-6. The rest of the experiments are based on only one run per configuration.
 	For the local search optimization algorithms (\ref{alg:opt_full}, \ref{alg:route_opt}, \ref{alg:mutual_depot}, \ref{alg:vtOpt}), $n_{max}$ was set to 2.
 	\par
 	\subsection{Results Analysis}
@@ -546,7 +546,6 @@
 			\label{fig:p33_drones}
 		\end{minipage}
 	\end{figure}
-	
 	
 	\input{H-AACONC_15-15-15.tex}\;
 	\input{H-AACONC_15-20-20.tex}\;
