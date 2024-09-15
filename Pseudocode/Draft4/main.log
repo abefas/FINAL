@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  9 SEP 2024 17:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  15 SEP 2024 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1542,6 +1542,13 @@ Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
 (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
+(/usr/share/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
+Package caption Info: New subtype `subfigure' on input line 238.
+\c@subfigure=\count473
+Package caption Info: New subtype `subtable' on input line 238.
+\c@subtable=\count474
+)
 (/usr/share/texmf-dist/tex/latex/newpx/newpxmath.sty
 Package: newpxmath 2023/11/08 v1.533
 
@@ -1555,7 +1562,7 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@toks=\toks53
 \XKV@tempa@toks=\toks54
 )
-\XKV@depth=\count473
+\XKV@depth=\count475
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texmf-dist/tex/latex/oberdiek/centernot.sty
@@ -1564,7 +1571,7 @@ Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 \px@tA=\toks55
 \px@tB=\toks56
 \px@su=\read5
-\px@Isdigit=\count474
+\px@Isdigit=\count476
 
 amsthm NOT loaded
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 222.
@@ -1649,8 +1656,8 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 LaTeX Font Info:    Overwriting symbol font `largesymbolsPXA' in version `bold'
 
 (Font)                  U/npxexa/m/n --> U/npxexa/b/n on input line 345.
-\px@cntz=\count475
-\px@IsAlNum=\count476
+\px@cntz=\count477
+\px@IsAlNum=\count478
 \px@sbptoks=\toks57
 LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 500.
 LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 501.
@@ -1688,13 +1695,13 @@ LaTeX Info: Redefining \_ on input line 43.
 Package: colortbl 2024/02/20 v1.0g Color table columns (DPC)
 \everycr=\toks58
 \minrowclearance=\skip102
-\rownum=\count477
+\rownum=\count479
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 56
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 57
 .
 
 (/usr/share/texmf-dist/tex/latex/psnfss/t1ptm.fd
@@ -1702,62 +1709,62 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 56.
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 57.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line
- 56.
+ 57.
 
 (/usr/share/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 57.
 LaTeX Font Info:    Trying to load font information for U+npxexa on input line 
-56.
+57.
 
 (/usr/share/texmf-dist/tex/latex/newpx/unpxexa.fd
 File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 57.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 5
-6.
+7.
 
 (/usr/share/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 57.
 LaTeX Font Info:    Trying to load font information for LMS+npxsy on input line
- 56.
+ 57.
 
 (/usr/share/texmf-dist/tex/latex/newpx/lmsnpxsy.fd
 File: lmsnpxsy.fd 2016/07/04 Fontinst v1.933 font definitions for LMS/npxsy.
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 57.
 LaTeX Font Info:    Trying to load font information for LMX+npxexx on input lin
-e 56.
+e 57.
 
 (/usr/share/texmf-dist/tex/latex/newpx/lmxnpxexx.fd
 File: lmxnpxexx.fd 2016/07/04 Fontinst v1.933 font definitions for LMX/npxexx.
 )
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Info: Command `\dddot' is already robust on input line 56.
-LaTeX Info: Command `\ddddot' is already robust on input line 56.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Info: Command `\dddot' is already robust on input line 57.
+LaTeX Info: Command `\ddddot' is already robust on input line 57.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1772,8 +1779,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 56.
-Package biblatex Info: Reference segment=0 on input line 56.
+Package biblatex Info: Reference section=0 on input line 57.
+Package biblatex Info: Reference segment=0 on input line 57.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1809,7 +1816,7 @@ Package biblatex Info: Reference segment=0 on input line 56.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 56.
+Package hyperref Info: Link coloring ON on input line 57.
 (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1817,16 +1824,16 @@ Package hyperref Info: Link coloring ON on input line 56.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count478
+\scratchcounter=\count480
 \scratchdimen=\dimen323
 \scratchbox=\box122
-\nofMPsegments=\count479
-\nofMParguments=\count480
+\nofMPsegments=\count481
+\nofMParguments=\count482
 \everyMPshowfont=\toks59
-\MPscratchCnt=\count481
+\MPscratchCnt=\count483
 \MPscratchDim=\dimen324
-\MPnumerator=\count482
-\makeMPintoPDFobject=\count483
+\MPnumerator=\count484
+\makeMPintoPDFobject=\count485
 \everyMPtoPDFconversion=\toks60
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1841,70 +1848,70 @@ e
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 56.
+ on input line 57.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
-8.
+9.
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6.6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
 LaTeX Font Info:    Trying to load font information for U+npxmia on input line 
-58.
+59.
 
 (/usr/share/texmf-dist/tex/latex/newpx/unpxmia.fd
 File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsym on input line 
-58.
+59.
 
 (/usr/share/texmf-dist/tex/latex/newpx/unpxsym.fd
 File: unpxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/npxsym.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 
-58.
+59.
 
 (/usr/share/texmf-dist/tex/latex/newpx/unpxsyc.fd
 File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.3> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+Underfull \hbox (badness 1895) in paragraph at lines 60--62
+\T1/ptm/m/n/10 the over-all travel cost. Emerg-ing trans-porta-tion tech-nolo-g
+ies
+ []
 
-Underfull \hbox (badness 3302) in paragraph at lines 63--65
+
+Underfull \hbox (badness 1137) in paragraph at lines 60--62
+\T1/ptm/m/n/10 such as au-tonomous and elec-tric vehicles--both land-based and
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.3> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+
+Underfull \hbox (badness 3302) in paragraph at lines 68--70
 []\T1/ptm/m/n/10 Routing prob-lems such as the TSP and the VRP are
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 66--69
+Underfull \hbox (badness 1552) in paragraph at lines 71--74
 \T1/ptm/m/n/10 in-te-grat-ing ad-vanced tech-nolo-gies into lo-gis-tics and op-
 er-a-tions
  []
 
 
-Underfull \hbox (badness 1127) in paragraph at lines 70--72
+Underfull \hbox (badness 1127) in paragraph at lines 75--77
 \T1/ptm/m/n/10 ser-vice cus-tomers, (our study de-picts a real-world sce-nario/
 we
- []
-
-
-Underfull \hbox (badness 1648) in paragraph at lines 75--76
-\T1/ptm/m/n/10 trucks in rout-ing prob-lems in 2015. In their sem-i-nal pa-per
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--77
-[]\T1/ptm/b/n/12 The Fly-ing Side-kick Trav-el-ing Sales-man
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fon
@@ -1913,125 +1920,135 @@ ts/enc/dvips/base/8r.enc}
 
 
 {/usr/share/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}]
-Underfull \hbox (badness 1442) in paragraph at lines 83--85
+Underfull \hbox (badness 1648) in paragraph at lines 80--81
+\T1/ptm/m/n/10 trucks in rout-ing prob-lems in 2015. In their sem-i-nal pa-per
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
+[]\T1/ptm/b/n/12 The Fly-ing Side-kick Trav-el-ing Sales-man
+ []
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 88--90
 \T1/ptm/m/n/10 name; the "Trav-el-ing Sales-man Prob-lem with Drone". They
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 86--87
+Underfull \hbox (badness 1484) in paragraph at lines 91--92
 \T1/ptm/m/n/10 and em-ployed a hy-brid heuris-tic termed Ran-dom-ized Vari-able
 
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 86--87
+Underfull \hbox (badness 1389) in paragraph at lines 91--92
 \T1/ptm/m/n/10 be-gins by gen-er-at-ing the op-ti-mal so-lu-tion for the TSP wh
 ere
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 86--87
+Underfull \hbox (badness 1048) in paragraph at lines 91--92
 \T1/ptm/m/n/10 ran-dom-ized lo-cal search pro-ce-dure aims to im-prove the ini-
 tial
  []
 
-
-Underfull \hbox (badness 1859) in paragraph at lines 88--92
+[2]
+Underfull \hbox (badness 1859) in paragraph at lines 93--97
 []\T1/ptm/m/n/10 {REMOVE} Dell'Amico et al. [[][]9[][]] pro-posed a mod-i-fied
  []
 
 
-Underfull \hbox (badness 2393) in paragraph at lines 88--92
+Underfull \hbox (badness 2393) in paragraph at lines 93--97
 \T1/ptm/m/n/10 a three-indexed for-mu-la-tion termed DMN and a two-indexed
  []
 
-[2]
-Underfull \hbox (badness 1231) in paragraph at lines 96--97
+
+Underfull \hbox (badness 1231) in paragraph at lines 101--102
 \T1/ptm/m/n/10 adds more com-plex ones as needed. The col-umn gen-er-a-tion
  []
 
 
-Underfull \hbox (badness 2189) in paragraph at lines 101--102
+Underfull \hbox (badness 2189) in paragraph at lines 106--107
 \T1/ptm/m/n/10 co-evolving a meme-plex along-side the pop-u-la-tion, where the
  []
 
 
-Underfull \hbox (badness 2213) in paragraph at lines 101--102
+Underfull \hbox (badness 2213) in paragraph at lines 106--107
 \T1/ptm/m/n/10 meme-plex com-prises eight op-tions rep-re-sent-ing crossover an
 d
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 101--102
+Underfull \hbox (badness 2205) in paragraph at lines 106--107
 \T1/ptm/m/n/10 dy-namic adap-ta-tion of the al-go-rithm en-ables it to learn an
 d
  []
 
 
-Underfull \hbox (badness 1953) in paragraph at lines 101--102
+Underfull \hbox (badness 1953) in paragraph at lines 106--107
 \T1/ptm/m/n/10 gen-er-a-tion, of-fer-ing greater flex-i-bil-ity in ex-plor-ing 
 the search
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--103
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
 []\T1/ptm/b/n/12 The Par-al-lel Drone Schedul-ing Trav-el-ing
  []
 
-
-Underfull \hbox (badness 1038) in paragraph at lines 107--108
+[3]
+Underfull \hbox (badness 1038) in paragraph at lines 112--113
 \T1/ptm/m/n/10 as a bi-cri-te-ria short-est path prob-lem [[][]26[][]] and is s
 olved us-ing
  []
 
-[3]
-Underfull \hbox (badness 1320) in paragraph at lines 111--113
+
+Underfull \hbox (badness 1320) in paragraph at lines 116--118
 \T1/ptm/m/n/10 Schedul-ing Mul-ti-ple Trav-el-ing Sales-man Prob-lem (PDSMTSP),
 
  []
 
 
-Underfull \hbox (badness 1019) in paragraph at lines 111--113
+Underfull \hbox (badness 1019) in paragraph at lines 116--118
 \T1/ptm/m/n/10 com-ple-tion time. The au-thors pro-pose a hy-brid meta-heuris-t
 ic
  []
 
 
-Underfull \hbox (badness 3895) in paragraph at lines 111--113
+Underfull \hbox (badness 3895) in paragraph at lines 116--118
 \T1/ptm/m/n/10 work for the single-truck case. The al-go-rithm be-gins by
  []
 
 
-Underfull \hbox (badness 2452) in paragraph at lines 114--115
+Underfull \hbox (badness 2452) in paragraph at lines 119--120
 \T1/ptm/m/n/10 Pro-gram-ming model for the PDSTSP which lever-ages re-cent
  []
 
 
-Underfull \hbox (badness 1231) in paragraph at lines 114--115
+Underfull \hbox (badness 1231) in paragraph at lines 119--120
 \T1/ptm/m/n/10 com-pu-ta-tion. This ap-proach pro-vides a novel per-spec-tive f
 or
  []
 
 
-Underfull \hbox (badness 1902) in paragraph at lines 121--122
+Underfull \hbox (badness 1902) in paragraph at lines 126--127
 \T1/ptm/m/n/10 al-go-rithm. In the first stage, the truck route is de-ter-mined
 
  []
 
-
-Underfull \hbox (badness 1237) in paragraph at lines 123--124
+[4]
+Underfull \hbox (badness 1237) in paragraph at lines 128--129
 \T1/ptm/m/n/10 then it-er-a-tively re-lo-cates truck nodes and in-serts drone n
 odes,
  []
 
-[4] [5]
-Underfull \hbox (badness 3209) in paragraph at lines 151--152
+[5]
+Underfull \hbox (badness 3209) in paragraph at lines 156--157
 []\T1/ptm/m/n/10 Stodola and Kut¥j [[][]35[][]] were the first to re-search the
 
  []
 
 
-Underfull \hbox (badness 1163) in paragraph at lines 151--152
+Underfull \hbox (badness 1163) in paragraph at lines 156--157
 \T1/ptm/m/n/10 prin-ci-ple and an adap-tive pheromone evap-o-ra-tion pro-ce-dur
 e to
  []
@@ -2043,65 +2060,65 @@ LaTeX Warning: No positions in optional float specifier.
 
 ) [6] [7]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 161.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 166.
 
-Underfull \hbox (badness 1117) in paragraph at lines 244--246
+Underfull \hbox (badness 1117) in paragraph at lines 249--251
 \OML/npxmi/m/it/10 v$ \T1/ptm/m/n/10 of de-pot $\OML/npxmi/m/it/10 i$ \T1/ptm/m
 /n/10 then $\OML/npxmi/m/it/10 M[]$ \T1/ptm/m/n/10 = $\OML/npxmi/m/it/10 max\LM
 S/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 M[]; M[]; :::; M[]\LMS/npxsy/m/n/10 º$ \T1/p
 tm/m/n/10 de-notes the
  []
 
-
-Underfull \hbox (badness 1117) in paragraph at lines 250--251
+[8]
+Underfull \hbox (badness 1117) in paragraph at lines 255--256
 \T1/ptm/m/n/10 rout-ing prob-lems. Al-though a naive ap-proach, this tech-nique
 
  []
 
 
-Underfull \hbox (badness 2726) in paragraph at lines 252--253
+Underfull \hbox (badness 2726) in paragraph at lines 257--258
 []\T1/ptm/m/n/10 For this pur-pose, we use a straight-for-ward con-strained
  []
 
-[8]
-<p01_BeforeMutualOpt.png, id=261, 1365.1803pt x 696.6828pt>
+<p01_BeforeMutualOpt.png, id=262, 1365.1803pt x 696.6828pt>
 File: p01_BeforeMutualOpt.png Graphic file (type png)
 <use p01_BeforeMutualOpt.png>
-Package pdftex.def Info: p01_BeforeMutualOpt.png  used on input line 313.
+Package pdftex.def Info: p01_BeforeMutualOpt.png  used on input line 318.
 (pdftex.def)             Requested size: 273.03122pt x 139.33409pt.
 
-Overfull \hbox (2.11342pt too wide) in paragraph at lines 313--314
+Overfull \hbox (2.11342pt too wide) in paragraph at lines 318--319
  [][] 
  []
 
-<p01_AfterMutualOpt.png, id=263, 1365.1803pt x 696.6828pt>
+<p01_AfterMutualOpt.png, id=264, 1365.1803pt x 696.6828pt>
 File: p01_AfterMutualOpt.png Graphic file (type png)
 <use p01_AfterMutualOpt.png>
-Package pdftex.def Info: p01_AfterMutualOpt.png  used on input line 322.
+Package pdftex.def Info: p01_AfterMutualOpt.png  used on input line 327.
 (pdftex.def)             Requested size: 273.03122pt x 139.33409pt.
 
-Overfull \hbox (2.11342pt too wide) in paragraph at lines 322--323
+Overfull \hbox (2.11342pt too wide) in paragraph at lines 327--328
  [][] 
  []
 
 
-Overfull \hbox (30.34807pt too wide) in paragraph at lines 329--329
+Overfull \hbox (30.34807pt too wide) in paragraph at lines 334--334
 []\T1/ptm/b/n/10 Algorithm 6: $\OML/npxmi/m/it/10 mutual[]vehicle[]type[]optimi
 zation\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 Sol; n[]\LMS/npxsy/m/n/10 º$ 
  []
 
 
-Underfull \hbox (badness 5563) in paragraph at lines 259--346
+Underfull \hbox (badness 5563) in paragraph at lines 264--351
 []\T1/ptm/m/n/10 Algorithms [][]4[][] and [][]5[][] are orig-i-nally pre-sented
  in [[][]34[][]]
  []
 
 
-Underfull \hbox (badness 1147) in paragraph at lines 259--346
+Underfull \hbox (badness 1147) in paragraph at lines 264--351
 \T1/ptm/m/n/10 as Sin-gle colony op-ti-miza-tion and Mu-tual colony op-ti-miza-
 tion
  []
 
+[9]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -2111,33 +2128,28 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9] (./Hybrid_algorithm.tex
+(./Hybrid_algorithm.tex [10 <./p01_BeforeMutualOpt.png> <./p01_AfterMutualOpt.p
+ng>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
-Underfull \hbox (badness 2080) in paragraph at lines 354--355
+Underfull \hbox (badness 2080) in paragraph at lines 359--360
 []\T1/ptm/m/n/10 The pheromone ma-trix up-date pro-ce-dure uses the same
  []
 
 
-Underfull \hbox (badness 3601) in paragraph at lines 354--355
+Underfull \hbox (badness 3601) in paragraph at lines 359--360
 \T1/ptm/m/n/10 logic as the orig-i-nal AA-CONC al-go-rithm. The Sim-u-lated
  []
 
 
-Underfull \hbox (badness 1253) in paragraph at lines 354--355
+Underfull \hbox (badness 1253) in paragraph at lines 359--360
 \T1/ptm/m/n/10 in how our al-go-rithm uti-lizes the pheromone ma-trix. In the
  []
 
-[10 <./p01_BeforeMutualOpt.png> <./p01_AfterMutualOpt.png>]
-Underfull \hbox (badness 1635) in paragraph at lines 370--371
+
+Underfull \hbox (badness 1635) in paragraph at lines 375--376
 []\T1/ptm/m/n/10 The so-lu-tion cho-sen for up-dat-ing the pheromone ma-trix
  []
 
@@ -2145,162 +2157,169 @@ Underfull \hbox (badness 1635) in paragraph at lines 370--371
 File: p07-15-15-15_best_solution_TRUCK.png Graphic file (type png)
 <use p07-15-15-15_best_solution_TRUCK.png>
 Package pdftex.def Info: p07-15-15-15_best_solution_TRUCK.png  used on input li
-ne 392.
+ne 397.
 (pdftex.def)             Requested size: 273.03122pt x 139.33409pt.
 
-Overfull \hbox (2.11342pt too wide) in paragraph at lines 392--393
+Overfull \hbox (2.11342pt too wide) in paragraph at lines 397--398
  [][] 
  []
 
 <p07-15-15-15_best_solution.png, id=356, 1365.1803pt x 696.6828pt>
 File: p07-15-15-15_best_solution.png Graphic file (type png)
 <use p07-15-15-15_best_solution.png>
-Package pdftex.def Info: p07-15-15-15_best_solution.png  used on input line 401
+Package pdftex.def Info: p07-15-15-15_best_solution.png  used on input line 406
 .
 (pdftex.def)             Requested size: 273.03122pt x 139.33409pt.
 
-Overfull \hbox (2.11342pt too wide) in paragraph at lines 401--402
+Overfull \hbox (2.11342pt too wide) in paragraph at lines 406--407
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-(./instances_table.tex) [11]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[12 <./p07-15-15-15_best_solution_TRUCK.png> <./p07-15-15-15_best_solution.png>
-]
-Underfull \hbox (badness 1005) in paragraph at lines 425--426
-\T1/ptm/m/n/10 at -0.14%. Its best re-sult was for in-stance 12 in [][]Fig-ure 
-10[][][],
+[11] (./instances_table.tex) [12 <./p07-15-15-15_best_solution_TRUCK.png> <./p0
+7-15-15-15_best_solution.png>]
+Underfull \hbox (badness 1331) in paragraph at lines 428--429
+\T1/ptm/m/n/10 im-prove-ment over the mfcmTSP, es-pe-cially when lo-cal search
  []
 
-[13]
-<small_15-15-15.png, id=485, 433.62pt x 252.945pt>
+
+Underfull \hbox (badness 1509) in paragraph at lines 428--429
+\T1/ptm/m/n/10 MD-mfcmTSP heuris-tic the small-est im-prove-ment is found in
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 428--429
+\T1/ptm/m/n/10 the same speed con-fig-u-ra-tion for in-stance 7 at 29.63%. The
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 430--431
+[]\T1/ptm/m/n/10 For larger in-stances for 500 to 1000 cus-tomers ([][]6[][]), 
+the
+ []
+
+[13] [14
+
+]
+<small_15-15-15.png, id=499, 433.62pt x 252.945pt>
 File: small_15-15-15.png Graphic file (type png)
 <use small_15-15-15.png>
-Package pdftex.def Info: small_15-15-15.png  used on input line 440.
-(pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
-
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 440--441
- [][] 
- []
-
-<small_15-20-20.png, id=486, 433.62pt x 252.945pt>
-File: small_15-20-20.png Graphic file (type png)
-<use small_15-20-20.png>
-Package pdftex.def Info: small_15-20-20.png  used on input line 446.
+Package pdftex.def Info: small_15-15-15.png  used on input line 446.
 (pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
 Overfull \hbox (0.95656pt too wide) in paragraph at lines 446--447
  [][] 
  []
 
-<small_15-20-30.png, id=487, 433.62pt x 252.945pt>
-File: small_15-20-30.png Graphic file (type png)
-<use small_15-20-30.png>
-Package pdftex.def Info: small_15-20-30.png  used on input line 452.
+<small_15-20-20.png, id=500, 433.62pt x 252.945pt>
+File: small_15-20-20.png Graphic file (type png)
+<use small_15-20-20.png>
+Package pdftex.def Info: small_15-20-20.png  used on input line 452.
 (pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
 Overfull \hbox (0.95656pt too wide) in paragraph at lines 452--453
  [][] 
  []
 
-<large_15-15-15.png, id=488, 433.62pt x 252.945pt>
+<small_15-20-30.png, id=501, 433.62pt x 252.945pt>
+File: small_15-20-30.png Graphic file (type png)
+<use small_15-20-30.png>
+Package pdftex.def Info: small_15-20-30.png  used on input line 458.
+(pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
+
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 458--459
+ [][] 
+ []
+
+<large_15-15-15.png, id=502, 433.62pt x 252.945pt>
 File: large_15-15-15.png Graphic file (type png)
 <use large_15-15-15.png>
-Package pdftex.def Info: large_15-15-15.png  used on input line 463.
+Package pdftex.def Info: large_15-15-15.png  used on input line 471.
 (pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 463--464
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 471--472
  [][] 
  []
 
-<large_15-20-20.png, id=489, 433.62pt x 252.945pt>
+<large_15-20-20.png, id=503, 433.62pt x 252.945pt>
 File: large_15-20-20.png Graphic file (type png)
 <use large_15-20-20.png>
-Package pdftex.def Info: large_15-20-20.png  used on input line 469.
+Package pdftex.def Info: large_15-20-20.png  used on input line 477.
 (pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 469--470
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 477--478
  [][] 
  []
 
-<large_15-20-30.png, id=490, 433.62pt x 252.945pt>
+<large_15-20-30.png, id=504, 433.62pt x 252.945pt>
 File: large_15-20-30.png Graphic file (type png)
 <use large_15-20-30.png>
-Package pdftex.def Info: large_15-20-30.png  used on input line 475.
+Package pdftex.def Info: large_15-20-30.png  used on input line 483.
 (pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 475--476
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 483--484
  [][] 
  []
 
-<p07_NM1.png, id=491, 386.316pt x 238.71pt>
+<p07_NM1.png, id=505, 386.316pt x 238.491pt>
 File: p07_NM1.png Graphic file (type png)
 <use p07_NM1.png>
-Package pdftex.def Info: p07_NM1.png  used on input line 486.
-(pdftex.def)             Requested size: 162.2516pt x 100.2575pt.
-<p07_NM2.png, id=492, 386.316pt x 238.491pt>
+Package pdftex.def Info: p07_NM1.png  used on input line 496.
+(pdftex.def)             Requested size: 162.2516pt x 100.16553pt.
+<p07_NM2.png, id=506, 386.535pt x 238.491pt>
 File: p07_NM2.png Graphic file (type png)
 <use p07_NM2.png>
-Package pdftex.def Info: p07_NM2.png  used on input line 492.
-(pdftex.def)             Requested size: 162.2516pt x 100.16553pt.
-<p07_NM4.png, id=493, 386.316pt x 238.491pt>
+Package pdftex.def Info: p07_NM2.png  used on input line 502.
+(pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
+<p07_NM4.png, id=507, 386.535pt x 238.491pt>
 File: p07_NM4.png Graphic file (type png)
 <use p07_NM4.png>
-Package pdftex.def Info: p07_NM4.png  used on input line 498.
-(pdftex.def)             Requested size: 162.2516pt x 100.16553pt.
-<p11_NM1.png, id=494, 386.535pt x 238.491pt>
+Package pdftex.def Info: p07_NM4.png  used on input line 508.
+(pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
+<p11_NM1.png, id=508, 386.316pt x 238.491pt>
 File: p11_NM1.png Graphic file (type png)
 <use p11_NM1.png>
-Package pdftex.def Info: p11_NM1.png  used on input line 509.
-(pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
-<p11_NM2.png, id=495, 386.316pt x 238.491pt>
+Package pdftex.def Info: p11_NM1.png  used on input line 521.
+(pdftex.def)             Requested size: 162.2516pt x 100.16553pt.
+<p11_NM2.png, id=509, 386.316pt x 238.491pt>
 File: p11_NM2.png Graphic file (type png)
 <use p11_NM2.png>
-Package pdftex.def Info: p11_NM2.png  used on input line 515.
+Package pdftex.def Info: p11_NM2.png  used on input line 527.
 (pdftex.def)             Requested size: 162.2516pt x 100.16553pt.
-<p11_NM4.png, id=496, 386.535pt x 238.491pt>
+<p11_NM4.png, id=510, 386.535pt x 238.491pt>
 File: p11_NM4.png Graphic file (type png)
 <use p11_NM4.png>
-Package pdftex.def Info: p11_NM4.png  used on input line 521.
+Package pdftex.def Info: p11_NM4.png  used on input line 533.
 (pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<p07_drones.png, id=497, 433.62pt x 252.945pt>
+<p07_drones.png, id=511, 433.62pt x 252.726pt>
 File: p07_drones.png Graphic file (type png)
 <use p07_drones.png>
-Package pdftex.def Info: p07_drones.png  used on input line 532.
-(pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
+Package pdftex.def Info: p07_drones.png  used on input line 546.
+(pdftex.def)             Requested size: 182.11916pt x 106.14418pt.
 
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 532--533
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 546--547
  [][] 
  []
 
-<p11_drones.png, id=498, 433.62pt x 252.945pt>
+<p11_drones.png, id=512, 433.62pt x 252.945pt>
 File: p11_drones.png Graphic file (type png)
 <use p11_drones.png>
-Package pdftex.def Info: p11_drones.png  used on input line 538.
+Package pdftex.def Info: p11_drones.png  used on input line 552.
 (pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 538--539
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 552--553
  [][] 
  []
 
-<p33_drones.png, id=499, 433.62pt x 252.945pt>
+<p33_drones.png, id=513, 433.62pt x 252.945pt>
 File: p33_drones.png Graphic file (type png)
 <use p33_drones.png>
-Package pdftex.def Info: p33_drones.png  used on input line 544.
+Package pdftex.def Info: p33_drones.png  used on input line 558.
 (pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 544--545
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 558--559
  [][] 
  []
 
@@ -2318,37 +2337,37 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14
+[15
 
 
  <./small_15-15-15.png> <./small_15-20-20.png> <./small_15-20-30.png> <./large_
 15-15-15.png> <./large_15-20-20.png> <./large_15-20-30.png> <./p07_NM1.png> <./
-p07_NM2.png> <./p07_NM4.png>] [15 <./p11_NM1.png> <./p11_NM2.png> <./p11_NM4.pn
-g> <./p07_drones.png> <./p11_drones.png> <./p33_drones.png>] [16]
+p07_NM2.png> <./p07_NM4.png>] [16 <./p11_NM1.png> <./p11_NM2.png> <./p11_NM4.pn
+g> <./p07_drones.png> <./p11_drones.png> <./p33_drones.png>] [17]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
-55.
+72.
 
 (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) [17
+) [18
 
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [18] (./main.
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [19] (./main.
 aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C1FD49F8140079F40ADEE7663E685BB1;3258.
+(rerunfilecheck)             Checksum: F7332FA48E9309D65EDE2D0F896A0E13;3340.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47394 strings out of 476000
- 1029749 string characters out of 5792234
- 1975187 words of memory out of 5000000
- 68524 multiletter control sequences out of 15000+600000
+ 47536 strings out of 476000
+ 1032396 string characters out of 5792234
+ 1972187 words of memory out of 5000000
+ 68662 multiletter control sequences out of 15000+600000
  647682 words of font info for 173 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  99i,25n,107p,3559b,1777s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2359,10 +2378,10 @@ s.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (18 pages, 1760997 bytes).
+Output written on main.pdf (19 pages, 1716169 bytes).
 PDF statistics:
- 722 PDF objects out of 1000 (max. 8388607)
- 639 compressed objects within 7 object streams
- 263 named destinations out of 1000 (max. 500000)
+ 737 PDF objects out of 1000 (max. 8388607)
+ 653 compressed objects within 7 object streams
+ 265 named destinations out of 1000 (max. 500000)
  260 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -19,6 +19,7 @@
 \usepackage{pgfplotstable, caption, array}
 \usepackage{indentfirst}
 \usepackage{setspace}
+\usepackage{subcaption}
 \usepackage[fracspacing]{newpxmath}
 \usepackage[none]{hyphenat}
 \sloppy
@@ -55,7 +56,11 @@
 \twocolumn
 \begin{document}
 	\maketitle
-	\section{INTRODUCTION}
+	\section*{ABSTRACT}
+	Routing problems are a fundamental class of optimization problems in combinatorics, focused on finding the most efficient routes for various applications, such as logistics, transportation, and network design. Among these, the Traveling Salesman Problem (TSP) stands out as one of the most studied and recognized problems, which involves determining the shortest possible route that allows a salesman to visit each destination point exactly once, minimizing the overall travel cost. Motivated by emerging transportation technologies such as autonomous and electric vehicles--both land-based and aerial--routing problems have naturally sparked renewed interest in the research community. 
+	Driven by this, in this paper we formulate the multi-depot mixed fleet capacitated multiple TSP (MD-mfcmTSP), which involves a set of depots, each equipped with a fleet of heterogeneous vehicles, including UAVs, which need to deliver parcels to a set of customers in the minimum time. Each vehicle type has a capacity measured in parcels and speed measured in m/s while considering real-world limitations where some customers may not be accessible by every vehicle. We propose a fast heuristic and a hybrid metaheuristic based on Ant Colony Optimization to solve the problem, along with several local search moves. We conduct a series of experiments with varying fleet configurations comprising of trucks, motorbikes and UAVs, aiming to compare the performance of our different approaches, and in addition determine the optimal fleet composition in different scenarios. The proposed algorithms are able to obtain results that improve upon existing work and show that with current commercial technologies, the benefit of using a greater number of UAVs surpasses the advantages of relying on fewer, faster units.
+	\par
+	\section{Introduction}
 	Garnering significant academic attention since the mid-20th century, the TSP has established itself as a classic combinatorial optimization problem. In its purest form, the problem asks what is the optimal route that a salesman should take so that they can visit a set of cities exactly once and return to the origin city while traveling the minimum distance possible. This may be modeled into a graph problem by assuming a weighted undirected fully connected graph $G=\{V,E\}$ where the cities are represented by the vertices $v\in V$ and each arc $e_{v_1,v_2}\in E$ represents the distance between vertices $v_1,v_2$.
 	\par
 	Naturally, various generalizations have emerged to address more complex scenarios. Notably, the Vehicle Routing Problem (VRP) extends the TSP by replacing the salesman with a fleet of vehicles, each with a certain capacity, which need to service a set of customers with varying demands from a single central depot. The Multiple Traveling Salesman Problem (MTSP) lies inbetween the two previously mentioned, being an extension of the TSP and a relaxation of the VRP. In contrast to the VRP, the MTSP does not consider capacity constraints or customer demand and does not allow for multiple trips.
@@ -435,116 +440,125 @@
 	%Small instances
 	\begin{figure}[h]
 		\centering
-		\begin{minipage}{0.33\textwidth}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{small_15-15-15}\;
 			\caption{$S_T=15$, $S_M=15$, $S_D=15$}
 			\label{fig:15-15-15}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{small_15-20-20}\;
 			\caption{$S_T=15$, $S_M=20$, $S_D=20$}
 			\label{fig:15-20-20}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{small_15-20-30}\;
 			\caption{$S_T=15$, $S_M=20$, $S_D=30$}
 			\label{fig:15-20-30}
-		\end{minipage}
+		\end{subfigure}
+		    \caption{Performance of algorithms for different vehicle speeds - smaller instances}
+		    \label{fig:small_instances}
 	\end{figure}
 	
 	%Large instances
 	\begin{figure}[h]
 		\centering
-		\begin{minipage}{0.33\textwidth}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{large_15-15-15}\;
 			\caption{$S_T=15$, $S_M=15$, $S_D=15$}
 			\label{fig:large_15-15-15}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{large_15-20-20}\;
 			\caption{$S_T=15$, $S_M=20$, $S_D=20$}
 			\label{fig:large_15-20-20}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{large_15-20-30}\;
 			\caption{$S_T=15$, $S_M=20$, $S_D=30$}
 			\label{fig:large_15-20-30}
-		\end{minipage}
+		\end{subfigure}
+		\caption{Performance of algorithms for different vehicle speeds - larger instances}
+		\label{fig:large_instances}
 	\end{figure}
 	
 	%Motorbike experiments 07
 	\begin{figure}[h]
 		\centering
-		\begin{minipage}{0.33\textwidth}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{p07_NM1}\;
-			\caption{Instance 7 - $N_M=1$}
+			\caption{$N_M=1$}
 			\label{fig:p07_NM1}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{p07_NM2}\;
-			\caption{Instance 7 - $N_M=2$}
+			\caption{$N_M=2$}
 			\label{fig:p07_NM2}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{p07_NM4}\;
-			\caption{Instance 7 - $N_M=4$}
+			\caption{$N_M=4$}
 			\label{fig:p07_NM4}
-		\end{minipage}
+		\end{subfigure}
+		\caption{Varying motorbike capacity for 1,2 and 4 motorbikes per depot - instance 7}
+		\label{fig:motorbike_exp_p07}
 	\end{figure}
 	
 	%Motorbike experiments 11
 	\begin{figure}[h]
 		\centering
-		\begin{minipage}{0.33\textwidth}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{p11_NM1}\;
 			\caption{Instance 11 - $N_M=1$}
 			\label{fig:p11_NM1}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{p11_NM2}\;
 			\caption{Instance 11 - $N_M=2$}
 			\label{fig:p11_NM2}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{p11_NM4}\;
 			\caption{Instance 11 - $N_M=4$}
 			\label{fig:p11_NM4}
-		\end{minipage}
+		\end{subfigure}
+		\caption{Varying motorbike capacity for 1,2 and 4 motorbikes per depot - instance 11}
+		\label{fig:motorbike_exp_p11}
 	\end{figure}
 	
 	%Drone experiments 07
 	\begin{figure}[h]
 		\centering
-		\begin{minipage}{0.33\textwidth}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{p07_drones}\;
 			\caption{Instance 7}
 			\label{fig:p07_drones}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{p11_drones}\;
 			\caption{Instance 11}
 			\label{fig:p11_drones}
-		\end{minipage}
-		\begin{minipage}{0.33\textwidth}
+		\end{subfigure}
+		\begin{subfigure}{0.33\textwidth}
 			\centering
 			\includegraphics[scale=0.42]{p33_drones}\;
 			\caption{Instance 14}
 			\label{fig:p33_drones}
-		\end{minipage}
+		\end{subfigure}
+		\caption{Varying drone quantity (ND) per depot and speed (SD)}
 	\end{figure}
 	
 	
