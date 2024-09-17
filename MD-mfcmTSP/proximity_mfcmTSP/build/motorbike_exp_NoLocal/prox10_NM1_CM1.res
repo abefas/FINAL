@@ -1,0 +1,60 @@
+total makespan: 2198.94
+type 1  depot 250  route  1  time    2069.01	    0 92 178 210 41 110 60 109 20 227 29 97 132 169 181 243 6 165 37 44 22 120 23 236 196 48 174 143 14 98 240 128 179 161 93 187 45 77 91 46 216 63 180 200 126 116 67 51 134 158 0 
+type 1  depot 251  route  1  time    2198.94	    0 38 39 102 15 52 75 162 136 176 226 32 78 201 147 127 40 17 175 47 168 103 113 80 194 197 42 10 238 131 214 57 203 11 241 235 82 157 249 237 177 224 163 64 125 193 101 148 26 153 248 121 89 167 13 43 223 122 146 135 84 3 118 0 
+type 1  depot 252  route  1  time    2108.86	    0 124 49 12 133 5 191 30 18 137 54 204 198 73 96 112 213 8 207 19 72 211 90 61 129 221 130 53 228 173 27 195 2 170 230 58 183 150 36 220 206 83 217 205 31 0 
+type 1  depot 253  route  1  time    1975.66	    0 188 95 182 28 156 144 192 184 218 119 245 151 86 149 152 208 246 7 140 141 104 74 186 21 138 100 145 115 209 99 70 108 244 76 154 4 81 234 68 142 231 202 0 
+type 1 makespan 2198.94
+type 2  depot 250  route  1  time     101.76	    0 111 0 
+type 2  depot 250  route  2  time     227.55	    0 107 0 
+type 2  depot 250  route  3  time     152.17	    0 105 0 
+type 2  depot 250  route  4  time     563.21	    0 159 0 
+type 2  depot 250  route  5  time     495.54	    0 88 0 
+type 2  depot 250  route  6  time     306.45	    0 171 0 
+type 2  depot 250  route  7  time     172.95	    0 85 0 
+type 2  depot 251  route  1  time     377.42	    0 16 0 
+type 2  depot 251  route  2  time     427.97	    0 9 0 
+type 2  depot 251  route  3  time     378.36	    0 24 0 
+type 2  depot 251  route  4  time     350.87	    0 59 0 
+type 2  depot 251  route  5  time     297.92	    0 219 0 
+type 2  depot 251  route  6  time     221.91	    0 55 0 
+type 2  depot 251  route  7  time     124.01	    0 225 0 
+type 2  depot 252  route  1  time     496.97	    0 189 0 
+type 2  depot 252  route  2  time     585.76	    0 229 0 
+type 2  depot 252  route  3  time     531.75	    0 71 0 
+type 2  depot 252  route  4  time     259.66	    0 185 0 
+type 2  depot 252  route  5  time     196.86	    0 79 0 
+type 2  depot 253  route  1  time      80.28	    0 34 0 
+type 2  depot 253  route  2  time     187.14	    0 164 0 
+type 2  depot 253  route  3  time     322.21	    0 155 0 
+type 2  depot 253  route  4  time     266.17	    0 35 0 
+type 2  depot 253  route  5  time     454.12	    0 215 0 
+type 2  depot 253  route  6  time     384.71	    0 232 0 
+type 2  depot 253  route  7  time     268.33	    0 172 0 
+type 2 makespan 2178.45
+type 3  depot 250  route  1  time     146.21	    0 117 0 
+type 3  depot 250  route  2  time     294.01	    0 199 0 
+type 3  depot 250  route  3  time     354.28	    0 212 0 
+type 3  depot 250  route  4  time     570.77	    0 247 0 
+type 3  depot 250  route  5  time     466.71	    0 50 0 
+type 3  depot 250  route  6  time     181.35	    0 222 0 
+type 3  depot 251  route  1  time      63.25	    0 242 0 
+type 3  depot 251  route  2  time      48.53	    0 56 0 
+type 3  depot 251  route  3  time     216.85	    0 233 0 
+type 3  depot 251  route  4  time     407.54	    0 190 0 
+type 3  depot 251  route  5  time     387.59	    0 123 0 
+type 3  depot 251  route  6  time     363.81	    0 114 0 
+type 3  depot 251  route  7  time     298.51	    0 69 0 
+type 3  depot 251  route  8  time     234.09	    0 62 0 
+type 3  depot 251  route  9  time     131.99	    0 66 0 
+type 3  depot 252  route  1  time     361.54	    0 33 0 
+type 3  depot 252  route  2  time     583.70	    0 106 0 
+type 3  depot 252  route  3  time     666.17	    0 1 0 
+type 3  depot 252  route  4  time     275.60	    0 65 0 
+type 3  depot 252  route  5  time     223.61	    0 166 0 
+type 3  depot 253  route  1  time     549.75	    0 139 0 
+type 3  depot 253  route  2  time     299.41	    0 239 0 
+type 3  depot 253  route  3  time     122.57	    0 87 0 
+type 3  depot 253  route  4  time     185.71	    0 160 0 
+type 3  depot 253  route  5  time     526.12	    0 94 0 
+type 3  depot 253  route  6  time     352.07	    0 25 0 
+type 3 makespan 2152.16

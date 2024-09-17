@@ -144,3 +144,673 @@ Time = 0.08 s
 Instance 11 N_M 4 C_M 8
 Total Makespan = 760.49
 Time = 0.04 s
+
+
+
+Instance 01 N_M 1 C_M 1
+Total Makespan = 300.34
+Time = 0.01 s
+Instance 01 N_M 2 C_M 1
+Total Makespan = 270.90
+Time = 0.01 s
+Instance 01 N_M 4 C_M 1
+Total Makespan = 234.06
+Time = 0.01 s
+Instance 01 N_M 1 C_M 2
+Total Makespan = 298.45
+Time = 0.00 s
+Instance 01 N_M 2 C_M 2
+Total Makespan = 252.97
+Time = 0.00 s
+Instance 01 N_M 4 C_M 2
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 01 N_M 1 C_M 3
+Total Makespan = 301.13
+Time = 0.00 s
+Instance 01 N_M 2 C_M 3
+Total Makespan = 268.06
+Time = 0.00 s
+Instance 01 N_M 4 C_M 3
+Total Makespan = 231.71
+Time = 0.00 s
+Instance 01 N_M 1 C_M 4
+Total Makespan = 297.90
+Time = 0.00 s
+Instance 01 N_M 2 C_M 4
+Total Makespan = 240.28
+Time = 0.00 s
+Instance 01 N_M 4 C_M 4
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 01 N_M 1 C_M 5
+Total Makespan = 319.62
+Time = 0.00 s
+Instance 01 N_M 2 C_M 5
+Total Makespan = 232.69
+Time = 0.00 s
+Instance 01 N_M 4 C_M 5
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 01 N_M 1 C_M 6
+Total Makespan = 285.96
+Time = 0.00 s
+Instance 01 N_M 2 C_M 6
+Total Makespan = 240.28
+Time = 0.00 s
+Instance 01 N_M 4 C_M 6
+Total Makespan = 231.04
+Time = 0.01 s
+Instance 01 N_M 1 C_M 7
+Total Makespan = 279.16
+Time = 0.00 s
+Instance 01 N_M 2 C_M 7
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 01 N_M 4 C_M 7
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 01 N_M 1 C_M 8
+Total Makespan = 261.78
+Time = 0.00 s
+Instance 01 N_M 2 C_M 8
+Total Makespan = 253.02
+Time = 0.00 s
+Instance 01 N_M 4 C_M 8
+Total Makespan = 231.04
+Time = 0.00 s
+
+
+Instance 02 N_M 1 C_M 1
+Total Makespan = 345.70
+Time = 0.00 s
+Instance 02 N_M 2 C_M 1
+Total Makespan = 267.56
+Time = 0.00 s
+Instance 02 N_M 4 C_M 1
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 02 N_M 1 C_M 2
+Total Makespan = 302.60
+Time = 0.00 s
+Instance 02 N_M 2 C_M 2
+Total Makespan = 273.81
+Time = 0.00 s
+Instance 02 N_M 4 C_M 2
+Total Makespan = 231.04
+Time = 0.00 s
+
+Instance 02 N_M 1 C_M 3
+Total Makespan = 265.78
+Time = 0.00 s
+Instance 02 N_M 2 C_M 3
+Total Makespan = 251.66
+Time = 0.00 s
+Instance 02 N_M 4 C_M 3
+Total Makespan = 231.04
+Time = 0.00 s
+
+Instance 02 N_M 1 C_M 4
+Total Makespan = 279.93
+Time = 0.00 s
+Instance 02 N_M 2 C_M 4
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 02 N_M 4 C_M 4
+Total Makespan = 231.04
+Time = 0.00 s
+
+Instance 02 N_M 1 C_M 5
+Total Makespan = 309.58
+Time = 0.00 s
+Instance 02 N_M 2 C_M 5
+Total Makespan = 249.28
+Time = 0.00 s
+Instance 02 N_M 4 C_M 5
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 02 N_M 1 C_M 6
+Total Makespan = 289.13
+Time = 0.00 s
+Instance 02 N_M 2 C_M 6
+Total Makespan = 234.72
+Time = 0.00 s
+Instance 02 N_M 4 C_M 6
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 02 N_M 1 C_M 7
+Total Makespan = 279.93
+Time = 0.00 s
+Instance 02 N_M 2 C_M 7
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 02 N_M 4 C_M 7
+Total Makespan = 231.04
+Time = 0.00 s
+Instance 02 N_M 1 C_M 8
+Total Makespan = 284.78
+Time = 0.00 s
+Instance 02 N_M 2 C_M 8
+Total Makespan = 234.73
+Time = 0.00 s
+Instance 02 N_M 4 C_M 8
+Total Makespan = 231.04
+Time = 0.01 s
+
+
+Instance 03 N_M 1 C_M 1
+Total Makespan = 297.40
+Time = 0.00 s
+Instance 03 N_M 2 C_M 1
+Total Makespan = 266.88
+Time = 0.00 s
+Instance 03 N_M 4 C_M 1
+Total Makespan = 226.67
+Time = 0.01 s
+Instance 03 N_M 1 C_M 2
+Total Makespan = 281.49
+Time = 0.01 s
+Instance 03 N_M 2 C_M 2
+Total Makespan = 241.15
+Time = 0.00 s
+Instance 03 N_M 4 C_M 2
+Total Makespan = 210.50
+Time = 0.00 s
+Instance 03 N_M 1 C_M 3
+Total Makespan = 261.74
+Time = 0.00 s
+Instance 03 N_M 2 C_M 3
+Total Makespan = 227.70
+Time = 0.00 s
+Instance 03 N_M 4 C_M 3
+Total Makespan = 210.50
+Time = 0.00 s
+Instance 03 N_M 1 C_M 4
+Total Makespan = 273.36
+Time = 0.00 s
+Instance 03 N_M 2 C_M 4
+Total Makespan = 215.79
+Time = 0.01 s
+Instance 03 N_M 4 C_M 4
+Total Makespan = 210.50
+Time = 0.00 s
+Instance 03 N_M 1 C_M 5
+Total Makespan = 273.36
+Time = 0.00 s
+Instance 03 N_M 2 C_M 5
+Total Makespan = 248.18
+Time = 0.00 s
+Instance 03 N_M 4 C_M 5
+Total Makespan = 210.50
+Time = 0.00 s
+Instance 03 N_M 1 C_M 6
+Total Makespan = 268.49
+Time = 0.00 s
+Instance 03 N_M 2 C_M 6
+Total Makespan = 250.37
+Time = 0.00 s
+Instance 03 N_M 4 C_M 6
+Total Makespan = 210.50
+Time = 0.00 s
+Instance 03 N_M 1 C_M 7
+Total Makespan = 276.16
+Time = 0.00 s
+Instance 03 N_M 2 C_M 7
+Total Makespan = 210.50
+Time = 0.00 s
+Instance 03 N_M 4 C_M 7
+Total Makespan = 210.50
+Time = 0.01 s
+Instance 03 N_M 1 C_M 8
+Total Makespan = 242.21
+Time = 0.00 s
+Instance 03 N_M 2 C_M 8
+Total Makespan = 210.50
+Time = 0.01 s
+Instance 03 N_M 4 C_M 8
+Total Makespan = 210.50
+Time = 0.01 s
+
+
+Instance 04 N_M 1 C_M 1
+Total Makespan = 926.17
+Time = 0.01 s
+Instance 04 N_M 2 C_M 1
+Total Makespan = 784.61
+Time = 0.01 s
+Instance 04 N_M 4 C_M 1
+Total Makespan = 658.40
+Time = 0.01 s
+Instance 04 N_M 1 C_M 2
+Total Makespan = 871.45
+Time = 0.01 s
+Instance 04 N_M 2 C_M 2
+Total Makespan = 729.68
+Time = 0.01 s
+Instance 04 N_M 4 C_M 2
+Total Makespan = 524.49
+Time = 0.01 s
+Instance 04 N_M 1 C_M 3
+Total Makespan = 822.16
+Time = 0.01 s
+Instance 04 N_M 2 C_M 3
+Total Makespan = 663.44
+Time = 0.01 s
+Instance 04 N_M 4 C_M 3
+Total Makespan = 472.26
+Time = 0.01 s
+Instance 04 N_M 1 C_M 4
+Total Makespan = 760.19
+Time = 0.01 s
+Instance 04 N_M 2 C_M 4
+Total Makespan = 621.93
+Time = 0.01 s
+Instance 04 N_M 4 C_M 4
+Total Makespan = 440.34
+Time = 0.01 s
+Instance 04 N_M 1 C_M 5
+Total Makespan = 757.23
+Time = 0.01 s
+Instance 04 N_M 2 C_M 5
+Total Makespan = 617.33
+Time = 0.01 s
+Instance 04 N_M 4 C_M 5
+Total Makespan = 423.73
+Time = 0.03 s
+Instance 04 N_M 1 C_M 6
+Total Makespan = 733.04
+Time = 0.01 s
+Instance 04 N_M 2 C_M 6
+Total Makespan = 564.37
+Time = 0.01 s
+Instance 04 N_M 4 C_M 6
+Total Makespan = 449.34
+Time = 0.01 s
+Instance 04 N_M 1 C_M 7
+Total Makespan = 730.86
+Time = 0.02 s
+Instance 04 N_M 2 C_M 7
+Total Makespan = 561.03
+Time = 0.02 s
+Instance 04 N_M 4 C_M 7
+Total Makespan = 440.02
+Time = 0.01 s
+Instance 04 N_M 1 C_M 8
+Total Makespan = 681.43
+Time = 0.01 s
+Instance 04 N_M 2 C_M 8
+Total Makespan = 561.26
+Time = 0.02 s
+Instance 04 N_M 4 C_M 8
+Total Makespan = 350.57
+Time = 0.05 s
+
+
+Instance 05 N_M 1 C_M 1
+Total Makespan = 870.44
+Time = 0.02 s
+Instance 05 N_M 2 C_M 1
+Total Makespan = 809.50
+Time = 0.01 s
+Instance 05 N_M 4 C_M 1
+Total Makespan = 667.32
+Time = 0.02 s
+Instance 05 N_M 1 C_M 2
+Total Makespan = 840.17
+Time = 0.01 s
+Instance 05 N_M 2 C_M 2
+Total Makespan = 740.50
+Time = 0.01 s
+Instance 05 N_M 4 C_M 2
+Total Makespan = 555.19
+Time = 0.01 s
+Instance 05 N_M 1 C_M 3
+Total Makespan = 816.01
+Time = 0.02 s
+Instance 05 N_M 2 C_M 3
+Total Makespan = 670.27
+Time = 0.01 s
+Instance 05 N_M 4 C_M 3
+Total Makespan = 507.15
+Time = 0.01 s
+Instance 05 N_M 1 C_M 4
+Total Makespan = 767.00
+Time = 0.01 s
+Instance 05 N_M 2 C_M 4
+Total Makespan = 638.70
+Time = 0.01 s
+Instance 05 N_M 4 C_M 4
+Total Makespan = 472.73
+Time = 0.01 s
+Instance 05 N_M 1 C_M 5
+Total Makespan = 746.28
+Time = 0.02 s
+Instance 05 N_M 2 C_M 5
+Total Makespan = 626.46
+Time = 0.00 s
+Instance 05 N_M 4 C_M 5
+Total Makespan = 434.02
+Time = 0.02 s
+Instance 05 N_M 1 C_M 6
+Total Makespan = 736.92
+Time = 0.01 s
+Instance 05 N_M 2 C_M 6
+Total Makespan = 609.32
+Time = 0.01 s
+Instance 05 N_M 4 C_M 6
+Total Makespan = 413.57
+Time = 0.02 s
+Instance 05 N_M 1 C_M 7
+Total Makespan = 725.62
+Time = 0.03 s
+Instance 05 N_M 2 C_M 7
+Total Makespan = 566.97
+Time = 0.01 s
+Instance 05 N_M 4 C_M 7
+Total Makespan = 371.47
+Time = 0.03 s
+Instance 05 N_M 1 C_M 8
+Total Makespan = 739.25
+Time = 0.02 s
+Instance 05 N_M 2 C_M 8
+Total Makespan = 574.64
+Time = 0.01 s
+Instance 05 N_M 4 C_M 8
+Total Makespan = 420.05
+Time = 0.02 s
+
+
+Instance 06 N_M 1 C_M 1
+Total Makespan = 635.83
+Time = 0.02 s
+Instance 06 N_M 2 C_M 1
+Total Makespan = 540.07
+Time = 0.01 s
+Instance 06 N_M 4 C_M 1
+Total Makespan = 415.90
+Time = 0.01 s
+Instance 06 N_M 1 C_M 2
+Total Makespan = 590.87
+Time = 0.02 s
+Instance 06 N_M 2 C_M 2
+Total Makespan = 489.43
+Time = 0.01 s
+Instance 06 N_M 4 C_M 2
+Total Makespan = 388.33
+Time = 0.01 s
+Instance 06 N_M 1 C_M 3
+Total Makespan = 615.88
+Time = 0.02 s
+Instance 06 N_M 2 C_M 3
+Total Makespan = 448.91
+Time = 0.01 s
+Instance 06 N_M 4 C_M 3
+Total Makespan = 307.39
+Time = 0.02 s
+Instance 06 N_M 1 C_M 4
+Total Makespan = 534.77
+Time = 0.01 s
+Instance 06 N_M 2 C_M 4
+Total Makespan = 420.97
+Time = 0.02 s
+Instance 06 N_M 4 C_M 4
+Total Makespan = 298.52
+Time = 0.02 s
+Instance 06 N_M 1 C_M 5
+Total Makespan = 532.51
+Time = 0.01 s
+Instance 06 N_M 2 C_M 5
+Total Makespan = 359.79
+Time = 0.02 s
+Instance 06 N_M 4 C_M 5
+Total Makespan = 290.23
+Time = 0.01 s
+Instance 06 N_M 1 C_M 6
+Total Makespan = 449.64
+Time = 0.01 s
+Instance 06 N_M 2 C_M 6
+Total Makespan = 396.08
+Time = 0.02 s
+Instance 06 N_M 4 C_M 6
+Total Makespan = 283.40
+Time = 0.02 s
+Instance 06 N_M 1 C_M 7
+Total Makespan = 500.99
+Time = 0.01 s
+Instance 06 N_M 2 C_M 7
+Total Makespan = 443.41
+Time = 0.01 s
+Instance 06 N_M 4 C_M 7
+Total Makespan = 323.38
+Time = 0.02 s
+Instance 06 N_M 1 C_M 8
+Total Makespan = 513.06
+Time = 0.01 s
+Instance 06 N_M 2 C_M 8
+Total Makespan = 403.96
+Time = 0.01 s
+Instance 06 N_M 4 C_M 8
+Total Makespan = 253.86
+Time = 0.04 s
+
+
+Instance 08 N_M 1 C_M 1
+Total Makespan = 4246.28
+Time = 0.21 s
+Instance 08 N_M 2 C_M 1
+Total Makespan = 3942.70
+Time = 0.08 s
+Instance 08 N_M 4 C_M 1
+Total Makespan = 3174.93
+Time = 0.15 s
+Instance 08 N_M 1 C_M 2
+Total Makespan = 3981.03
+Time = 0.22 s
+Instance 08 N_M 2 C_M 2
+Total Makespan = 3373.46
+Time = 0.11 s
+Instance 08 N_M 4 C_M 2
+Total Makespan = 2749.10
+Time = 0.15 s
+Instance 08 N_M 1 C_M 3
+Total Makespan = 3761.94
+Time = 0.26 s
+Instance 08 N_M 2 C_M 3
+Total Makespan = 3072.13
+Time = 0.20 s
+Instance 08 N_M 4 C_M 3
+Total Makespan = 2407.93
+Time = 0.15 s
+Instance 08 N_M 1 C_M 4
+Total Makespan = 3592.10
+Time = 0.45 s
+Instance 08 N_M 2 C_M 4
+Total Makespan = 2930.76
+Time = 0.21 s
+Instance 08 N_M 4 C_M 4
+Total Makespan = 2200.05
+Time = 0.10 s
+Instance 08 N_M 1 C_M 5
+Total Makespan = 3481.19
+Time = 0.17 s
+Instance 08 N_M 2 C_M 5
+Total Makespan = 2815.32
+Time = 0.17 s
+Instance 08 N_M 4 C_M 5
+Total Makespan = 2132.38
+Time = 0.15 s
+Instance 08 N_M 1 C_M 6
+Total Makespan = 3435.20
+Time = 0.26 s
+Instance 08 N_M 2 C_M 6
+Total Makespan = 2893.54
+Time = 0.15 s
+Instance 08 N_M 4 C_M 6
+Total Makespan = 1936.84
+Time = 0.19 s
+Instance 08 N_M 1 C_M 7
+Total Makespan = 3525.58
+Time = 0.14 s
+Instance 08 N_M 2 C_M 7
+Total Makespan = 2695.73
+Time = 0.14 s
+Instance 08 N_M 4 C_M 7
+Total Makespan = 1945.64
+Time = 0.18 s
+Instance 08 N_M 1 C_M 8
+Total Makespan = 3427.44
+Time = 0.16 s
+Instance 08 N_M 2 C_M 8
+Total Makespan = 2578.23
+Time = 0.11 s
+Instance 08 N_M 4 C_M 8
+Total Makespan = 1872.70
+Time = 0.16 s
+
+
+Instance 09 N_M 1 C_M 1
+Total Makespan = 2728.87
+Time = 0.28 s
+Instance 09 N_M 2 C_M 1
+Total Makespan = 2438.30
+Time = 0.20 s
+Instance 09 N_M 4 C_M 1
+Total Makespan = 2202.95
+Time = 0.14 s
+Instance 09 N_M 1 C_M 2
+Total Makespan = 2643.64
+Time = 0.22 s
+Instance 09 N_M 2 C_M 2
+Total Makespan = 2248.10
+Time = 0.28 s
+Instance 09 N_M 4 C_M 2
+Total Makespan = 1791.61
+Time = 0.09 s
+Instance 09 N_M 1 C_M 3
+Total Makespan = 2421.86
+Time = 0.35 s
+Instance 09 N_M 2 C_M 3
+Total Makespan = 2098.13
+Time = 0.12 s
+Instance 09 N_M 4 C_M 3
+Total Makespan = 1542.56
+Time = 0.10 s
+Instance 09 N_M 1 C_M 4
+Total Makespan = 2377.32
+Time = 0.37 s
+Instance 09 N_M 2 C_M 4
+Total Makespan = 1944.23
+Time = 0.18 s
+Instance 09 N_M 4 C_M 4
+Total Makespan = 1579.03
+Time = 0.24 s
+Instance 09 N_M 1 C_M 5
+Total Makespan = 2199.76
+Time = 0.29 s
+Instance 09 N_M 2 C_M 5
+Total Makespan = 1783.11
+Time = 0.18 s
+Instance 09 N_M 4 C_M 5
+Total Makespan = 1351.26
+Time = 0.09 s
+Instance 09 N_M 1 C_M 6
+Total Makespan = 2157.09
+Time = 0.15 s
+Instance 09 N_M 2 C_M 6
+Total Makespan = 1765.34
+Time = 0.16 s
+Instance 09 N_M 4 C_M 6
+Total Makespan = 1299.73
+Time = 0.11 s
+Instance 09 N_M 1 C_M 7
+Total Makespan = 2127.67
+Time = 0.11 s
+Instance 09 N_M 2 C_M 7
+Total Makespan = 1615.76
+Time = 0.13 s
+Instance 09 N_M 4 C_M 7
+Total Makespan = 1279.93
+Time = 0.12 s
+Instance 09 N_M 1 C_M 8
+Total Makespan = 2196.84
+Time = 0.15 s
+Instance 09 N_M 2 C_M 8
+Total Makespan = 1639.98
+Time = 0.18 s
+Instance 09 N_M 4 C_M 8
+Total Makespan = 1171.09
+Time = 0.13 s
+
+
+Instance 10 N_M 1 C_M 1
+Total Makespan = 2021.67
+Time = 0.10 s
+Instance 10 N_M 2 C_M 1
+Total Makespan = 1829.10
+Time = 0.07 s
+Instance 10 N_M 4 C_M 1
+Total Makespan = 1610.51
+Time = 0.07 s
+Instance 10 N_M 1 C_M 2
+Total Makespan = 1922.03
+Time = 0.08 s
+Instance 10 N_M 2 C_M 2
+Total Makespan = 1603.70
+Time = 0.06 s
+Instance 10 N_M 4 C_M 2
+Total Makespan = 1291.72
+Time = 0.04 s
+Instance 10 N_M 1 C_M 3
+Total Makespan = 1866.07
+Time = 0.10 s
+Instance 10 N_M 2 C_M 3
+Total Makespan = 1535.16
+Time = 0.05 s
+Instance 10 N_M 4 C_M 3
+Total Makespan = 1167.63
+Time = 0.04 s
+Instance 10 N_M 1 C_M 4
+Total Makespan = 1776.14
+Time = 0.10 s
+Instance 10 N_M 2 C_M 4
+Total Makespan = 1432.87
+Time = 0.09 s
+Instance 10 N_M 4 C_M 4
+Total Makespan = 1160.81
+Time = 0.01 s
+Instance 10 N_M 1 C_M 5
+Total Makespan = 1769.77
+Time = 0.08 s
+Instance 10 N_M 2 C_M 5
+Total Makespan = 1357.71
+Time = 0.11 s
+Instance 10 N_M 4 C_M 5
+Total Makespan = 1043.32
+Time = 0.07 s
+Instance 10 N_M 1 C_M 6
+Total Makespan = 1629.13
+Time = 0.09 s
+Instance 10 N_M 2 C_M 6
+Total Makespan = 1287.07
+Time = 0.05 s
+Instance 10 N_M 4 C_M 6
+Total Makespan = 992.44
+Time = 0.11 s
+Instance 10 N_M 1 C_M 7
+Total Makespan = 1693.73
+Time = 0.05 s
+Instance 10 N_M 2 C_M 7
+Total Makespan = 1303.63
+Time = 0.10 s
+Instance 10 N_M 4 C_M 7
+Total Makespan = 902.27
+Time = 0.16 s
+Instance 10 N_M 1 C_M 8
+Total Makespan = 1666.43
+Time = 0.04 s
+Instance 10 N_M 2 C_M 8
+Total Makespan = 1263.20
+Time = 0.07 s
+Instance 10 N_M 4 C_M 8
+Total Makespan = 909.67
+Time = 0.07 s
