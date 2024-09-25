@@ -70,6 +70,8 @@ Time = 58.00 s
 Instance 01 NM4 CM8
 Total Makespan = 231.04
 Time = 59.00 s
+
+
 Instance 02 NM1 CM1
 Total Makespan = 266.02
 Time = 56.00 s
@@ -142,6 +144,8 @@ Time = 56.00 s
 Instance 02 NM4 CM8
 Total Makespan = 231.04
 Time = 21.00 s
+
+
 Instance 03 NM1 CM1
 Total Makespan = 262.09
 Time = 162.00 s
@@ -214,6 +218,8 @@ Time = 148.00 s
 Instance 03 NM4 CM8
 Total Makespan = 210.50
 Time = 131.00 s
+
+
 Instance 04 NM1 CM1
 Total Makespan = 812.78
 Time = 304.00 s
@@ -286,6 +292,8 @@ Time = 258.00 s
 Instance 04 NM4 CM8
 Total Makespan = 332.48
 Time = 496.00 s
+
+
 Instance 05 NM1 CM1
 Total Makespan = 791.89
 Time = 330.00 s
@@ -358,6 +366,8 @@ Time = 338.00 s
 Instance 05 NM4 CM8
 Total Makespan = 329.53
 Time = 328.00 s
+
+
 Instance 06 NM1 CM1
 Total Makespan = 531.69
 Time = 194.00 s
@@ -430,6 +440,8 @@ Time = 328.00 s
 Instance 06 NM4 CM8
 Total Makespan = 235.63
 Time = 372.00 s
+
+
 Instance 08 NM1 CM1
 Total Makespan = 3693.83
 Time = 3482.00 s
@@ -502,6 +514,8 @@ Time = 2347.00 s
 Instance 08 NM4 CM8
 Total Makespan = 1510.16
 Time = 3600.00 s
+
+
 Instance 09 NM1 CM1
 Total Makespan = 2335.29
 Time = 3307.00 s
@@ -574,6 +588,8 @@ Time = 2785.00 s
 Instance 09 NM4 CM8
 Total Makespan = 1003.32
 Time = 3310.00 s
+
+
 Instance 10 NM1 CM1
 Total Makespan = 1797.27
 Time = 3600.00 s

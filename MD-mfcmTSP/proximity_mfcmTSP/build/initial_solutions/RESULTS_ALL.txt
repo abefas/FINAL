@@ -1,0 +1,3 @@
+Instance 07 N_M 1 C_M 3
+Total Makespan = 974.80
+Time = 0.00 s

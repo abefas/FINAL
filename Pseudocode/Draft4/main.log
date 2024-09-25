@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.6.9)  15 SEP 2024 13:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.9.23)  25 SEP 2024 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2275,51 +2275,142 @@ File: p07_NM4.png Graphic file (type png)
 <use p07_NM4.png>
 Package pdftex.def Info: p07_NM4.png  used on input line 508.
 (pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
-<p11_NM1.png, id=508, 386.316pt x 238.491pt>
+<p07_init.png, id=508, 1365.1803pt x 696.6828pt>
+File: p07_init.png Graphic file (type png)
+<use p07_init.png>
+Package pdftex.def Info: p07_init.png  used on input line 521.
+(pdftex.def)             Requested size: 204.7682pt x 104.49791pt.
+
+Overfull \hbox (23.6056pt too wide) in paragraph at lines 521--522
+ [][] 
+ []
+
+<p07_NM1_CM3.png, id=509, 1365.1803pt x 696.6828pt>
+File: p07_NM1_CM3.png Graphic file (type png)
+<use p07_NM1_CM3.png>
+Package pdftex.def Info: p07_NM1_CM3.png  used on input line 528.
+(pdftex.def)             Requested size: 204.7682pt x 104.49791pt.
+
+Overfull \hbox (23.6056pt too wide) in paragraph at lines 528--529
+ [][] 
+ []
+
+<p07_NM1_CM7.png, id=510, 1365.1803pt x 696.6828pt>
+File: p07_NM1_CM7.png Graphic file (type png)
+<use p07_NM1_CM7.png>
+Package pdftex.def Info: p07_NM1_CM7.png  used on input line 535.
+(pdftex.def)             Requested size: 204.7682pt x 104.49791pt.
+
+Overfull \hbox (23.6056pt too wide) in paragraph at lines 535--536
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<p11_NM1.png, id=511, 386.316pt x 238.491pt>
 File: p11_NM1.png Graphic file (type png)
 <use p11_NM1.png>
-Package pdftex.def Info: p11_NM1.png  used on input line 521.
+Package pdftex.def Info: p11_NM1.png  used on input line 548.
 (pdftex.def)             Requested size: 162.2516pt x 100.16553pt.
-<p11_NM2.png, id=509, 386.316pt x 238.491pt>
+<p11_NM2.png, id=512, 386.316pt x 238.491pt>
 File: p11_NM2.png Graphic file (type png)
 <use p11_NM2.png>
-Package pdftex.def Info: p11_NM2.png  used on input line 527.
+Package pdftex.def Info: p11_NM2.png  used on input line 554.
 (pdftex.def)             Requested size: 162.2516pt x 100.16553pt.
-<p11_NM4.png, id=510, 386.535pt x 238.491pt>
+<p11_NM4.png, id=513, 386.535pt x 238.491pt>
 File: p11_NM4.png Graphic file (type png)
 <use p11_NM4.png>
-Package pdftex.def Info: p11_NM4.png  used on input line 533.
+Package pdftex.def Info: p11_NM4.png  used on input line 560.
 (pdftex.def)             Requested size: 162.34358pt x 100.16553pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<p07_drones.png, id=511, 433.62pt x 252.726pt>
+<Instance1.png, id=514, 362.007pt x 217.467pt>
+File: Instance1.png Graphic file (type png)
+<use Instance1.png>
+Package pdftex.def Info: Instance1.png  used on input line 573.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance2.png, id=515, 362.007pt x 217.467pt>
+File: Instance2.png Graphic file (type png)
+<use Instance2.png>
+Package pdftex.def Info: Instance2.png  used on input line 579.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance3.png, id=516, 362.007pt x 217.467pt>
+File: Instance3.png Graphic file (type png)
+<use Instance3.png>
+Package pdftex.def Info: Instance3.png  used on input line 585.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance4.png, id=517, 362.007pt x 217.467pt>
+File: Instance4.png Graphic file (type png)
+<use Instance4.png>
+Package pdftex.def Info: Instance4.png  used on input line 593.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance5.png, id=518, 362.007pt x 217.467pt>
+File: Instance5.png Graphic file (type png)
+<use Instance5.png>
+Package pdftex.def Info: Instance5.png  used on input line 599.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance6.png, id=519, 362.007pt x 217.467pt>
+File: Instance6.png Graphic file (type png)
+<use Instance6.png>
+Package pdftex.def Info: Instance6.png  used on input line 605.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance7.png, id=520, 362.007pt x 217.467pt>
+File: Instance7.png Graphic file (type png)
+<use Instance7.png>
+Package pdftex.def Info: Instance7.png  used on input line 613.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance8.png, id=521, 362.007pt x 217.467pt>
+File: Instance8.png Graphic file (type png)
+<use Instance8.png>
+Package pdftex.def Info: Instance8.png  used on input line 619.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance9.png, id=522, 362.007pt x 217.467pt>
+File: Instance9.png Graphic file (type png)
+<use Instance9.png>
+Package pdftex.def Info: Instance9.png  used on input line 625.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance10.png, id=523, 362.007pt x 217.467pt>
+File: Instance10.png Graphic file (type png)
+<use Instance10.png>
+Package pdftex.def Info: Instance10.png  used on input line 633.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+<Instance11.png, id=524, 362.007pt x 217.467pt>
+File: Instance11.png Graphic file (type png)
+<use Instance11.png>
+Package pdftex.def Info: Instance11.png  used on input line 639.
+(pdftex.def)             Requested size: 152.0419pt x 91.3355pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<p07_drones.png, id=525, 433.62pt x 252.726pt>
 File: p07_drones.png Graphic file (type png)
 <use p07_drones.png>
-Package pdftex.def Info: p07_drones.png  used on input line 546.
+Package pdftex.def Info: p07_drones.png  used on input line 652.
 (pdftex.def)             Requested size: 182.11916pt x 106.14418pt.
 
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 546--547
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 652--653
  [][] 
  []
 
-<p11_drones.png, id=512, 433.62pt x 252.945pt>
+<p11_drones.png, id=526, 433.62pt x 252.945pt>
 File: p11_drones.png Graphic file (type png)
 <use p11_drones.png>
-Package pdftex.def Info: p11_drones.png  used on input line 552.
+Package pdftex.def Info: p11_drones.png  used on input line 658.
 (pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 552--553
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 658--659
  [][] 
  []
 
-<p33_drones.png, id=513, 433.62pt x 252.945pt>
+<p33_drones.png, id=527, 433.62pt x 252.945pt>
 File: p33_drones.png Graphic file (type png)
 <use p33_drones.png>
-Package pdftex.def Info: p33_drones.png  used on input line 558.
+Package pdftex.def Info: p33_drones.png  used on input line 664.
 (pdftex.def)             Requested size: 182.11916pt x 106.23618pt.
 
-Overfull \hbox (0.95656pt too wide) in paragraph at lines 558--559
+Overfull \hbox (0.95656pt too wide) in paragraph at lines 664--665
  [][] 
  []
 
@@ -2342,16 +2433,19 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
  <./small_15-15-15.png> <./small_15-20-20.png> <./small_15-20-30.png> <./large_
 15-15-15.png> <./large_15-20-20.png> <./large_15-20-30.png> <./p07_NM1.png> <./
-p07_NM2.png> <./p07_NM4.png>] [16 <./p11_NM1.png> <./p11_NM2.png> <./p11_NM4.pn
-g> <./p07_drones.png> <./p11_drones.png> <./p33_drones.png>] [17]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
-72.
-
-(/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+p07_NM2.png> <./p07_NM4.png>] [16 <./p07_init.png> <./p07_NM1_CM3.png> <./p07_N
+M1_CM7.png> <./p11_NM1.png> <./p11_NM2.png> <./p11_NM4.png>] [17 <./Instance1.p
+ng> <./Instance2.png> <./Instance3.png> <./Instance4.png> <./Instance5.png> <./
+Instance6.png> <./Instance7.png> <./Instance8.png> <./Instance9.png> <./Instanc
+e10.png> <./Instance11.png> <./p07_drones.png> <./p11_drones.png> <./p33_drones
+.png>] [18]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
+78.
+ (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) [18
+) [19
 
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [19] (./main.
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [20] (./main.
 aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -2364,10 +2458,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47536 strings out of 476000
- 1032396 string characters out of 5792234
+ 47723 strings out of 476000
+ 1035879 string characters out of 5792233
  1972187 words of memory out of 5000000
- 68662 multiletter control sequences out of 15000+600000
+ 68846 multiletter control sequences out of 15000+600000
  647682 words of font info for 173 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  99i,25n,107p,3559b,1777s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2378,10 +2472,10 @@ s.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (19 pages, 1716169 bytes).
+Output written on main.pdf (20 pages, 2707455 bytes).
 PDF statistics:
- 737 PDF objects out of 1000 (max. 8388607)
- 653 compressed objects within 7 object streams
- 265 named destinations out of 1000 (max. 500000)
- 260 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 771 PDF objects out of 1000 (max. 8388607)
+ 658 compressed objects within 7 object streams
+ 268 named destinations out of 1000 (max. 500000)
+ 330 words of extra memory for PDF output out of 10000 (max. 10000000)
 

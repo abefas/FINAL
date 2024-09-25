@@ -16,7 +16,6 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
     //e.g. if closest depot has only drones but customer cannot be accessed by drones then customer 
     //goes into the second closest depot's cluster
     ClusterData cd = createClusters(G, da_access);
-    exit(1);
 
     asolution R;
     R.total_makespan = 0.0;
@@ -223,12 +222,6 @@ void heuristic_v1_2(SON *G, VType *VT, int **da_access){
                 if(type != 2){
                     double ms1 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 1);
                     double ms2 = k_optimization2(&R.a_VT[type].a_depots[IDEPOT], G, VT[type], 2);
-                }
-                */
-                /*
-                swapcount++; 
-                if(swapcount == 2){
-                    break;
                 }
                 */
             }else{
